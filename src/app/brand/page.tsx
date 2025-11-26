@@ -26,7 +26,7 @@ export default function Home() {
               </Link>
 
               <Link
-                href="https://www.figma.com/proto/i12YX9sbqeBXFJvExzA5PM/Raid-Guild-%7C-WORKING-%7C-Brand-Refresh-%7C-Q4-2025--Copy-?page-id=1859%3A175&node-id=1859-203&p=f&viewport=118%2C555%2C0.13&t=bKqLvajN7L8w4z03-1&scaling=contain&content-scaling=fixed"
+                href="https://www.figma.com/proto/i12YX9sbqeBXFJvExzA5PM/Raid-Guild-%7C-FINAL-%7C-Brand-%7C-Website-%7C-Archive-%7C-Q4-2025?page-id=1859%3A175&node-id=1859-203&p=f&viewport=430%2C527%2C0.06&t=3nRm7vwblHn8OUo9-1&scaling=contain&content-scaling=fixed"
                 className="block hover:text-accent transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
