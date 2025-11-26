@@ -51,7 +51,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="https://www.figma.com/proto/EuaqswLG9HfWWPbgNOdbSO/Raid-Guild-%7C-Brand-Refresh-%7C-Q4-2024?node-id=1859-175&t=0RNzFwba5kAxTnCR-1"
+              href="https://www.figma.com/proto/i12YX9sbqeBXFJvExzA5PM/Raid-Guild-%7C-FINAL-%7C-Brand-%7C-Website-%7C-Archive-%7C-Q4-2025?page-id=1859%3A175&node-id=1859-203&p=f&viewport=430%2C527%2C0.06&t=3nRm7vwblHn8OUo9-1&scaling=contain&content-scaling=fixed"
               className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
               target="_blank"
               rel="noopener noreferrer"
