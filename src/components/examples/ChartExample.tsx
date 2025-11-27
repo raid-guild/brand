@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
+import { ChartContainer } from "@/components/ui/chart";
 
 export function ChartExample() {
   return (
@@ -51,4 +51,3 @@ export function ChartExample() {
     </section>
   );
 }
-

@@ -43,10 +43,18 @@ const BreadcrumbLink = React.forwardRef<
     asChild?: boolean;
   }
 >(({ asChild, className, ...props }, ref) => {
-  const Comp = asChild ? React.Fragment : "a";
+  // const Comp = asChild ? React.Fragment : "a";
 
+  if (asChild) {
+    return (
+      <span
+        className={cn("transition-colors hover:text-foreground", className)}
+        {...props}
+      />
+    );
+  }
   return (
-    <Comp
+    <a
       ref={ref}
       className={cn("transition-colors hover:text-foreground", className)}
       {...props}
@@ -111,4 +119,3 @@ export {
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
 };
-

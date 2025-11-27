@@ -39,7 +39,7 @@ import { SliderExample } from "@/components/examples/SliderExample";
 import { TableExample } from "@/components/examples/TableExample";
 import { TabsExample } from "@/components/examples/TabsExample";
 import { TextareaExample } from "@/components/examples/TextareaExample";
-import { ToggleGroupExample } from "@/components/examples/ToggleGroupExample";
+import { ToggleExample } from "@/components/examples/ToggleExample";
 import { TooltipExample } from "@/components/examples/TooltipExample";
 
 export default function UIPage() {
@@ -121,11 +121,7 @@ export default function UIPage() {
     { id: "table", label: "Table", component: <TableExample /> },
     { id: "tabs", label: "Tabs", component: <TabsExample /> },
     { id: "textarea", label: "Textarea", component: <TextareaExample /> },
-    {
-      id: "toggle-group",
-      label: "Toggle Group",
-      component: <ToggleGroupExample />,
-    },
+    { id: "toggle", label: "Toggle", component: <ToggleExample /> },
     { id: "tooltip", label: "Tooltip", component: <TooltipExample /> },
   ] as const;
 
