@@ -47,9 +47,10 @@ export function Combobox({
       <PopoverTrigger asChild>
         <Button
           variant="secondary"
+          size="sm"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="w-[200px] justify-between text-sm"
         >
           {selectedOption ? selectedOption.label : placeholder}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -66,9 +67,7 @@ export function Combobox({
                   key={option.value}
                   value={option.value}
                   onSelect={(currentValue) => {
-                    onValueChange?.(
-                      currentValue === value ? "" : currentValue
-                    );
+                    onValueChange?.(currentValue === value ? "" : currentValue);
                     setOpen(false);
                   }}
                 >
@@ -88,4 +87,3 @@ export function Combobox({
     </Popover>
   );
 }
-

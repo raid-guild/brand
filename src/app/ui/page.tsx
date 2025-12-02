@@ -41,11 +41,14 @@ import { TabsExample } from "@/components/examples/TabsExample";
 import { TextareaExample } from "@/components/examples/TextareaExample";
 import { ToggleExample } from "@/components/examples/ToggleExample";
 import { TooltipExample } from "@/components/examples/TooltipExample";
+import { BrandNavigationExample } from "@/components/examples/BrandNavigationExample";
+import { FormExample } from "@/components/examples/FormExample";
+import { WizardExample } from "@/components/examples/WizardExample";
 
 export default function UIPage() {
-  const [activeTab, setActiveTab] = useState<"getting-started" | "examples">(
-    "getting-started"
-  );
+  const [activeTab, setActiveTab] = useState<
+    "getting-started" | "examples" | "advanced-components"
+  >("getting-started");
 
   const components = [
     { id: "accordion", label: "Accordion", component: <AccordionExample /> },
@@ -59,7 +62,6 @@ export default function UIPage() {
     { id: "calendar", label: "Calendar", component: <CalendarExample /> },
     { id: "card", label: "Card", component: <CardExample /> },
     { id: "carousel", label: "Carousel", component: <CarouselExample /> },
-    { id: "chart", label: "Chart", component: <ChartExample /> },
     { id: "checkbox", label: "Checkbox", component: <CheckboxExample /> },
     { id: "combobox", label: "Combobox", component: <ComboboxExample /> },
     { id: "command", label: "Command", component: <CommandExample /> },
@@ -130,6 +132,19 @@ export default function UIPage() {
   const [selectedComponent, setSelectedComponent] =
     useState<ComponentId | null>(null);
 
+  const advancedComponents = [
+    { id: "brand-navigation", label: "Brand Navigation", component: <BrandNavigationExample /> },
+    { id: "chart", label: "Chart", component: <ChartExample /> },
+    { id: "form", label: "Form", component: <FormExample /> },
+    { id: "wizard", label: "Wizard", component: <WizardExample /> },
+  ] as const;
+
+  type AdvancedComponentId = (typeof advancedComponents)[number]["id"];
+
+  const [selectedAdvancedComponent, setSelectedAdvancedComponent] = useState<
+    AdvancedComponentId | null
+  >(null);
+
   return (
     <div className="container-custom py-16">
       <div className="max-w-4xl mx-auto">
@@ -170,7 +185,11 @@ export default function UIPage() {
         {/* Tab Navigation */}
         <div className="mb-8 flex gap-2 border-b border-border">
           <button
-            onClick={() => setActiveTab("getting-started")}
+            onClick={() => {
+              setActiveTab("getting-started");
+              setSelectedComponent(null);
+              setSelectedAdvancedComponent(null);
+            }}
             className={`px-6 py-3 type-body-lg transition-colors border-b-2 ${
               activeTab === "getting-started"
                 ? "border-primary text-primary"
@@ -180,7 +199,11 @@ export default function UIPage() {
             Getting Started
           </button>
           <button
-            onClick={() => setActiveTab("examples")}
+            onClick={() => {
+              setActiveTab("examples");
+              setSelectedComponent(null);
+              setSelectedAdvancedComponent(null);
+            }}
             className={`px-6 py-3 type-body-lg transition-colors border-b-2 ${
               activeTab === "examples"
                 ? "border-primary text-primary"
@@ -188,6 +211,20 @@ export default function UIPage() {
             }`}
           >
             Component Examples
+          </button>
+          <button
+            onClick={() => {
+              setActiveTab("advanced-components");
+              setSelectedComponent(null);
+              setSelectedAdvancedComponent(null);
+            }}
+            className={`px-6 py-3 type-body-lg transition-colors border-b-2 ${
+              activeTab === "advanced-components"
+                ? "border-primary text-primary"
+                : "border-transparent text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Advanced Components
           </button>
         </div>
 
@@ -289,8 +326,8 @@ npm install -D @tailwindcss/postcss tw-animate-css`}</code>
                   5. Using with LLM Developer Agents
                 </h3>
                 <p className="text-body-base text-muted-foreground mb-4">
-                  When working with LLM developer agents (Cursor, GitHub Copilot,
-                  ChatGPT, etc.), always include the{" "}
+                  When working with LLM developer agents (Cursor, GitHub
+                  Copilot, ChatGPT, etc.), always include the{" "}
                   <strong className="text-foreground">
                     UI Components Catalog
                   </strong>{" "}
@@ -309,27 +346,14 @@ npm install -D @tailwindcss/postcss tw-animate-css`}</code>
                     <code className="block bg-muted p-3 rounded-lg text-sm">
                       docs/ui-components.md
                     </code>
-                  </div>
-                  <div>
-                    <h4 className="type-body-lg font-semibold mb-2">
-                      💡 Example Prompt Template
-                    </h4>
-                    <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-                      <code>{`I need to build a [feature description].
-
-Please use components from the UI Components Catalog 
-(docs/ui-components.md). Always prefer existing components 
-over creating custom ones.
-
-Requirements:
-- [Requirement 1]
-- [Requirement 2]
-
-Make sure to:
-- Import from @/components/ui/[component-name]
-- Follow design system patterns
-- Use correct variants and props`}</code>
-                    </pre>
+                    <Link
+                      href="https://github.com/raid-guild/brand/blob/main/docs/ui-components.md"
+                      className="text-primary hover:text-primary/80 transition-colors underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      File on GitHub
+                    </Link>
                   </div>
                   <div>
                     <h4 className="type-body-lg font-semibold mb-2">
@@ -348,7 +372,8 @@ Make sure to:
                         accepting code
                       </li>
                       <li>
-                        Check the catalog for component combinations and patterns
+                        Check the catalog for component combinations and
+                        patterns
                       </li>
                     </ul>
                   </div>
@@ -367,12 +392,12 @@ Make sure to:
           <div className="space-y-16">
             <section id="examples-top" className="mb-8">
               <h2 className="type-heading-lg mb-6">Component Examples</h2>
-              <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+              <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1">
                 {components.map((component) => (
                   <li key={component.id}>
                     <button
                       onClick={() => setSelectedComponent(component.id)}
-                      className="text-body-base text-primary hover:text-primary/80 transition-colors underline text-left"
+                      className="text-xs text-primary hover:text-primary/80 transition-colors underline text-left"
                     >
                       {component.label}
                     </button>
@@ -383,6 +408,35 @@ Make sure to:
             {selectedComponent && (
               <div className="mt-8">
                 {components.find((c) => c.id === selectedComponent)?.component}
+              </div>
+            )}
+          </div>
+        )}
+
+        {activeTab === "advanced-components" && (
+          <div className="space-y-16">
+            <section id="advanced-top" className="mb-8">
+              <h2 className="type-heading-lg mb-6">Advanced Components</h2>
+              <p className="type-body-base text-muted-foreground mb-6">
+                These are composed components that combine multiple UI elements
+                to create complex, reusable patterns for common use cases.
+              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1">
+                {advancedComponents.map((component) => (
+                  <li key={component.id}>
+                    <button
+                      onClick={() => setSelectedAdvancedComponent(component.id)}
+                      className="text-xs text-primary hover:text-primary/80 transition-colors underline text-left"
+                    >
+                      {component.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </section>
+            {selectedAdvancedComponent && (
+              <div className="mt-8">
+                {advancedComponents.find((c) => c.id === selectedAdvancedComponent)?.component}
               </div>
             )}
           </div>
