@@ -1,7 +1,37 @@
 "use client";
 
 import Link from "next/link";
-import { ChartContainer } from "@/components/ui/chart";
+import {
+  AreaChartComponent,
+  BarChartComponent,
+  LineChartComponent,
+  PieChartComponent,
+  type ChartData,
+} from "../ui/chart";
+
+// Sample data for demos
+export const sampleData = {
+  monthlyRevenue: [
+    { name: "Jan", revenue: 4000, expenses: 2400 },
+    { name: "Feb", revenue: 3000, expenses: 1398 },
+    { name: "Mar", revenue: 2000, expenses: 9800 },
+    { name: "Apr", revenue: 2780, expenses: 3908 },
+    { name: "May", revenue: 1890, expenses: 4800 },
+    { name: "Jun", revenue: 2390, expenses: 3800 },
+  ],
+  userStats: [
+    { name: "Active", value: 400 },
+    { name: "Inactive", value: 300 },
+    { name: "New", value: 200 },
+    { name: "Returning", value: 100 },
+  ],
+  performance: [
+    { name: "Q1", performance: 65, target: 70 },
+    { name: "Q2", performance: 78, target: 75 },
+    { name: "Q3", performance: 90, target: 80 },
+    { name: "Q4", performance: 85, target: 85 },
+  ],
+};
 
 export function ChartExample() {
   return (
@@ -10,7 +40,7 @@ export function ChartExample() {
         <h2 className="type-heading-md">Chart</h2>
         <div className="flex items-center gap-4">
           <Link
-            href="#examples-top"
+            href="#advanced-top"
             className="type-body-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             Back to top ↑
@@ -41,11 +71,55 @@ export function ChartExample() {
             Recharts. Install and configure your preferred charting library to
             use this component.
           </p>
-          <ChartContainer className="h-[300px] w-full border rounded-md p-4">
-            <div className="flex items-center justify-center h-full text-muted-foreground">
-              Chart visualization would appear here
-            </div>
-          </ChartContainer>
+          <div className="space-y-6">
+            <LineChartComponent
+              config={{
+                title: "Monthly Revenue",
+                description: "Revenue vs Expenses over time",
+                data: sampleData.monthlyRevenue.map((item) => ({
+                  ...item,
+                  value: item.revenue,
+                })) as ChartData[],
+                xKey: "name",
+                height: 300,
+              }}
+            />
+
+            <BarChartComponent
+              config={{
+                title: "Quarterly Performance",
+                description: "Performance vs Target by quarter",
+                data: sampleData.performance.map((item) => ({
+                  ...item,
+                  value: item.performance,
+                })) as ChartData[],
+                xKey: "name",
+                height: 300,
+              }}
+            />
+
+            <AreaChartComponent
+              config={{
+                title: "Revenue Trend",
+                description: "Revenue trend with area fill",
+                data: sampleData.monthlyRevenue.map((item) => ({
+                  ...item,
+                  value: item.revenue,
+                })) as ChartData[],
+                xKey: "name",
+                height: 300,
+              }}
+            />
+
+            <PieChartComponent
+              config={{
+                title: "User Distribution",
+                description: "Breakdown of user types",
+                data: sampleData.userStats,
+                height: 300,
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>

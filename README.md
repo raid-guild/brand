@@ -163,27 +163,10 @@ A comprehensive catalog of all available UI components is available in `docs/ui-
 - Follows design system patterns
 - Uses correct imports and props
 
-#### Example Prompt Template
-
-```
-I need to build a [feature description].
-
-Please use components from the UI Components Catalog (docs/ui-components.md). 
-Always prefer existing components over creating custom ones.
-
-Requirements:
-- [Requirement 1]
-- [Requirement 2]
-
-Make sure to:
-- Import from @/components/ui/[component-name]
-- Follow design system patterns
-- Use correct variants and props
-```
-
 #### What's in the Catalog
 
 The catalog includes:
+
 - Complete list of all 42+ UI components
 - Detailed descriptions and use cases
 - Import paths and exports

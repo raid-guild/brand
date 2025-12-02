@@ -6,7 +6,6 @@ import { useState } from "react";
 
 export function CalendarExample() {
   const [date, setDate] = useState<Date | undefined>(new Date());
-
   return (
     <section id="calendar">
       <div className="mb-4 flex items-center justify-between">
@@ -50,4 +49,3 @@ export function CalendarExample() {
     </section>
   );
 }
-
