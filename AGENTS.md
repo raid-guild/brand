@@ -2,7 +2,7 @@
 
 Single-file brief for AI assistants. Keep this in your context when generating UI, styles, or assets.
 
-Quick links: live site https://www.brand.raidguild.org/ | repo https://github.com/raid-guild/brand
+Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://github.com/raid-guild/brand)
 
 ## Using This in Another Project
 - Copy this file into the consuming repo (root recommended) or fetch it from the GitHub URL into your agent’s context.
@@ -56,7 +56,7 @@ Quick links: live site https://www.brand.raidguild.org/ | repo https://github.co
 - Use responsive layouts (`container-custom`, `grid-custom`) and test mobile/desktop.
 
 ## Suggested Prompt Snippet (for agents)
-```
+```text
 You are building UI for RaidGuild. Use the official design system.
 - Import components from @/components/ui/* (see docs/ui-components.md).
 - Use brand tokens from src/app/globals.css (semantic colors, radius, typography utilities).

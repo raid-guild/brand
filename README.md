@@ -4,7 +4,7 @@
 
 A repository of brand guidelines, assets and resources for designers and developers.
 
-Quick links: live site https://www.brand.raidguild.org/ | repo https://github.com/raid-guild/brand
+Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://github.com/raid-guild/brand)
 
 ## For AI Agents
 
