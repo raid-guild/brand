@@ -4,6 +4,13 @@
 
 A repository of brand guidelines, assets and resources for designers and developers.
 
+Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://github.com/raid-guild/brand)
+
+## For AI Agents
+
+- Load `AGENTS.md` into your assistant context before generating UI or copy. It condenses tokens, components, assets, and prompting rules.
+- When updating brand tokens, components, or asset paths, keep `AGENTS.md` in sync so agents stay accurate.
+
 ## Setting Up a New App with RaidGuild Brand Guidelines
 
 This guide will help you integrate the RaidGuild brand guidelines into a new Next.js application.
