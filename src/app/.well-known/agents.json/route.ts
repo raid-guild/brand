@@ -70,7 +70,8 @@ export function GET() {
           "Public RaidGuild brand guidance and asset references available after payment",
       },
     ];
-  } catch {
+  } catch (error) {
+    console.error("Failed to build agents.json capabilities", error);
     capabilities = [];
   }
 

@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-static";
+
 const schema = {
   $schema: "https://json-schema.org/draft/2020-12/schema",
   $id: "https://www.brand.raidguild.org/schemas/brand-guidelines-v1.json",
