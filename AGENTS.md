@@ -61,6 +61,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 - In documentation and MDX content, prefer these SVG icons over raw emojis. Use them via `<img src="/icon/dd/swords.svg" />` or `<img src="/icon/magic/star.svg" />` with semantic `alt` text, and avoid relying on emoji-only headings.
 - Illustrations: `illustrations/page.tsx` uses gallery from `public/assets/webp`, both color (-c) and B&W (-bw), multiple aspect ratios.
 - Home (`page.tsx`): quick links to PDF, Figma, GitHub; “For Archers” (design) and “For Warriors” (dev) navigation.
+- Machine API: `GET /api/machine/brand-guidelines` returns the complete versioned brand package after an x402 payment; `GET /.well-known/agents.json` publicly advertises its payment and response contract. The payload source is `src/lib/machine-api/brand-guidelines.ts`.
 
 ## Accessibility & UX Checklist
 - Every input needs a label + `FormMessage` for errors; preserve focus-visible rings (`ring-2 ring-moloch-500 ring-offset-2` via tokens).
@@ -86,4 +87,4 @@ You are building UI for RaidGuild. Use the official design system.
 - Fonts: `src/lib/fonts.ts`; theme toggling: `src/lib/theme-context.tsx`.
 
 ## Maintenance
-- Update this file whenever brand tokens, component APIs, asset paths, or setup steps change. Keeping it accurate ensures AI agents stay aligned with the source of truth.
+- Update this file and `src/lib/machine-api/brand-guidelines.ts` whenever brand tokens, component APIs, asset paths, or setup steps change. Keeping both agent-facing surfaces accurate ensures AI agents stay aligned with the source of truth.
