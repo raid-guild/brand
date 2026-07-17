@@ -211,6 +211,14 @@ export default function Home() {
               </p>
             </Link>
           </div>
+          <p className="mt-4">
+            <Link
+              href="/ai"
+              className="type-body-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              AI sub-brand →
+            </Link>
+          </p>
         </section>
 
         {/* For Designers & Developers */}
@@ -344,6 +352,66 @@ export default function Home() {
             </div>
           </section>
         </div>
+
+        {/* For Agents */}
+        <section className="mb-16">
+          <h2 className="type-heading-lg text-moloch-500 mb-6">
+            For Agents
+          </h2>
+          <p className="text-body-base text-muted-foreground mb-6">
+            Give an AI agent everything it needs to build with the RaidGuild
+            brand — a markdown manifest for context, structured JSON for
+            programmatic use, and a paid API for the complete guidelines
+            package.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Link
+              href="https://github.com/raid-guild/brand/blob/main/BRAND-ASSETS.md"
+              className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 className="type-heading-sm mb-2 group-hover:text-primary transition-colors">
+                Agent Manifest (Markdown)
+              </h3>
+              <p className="type-body-sm text-muted-foreground">
+                One file that teaches an AI agent the whole brand — guidelines,
+                assets, and download URLs. Drop it into your agent&apos;s
+                context.
+              </p>
+            </Link>
+
+            <Link
+              href="/brand-assets.json"
+              className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 className="type-heading-sm mb-2 group-hover:text-primary transition-colors">
+                brand-assets.json
+              </h3>
+              <p className="type-body-sm text-muted-foreground">
+                The same inventory, machine-readable. Served live for
+                programmatic use.
+              </p>
+            </Link>
+
+            <Link
+              href="/.well-known/agents.json"
+              className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 className="type-heading-sm mb-2 group-hover:text-primary transition-colors">
+                Paid Guidelines API (x402)
+              </h3>
+              <p className="type-body-sm text-muted-foreground">
+                The complete guidelines package via x402 micropayment.
+                Discovery is public; the full payload requires payment.
+              </p>
+            </Link>
+          </div>
+        </section>
       </div>
     </div>
   );
