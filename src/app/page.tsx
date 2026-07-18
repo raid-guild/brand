@@ -5,108 +5,108 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HERO_IMAGES = [
-  "/assets/webp/1080x1440/tower-platform-c.webp",
-  "/assets/webp/1080x1440/stairs-twist-c.webp",
-  "/assets/webp/1080x1440/stairs-curve-c.webp",
-  "/assets/webp/1080x1440/stairs-cloud-c.webp",
-  "/assets/webp/1080x1440/book-orb-c.webp",
-  "/assets/webp/1080x1440/tree-island-c.webp",
-  "/assets/webp/1080x1440/arch-gate-c.webp",
-  "/assets/webp/1080x1440/tower-floating-c.webp",
-  "/assets/webp/1080x1440/tower-tree-c.webp",
-  "/assets/webp/1080x1440/compass-circular-c.webp",
-  "/assets/webp/1080x1440/stone-pedestal-c.webp",
-  "/assets/webp/1080x1440/raven-solo-c.webp",
-  "/assets/webp/1440x1440/castle-staff-c.webp",
-  "/assets/webp/1440x1440/castle-flag-c.webp",
-  "/assets/webp/1440x1440/warriors-moloch-c.webp",
-  "/assets/webp/1440x1440/stairs-spiral-c.webp",
-  "/assets/webp/1440x1440/forge-duo-c.webp",
-  "/assets/webp/1440x1440/forge-anvil-c.webp",
-  "/assets/webp/1440x1440/forge-work-c.webp",
-  "/assets/webp/1440x1440/forge-fire-c.webp",
-  "/assets/webp/1440x1440/trio-portraits-c.webp",
-  "/assets/webp/1440x1440/ravens-flight-c.webp",
-  "/assets/webp/1440x1440/desk-work-c.webp",
-  "/assets/webp/1440x1440/warrior-solo-c.webp",
-  "/assets/webp/1440x1440/trio-profiles-c.webp",
-  "/assets/webp/1440x1440/stone-monuments-c.webp",
-  "/assets/webp/1440x1440/tree-mech-c.webp",
-  "/assets/webp/1440x1440/portal-arch-c.webp",
-  "/assets/webp/1440x1440/forge-building-c.webp",
-  "/assets/webp/1440x1440/table-castle-c.webp",
-  "/assets/webp/1440x1440/trio-arch-c.webp",
-  "/assets/webp/1440x1440/trio-backs-c.webp",
-  "/assets/webp/1440x1440/trio-beast-c.webp",
-  "/assets/webp/1440x1440/trio-wings-c.webp",
-  "/assets/webp/1440x1440/trio-mountain-c.webp",
-  "/assets/webp/1440x1440/trio-orb-c.webp",
-  "/assets/webp/1440x1440/trio-portal-c.webp",
-  "/assets/webp/1440x1440/trio-weapons-c.webp",
-  "/assets/webp/1440x1440/warriors-triangle-c.webp",
-  "/assets/webp/1440x1440/warriors-confident-c.webp",
-  "/assets/webp/1440x1440/warriors-forward-c.webp",
-  "/assets/webp/1440x1440/warriors-casual-c.webp",
-  "/assets/webp/1440x1440/warriors-orbs-c.webp",
-  "/assets/webp/1440x1440/warriors-magic-c.webp",
-  "/assets/webp/1440x1440/warriors-white-c.webp",
-  "/assets/webp/1440x1440/warriors-ready-c.webp",
-  "/assets/webp/1440x1440/warriors-belts-c.webp",
-  "/assets/webp/1440x1440/warriors-standing-c.webp",
-  "/assets/webp/1440x1440/warriors-masked-c.webp",
-  "/assets/webp/1440x1440/warriors-armed-c.webp",
-  "/assets/webp/1440x1440/trio-warriors-c.webp",
-  "/assets/webp/1080x1440/tower-platform-bw.webp",
-  "/assets/webp/1080x1440/stairs-twist-bw.webp",
-  "/assets/webp/1080x1440/stairs-curve-bw.webp",
-  "/assets/webp/1080x1440/stairs-cloud-bw.webp",
-  "/assets/webp/1080x1440/book-orb-bw.webp",
-  "/assets/webp/1080x1440/tree-island-bw.webp",
-  "/assets/webp/1080x1440/arch-gate-bw.webp",
-  "/assets/webp/1080x1440/tower-floating-bw.webp",
-  "/assets/webp/1080x1440/tower-tree-bw.webp",
-  "/assets/webp/1080x1440/compass-circular-bw.webp",
-  "/assets/webp/1080x1440/stone-pedestal-bw.webp",
-  "/assets/webp/1080x1440/raven-solo-bw.webp",
-  "/assets/webp/1440x1440/castle-flag-bw.webp",
-  "/assets/webp/1440x1440/castle-staff-bw.webp",
-  "/assets/webp/1440x1440/warriors-moloch-bw.webp",
-  "/assets/webp/1440x1440/stairs-spiral-bw.webp",
-  "/assets/webp/1440x1440/forge-duo-bw.webp",
-  "/assets/webp/1440x1440/forge-anvil-bw.webp",
-  "/assets/webp/1440x1440/forge-work-bw.webp",
-  "/assets/webp/1440x1440/forge-fire-bw.webp",
-  "/assets/webp/1440x1440/trio-portraits-bw.webp",
-  "/assets/webp/1440x1440/ravens-flight-bw.webp",
-  "/assets/webp/1440x1440/desk-work-bw.webp",
-  "/assets/webp/1440x1440/warrior-solo-bw.webp",
-  "/assets/webp/1440x1440/trio-profiles-bw.webp",
-  "/assets/webp/1440x1440/stone-monuments-bw.webp",
-  "/assets/webp/1440x1440/tree-mech-bw.webp",
-  "/assets/webp/1440x1440/portal-arch-bw.webp",
-  "/assets/webp/1440x1440/forge-building-bw.webp",
-  "/assets/webp/1440x1440/table-castle-bw.webp",
-  "/assets/webp/1440x1440/trio-arch-bw.webp",
-  "/assets/webp/1440x1440/trio-backs-bw.webp",
-  "/assets/webp/1440x1440/trio-beast-bw.webp",
-  "/assets/webp/1440x1440/trio-wings-bw.webp",
-  "/assets/webp/1440x1440/trio-mountain-bw.webp",
-  "/assets/webp/1440x1440/trio-orb-bw.webp",
-  "/assets/webp/1440x1440/trio-portal-bw.webp",
-  "/assets/webp/1440x1440/trio-weapons-bw.webp",
-  "/assets/webp/1440x1440/trio-warriors-bw.webp",
-  "/assets/webp/1440x1440/warriors-triangle-bw.webp",
-  "/assets/webp/1440x1440/warriors-confident-bw.webp",
-  "/assets/webp/1440x1440/warriors-forward-bw.webp",
-  "/assets/webp/1440x1440/warriors-casual-bw.webp",
-  "/assets/webp/1440x1440/warriors-orbs-bw.webp",
-  "/assets/webp/1440x1440/warriors-magic-bw.webp",
-  "/assets/webp/1440x1440/warriors-white-bw.webp",
-  "/assets/webp/1440x1440/warriors-ready-bw.webp",
-  "/assets/webp/1440x1440/warriors-belts-bw.webp",
-  "/assets/webp/1440x1440/warriors-standing-bw.webp",
-  "/assets/webp/1440x1440/warriors-masked-bw.webp",
-  "/assets/webp/1440x1440/warriors-armed-bw.webp",
+  "/assets/webp/scroll100/1080x1440/tower-platform-c.webp",
+  "/assets/webp/scroll100/1080x1440/stairs-twist-c.webp",
+  "/assets/webp/scroll100/1080x1440/stairs-curve-c.webp",
+  "/assets/webp/scroll100/1080x1440/stairs-cloud-c.webp",
+  "/assets/webp/scroll100/1080x1440/book-orb-c.webp",
+  "/assets/webp/scroll100/1080x1440/tree-island-c.webp",
+  "/assets/webp/scroll100/1080x1440/arch-gate-c.webp",
+  "/assets/webp/scroll100/1080x1440/tower-floating-c.webp",
+  "/assets/webp/scroll100/1080x1440/tower-tree-c.webp",
+  "/assets/webp/scroll100/1080x1440/compass-circular-c.webp",
+  "/assets/webp/scroll100/1080x1440/stone-pedestal-c.webp",
+  "/assets/webp/scroll100/1080x1440/raven-solo-c.webp",
+  "/assets/webp/scroll100/1440x1440/castle-staff-c.webp",
+  "/assets/webp/scroll100/1440x1440/castle-flag-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-moloch-c.webp",
+  "/assets/webp/scroll100/1440x1440/stairs-spiral-c.webp",
+  "/assets/webp/scroll100/1440x1440/forge-duo-c.webp",
+  "/assets/webp/scroll100/1440x1440/forge-anvil-c.webp",
+  "/assets/webp/scroll100/1440x1440/forge-work-c.webp",
+  "/assets/webp/scroll100/1440x1440/forge-fire-c.webp",
+  "/assets/webp/scroll100/1440x1440/trio-portraits-c.webp",
+  "/assets/webp/scroll100/1440x1440/ravens-flight-c.webp",
+  "/assets/webp/scroll100/1440x1440/desk-work-c.webp",
+  "/assets/webp/scroll100/1440x1440/warrior-solo-c.webp",
+  "/assets/webp/scroll100/1440x1440/trio-profiles-c.webp",
+  "/assets/webp/scroll100/1440x1440/stone-monuments-c.webp",
+  "/assets/webp/scroll100/1440x1440/tree-mech-c.webp",
+  "/assets/webp/scroll100/1440x1440/portal-arch-c.webp",
+  "/assets/webp/scroll100/1440x1440/forge-building-c.webp",
+  "/assets/webp/scroll100/1440x1440/table-castle-c.webp",
+  "/assets/webp/scroll100/1440x1440/trio-arch-c.webp",
+  "/assets/webp/scroll100/1440x1440/trio-backs-c.webp",
+  "/assets/webp/scroll100/1440x1440/trio-beast-c.webp",
+  "/assets/webp/scroll100/1440x1440/trio-wings-c.webp",
+  "/assets/webp/scroll100/1440x1440/trio-mountain-c.webp",
+  "/assets/webp/scroll100/1440x1440/trio-orb-c.webp",
+  "/assets/webp/scroll100/1440x1440/trio-portal-c.webp",
+  "/assets/webp/scroll100/1440x1440/trio-weapons-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-triangle-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-confident-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-forward-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-casual-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-orbs-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-magic-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-white-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-ready-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-belts-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-standing-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-masked-c.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-armed-c.webp",
+  "/assets/webp/scroll100/1440x1440/trio-warriors-c.webp",
+  "/assets/webp/scroll100/1080x1440/tower-platform-bw.webp",
+  "/assets/webp/scroll100/1080x1440/stairs-twist-bw.webp",
+  "/assets/webp/scroll100/1080x1440/stairs-curve-bw.webp",
+  "/assets/webp/scroll100/1080x1440/stairs-cloud-bw.webp",
+  "/assets/webp/scroll100/1080x1440/book-orb-bw.webp",
+  "/assets/webp/scroll100/1080x1440/tree-island-bw.webp",
+  "/assets/webp/scroll100/1080x1440/arch-gate-bw.webp",
+  "/assets/webp/scroll100/1080x1440/tower-floating-bw.webp",
+  "/assets/webp/scroll100/1080x1440/tower-tree-bw.webp",
+  "/assets/webp/scroll100/1080x1440/compass-circular-bw.webp",
+  "/assets/webp/scroll100/1080x1440/stone-pedestal-bw.webp",
+  "/assets/webp/scroll100/1080x1440/raven-solo-bw.webp",
+  "/assets/webp/scroll100/1440x1440/castle-flag-bw.webp",
+  "/assets/webp/scroll100/1440x1440/castle-staff-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-moloch-bw.webp",
+  "/assets/webp/scroll100/1440x1440/stairs-spiral-bw.webp",
+  "/assets/webp/scroll100/1440x1440/forge-duo-bw.webp",
+  "/assets/webp/scroll100/1440x1440/forge-anvil-bw.webp",
+  "/assets/webp/scroll100/1440x1440/forge-work-bw.webp",
+  "/assets/webp/scroll100/1440x1440/forge-fire-bw.webp",
+  "/assets/webp/scroll100/1440x1440/trio-portraits-bw.webp",
+  "/assets/webp/scroll100/1440x1440/ravens-flight-bw.webp",
+  "/assets/webp/scroll100/1440x1440/desk-work-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warrior-solo-bw.webp",
+  "/assets/webp/scroll100/1440x1440/trio-profiles-bw.webp",
+  "/assets/webp/scroll100/1440x1440/stone-monuments-bw.webp",
+  "/assets/webp/scroll100/1440x1440/tree-mech-bw.webp",
+  "/assets/webp/scroll100/1440x1440/portal-arch-bw.webp",
+  "/assets/webp/scroll100/1440x1440/forge-building-bw.webp",
+  "/assets/webp/scroll100/1440x1440/table-castle-bw.webp",
+  "/assets/webp/scroll100/1440x1440/trio-arch-bw.webp",
+  "/assets/webp/scroll100/1440x1440/trio-backs-bw.webp",
+  "/assets/webp/scroll100/1440x1440/trio-beast-bw.webp",
+  "/assets/webp/scroll100/1440x1440/trio-wings-bw.webp",
+  "/assets/webp/scroll100/1440x1440/trio-mountain-bw.webp",
+  "/assets/webp/scroll100/1440x1440/trio-orb-bw.webp",
+  "/assets/webp/scroll100/1440x1440/trio-portal-bw.webp",
+  "/assets/webp/scroll100/1440x1440/trio-weapons-bw.webp",
+  "/assets/webp/scroll100/1440x1440/trio-warriors-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-triangle-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-confident-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-forward-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-casual-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-orbs-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-magic-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-white-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-ready-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-belts-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-standing-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-masked-bw.webp",
+  "/assets/webp/scroll100/1440x1440/warriors-armed-bw.webp",
 ];
 
 export default function Home() {
@@ -211,6 +211,14 @@ export default function Home() {
               </p>
             </Link>
           </div>
+          <p className="mt-4">
+            <Link
+              href="/ai"
+              className="type-body-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              AI sub-brand →
+            </Link>
+          </p>
         </section>
 
         {/* For Designers & Developers */}
@@ -273,7 +281,8 @@ export default function Home() {
                   Illustrations
                 </h3>
                 <p className="type-body-sm text-muted-foreground">
-                  Technology-forward line art library echoing cyberpunk and D&D heroism
+                  Technology-forward line art library echoing cyberpunk and D&D
+                  heroism
                 </p>
               </Link>
 
@@ -286,7 +295,8 @@ export default function Home() {
                   Iconography
                 </h3>
                 <p className="type-body-sm text-muted-foreground">
-                  Magical mystical symbols paired with practical development and community icons
+                  Magical mystical symbols paired with practical development and
+                  community icons
                 </p>
               </Link>
             </div>
@@ -344,6 +354,66 @@ export default function Home() {
             </div>
           </section>
         </div>
+
+        {/* For Agents */}
+        <section className="mb-16">
+          <h2 className="type-heading-lg text-moloch-500 mb-6">
+            For Agents
+          </h2>
+          <p className="text-body-base text-muted-foreground mb-6">
+            Give an AI agent everything it needs to build with the RaidGuild
+            brand — a markdown manifest for context, structured JSON for
+            programmatic use, and a paid API for the complete guidelines
+            package.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Link
+              href="https://github.com/raid-guild/brand/blob/main/BRAND-ASSETS.md"
+              className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 className="type-heading-sm mb-2 group-hover:text-primary transition-colors">
+                Agent Manifest (Markdown)
+              </h3>
+              <p className="type-body-sm text-muted-foreground">
+                One file that teaches an AI agent the whole brand — guidelines,
+                assets, and download URLs. Drop it into your agent&apos;s
+                context.
+              </p>
+            </Link>
+
+            <Link
+              href="/brand-assets.json"
+              className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 className="type-heading-sm mb-2 group-hover:text-primary transition-colors">
+                brand-assets.json
+              </h3>
+              <p className="type-body-sm text-muted-foreground">
+                The same inventory, machine-readable. Served live for
+                programmatic use.
+              </p>
+            </Link>
+
+            <Link
+              href="/.well-known/agents.json"
+              className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3 className="type-heading-sm mb-2 group-hover:text-primary transition-colors">
+                Paid Guidelines API (x402)
+              </h3>
+              <p className="type-body-sm text-muted-foreground">
+                The complete guidelines package via x402 micropayment.
+                Discovery is public; the full payload requires payment.
+              </p>
+            </Link>
+          </div>
+        </section>
       </div>
     </div>
   );
