@@ -4,6 +4,42 @@
 
 A repository of brand guidelines, assets and resources for designers and developers.
 
+Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://github.com/raid-guild/brand)
+
+## For AI Agents
+
+- Load `AGENTS.md` into your assistant context before generating UI or copy. It condenses tokens, components, assets, and prompting rules.
+- When updating brand tokens, components, or asset paths, keep `AGENTS.md` in sync so agents stay accurate.
+
+## Paid Machine API
+
+The site exposes its complete machine-readable brand package through an x402
+endpoint:
+
+- Discovery: `GET /.well-known/agents.json`
+- Paid resource: `GET /api/machine/brand-guidelines`
+
+An unpaid request receives `402 Payment Required` and a standard x402 v2
+`PAYMENT-REQUIRED` header. A client can authorize the advertised exact payment
+and retry with a `PAYMENT-SIGNATURE` header. Successful responses include the
+guidelines payload and a `PAYMENT-RESPONSE` settlement header.
+
+Configure the endpoint with:
+
+```env
+X402_BRAND_CHAIN_ID=84532
+X402_BRAND_PAY_TO_ADDRESS=0xYourPaymentRecipientAddress
+X402_BRAND_GUIDELINES_PRICE=0.01
+X402_BRAND_MAX_TIMEOUT_SECONDS=60
+X402_BRAND_DESCRIPTION="Access the complete RaidGuild brand guidelines, design tokens, implementation guidance, and machine-readable asset manifest."
+X402_FACILITATOR_URL=https://x402.org/facilitator
+```
+
+The current configuration targets Base Sepolia. The discovery document is
+public; the full payload is returned only after successful payment. Update the
+payload in `src/lib/machine-api/brand-guidelines.ts` whenever tokens, guidance,
+components, or asset paths change.
+
 ## Setting Up a New App with RaidGuild Brand Guidelines
 
 This guide will help you integrate the RaidGuild brand guidelines into a new Next.js application.
