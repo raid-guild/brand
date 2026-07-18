@@ -211,14 +211,20 @@ export default function Home() {
               </p>
             </Link>
           </div>
-          <p className="mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
             <Link
               href="/ai"
-              className="type-body-sm text-muted-foreground hover:text-primary transition-colors"
+              className="p-6 border border-border rounded-lg hover:border-[#2FD09A] hover:bg-muted/50 transition-all group"
             >
-              AI sub-brand →
+              <h3 className="type-heading-sm mb-2 group-hover:text-[#2FD09A] transition-colors">
+                AI Sub-brand
+              </h3>
+              <p className="type-body-sm text-muted-foreground">
+                Design system for raidguild.ai, RaidGuild&apos;s AI
+                consulting agency
+              </p>
             </Link>
-          </p>
+          </div>
         </section>
 
         {/* For Designers & Developers */}
