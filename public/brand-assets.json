@@ -1,0 +1,244 @@
+{
+  "$schema": "https://raidguild.org/schemas/brand-manifest-v1.json",
+  "name": "RaidGuild Brand Assets Manifest",
+  "version": "1.0.0",
+  "brandRefresh": "2024 Q4",
+  "description": "Machine-readable inventory of every RaidGuild brand asset plus the core brand guidelines. Intended to back an agent-facing endpoint (e.g. /api/guidelines). Human-readable companion: BRAND-ASSETS.md.",
+  "sourceOfTruth": "https://github.com/raid-guild/brand",
+  "companionDocs": {
+    "assetManifestMarkdown": "https://github.com/raid-guild/brand/blob/main/BRAND-ASSETS.md",
+    "developerHandbook": "AGENTS.md",
+    "uiComponents": "docs/ui-components.md",
+    "tokensSource": "https://github.com/raid-guild/brand/blob/main/src/app/globals.css"
+  },
+  "baseUrls": {
+    "live": "https://www.brand.raidguild.org",
+    "githubRaw": "https://raw.githubusercontent.com/raid-guild/brand/main/public",
+    "githubTree": "https://github.com/raid-guild/brand/tree/main/public"
+  },
+  "downloadRule": "Any repo path under public/... is served at {live}/... (the public/ prefix is dropped). Example: public/assets/logos/full-m500.svg -> https://www.brand.raidguild.org/assets/logos/full-m500.svg",
+  "namingConvention": {
+    "colorCodes": { "m": "Moloch (warm red)", "s": "Scroll (warm yellow)" },
+    "example": "m500 = Moloch 500; a two-part code foreground-background like m800-s100 = Moloch 800 mark on a Scroll 100 background."
+  },
+  "guidelines": {
+    "colors": {
+      "note": "Warm, high-contrast palette (red / off-black / off-white). Defined as CSS custom properties in src/app/globals.css. Prefer Tailwind utilities e.g. bg-moloch-500, text-scroll-100.",
+      "primary": [
+        { "name": "Moloch 800", "hex": "#29100A", "role": "Primary dark / foreground text" },
+        { "name": "Moloch 500", "hex": "#BD482D", "role": "Primary brand red (CTAs, accents)" },
+        { "name": "Scroll 100", "hex": "#F9F7E7", "role": "Primary light / background" },
+        { "name": "Scroll 700", "hex": "#534A13", "role": "Deep warm yellow accent" }
+      ],
+      "scales": {
+        "moloch": {
+          "100": "#FAEEEB",
+          "200": "#EFC5BB",
+          "300": "#E39B8B",
+          "400": "#D25C41",
+          "500": "#BD482D",
+          "600": "#8B3521",
+          "700": "#5C2316",
+          "800": "#29100A"
+        },
+        "scroll": {
+          "100": "#F9F7E7",
+          "200": "#ECE5AC",
+          "300": "#DCCD6A",
+          "400": "#D2C141",
+          "500": "#B5A22C",
+          "600": "#837820",
+          "700": "#534A13",
+          "800": "#211E07"
+        },
+        "neutral": {
+          "100": "#F1EFEE",
+          "200": "#D5CECD",
+          "300": "#B9AEAC",
+          "400": "#9E8E8A",
+          "500": "#806F6B",
+          "600": "#645754",
+          "700": "#433937",
+          "800": "#221D1C",
+          "white": "#FAFAFA",
+          "black": "#0D0D0D"
+        }
+      },
+      "semanticLight": {
+        "background": "Scroll 100 (#F9F7E7)",
+        "foreground": "Moloch 800 (#29100A)",
+        "primary": "Moloch 500 (#BD482D) on Scroll 100",
+        "secondaryMuted": "Neutral 100 (#F1EFEE) with Neutral 600 (#645754) text",
+        "accent": "Moloch 500 (#BD482D)",
+        "borderInput": "Neutral 200 (#D5CECD)",
+        "focusRing": "Moloch 500 (#BD482D)"
+      },
+      "semanticDark": "Background flips to Moloch 800 (#29100A) with Scroll 100 (#F9F7E7) text."
+    },
+    "typography": {
+      "families": [
+        { "name": "Mazius Display", "cssVar": "--font-display", "role": "Display / headlines / brand graphics", "notes": "High-contrast calligraphic serif; bold preferred for headlines; two italics combine for expressiveness." },
+        { "name": "EB Garamond", "cssVar": "--font-body", "role": "Body & supporting copy, UI components", "notes": "Chosen for high readability." },
+        { "name": "Ubuntu Mono", "cssVar": "--font-mono", "role": "Code / technical content", "notes": "Loaded from Google Fonts; no local file needed." }
+      ],
+      "scale": [
+        { "token": "Display Large", "px": 80, "lineHeight": "110%", "letterSpacing": "-2%", "class": "type-display-lg" },
+        { "token": "Display Medium", "px": 60, "lineHeight": "120%", "letterSpacing": "-1%", "class": "type-display-md" },
+        { "token": "Display Small", "px": 48, "lineHeight": "120%", "letterSpacing": "0%", "class": "type-display-sm" },
+        { "token": "Heading Large", "px": 36, "lineHeight": "120%", "letterSpacing": "0%", "class": "type-heading-lg" },
+        { "token": "Heading Medium", "px": 28, "lineHeight": "130%", "letterSpacing": "0%", "class": "type-heading-md" },
+        { "token": "Body Large", "px": 20, "lineHeight": "140%", "letterSpacing": "0%", "class": "type-body-lg" },
+        { "token": "Body Base", "px": 16, "lineHeight": "160%", "letterSpacing": "0%", "class": "text-body-base" },
+        { "token": "Body Small", "px": 12, "lineHeight": "160%", "letterSpacing": "0%", "class": "type-body-sm" }
+      ],
+      "additionalClasses": ["type-heading-sm", "type-body-md", "type-label", "type-label-md", "type-label-sm", "type-code-lg", "type-code-md", "type-code-sm"]
+    },
+    "layout": {
+      "containerCustom": "max-width 1280px, responsive padding",
+      "gridCustom": "4 cols (mobile) -> 8 (tablet) -> 12 (desktop)",
+      "radiusBase": "0.625rem (with radius-sm/md/lg/xl derived)"
+    }
+  },
+  "assets": {
+    "logos": {
+      "format": "svg",
+      "folder": "https://www.brand.raidguild.org/assets/logos/",
+      "rules": [
+        "Logo = crossed-sword logomark + 'Raid Guild' wordmark.",
+        "The wordmark is NOT used on its own.",
+        "Use the logomark alone only when space is limited or the full logotype is inappropriate.",
+        "'Floating' = single-color transparent mark. 'With background' = baked-in colored background named foreground-background."
+      ],
+      "quickPick": {
+        "onLight": ["full-m500.svg", "full-m800.svg"],
+        "onDark": ["full-s100.svg"]
+      },
+      "items": [
+        { "file": "full-m800.svg", "type": "logotype", "description": "Full logo, Moloch 800 (floating)", "url": "https://www.brand.raidguild.org/assets/logos/full-m800.svg" },
+        { "file": "full-m500.svg", "type": "logotype", "description": "Full logo, Moloch 500 (floating)", "url": "https://www.brand.raidguild.org/assets/logos/full-m500.svg" },
+        { "file": "full-s100.svg", "type": "logotype", "description": "Full logo, Scroll 100 (floating, for dark backgrounds)", "url": "https://www.brand.raidguild.org/assets/logos/full-s100.svg" },
+        { "file": "full-m500-m800.svg", "type": "logotype", "description": "Moloch 500 mark on Moloch 800 background", "url": "https://www.brand.raidguild.org/assets/logos/full-m500-m800.svg" },
+        { "file": "full-m800-m500.svg", "type": "logotype", "description": "Moloch 800 mark on Moloch 500 background", "url": "https://www.brand.raidguild.org/assets/logos/full-m800-m500.svg" },
+        { "file": "full-m800-s100.svg", "type": "logotype", "description": "Moloch 800 mark on Scroll 100 background", "url": "https://www.brand.raidguild.org/assets/logos/full-m800-s100.svg" },
+        { "file": "full-s100-s700.svg", "type": "logotype", "description": "Scroll 100 mark on Scroll 700 background", "url": "https://www.brand.raidguild.org/assets/logos/full-s100-s700.svg" },
+        { "file": "symbol-m800.svg", "type": "logomark", "description": "Symbol, Moloch 800 (floating)", "url": "https://www.brand.raidguild.org/assets/logos/symbol-m800.svg" },
+        { "file": "symbol-m500.svg", "type": "logomark", "description": "Symbol, Moloch 500 (floating)", "url": "https://www.brand.raidguild.org/assets/logos/symbol-m500.svg" },
+        { "file": "symbol-s700.svg", "type": "logomark", "description": "Symbol, Scroll 700 (floating)", "url": "https://www.brand.raidguild.org/assets/logos/symbol-s700.svg" },
+        { "file": "symbol-m500-m800.svg", "type": "logomark", "description": "Moloch 500 symbol on Moloch 800 background", "url": "https://www.brand.raidguild.org/assets/logos/symbol-m500-m800.svg" },
+        { "file": "symbol-m800-m500.svg", "type": "logomark", "description": "Moloch 800 symbol on Moloch 500 background", "url": "https://www.brand.raidguild.org/assets/logos/symbol-m800-m500.svg" },
+        { "file": "symbol-m800-s100.svg", "type": "logomark", "description": "Moloch 800 symbol on Scroll 100 background", "url": "https://www.brand.raidguild.org/assets/logos/symbol-m800-s100.svg" },
+        { "file": "symbol-s100-s700.svg", "type": "logomark", "description": "Scroll 100 symbol on Scroll 700 background", "url": "https://www.brand.raidguild.org/assets/logos/symbol-s100-s700.svg" }
+      ]
+    },
+    "icons": {
+      "format": "svg",
+      "folder": "https://www.brand.raidguild.org/assets/icon/",
+      "usage": "Colorable via CSS fill/stroke. Recommended colors: Moloch 800 #29100A, Moloch 500 #BD482D, Scroll 100 #F9F7E7, Scroll 700 #534A13. Prefer these SVG icons over emoji in docs/MDX.",
+      "sets": {
+        "8bit": {
+          "folder": "https://www.brand.raidguild.org/assets/icon/8bit/",
+          "urlPattern": "https://www.brand.raidguild.org/assets/icon/8bit/{name}.svg",
+          "description": "D&D-inspired pixelated hero characters, one per guild member role.",
+          "items": [
+            { "name": "alchemist", "role": "DAO Consultant" },
+            { "name": "archer", "role": "Visual Design" },
+            { "name": "cleric", "role": "Account Manager" },
+            { "name": "druid", "role": "Data Science" },
+            { "name": "dwarf", "role": "Treasury (AngryDwarf)" },
+            { "name": "healer", "role": "Internal Ops" },
+            { "name": "hunter", "role": "BizDev" },
+            { "name": "monk", "role": "PM" },
+            { "name": "necromancer", "role": "DevOps" },
+            { "name": "paladin", "role": "Backend Dev" },
+            { "name": "ranger", "role": "UX Design" },
+            { "name": "rogue", "role": "Legal" },
+            { "name": "scribe", "role": "Content Creator" },
+            { "name": "sorcerer", "role": "(role character)" },
+            { "name": "tavernkeeper", "role": "Community" },
+            { "name": "warrior", "role": "Frontend Dev" },
+            { "name": "wizard", "role": "Smart Contracts" }
+          ]
+        },
+        "dd": {
+          "folder": "https://www.brand.raidguild.org/assets/icon/dd/",
+          "urlPattern": "https://www.brand.raidguild.org/assets/icon/dd/{name}.svg",
+          "description": "Original RaidGuild service & community line icons defining core offerings and values.",
+          "items": ["community", "consultation", "culture", "dao", "education", "experiment", "frontend", "fullstack", "learning", "manifesto", "marketing", "robot", "spear", "sprint", "swords"]
+        },
+        "magic": {
+          "folder": "https://www.brand.raidguild.org/assets/icon/magic/",
+          "urlPattern": "https://www.brand.raidguild.org/assets/icon/magic/{name}.svg",
+          "description": "Mystical, alchemical glyphs evoking the spiritual side of the craft.",
+          "items": ["candle", "cauldron", "chalice", "crystal", "feather", "flask", "hourglass", "lantern", "moon", "pumpkin", "sparkle", "star", "stars"]
+        }
+      }
+    },
+    "illustrations": {
+      "format": "webp",
+      "folder": "https://www.brand.raidguild.org/assets/webp/",
+      "totalFiles": 848,
+      "description": "Technology-forward line art blending cyberpunk aesthetics with D&D heroism.",
+      "usage": "Pair with brand colors. Maintain original aspect ratios; do not stretch or distort.",
+      "midjourneyPrompts": "https://hackmd.io/@Suede/Skbpddppll",
+      "urlTemplates": {
+        "full": "https://www.brand.raidguild.org/assets/webp/{palette}/{size}/{scene}-{tone}.webp",
+        "thumbnail": "https://www.brand.raidguild.org/assets/webp/{palette}/thumbnails/{size}/{scene}-{tone}.webp"
+      },
+      "dimensions": {
+        "palette": ["moloch500", "moloch800", "scroll100", "scroll700"],
+        "tone": { "c": "full color", "bw": "black & white" },
+        "note": "Every scene exists in all 4 palettes, both tones, full + thumbnail (16 files per scene). IMPORTANT: a scene only exists under its own aspect-ratio folder (see scenesBySize) — do not request a scene from a size it does not belong to."
+      },
+      "scenesBySize": {
+        "1440x1440": {
+          "aspect": "square",
+          "count": 39,
+          "scenes": ["castle-flag", "castle-staff", "desk-work", "forge-anvil", "forge-building", "forge-duo", "forge-fire", "forge-work", "portal-arch", "ravens-flight", "stairs-spiral", "stone-monuments", "table-castle", "tree-mech", "trio-arch", "trio-backs", "trio-beast", "trio-mountain", "trio-orb", "trio-portal", "trio-portraits", "trio-profiles", "trio-warriors", "trio-weapons", "trio-wings", "warrior-solo", "warriors-armed", "warriors-belts", "warriors-casual", "warriors-confident", "warriors-forward", "warriors-magic", "warriors-masked", "warriors-moloch", "warriors-orbs", "warriors-ready", "warriors-standing", "warriors-triangle", "warriors-white"]
+        },
+        "1080x1440": {
+          "aspect": "portrait",
+          "count": 12,
+          "scenes": ["arch-gate", "book-orb", "compass-circular", "raven-solo", "stairs-cloud", "stairs-curve", "stairs-twist", "stone-pedestal", "tower-floating", "tower-platform", "tower-tree", "tree-island"]
+        },
+        "1440x550": {
+          "aspect": "landscape",
+          "count": 2,
+          "scenes": ["ship-front", "ship-mech"]
+        }
+      },
+      "examples": [
+        "https://www.brand.raidguild.org/assets/webp/moloch500/1440x1440/forge-fire-c.webp",
+        "https://www.brand.raidguild.org/assets/webp/scroll100/1080x1440/tower-tree-bw.webp",
+        "https://www.brand.raidguild.org/assets/webp/moloch800/thumbnails/1440x550/ship-mech-c.webp"
+      ]
+    },
+    "fonts": {
+      "folder": "https://www.brand.raidguild.org/fonts/",
+      "items": [
+        { "file": "MAZIUSREVIEW20.09-Regular.otf", "family": "Mazius Display", "weight": "Regular", "url": "https://www.brand.raidguild.org/fonts/MAZIUSREVIEW20.09-Regular.otf" },
+        { "file": "MAZIUSREVIEW20.09-Regular.woff", "family": "Mazius Display", "weight": "Regular (woff)", "url": "https://www.brand.raidguild.org/fonts/MAZIUSREVIEW20.09-Regular.woff" },
+        { "file": "MaziusDisplay-Bold.otf", "family": "Mazius Display", "weight": "Bold", "url": "https://www.brand.raidguild.org/fonts/MaziusDisplay-Bold.otf" },
+        { "file": "MaziusDisplay-Extraitalic.otf", "family": "Mazius Display", "weight": "Extra Italic", "url": "https://www.brand.raidguild.org/fonts/MaziusDisplay-Extraitalic.otf" },
+        { "file": "MaziusDisplay-ExtraItalicBold.otf", "family": "Mazius Display", "weight": "Extra Italic Bold", "url": "https://www.brand.raidguild.org/fonts/MaziusDisplay-ExtraItalicBold.otf" },
+        { "file": "EBGaramond-VariableFont_wght.ttf", "family": "EB Garamond", "weight": "Variable", "url": "https://www.brand.raidguild.org/fonts/EBGaramond-VariableFont_wght.ttf" },
+        { "file": "EBGaramond-Italic-VariableFont_wght.ttf", "family": "EB Garamond", "weight": "Italic Variable", "url": "https://www.brand.raidguild.org/fonts/EBGaramond-Italic-VariableFont_wght.ttf" }
+      ]
+    },
+    "social": {
+      "format": "png",
+      "dimensions": "400x400",
+      "folder": "https://www.brand.raidguild.org/assets/social/",
+      "items": [
+        { "file": "400x400_dark.png", "description": "Dark background avatar", "url": "https://www.brand.raidguild.org/assets/social/400x400_dark.png" },
+        { "file": "400x400_light.png", "description": "Light background avatar", "url": "https://www.brand.raidguild.org/assets/social/400x400_light.png" },
+        { "file": "400x400_red.png", "description": "Red (Moloch) avatar", "url": "https://www.brand.raidguild.org/assets/social/400x400_red.png" }
+      ]
+    },
+    "guidelinesPdf": {
+      "format": "pdf",
+      "description": "Complete human-facing brand guidelines (2024 Q4 Refresh), ~5.7 MB.",
+      "url": "https://www.brand.raidguild.org/assets/RaidGuild_brand_guidelines.pdf",
+      "rawUrl": "https://raw.githubusercontent.com/raid-guild/brand/main/public/assets/RaidGuild_brand_guidelines.pdf"
+    }
+  }
+}
