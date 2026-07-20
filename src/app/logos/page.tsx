@@ -221,11 +221,11 @@ export default function LogosPage() {
             </p>
             <div>
               <h3 className="type-heading-sm mb-4">Floating</h3>
-              <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-lg overflow-hidden border border-border bg-white p-6">
                   <Image
-                    src="/assets/logos/cohort/cohort-m500.svg"
-                    alt="Raid Guild Cohort Logo - Moloch 500"
+                    src="/assets/logos/cohort/cohort-m800.svg"
+                    alt="Raid Guild Cohort Logo - Moloch 800"
                     width={589}
                     height={166}
                     className="w-full h-auto"
@@ -233,8 +233,8 @@ export default function LogosPage() {
                 </div>
                 <div className="rounded-lg overflow-hidden border border-border bg-white p-6">
                   <Image
-                    src="/assets/logos/cohort/cohort-m800.svg"
-                    alt="Raid Guild Cohort Logo - Moloch 800"
+                    src="/assets/logos/cohort/cohort-m500.svg"
+                    alt="Raid Guild Cohort Logo - Moloch 500"
                     width={589}
                     height={166}
                     className="w-full h-auto"
