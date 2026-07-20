@@ -214,6 +214,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
             <Link
               href="/ai"
+              target="topw"
               className="p-6 border border-border rounded-lg hover:border-[#2FD09A] hover:bg-muted/50 transition-all group"
             >
               <h3 className="type-heading-sm mb-2 group-hover:text-[#2FD09A] transition-colors">
