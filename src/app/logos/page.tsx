@@ -212,6 +212,55 @@ export default function LogosPage() {
               </div>
             </div>
           </section>
+
+          <section>
+            <h2 className="type-heading-lg mb-6">Cohort</h2>
+            <p className="text-base mb-6 text-foreground/70">
+              A logo variant for the Cohort program, used on the
+              raidguild.org/join page.
+            </p>
+            <div>
+              <h3 className="type-heading-sm mb-4">Floating</h3>
+              <div className="space-y-4">
+                <div className="rounded-lg overflow-hidden border border-border bg-white p-6">
+                  <Image
+                    src="/assets/logos/cohort/cohort-m500.svg"
+                    alt="Raid Guild Cohort Logo - Moloch 500"
+                    width={589}
+                    height={166}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-border bg-white p-6">
+                  <Image
+                    src="/assets/logos/cohort/cohort-m800.svg"
+                    alt="Raid Guild Cohort Logo - Moloch 800"
+                    width={589}
+                    height={166}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-border bg-white p-6">
+                  <Image
+                    src="/assets/logos/cohort/cohort-s100.svg"
+                    alt="Raid Guild Cohort Logo - Scroll 100"
+                    width={589}
+                    height={166}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-border bg-white p-6">
+                  <Image
+                    src="/assets/logos/cohort/cohort-s700.svg"
+                    alt="Raid Guild Cohort Logo - Scroll 700"
+                    width={589}
+                    height={166}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </div>
