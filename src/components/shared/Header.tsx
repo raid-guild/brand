@@ -13,6 +13,7 @@ import {
 import type { RefObject } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import HeaderNavLinks, {
   type HeaderNavLink,
@@ -100,6 +101,7 @@ export default function Header({
   const panelId = useId();
 
   const isDesktop = useIsDesktop();
+  const pathname = usePathname();
 
   const headerHeight = isDesktop ? DESKTOP_THIN_HEIGHT : MOBILE_HEADER_HEIGHT;
 
@@ -169,6 +171,10 @@ export default function Header({
     panelRef,
     triggerRef,
   });
+
+  if (pathname?.startsWith("/ai")) {
+    return null;
+  }
 
   return (
     <header

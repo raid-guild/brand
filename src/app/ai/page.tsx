@@ -23,10 +23,45 @@ const COLORS = [
   { name: "Muted foreground", hex: "#737B8C", hsl: "220 10% 50%", textOn: "#060609" },
 ];
 
-const LOGO_FILES = [
-  { file: "ai-mark-teal.svg", label: "Teal — primary, for dark backgrounds", bg: "#0D0D12" },
-  { file: "ai-mark-fg.svg", label: "Off-white — for dark backgrounds", bg: "#0D0D12" },
-  { file: "ai-mark-dark.svg", label: "Near-black — for rare light contexts", bg: "#E8E6E3" },
+const SYMBOL_FILES = [
+  { file: "symbol-green.svg", label: "Green — primary, for dark backgrounds", bg: "#0D0D12" },
+  { file: "symbol-pink.svg", label: "Pink — accent, for dark backgrounds", bg: "#0D0D12" },
+  { file: "symbol-white.svg", label: "White — for dark backgrounds", bg: "#0D0D12" },
+  { file: "symbol-black.svg", label: "Black — for rare light contexts", bg: "#E8E6E3" },
+];
+
+const LOCKUPS = [
+  {
+    name: "Wordmark",
+    description: "Stacked display wordmark, no mark.",
+    width: 554,
+    height: 166,
+    files: [
+      { file: "logo-RG-AI-green.svg", color: "Green" },
+      { file: "logo-RG-AI-pink.svg", color: "Pink" },
+    ],
+  },
+  {
+    name: "Full Lockup",
+    description: "Wordmark with the crossed-swords mark.",
+    width: 584,
+    height: 110,
+    files: [
+      { file: "logo-RG-AI-lg-green.svg", color: "Green" },
+      { file: "logo-RG-AI-lg-pink.svg", color: "Pink" },
+    ],
+  },
+  {
+    name: "Modern Lockup",
+    description:
+      "Single-line sans-serif wordmark with the mark — matches this page's own typography.",
+    width: 788,
+    height: 105,
+    files: [
+      { file: "logo-RG-AI-mod-green.svg", color: "Green" },
+      { file: "logo-RG-AI-mod-pink.svg", color: "Pink" },
+    ],
+  },
 ];
 
 export default function AiSubBrandPage() {
@@ -79,12 +114,13 @@ export default function AiSubBrandPage() {
             Logo
           </h2>
           <p className="text-[#737B8C] max-w-2xl mb-8">
-            Derived from the original RaidGuild crossed-swords mark, recolored
-            for this sub-brand. Geometry unchanged. A lockup wordmark has not
-            been cut yet — the mark stands alone until then.
+            The RaidGuild AI crossed-swords mark, in four color variants, and
+            three lockup treatments pairing the mark with the wordmark.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-            {LOGO_FILES.map((logo) => (
+
+          <h3 className="text-sm tracking-wide text-[#737B8C] mb-4">Symbol</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            {SYMBOL_FILES.map((logo) => (
               <div key={logo.file} className="border border-[#202027] rounded-lg p-6">
                 <div
                   className="rounded-md flex items-center justify-center h-32 mb-4"
@@ -94,7 +130,7 @@ export default function AiSubBrandPage() {
                     src={`/assets/logos/ai/${logo.file}`}
                     alt={logo.label}
                     width={64}
-                    height={64}
+                    height={60}
                   />
                 </div>
                 <p className="text-sm text-[#E8E6E3] mb-1">{logo.label}</p>
@@ -108,16 +144,38 @@ export default function AiSubBrandPage() {
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-3 p-6 border border-[#202027] rounded-lg w-fit">
-            <Image
-              src="/assets/logos/ai/ai-mark-teal.svg"
-              alt="RaidGuild AI mark"
-              width={40}
-              height={40}
-            />
-            <span className={`${spaceGrotesk.className} text-xl font-bold tracking-wide`}>
-              RAIDGUILD AI
-            </span>
+
+          <h3 className="text-sm tracking-wide text-[#737B8C] mb-4">Lockups</h3>
+          <div className="space-y-8">
+            {LOCKUPS.map((lockup) => (
+              <div key={lockup.name}>
+                <p className="text-sm text-[#E8E6E3] mb-1">{lockup.name}</p>
+                <p className="text-sm text-[#737B8C] mb-4">{lockup.description}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {lockup.files.map((item) => (
+                    <div key={item.file} className="border border-[#202027] rounded-lg p-6">
+                      <div className="rounded-md flex items-center justify-center bg-[#0D0D12] p-6 mb-4">
+                        <Image
+                          src={`/assets/logos/ai/${item.file}`}
+                          alt={`${lockup.name} — ${item.color}`}
+                          width={lockup.width}
+                          height={lockup.height}
+                          className="w-full h-auto"
+                        />
+                      </div>
+                      <p className="text-sm text-[#E8E6E3] mb-1">{item.color}</p>
+                      <a
+                        href={`/assets/logos/ai/${item.file}`}
+                        download
+                        className="text-sm text-[#2FD09A] hover:underline"
+                      >
+                        Download SVG
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
