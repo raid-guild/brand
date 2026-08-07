@@ -6,8 +6,9 @@ import { ThemeProvider } from "@/lib/theme-context";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Raid Guild",
-  description: "We are slaying Moloch, one web3 build at a time.",
+  title: "RaidGuild Brand Archive",
+  description:
+    "A living, versioned guide to RaidGuild identity across brand steward reigns.",
 };
 
 export default function RootLayout({
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-brand-reign="louchi" suppressHydrationWarning>
       <body
         className={`${maziusDisplay.variable} ${ebGaramond.variable} ${ubuntuMono.variable} antialiased`}
       >

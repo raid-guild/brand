@@ -1,210 +1,139 @@
+"use client";
+
 import Link from "next/link";
+import { useTheme } from "@/lib/theme-context";
+
+const TYPE_SCALE = [
+  { name: "Display Large", className: "type-display-lg", detail: "80px / 110% / -2%" },
+  { name: "Display Medium", className: "type-display-md", detail: "60px / 120% / -1%" },
+  { name: "Display Small", className: "type-display-sm", detail: "48px / 120% / 0%" },
+  { name: "Heading Large", className: "type-heading-lg", detail: "36px / 120% / 0%" },
+  { name: "Heading Medium", className: "type-heading-md", detail: "28px / 130% / 0%" },
+  { name: "Body Large", className: "type-body-lg", detail: "20px / 140% / 0%" },
+] as const;
 
 export default function TypographyPage() {
+  const { brandReign } = useTheme();
+  const isTw = brandReign.id === "tw";
+
+  const families = isTw
+    ? [
+        {
+          name: "Alchemion",
+          className: "font-display",
+          sample: "Strange worlds reward the curious.",
+          role: "Display and oversized statements",
+          description:
+            "A theatrical display face used for the TW reign's oversized, kinetic headlines.",
+        },
+        {
+          name: "Fratelli",
+          className: "font-body",
+          sample: "RaidGuild assembles the right party for the quest.",
+          role: "Body and supporting copy",
+          description:
+            "A compact supporting face that keeps the TW system direct beneath expressive headlines.",
+        },
+      ]
+    : [
+        {
+          name: "Mazius Display",
+          className: "font-display",
+          sample: "Venture beyond the familiar.",
+          role: "Display, headlines, and brand graphics",
+          description:
+            brandReign.id === "louchi"
+              ? "Used expansively with tight line height and occasional coral italic emphasis to frame speculative-world imagery."
+              : "A calligraphic high-contrast serif used for expressive headlines and brand graphics.",
+        },
+        {
+          name: "EB Garamond",
+          className: "font-body",
+          sample: "Build digital worlds worth inhabiting.",
+          role: "Body and supporting copy",
+          description:
+            "The readable editorial counterweight to Mazius Display across long-form copy and interfaces.",
+        },
+        {
+          name: "Ubuntu Mono",
+          className: "font-mono",
+          sample: "RG—26.002 / SIGNAL ACTIVE",
+          role: "Labels, coordinates, and technical metadata",
+          description:
+            brandReign.id === "louchi"
+              ? "Used heavily for field-note metadata, navigation labels, coordinates, and technical signals."
+              : "Used for code, utility labels, and technical content.",
+        },
+      ];
+
+  const sourceUrl = isTw
+    ? "https://www.raidguild.org/witch/fonts/"
+    : brandReign.id === "louchi"
+      ? "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign/public/fonts"
+      : "https://github.com/raid-guild/brand/tree/main/public/fonts";
+
   return (
     <div className="container-custom py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="type-display-lg mb-8">Typography</h1>
+      <div className="mx-auto max-w-4xl">
+        <p className="type-label-sm mb-3 text-primary">{brandReign.label}</p>
+        <h1 className="type-display-lg mb-6">Typography</h1>
+        <p className="type-body-lg mb-12 max-w-3xl text-muted-foreground">
+          {isTw
+            ? "TW pairs theatrical display type with compact supporting copy for an energetic, web-native voice."
+            : brandReign.id === "louchi"
+              ? "Louchi keeps the Mazius, Garamond, and Ubuntu foundation but shifts the composition: much larger display moments, tighter leading, editorial contrast, and technical field-note details."
+              : "Suede established the Mazius, Garamond, and Ubuntu foundation used across the warm Moloch and Scroll system."}
+        </p>
 
         <div className="space-y-16">
           <section>
-            <h2 className="type-heading-lg mb-6">Font Families</h2>
-            <div className="space-y-8">
-              <div className="p-6 border border-border rounded-lg">
-                <h3 className="text-3xl font-display mb-4 text-moloch-400">
-                  Mazius Display
-                </h3>
-                <div className="space-y-4">
-                  <div className="type-display-lg">Display Large</div>
-                  <div className="type-display-md">Display Medium</div>
-                  <div className="type-display-sm">Display Small</div>
-                </div>
-                <p className="text-body-base text-muted-foreground mt-4">
-                  Mazius Display is the display typeface. It is a high-contrast
-                  serif font with a calligraphic feel, influenced by latin
-                  chancery hands. The bold weight is preferred for headlines to
-                  editorialize layouts. The two italic weights can be combined
-                  to increase expressiveness. Use for headlines and brand
-                  graphics.
-                </p>
-              </div>
-
-              <div className="p-6 border border-border rounded-lg">
-                <h3 className="text-3xl font-body mb-4 text-moloch-400">
-                  EB Garamond
-                </h3>
-                <div className="space-y-4">
-                  <div className="type-body-lg font-body">Body Large</div>
-                  <div className="text-body-base font-body">Body Base</div>
-                  <div className="type-body-sm font-body">Body Small</div>
-                </div>
-                <p className="text-body-base text-muted-foreground mt-4">
-                  EB Garamond is the secondary typeface, used for body and
-                  supporting copy in communications. This typeface is also used
-                  heavily in UI components in the design system. Garamond was
-                  chosen because of its high readability.
-                </p>
-              </div>
-
-              <div className="p-6 border border-border rounded-lg">
-                <h3 className="text-3xl font-mono mb-4 text-moloch-400">
-                  Ubuntu Mono
-                </h3>
-                <div className="space-y-4">
-                  <div className="font-mono type-body-lg">Monospace Large</div>
-                  <div className="font-mono text-body-base">Monospace Base</div>
-                  <div className="font-mono type-body-sm">Monospace Small</div>
-                </div>
-                <p className="text-body-base text-muted-foreground mt-4">
-                  Monospace font for code and technical content
-                </p>
-              </div>
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+              <h2 className="type-heading-lg">Font Families</h2>
+              <Link
+                href={sourceUrl}
+                className="type-label-md text-primary hover:text-primary/80"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View source fonts
+              </Link>
+            </div>
+            <div className="space-y-6">
+              {families.map((family) => (
+                <article key={family.name} className="rounded-lg border border-border bg-card p-6 text-card-foreground">
+                  <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3">
+                    <h3 className={`text-3xl text-primary ${family.className}`}>{family.name}</h3>
+                    <span className="type-label-sm text-muted-foreground">{family.role}</span>
+                  </div>
+                  <p className={`text-[clamp(2rem,6vw,4.5rem)] leading-[0.95] ${family.className}`}>
+                    {family.sample}
+                  </p>
+                  <p className="type-body-md mt-6 text-muted-foreground">{family.description}</p>
+                </article>
+              ))}
             </div>
           </section>
 
           <section>
             <h2 className="type-heading-lg mb-6">Type Scale</h2>
             <div className="space-y-4">
-              <div className="p-6 border border-border rounded-lg">
-                <div className="type-display-lg mb-2">Display Large - 80px</div>
-                <p className="type-body-sm text-muted-foreground">
-                  Line height: 110% | Letter spacing: -2%
-                </p>
-              </div>
-              <div className="p-6 border border-border rounded-lg">
-                <div className="type-display-md mb-2">
-                  Display Medium - 60px
+              {TYPE_SCALE.map((type) => (
+                <div key={type.name} className="rounded-lg border border-border bg-card p-6 text-card-foreground">
+                  <div className={`${type.className} mb-2`}>{type.name}</div>
+                  <p className="type-code-sm text-muted-foreground">Size / line height / letter spacing · {type.detail}</p>
                 </div>
-                <p className="type-body-sm text-muted-foreground">
-                  Line height: 120% | Letter spacing: -1%
-                </p>
-              </div>
-              <div className="p-6 border border-border rounded-lg">
-                <div className="type-display-sm mb-2">Display Small - 48px</div>
-                <p className="type-body-sm text-muted-foreground">
-                  Line height: 120% | Letter spacing: 0%
-                </p>
-              </div>
-              <div className="p-6 border border-border rounded-lg">
-                <div className="type-heading-lg mb-2">Heading Large - 36px</div>
-                <p className="type-body-sm text-muted-foreground">
-                  Line height: 120% | Letter spacing: 0%
-                </p>
-              </div>
-              <div className="p-6 border border-border rounded-lg">
-                <div className="type-heading-md mb-2">
-                  Heading Medium - 28px
-                </div>
-                <p className="type-body-sm text-muted-foreground">
-                  Line height: 130% | Letter spacing: 0%
-                </p>
-              </div>
-              <div className="p-6 border border-border rounded-lg">
-                <div className="type-body-lg mb-2">Body Large - 20px</div>
-                <p className="type-body-sm text-muted-foreground">
-                  Line height: 140% | Letter spacing: 0%
-                </p>
-              </div>
-              <div className="p-6 border border-border rounded-lg">
-                <div className="text-body-base mb-2">Body Base - 16px</div>
-                <p className="type-body-sm text-muted-foreground">
-                  Line height: 160% | Letter spacing: 0%
-                </p>
-              </div>
-              <div className="p-6 border border-border rounded-lg">
-                <div className="type-body-sm mb-2">Body Small - 12px</div>
-                <p className="type-body-sm text-muted-foreground">
-                  Line height: 160% | Letter spacing: 0%
-                </p>
-              </div>
+              ))}
             </div>
           </section>
 
-          <section>
-            <h2 className="type-heading-lg mb-6">Developers</h2>
-            <div className="space-y-6">
-              <div className="bg-primary/10 border border-primary/20 rounded-lg p-6 mb-12">
-                <p className="text-base mb-3 font-medium">
-                  {" "}
-                  Download font files:
-                </p>
-                <Link
-                  href="https://github.com/raid-guild/brand/tree/main/public/fonts"
-                  className="text-lg text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-2 font-medium"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View on GitHub
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                    />
-                  </svg>
-                </Link>
-              </div>
-
-              <div>
-                <h3 className="type-heading-md mb-4">Typography Classes</h3>
-                <p className="text-body-base mb-4">
-                  Available className utilities from globals.css:
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-display-lg
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-display-md
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-display-sm
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-heading-lg
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-heading-md
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-heading-sm
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-body-lg
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-body-md
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-body-sm
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-label
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-label-md
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-label-sm
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-code-lg
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-code-md
-                  </code>
-                  <code className="type-code-md p-2 bg-muted rounded">
-                    type-code-sm
-                  </code>
-                </div>
-              </div>
-            </div>
+          <section className="rounded-lg border border-border bg-card p-6 text-card-foreground">
+            <h2 className="type-heading-md mb-3">Implementation</h2>
+            <p className="type-body-md text-muted-foreground">
+              Continue using the shared font-display, font-body, and font-mono
+              roles plus the type-* utilities. The selected reign remaps the
+              families and surrounding composition without changing component
+              APIs.
+            </p>
           </section>
         </div>
       </div>

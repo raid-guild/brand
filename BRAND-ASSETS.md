@@ -4,7 +4,7 @@
 >
 > **Companion doc:** `AGENTS.md` is the *developer/design-system* handbook (components, tokens, setup). **This file** is the *asset inventory + download map*. Use both together.
 >
-> **2024 Q4 Brand Refresh.** Source of truth: <https://github.com/raid-guild/brand>
+> **Latest reign: Louchi / Venture Beyond.** Source of truth: <https://github.com/raid-guild/brand>
 
 ---
 
@@ -30,7 +30,7 @@ Throughout this doc, `{LIVE}` = `https://www.brand.raidguild.org` and `{RAW}` = 
 
 | Category | Count | Format | Location |
 | --- | --- | --- | --- |
-| Logos (logotype + logomark) | 14 | SVG | `/assets/logos/` |
+| Logos (logotype + logomark) | 15 | SVG | `/assets/logos/` |
 | Icons — 8bit roles | 17 | SVG | `/assets/icon/8bit/` |
 | Icons — D&D service/community | 15 | SVG | `/assets/icon/dd/` |
 | Icons — Magic/alchemical | 13 | SVG | `/assets/icon/magic/` |
@@ -45,7 +45,24 @@ Naming convention for color-coded assets: `m` = Moloch (warm red), `s` = Scroll 
 
 ## 2. Brand foundations
 
+RaidGuild is intentionally mutable. Visual systems are versioned as **reigns** named for the elected brand steward. The guide defaults to Louchi; Suede and TW remain selectable archives, and Ven is reserved until its reference files are recovered.
+
+The **black crossed swords** are the canonical master mark and the only currently durable identity element. Track colors may recolor the mark. Wordmarks, lockups, palettes, typography, illustration, and motion belong to a reign rather than timeless canon.
+
 ### 2.1 Colors
+
+**Louchi / latest:** Moebius-influenced speculative worlds, expansive editorial type, and cinematic spatial composition.
+
+| Name | Hex | Role |
+| --- | --- | --- |
+| Ink | `#102D2C` | Canonical dark ink |
+| Deep Teal | `#0A292B` | Immersive surface |
+| Cyan | `#B8E0DF` | Open field |
+| Parchment | `#EFE9D7` | Primary canvas |
+| Coral | `#EE3C78` | Signal and action |
+| Acid Lime | `#D7E34D` | Highlight and status |
+
+The following Moloch and Scroll system is the **Suede archive**, preserved for projects using that reign.
 
 The primary palette is a warm, high-contrast combination of red, off-black, and off-white — warm and energetic, meant to inspire action. All colors are defined as CSS custom properties in `src/app/globals.css`.
 
@@ -107,6 +124,8 @@ The primary palette is a warm, high-contrast combination of red, off-black, and 
 
 Three families, wired up in `src/lib/fonts.ts`. Download the font files from `/fonts/` (see §6).
 
+Louchi retains the Suede font families but changes their composition: larger Mazius display moments, tighter leading, and more Ubuntu Mono metadata. TW uses archived **Alchemion** display and **Fratelli** body faces from `/witch/fonts/`.
+
 | Family | Role | Notes |
 | --- | --- | --- |
 | **Mazius Display** | Display / headlines / brand graphics | High-contrast calligraphic serif (latin chancery influence). Bold weight preferred for headlines; two italics can combine for expressiveness. |
@@ -140,11 +159,12 @@ Additional utility classes available: `type-heading-sm`, `type-body-md`, `type-l
 
 ## 3. Logos
 
-The logo has two elements: the **crossed-sword logomark** and the **"Raid Guild" logotype (wordmark)**. Rules:
+The **crossed-sword logomark** is the durable RaidGuild identifier. Rules:
 
-- The wordmark is **not** used on its own.
-- Use the **logomark alone** only when space is limited or the full logotype is inappropriate.
-- "Floating" variants are single-color transparent marks; "with background" variants bake in a colored background (`foreground-background`).
+- Use `symbol-black.svg` as the canonical master mark.
+- Track-specific color variants are welcome where differentiation is useful.
+- Preserve recognition and document deliberate geometry changes as a new mark version.
+- Existing full wordmarks and Moloch/Scroll variants are **Suede-era archive assets**.
 
 **Download folder:** `{LIVE}/assets/logos/` · GitHub: <https://github.com/raid-guild/brand/tree/main/public/assets/logos>
 
@@ -164,6 +184,7 @@ The logo has two elements: the **crossed-sword logomark** and the **"Raid Guild"
 
 | File | Description | URL |
 | --- | --- | --- |
+| `symbol-black.svg` | Canonical black master mark | `{LIVE}/assets/logos/symbol-black.svg` |
 | `symbol-m800.svg` | Symbol, Moloch 800 (floating) | `{LIVE}/assets/logos/symbol-m800.svg` |
 | `symbol-m500.svg` | Symbol, Moloch 500 (floating) | `{LIVE}/assets/logos/symbol-m500.svg` |
 | `symbol-s700.svg` | Symbol, Scroll 700 (floating) | `{LIVE}/assets/logos/symbol-s700.svg` |
@@ -172,7 +193,7 @@ The logo has two elements: the **crossed-sword logomark** and the **"Raid Guild"
 | `symbol-m800-s100.svg` | Moloch 800 symbol on Scroll 100 background | `{LIVE}/assets/logos/symbol-m800-s100.svg` |
 | `symbol-s100-s700.svg` | Scroll 100 symbol on Scroll 700 background | `{LIVE}/assets/logos/symbol-s100-s700.svg` |
 
-**Quick pick:** primary logo on light backgrounds → `full-m500.svg` or `full-m800.svg`; on dark backgrounds → `full-s100.svg`.
+**Quick pick:** canonical identity → `symbol-black.svg`. For a preserved Suede lockup on light backgrounds use `full-m500.svg` or `full-m800.svg`; on dark backgrounds use `full-s100.svg`.
 
 ---
 
@@ -221,6 +242,12 @@ Mystical, transformative symbols evoking the spiritual side of the craft. URL pa
 ---
 
 ## 5. Illustrations
+
+Illustration libraries are reign-specific:
+
+- **Louchi:** the Moebius-influenced `public/images/neo` set pinned to Venture Beyond commit `6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65`.
+- **TW:** the archived `/witch/images/witchcraft-*` set.
+- **Suede:** the WebP library inventoried below.
 
 Technology-forward line art blending cyberpunk aesthetics with D&D heroism ("where blockchain meets fantasy, and builders become adventurers"). Format: **WebP**.
 

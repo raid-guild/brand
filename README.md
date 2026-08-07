@@ -1,8 +1,10 @@
-# RaidGuild Brand Guidelines
+# RaidGuild Brand Archive
 
-2024 Q4 Refresh
+Latest reign: Louchi / Venture Beyond
 
-A repository of brand guidelines, assets and resources for designers and developers.
+A living, versioned repository of brand guidance, assets, and resources for designers and developers. RaidGuild's identity evolves with its elected brand steward; older reigns remain selectable instead of being overwritten.
+
+The black crossed swords are the canonical master mark. Track colors and the surrounding visual system may change between reigns.
 
 Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://github.com/raid-guild/brand)
 

@@ -1,6 +1,65 @@
+"use client";
+
 import Link from "next/link";
+import { useTheme } from "@/lib/theme-context";
 
 export default function ColorsPage() {
+  const { brandReign } = useTheme();
+
+  if (brandReign.id !== "suede") {
+    return (
+      <div className="container-custom py-16">
+        <div className="max-w-4xl mx-auto">
+          <p className="type-label-sm mb-3 text-primary">{brandReign.label}</p>
+          <h1 className="type-display-lg mb-6">Colors</h1>
+          <p className="type-body-lg mb-12 max-w-3xl text-muted-foreground">
+            {brandReign.summary}
+          </p>
+
+          <section className="mb-16">
+            <h2 className="type-heading-lg mb-6">Reign Palette</h2>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {brandReign.palette.map((color) => (
+                <article key={color.name} className="overflow-hidden rounded-lg border border-border bg-card">
+                  <div
+                    className="h-36 border-b border-border"
+                    style={{ backgroundColor: color.value }}
+                    aria-label={`${color.name}: ${color.value}`}
+                  />
+                  <div className="p-5">
+                    <h3 className="type-heading-sm">{color.name}</h3>
+                    <p className="type-code-md mt-1 text-muted-foreground">{color.value}</p>
+                    <p className="type-body-sm mt-3 text-muted-foreground">{color.role}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="rounded-lg border border-border bg-card p-6 text-card-foreground">
+            <h2 className="type-heading-md mb-3">Implementation Note</h2>
+            <p className="type-body-md text-muted-foreground">
+              Components continue to consume semantic tokens such as background,
+              foreground, primary, secondary, accent, border, and ring. Selecting
+              a reign remaps those semantics while preserving component APIs and
+              the guide&apos;s layout.
+            </p>
+            {brandReign.sourceUrl ? (
+              <Link
+                href={brandReign.sourceUrl}
+                className="mt-5 inline-block type-label-md text-primary hover:text-primary/80"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View {brandReign.sourceLabel}
+              </Link>
+            ) : null}
+          </section>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="container-custom py-16">
       <div className="max-w-4xl mx-auto">

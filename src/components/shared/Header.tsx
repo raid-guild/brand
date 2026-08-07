@@ -15,12 +15,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { BRAND_REIGNS, isBrandReignId } from "@/lib/brand-reigns";
+import { useTheme } from "@/lib/theme-context";
 import HeaderNavLinks, {
   type HeaderNavLink,
   type HeaderNavLinksProps,
 } from "./NavLinks";
 
-type HeaderTheme = "moloch-500" | "moloch-800" | "scroll-700";
+type HeaderTheme = "brand" | "moloch-500" | "moloch-800" | "scroll-700";
 
 type ThemeConfig = {
   background: string;
@@ -43,6 +52,16 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 const THEME_CONFIG: Record<HeaderTheme, ThemeConfig> = {
+  brand: {
+    background: "bg-background",
+    borderAccent: "border-primary",
+    text: "text-foreground",
+    navHover: "hover:bg-secondary",
+    navActive: "bg-primary",
+    navActiveText: "text-primary-foreground",
+    menuSurface: "bg-background/95",
+    logoPath: "/assets/logos/symbol-black.svg",
+  },
   "moloch-500": {
     background: "bg-moloch-500",
     borderAccent: "border-scroll-700",
@@ -92,7 +111,7 @@ type HeaderProps = {
 
 export default function Header({
   staticAppearance = true,
-  themeVariant = "moloch-500",
+  themeVariant = "brand",
   NavLinksComponent: ProvidedNavLinksComponent,
 }: HeaderProps) {
   const headerRef = useRef<HTMLElement>(null);
@@ -105,29 +124,6 @@ export default function Header({
 
   const headerHeight = isDesktop ? DESKTOP_THIN_HEIGHT : MOBILE_HEADER_HEIGHT;
 
-  // Calculate theme based on 5-minute intervals
-  const getThemeForInterval = useCallback(() => {
-    const themes: HeaderTheme[] = ["moloch-500", "moloch-800", "scroll-700"];
-    const interval = Math.floor(Date.now() / (1000 * 60 * 5)); // 5 minutes
-    return themes[interval % themes.length];
-  }, []);
-
-  const [currentTheme, setCurrentTheme] = useState<HeaderTheme>(getThemeForInterval);
-
-  // Update theme every minute to catch 5-minute boundaries
-  useEffect(() => {
-    const checkTheme = () => {
-      const newTheme = getThemeForInterval();
-      if (newTheme !== currentTheme) {
-        setCurrentTheme(newTheme);
-      }
-    };
-
-    const intervalId = setInterval(checkTheme, 60000); // Check every minute
-
-    return () => clearInterval(intervalId);
-  }, [currentTheme, getThemeForInterval]);
-
   const navAnchorIds = useMemo(
     () =>
       NAV_ITEMS.map((item) => getAnchorId(item)).filter(
@@ -136,7 +132,7 @@ export default function Header({
     []
   );
 
-  const theme = THEME_CONFIG[currentTheme];
+  const theme = THEME_CONFIG[themeVariant];
   const NavLinksComponent = ProvidedNavLinksComponent ?? HeaderNavLinks;
 
   const navLinks = useMemo<HeaderNavLink[]>(
@@ -236,12 +232,15 @@ function HeaderDesktop({
   return (
     <div className="flex items-center justify-between gap-6 py-5">
       <Logo variant="thin" logoPath={theme.logoPath} />
-      <NavLinksComponent
-        theme={theme}
-        activeAnchorId={activeAnchorId}
-        variant="desktop"
-        links={links}
-      />
+      <div className="flex items-center gap-4">
+        <NavLinksComponent
+          theme={theme}
+          activeAnchorId={activeAnchorId}
+          variant="desktop"
+          links={links}
+        />
+        <BrandReignSelect />
+      </div>
     </div>
   );
 }
@@ -264,13 +263,56 @@ function HeaderMobile({
   return (
     <div className="flex items-center justify-between gap-4 py-4">
       <Logo variant="mobile" logoPath={theme.logoPath} />
-      <MenuButton
-        ref={triggerRef}
-        isOpen={isMenuOpen}
-        ariaControls={panelId}
-        theme={theme}
-        onToggle={onToggleMenu}
-      />
+      <div className="flex items-center gap-2">
+        <BrandReignSelect compact />
+        <MenuButton
+          ref={triggerRef}
+          isOpen={isMenuOpen}
+          ariaControls={panelId}
+          theme={theme}
+          onToggle={onToggleMenu}
+        />
+      </div>
+    </div>
+  );
+}
+
+function BrandReignSelect({ compact = false }: { compact?: boolean }) {
+  const { brandReign, setBrandReign } = useTheme();
+  const selectId = useId();
+
+  return (
+    <div className={compact ? "w-[8.5rem]" : "w-[12rem]"}>
+      <label className="sr-only" htmlFor={selectId}>
+        Brand guide version
+      </label>
+      <Select
+        value={brandReign.id}
+        onValueChange={(value) => {
+          if (isBrandReignId(value)) setBrandReign(value);
+        }}
+      >
+        <SelectTrigger
+          id={selectId}
+          aria-label="Brand guide version"
+          className="border-current/40 bg-background text-foreground shadow-sm"
+        >
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent align="end">
+          {BRAND_REIGNS.map((reign) => (
+            <SelectItem
+              key={reign.id}
+              value={reign.id}
+              disabled={!reign.available}
+            >
+              {compact && reign.status !== "latest"
+                ? reign.steward
+                : reign.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     </div>
   );
 }
@@ -281,22 +323,40 @@ type LogoProps = {
 };
 
 function Logo({ variant, logoPath }: LogoProps) {
+  const isCanonicalMark = logoPath.endsWith("symbol-black.svg");
   const baseClasses =
     "w-auto transition-all duration-300 motion-reduce:transition-none";
 
   const sizeClasses =
-    variant === "tall" ? "h-[150px]" : variant === "thin" ? "h-12" : "h-10";
+    variant === "tall"
+      ? isCanonicalMark
+        ? "h-16"
+        : "h-[150px]"
+      : variant === "thin"
+        ? isCanonicalMark
+          ? "h-11"
+          : "h-12"
+        : isCanonicalMark
+          ? "h-9"
+          : "h-10";
 
   return (
-    <Link href="/" className="inline-block">
+    <Link href="/" className="inline-flex items-center gap-3 text-foreground">
       <Image
         src={logoPath}
-        alt="Raid Guild Logo"
-        width={632}
-        height={166}
+        alt="RaidGuild crossed swords"
+        width={isCanonicalMark ? 112 : 632}
+        height={isCanonicalMark ? 105 : 166}
         priority
         className={[baseClasses, sizeClasses].join(" ")}
       />
+      {isCanonicalMark ? (
+        <span className="hidden type-label-md leading-tight sm:block">
+          RaidGuild
+          <br />
+          Brand Archive
+        </span>
+      ) : null}
     </Link>
   );
 }

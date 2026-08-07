@@ -1,6 +1,22 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "RG Alchemion";
+  src: url("https://www.raidguild.org/witch/fonts/Alchemion.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "RG Fratelli";
+  src: url("https://www.raidguild.org/witch/fonts/Fratelli.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -201,6 +217,138 @@
   --sidebar-accent-foreground: var(--moloch-800);
   --sidebar-border: var(--neutral-200);
   --sidebar-ring: var(--moloch-500);
+
+  /* Steward reign metadata (Suede fallback) */
+  --reign-ink: #29100a;
+  --reign-deep: #29100a;
+  --reign-field: #f9f7e7;
+  --reign-signal: #bd482d;
+  --reign-highlight: #534a13;
+}
+
+/*
+ * Brand reigns are versioned expressions, not replacements for RaidGuild's
+ * durable identity. Legacy Moloch/Scroll aliases remain available so existing
+ * components can inherit a selected reign without duplicating the guide.
+ */
+[data-brand-reign="louchi"] {
+  --moloch-100: #e7f4f3;
+  --moloch-200: #b8e0df;
+  --moloch-300: #78c5c3;
+  --moloch-400: #ee709a;
+  --moloch-500: #ee3c78;
+  --moloch-600: #b84067;
+  --moloch-700: #315654;
+  --moloch-800: #0a292b;
+  --scroll-100: #efe9d7;
+  --scroll-200: #e5dfc8;
+  --scroll-300: #d7e34d;
+  --scroll-400: #c7d13f;
+  --scroll-500: #9fa82f;
+  --scroll-600: #667325;
+  --scroll-700: #102d2c;
+  --scroll-800: #071c1d;
+  --neutral-100: #e7eeea;
+  --neutral-200: #cbd9d3;
+  --neutral-300: #a7bdb7;
+  --neutral-400: #799590;
+  --neutral-500: #58746f;
+  --neutral-600: #3e5d59;
+  --neutral-700: #274440;
+  --neutral-800: #102d2c;
+  --neutral-white: #fffdf5;
+  --neutral-black: #060609;
+  --background: var(--scroll-100);
+  --foreground: var(--scroll-700);
+  --card: #f5f0e2;
+  --card-foreground: var(--scroll-700);
+  --popover: #f5f0e2;
+  --popover-foreground: var(--scroll-700);
+  --primary: var(--moloch-500);
+  --primary-foreground: var(--scroll-100);
+  --secondary: var(--moloch-200);
+  --secondary-foreground: var(--scroll-700);
+  --muted: #e2e9df;
+  --muted-foreground: #3e5d59;
+  --accent: var(--scroll-300);
+  --accent-foreground: var(--scroll-700);
+  --destructive: #b84031;
+  --border: #9db2ac;
+  --input: #9db2ac;
+  --ring: var(--moloch-500);
+  --chart-1: var(--moloch-500);
+  --chart-2: var(--moloch-300);
+  --chart-3: var(--scroll-300);
+  --chart-4: #b84031;
+  --chart-5: var(--scroll-700);
+  --sidebar: var(--scroll-100);
+  --sidebar-foreground: var(--scroll-700);
+  --sidebar-primary: var(--moloch-500);
+  --sidebar-primary-foreground: var(--scroll-100);
+  --sidebar-accent: var(--moloch-200);
+  --sidebar-accent-foreground: var(--scroll-700);
+  --sidebar-border: #9db2ac;
+  --sidebar-ring: var(--moloch-500);
+  --reign-ink: #102d2c;
+  --reign-deep: #0a292b;
+  --reign-field: #b8e0df;
+  --reign-signal: #ee3c78;
+  --reign-highlight: #d7e34d;
+}
+
+[data-brand-reign="suede"] {
+  --reign-ink: #29100a;
+  --reign-deep: #29100a;
+  --reign-field: #f9f7e7;
+  --reign-signal: #bd482d;
+  --reign-highlight: #534a13;
+}
+
+[data-brand-reign="tw"] {
+  --moloch-100: #f4ded7;
+  --moloch-200: #e6b7a9;
+  --moloch-300: #d78d76;
+  --moloch-400: #c76548;
+  --moloch-500: #a8452c;
+  --moloch-600: #813420;
+  --moloch-700: #542116;
+  --moloch-800: #29100a;
+  --scroll-100: #f9f7e7;
+  --scroll-200: #eee9c8;
+  --scroll-300: #e0d889;
+  --scroll-400: #c8bc55;
+  --scroll-500: #a89b37;
+  --scroll-600: #7a6f26;
+  --scroll-700: #534a13;
+  --scroll-800: #211e07;
+  --background: var(--moloch-500);
+  --foreground: var(--moloch-800);
+  --card: var(--scroll-100);
+  --card-foreground: var(--moloch-800);
+  --popover: var(--scroll-100);
+  --popover-foreground: var(--moloch-800);
+  --primary: var(--moloch-800);
+  --primary-foreground: var(--scroll-100);
+  --secondary: var(--scroll-100);
+  --secondary-foreground: var(--moloch-800);
+  --muted: #c9654d;
+  --muted-foreground: var(--moloch-800);
+  --accent: var(--scroll-100);
+  --accent-foreground: var(--moloch-800);
+  --destructive: #742618;
+  --border: #29100a4d;
+  --input: #29100a4d;
+  --ring: var(--scroll-100);
+  --reign-ink: #29100a;
+  --reign-deep: #29100a;
+  --reign-field: #f9f7e7;
+  --reign-signal: #a8452c;
+  --reign-highlight: #f9f7e7;
+}
+
+[data-brand-reign="tw"] body {
+  --font-display: "RG Alchemion", Arial, sans-serif;
+  --font-body: "RG Fratelli", Arial, sans-serif;
 }
 
 .dark {
@@ -209,12 +357,35 @@
   --foreground: var(--scroll-100);
 }
 
+.dark[data-brand-reign="louchi"] {
+  --background: var(--moloch-800);
+  --foreground: var(--scroll-100);
+  --card: #102d2c;
+  --card-foreground: var(--scroll-100);
+  --popover: #102d2c;
+  --popover-foreground: var(--scroll-100);
+  --muted: #274440;
+  --muted-foreground: #b8e0df;
+  --border: #58746f;
+  --input: #58746f;
+}
+
+.dark[data-brand-reign="tw"] {
+  --background: var(--moloch-800);
+  --foreground: var(--scroll-100);
+  --muted: var(--moloch-700);
+  --muted-foreground: var(--scroll-200);
+  --border: #f9f7e74d;
+  --input: #f9f7e74d;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    transition: background-color 240ms ease, color 240ms ease;
   }
 }
 

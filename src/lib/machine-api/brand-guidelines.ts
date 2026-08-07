@@ -7,6 +7,7 @@ const RAW_BASE_URL =
   "https://raw.githubusercontent.com/raid-guild/brand/main/public";
 
 const logoFiles = [
+  "symbol-black.svg",
   "full-m800.svg",
   "full-m500.svg",
   "full-s100.svg",
@@ -185,8 +186,8 @@ const payload = {
   schema:
     "https://www.brand.raidguild.org/schemas/brand-guidelines-v1.json",
   schemaVersion: "1.0.0",
-  contentVersion: "2024-q4",
-  name: "RaidGuild Brand Guidelines",
+  contentVersion: "2026-louchi",
+  name: "RaidGuild Brand Archive",
   description:
     "A machine-readable guide to the RaidGuild brand, design system, voice, implementation patterns, and complete public asset inventory.",
   sourceOfTruth: "https://github.com/raid-guild/brand",
@@ -198,13 +199,75 @@ const payload = {
   guidelines: {
     identity: {
       summary:
-        "RaidGuild combines battle-tested web3 delivery with a bold, craft-forward, collaborative, and lightly mythic identity.",
+        "RaidGuild is a deliberately evolving identity. The crossed swords are the durable signal; each elected brand steward may build a new visual world around them.",
       logoRules: [
-        "The full logo combines the crossed-sword logomark and Raid Guild logotype.",
-        "Do not use the wordmark by itself.",
-        "Use the logomark alone only when space is limited or the full logo is inappropriate.",
-        "Use full-m500.svg or full-m800.svg on light backgrounds and full-s100.svg on dark backgrounds.",
+        "Use the black crossed swords as the canonical master mark.",
+        "Color variations of the crossed swords may identify different tracks or programs.",
+        "Wordmarks, lockups, typography, palettes, illustration, and motion belong to a steward reign and may change.",
+        "Even the crossed-sword geometry may evolve, but any alteration must preserve recognition and be documented as a new mark version.",
+        "Treat the existing full Moloch and Scroll lockups as Suede-era archive assets, not timeless identity rules.",
       ],
+    },
+    versioning: {
+      model:
+        "Brand releases are named for the elected brand steward's reign. The guide defaults to the latest available reign and preserves older reigns as selectable versions.",
+      defaultReign: "louchi",
+      durableIdentity: "black crossed swords",
+      reigns: [
+        {
+          id: "louchi",
+          steward: "Louchi",
+          status: "latest",
+          available: true,
+          source:
+            "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign",
+          palette: {
+            ink: "#102d2c",
+            deepTeal: "#0a292b",
+            cyan: "#b8e0df",
+            parchment: "#efe9d7",
+            coral: "#ee3c78",
+            acidLime: "#d7e34d",
+          },
+          direction:
+            "Moebius-influenced speculative worlds, expansive editorial typography, spatial composition, and cinematic motion.",
+        },
+        {
+          id: "suede",
+          steward: "Suede",
+          status: "archived",
+          available: true,
+          source: "https://github.com/raid-guild/brand",
+          direction:
+            "Warm Moloch and Scroll palettes, Mazius and EB Garamond typography, D&D role language, and technology-forward line art.",
+        },
+        {
+          id: "tw",
+          steward: "TW",
+          status: "archived",
+          available: true,
+          source: "https://www.raidguild.org/witch",
+          palette: {
+            primary: "#a8452c",
+            black: "#29100a",
+            secondary: "#f9f7e7",
+          },
+          direction:
+            "Oversized Alchemion and Fratelli typography, tickers, playful motion, rust red, and parchment.",
+        },
+        {
+          id: "ven",
+          steward: "Ven",
+          status: "reference-pending",
+          available: false,
+        },
+      ],
+      implementation: {
+        selectorLocation: "top-right header",
+        persistenceKey: "raidguild-brand-reign",
+        source: "src/lib/brand-reigns.ts",
+        cssAttribute: "data-brand-reign",
+      },
     },
     colors: {
       primary: {
@@ -625,7 +688,7 @@ const payload = {
       "Give every input a visible label and validation message.",
       "Preserve focus-visible rings and keyboard navigation.",
       "Keep Radix primitives' accessible semantics.",
-      "Maintain primary Moloch 500 on Scroll 100 contrast.",
+      "Validate contrast within every selectable steward reign.",
       "Use responsive layouts and test both mobile and desktop.",
       "Use semantic alt text for brand icons and illustrations.",
     ],
@@ -665,6 +728,24 @@ const payload = {
     illustrations: {
       format: "webp",
       totalFiles: 212,
+      reignReferences: {
+        louchi: {
+          source:
+            "https://github.com/raid-guild/website/tree/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo",
+          direction:
+            "Moebius-influenced speculative landscapes with cyan horizons, coral structures, and atmospheric detail.",
+        },
+        tw: {
+          source: "https://www.raidguild.org/witch/images/",
+          direction:
+            "Surreal witchcraft scenes, dense graphic symbols, high-energy crops, and playful motion.",
+        },
+        suede: {
+          source: `${LIVE_BASE_URL}/assets/webp/`,
+          direction:
+            "Technology-forward line art blending cyberpunk aesthetics with D&D heroism.",
+        },
+      },
       tones: {
         c: "color",
         bw: "black and white",
@@ -680,6 +761,21 @@ const payload = {
     },
     fonts: {
       folder: `${LIVE_BASE_URL}/fonts/`,
+      reignFamilies: {
+        louchi: ["Mazius Display", "EB Garamond", "Ubuntu Mono"],
+        suede: ["Mazius Display", "EB Garamond", "Ubuntu Mono"],
+        tw: ["Alchemion", "Fratelli"],
+      },
+      twArchive: [
+        {
+          file: "Alchemion.otf",
+          url: "https://www.raidguild.org/witch/fonts/Alchemion.otf",
+        },
+        {
+          file: "Fratelli.otf",
+          url: "https://www.raidguild.org/witch/fonts/Fratelli.otf",
+        },
+      ],
       files: [
         "MAZIUSREVIEW20.09-Regular.otf",
         "MAZIUSREVIEW20.09-Regular.woff",

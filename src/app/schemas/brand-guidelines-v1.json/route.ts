@@ -5,7 +5,7 @@ export const dynamic = "force-static";
 const schema = {
   $schema: "https://json-schema.org/draft/2020-12/schema",
   $id: "https://www.brand.raidguild.org/schemas/brand-guidelines-v1.json",
-  title: "RaidGuild Brand Guidelines",
+  title: "RaidGuild Brand Archive",
   description:
     "The paid machine-readable RaidGuild brand guidelines and asset manifest.",
   type: "object",
@@ -26,7 +26,7 @@ const schema = {
     schema: { const: schemaUrl() },
     schemaVersion: { const: "1.0.0" },
     contentVersion: { type: "string", minLength: 1 },
-    name: { const: "RaidGuild Brand Guidelines" },
+    name: { const: "RaidGuild Brand Archive" },
     description: { type: "string", minLength: 1 },
     sourceOfTruth: { type: "string", format: "uri" },
     baseUrls: {

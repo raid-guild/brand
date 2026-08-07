@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { BrandReignPanel, ReignHeroMark } from "@/components/brand/BrandReignPanel";
+import { useTheme } from "@/lib/theme-context";
 
 const HERO_IMAGES = [
   "/assets/webp/scroll100/1080x1440/tower-platform-c.webp",
@@ -110,6 +112,7 @@ const HERO_IMAGES = [
 ];
 
 export default function Home() {
+  const { brandReign } = useTheme();
   // Calculate current image based on 2-minute intervals
   const getImageForInterval = useCallback(() => {
     const interval = Math.floor(Date.now() / (1000 * 60 * 2)); // 2 minutes
@@ -139,28 +142,35 @@ export default function Home() {
         {/* Left Column - Text Content */}
         <div className="flex flex-col justify-center">
           <h1 className="type-display-lg md:type-display-md mb-4">
-            Raid Guild Brand Guidelines
+            RaidGuild Brand Archive
           </h1>
-          <p className="type-body-lg text-moloch-800">
-            Your one-stop shop for brand assets, design guidelines, and UI
-            components. Everything you need to build with the Raid Guild brand.
+          <p className="type-body-lg text-foreground/80">
+            A living guide to the identity stewarded by {brandReign.steward}.
+            The crossed swords remain the shared signal; each reign builds a
+            new world around them.
           </p>
         </div>
 
         {/* Right Column - Image */}
         <div className="flex justify-center lg:justify-end lg:pr-[100px] lg:pt-[20px]">
           <div className="relative w-full lg:max-w-[500px] aspect-[3/4] rounded-lg overflow-hidden">
-            <Image
-              key={currentImage}
-              src={currentImage}
-              alt="Raid Guild Brand Artwork"
-              fill
-              className="object-contain"
-              priority
-            />
+            {brandReign.id === "louchi" ? (
+              <ReignHeroMark />
+            ) : (
+              <Image
+                key={currentImage}
+                src={currentImage}
+                alt={`${brandReign.steward} reign RaidGuild artwork`}
+                fill
+                className="object-contain"
+                priority
+              />
+            )}
           </div>
         </div>
       </div>
+
+      <BrandReignPanel />
 
       <div className="max-w-6xl">
         {/* Quick Resources */}

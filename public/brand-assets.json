@@ -1,9 +1,9 @@
 {
   "$schema": "https://raidguild.org/schemas/brand-manifest-v1.json",
   "name": "RaidGuild Brand Assets Manifest",
-  "version": "1.0.0",
-  "brandRefresh": "2024 Q4",
-  "description": "Machine-readable inventory of every RaidGuild brand asset plus the core brand guidelines. Intended to back an agent-facing endpoint (e.g. /api/guidelines). Human-readable companion: BRAND-ASSETS.md.",
+  "version": "2.0.0",
+  "brandRefresh": "Louchi / Venture Beyond",
+  "description": "Machine-readable inventory of RaidGuild brand assets and its versioned steward-reign guidance. Human-readable companion: BRAND-ASSETS.md.",
   "sourceOfTruth": "https://github.com/raid-guild/brand",
   "companionDocs": {
     "assetManifestMarkdown": "https://github.com/raid-guild/brand/blob/main/BRAND-ASSETS.md",
@@ -22,8 +22,36 @@
     "example": "m500 = Moloch 500; a two-part code foreground-background like m800-s100 = Moloch 800 mark on a Scroll 100 background."
   },
   "guidelines": {
+    "identity": {
+      "durableElement": "Black crossed-swords logomark",
+      "masterAsset": "https://www.brand.raidguild.org/assets/logos/symbol-black.svg",
+      "rules": [
+        "Use black crossed swords as the canonical master mark.",
+        "Color variations may identify different tracks or programs.",
+        "Wordmarks, lockups, palettes, typography, illustration, and motion belong to a named steward reign.",
+        "Document any deliberate geometry alteration as a new mark version while preserving recognition."
+      ]
+    },
+    "versioning": {
+      "default": "louchi",
+      "storageKey": "raidguild-brand-reign",
+      "reigns": [
+        { "id": "louchi", "steward": "Louchi", "status": "latest", "available": true, "source": "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign" },
+        { "id": "suede", "steward": "Suede", "status": "archived", "available": true, "source": "https://github.com/raid-guild/brand" },
+        { "id": "tw", "steward": "TW", "status": "archived", "available": true, "source": "https://www.raidguild.org/witch" },
+        { "id": "ven", "steward": "Ven", "status": "reference-pending", "available": false }
+      ]
+    },
     "colors": {
-      "note": "Warm, high-contrast palette (red / off-black / off-white). Defined as CSS custom properties in src/app/globals.css. Prefer Tailwind utilities e.g. bg-moloch-500, text-scroll-100.",
+      "note": "Semantic tokens are remapped by data-brand-reign. The Moloch and Scroll scales below are the preserved Suede archive.",
+      "louchi": [
+        { "name": "Ink", "hex": "#102D2C", "role": "Canonical dark ink" },
+        { "name": "Deep Teal", "hex": "#0A292B", "role": "Immersive surface" },
+        { "name": "Cyan", "hex": "#B8E0DF", "role": "Open field" },
+        { "name": "Parchment", "hex": "#EFE9D7", "role": "Primary canvas" },
+        { "name": "Coral", "hex": "#EE3C78", "role": "Signal and action" },
+        { "name": "Acid Lime", "hex": "#D7E34D", "role": "Highlight and status" }
+      ],
       "primary": [
         { "name": "Moloch 800", "hex": "#29100A", "role": "Primary dark / foreground text" },
         { "name": "Moloch 500", "hex": "#BD482D", "role": "Primary brand red (CTAs, accents)" },
@@ -76,6 +104,11 @@
       "semanticDark": "Background flips to Moloch 800 (#29100A) with Scroll 100 (#F9F7E7) text."
     },
     "typography": {
+      "reigns": {
+        "louchi": "Mazius Display, EB Garamond, and Ubuntu Mono with expansive display composition and technical field-note metadata.",
+        "suede": "Mazius Display, EB Garamond, and Ubuntu Mono in the warm Moloch and Scroll system.",
+        "tw": "Alchemion for display and Fratelli for body copy, loaded from the /witch archive."
+      },
       "families": [
         { "name": "Mazius Display", "cssVar": "--font-display", "role": "Display / headlines / brand graphics", "notes": "High-contrast calligraphic serif; bold preferred for headlines; two italics combine for expressiveness." },
         { "name": "EB Garamond", "cssVar": "--font-body", "role": "Body & supporting copy, UI components", "notes": "Chosen for high readability." },
@@ -104,16 +137,17 @@
       "format": "svg",
       "folder": "https://www.brand.raidguild.org/assets/logos/",
       "rules": [
-        "Logo = crossed-sword logomark + 'Raid Guild' wordmark.",
-        "The wordmark is NOT used on its own.",
-        "Use the logomark alone only when space is limited or the full logotype is inappropriate.",
-        "'Floating' = single-color transparent mark. 'With background' = baked-in colored background named foreground-background."
+        "Use symbol-black.svg as the canonical master mark.",
+        "Track colors may recolor the crossed swords.",
+        "Existing full wordmarks and Moloch/Scroll variants are Suede-era archive assets.",
+        "Document deliberate geometry changes as new mark versions."
       ],
       "quickPick": {
         "onLight": ["full-m500.svg", "full-m800.svg"],
         "onDark": ["full-s100.svg"]
       },
       "items": [
+        { "file": "symbol-black.svg", "type": "logomark", "description": "Canonical black master mark", "url": "https://www.brand.raidguild.org/assets/logos/symbol-black.svg" },
         { "file": "full-m800.svg", "type": "logotype", "description": "Full logo, Moloch 800 (floating)", "url": "https://www.brand.raidguild.org/assets/logos/full-m800.svg" },
         { "file": "full-m500.svg", "type": "logotype", "description": "Full logo, Moloch 500 (floating)", "url": "https://www.brand.raidguild.org/assets/logos/full-m500.svg" },
         { "file": "full-s100.svg", "type": "logotype", "description": "Full logo, Scroll 100 (floating, for dark backgrounds)", "url": "https://www.brand.raidguild.org/assets/logos/full-s100.svg" },
@@ -177,7 +211,12 @@
       "format": "webp",
       "folder": "https://www.brand.raidguild.org/assets/webp/",
       "totalFiles": 848,
-      "description": "Technology-forward line art blending cyberpunk aesthetics with D&D heroism.",
+      "description": "The listed WebP library is the Suede archive. Louchi and TW use their pinned reign reference sets.",
+      "reignReferences": {
+        "louchi": "https://github.com/raid-guild/website/tree/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo",
+        "tw": "https://www.raidguild.org/witch/images/",
+        "suede": "https://www.brand.raidguild.org/assets/webp/"
+      },
       "usage": "Pair with brand colors. Maintain original aspect ratios; do not stretch or distort.",
       "midjourneyPrompts": "https://hackmd.io/@Suede/Skbpddppll",
       "urlTemplates": {

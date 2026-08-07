@@ -4,6 +4,14 @@ Single-file brief for AI assistants. Keep this in your context when generating U
 
 Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://github.com/raid-guild/brand)
 
+## Durable Identity & Versioning
+- RaidGuild is intentionally mutable. The election of a new brand steward can introduce a new visual reign; this evolution is a feature, not a defect.
+- The black crossed-swords logomark is the canonical master mark and the only currently durable brand element.
+- The mark may use color variations for different tracks or programs. Even its geometry may evolve, but alterations must preserve recognition and be documented as a new mark version.
+- Wordmarks, lockups, palettes, typography, illustration, motion, and voice treatments belong to a named steward reign. Do not present one reign's expression as timeless RaidGuild canon.
+- The guide defaults to the latest available reign and stores the user's selection under `raidguild-brand-reign`. Reign definitions live in `src/lib/brand-reigns.ts`; CSS is selected with `data-brand-reign` on `<html>`.
+- Reigns: **Louchi** (latest, Venture Beyond), **Suede** (archived current-repo system), **TW** (archived at `https://www.raidguild.org/witch`), and **Ven** (reserved; reference files pending).
+
 ## Using This in Another Project
 - Copy this file into the consuming repo (root recommended) or fetch it from the GitHub URL into your agent’s context.
 - If the repo already has an `AGENTS.md`, merge this content into their file (or add as `RG_BRAND_AGENTS.md`) and include both in your agent context.
@@ -20,11 +28,12 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 ## Quick Start (Dev Setup)
 - Install deps: `npm install class-variance-authority clsx lucide-react tailwind-merge` and `npm install -D @tailwindcss/postcss tw-animate-css`.
 - Fonts: place `MAZIUSREVIEW20.09-Regular.woff`, `MaziusDisplay-Bold.otf`, `EBGaramond-VariableFont_wght.ttf`, `EBGaramond-Italic-VariableFont_wght.ttf` under `public/fonts/`.
-- Layout: wrap `<body>` with font variables `maziusDisplay`, `ebGaramond`, `ubuntuMono` from `src/lib/fonts.ts` and the `<ThemeProvider>` from `src/lib/theme-context.tsx` (light/dark).
+- Layout: set `data-brand-reign="louchi"` on `<html>`, wrap `<body>` with font variables `maziusDisplay`, `ebGaramond`, `ubuntuMono` from `src/lib/fonts.ts`, and use `<ThemeProvider>` from `src/lib/theme-context.tsx` for reign selection plus light/dark appearance.
 - Replace your `globals.css` with `src/app/globals.css` to get tokens, utilities, and Tailwind `@theme inline`.
 
 ## Brand Tokens & Semantics (from `src/app/globals.css`)
-- **Palettes (hex)**:  
+- **Louchi / latest anchors**: ink `#102d2c`, deep teal `#0a292b`, cyan `#b8e0df`, parchment `#efe9d7`, coral `#ee3c78`, acid lime `#d7e34d`. Direction: Moebius-influenced speculative worlds, expansive editorial typography, spatial composition, and cinematic motion.
+- **Suede / archived palettes (hex)**:
   - Moloch: 100 `#f1efee`, 200 `#efc5bb`, 300 `#e39b8b`, 400 `#d25c41`, 500 `#bd482d` (primary), 600 `#8b3521`, 700 `#5c2316`, 800 `#29100a`.  
   - Scroll: 100 `#f9f7e7`, 200 `#ece5ac`, 300 `#dccd6a`, 400 `#d2c141`, 500 `#b5a22c`, 600 `#837820`, 700 `#534a13`, 800 `#211e07`.  
   - Neutral: 100 `#f1efee`, 200 `#d5cecd`, 300 `#b9aeac`, 400 `#9e8e8a`, 500 `#806f6b`, 600 `#645754`, 700 `#433937`, 800 `#221d1c`, white `#fafafa`, black `#0d0d0d`.
@@ -34,6 +43,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 
 ## Typography
 - Families: `--font-display` (Mazius Display), `--font-body` (EB Garamond), `--font-mono` (Ubuntu Mono).
+- Louchi retains those families but uses much larger display moments, tighter leading, editorial contrast, and Ubuntu Mono for field-note metadata. TW remaps display/body to Alchemion and Fratelli using the archived `/witch/fonts` files.
 - Utility classes (preferred): `type-display-lg/md/sm`, `type-heading-lg/md/sm`, `type-body-lg/md/sm`, `type-label`, `type-label-md`, `type-label-sm`, `type-code-lg/md/sm`. Uses weights, letter spacing, and line heights defined in globals.
 
 ## Copy & capitalization
@@ -53,13 +63,13 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 - Patterns: prefer composition over custom styling; keep accessibility (Radix primitives, focus-visible rings). Use `cn` from `src/lib/utils.ts` for class merging.
 
 ## Assets & References (pages under `src/app/`)
-- Logos: `logos/page.tsx` + SVGs under `public/assets/logos`. Full logotype and crossed-sword logomark in Moloch/Scroll variants, floating and with backgrounds.
+- Logos: `logos/page.tsx` + SVGs under `public/assets/logos`. `symbol-black.svg` is the canonical master mark. Full Moloch/Scroll logotypes and variants are preserved as Suede-era archive assets.
 - Colors: `colors/page.tsx` shows palettes and hexes; developer note points to `globals.css`.
 - Typography: `typography/page.tsx` shows specimens, usage guidance; font downloads link.
 - Iconography: `iconography/page.tsx` references SVG sets in `public/assets/icon` (8bit roles, D&D service icons, magic set).
 - Cohort guide icon assets: this repo also exposes a subset of brand icons under `/dd` (D&D-style line icons for roles, tools, and encounters) and `public/assets/icon/magic` (magic UI glyphs like stars, crystals, lanterns, flasks). the /8bit folder has special 8bit style icons for the different roles in RaidGuild
 - In documentation and MDX content, prefer these SVG icons over raw emojis. Use them via `<img src="/icon/dd/swords.svg" />` or `<img src="/icon/magic/star.svg" />` with semantic `alt` text, and avoid relying on emoji-only headings.
-- Illustrations: `illustrations/page.tsx` uses gallery from `public/assets/webp`, both color (-c) and B&W (-bw), multiple aspect ratios.
+- Illustrations: `illustrations/page.tsx` is reign-aware. Louchi references the `public/images/neo` set pinned to Venture Beyond commit `6e5f3ec`; TW references the `/witch/images/witchcraft-*` archive; Suede uses `public/assets/webp` in color (`-c`) and B&W (`-bw`) across multiple aspect ratios.
 - Home (`page.tsx`): quick links to PDF, Figma, GitHub; “For Archers” (design) and “For Warriors” (dev) navigation.
 - Machine API: `GET /api/machine/brand-guidelines` returns the complete versioned brand package after an x402 payment; `GET /.well-known/agents.json` publicly advertises its payment and response contract. The payload source is `src/lib/machine-api/brand-guidelines.ts`.
 

@@ -1,17 +1,71 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "@/lib/theme-context";
 
 export default function LogosPage() {
+  const { brandReign } = useTheme();
+  const trackColors = [
+    { name: "Canon", value: "#060609" },
+    ...brandReign.palette.slice(0, 4).map((color) => ({
+      name: color.name,
+      value: color.value,
+    })),
+  ];
+
   return (
     <div className="container-custom py-16">
       <div className="max-w-4xl mx-auto">
         <div className="mb-12">
           <h1 className="type-display-lg mb-6">Logos</h1>
           <p className="text-lg mb-8 text-foreground/80">
-            The logo is the primary identifier for our brand. It is comprised of
-            two elements, the crossed sword logomark and the Raid Guild
-            logotype.
+            The crossed swords are RaidGuild&apos;s canonical identifier. Everything
+            around the mark—including its drawing, lockup, typography, color,
+            and world—may evolve during a steward&apos;s reign.
           </p>
+
+          <section className="mb-12 rounded-lg border border-border bg-card p-6 text-card-foreground">
+            <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:items-center">
+              <div className="flex min-h-72 items-center justify-center rounded-lg bg-white p-10">
+                <Image
+                  src="/assets/logos/symbol-black.svg"
+                  alt="Canonical black RaidGuild crossed swords"
+                  width={180}
+                  height={168}
+                  priority
+                />
+              </div>
+              <div>
+                <p className="type-label-sm mb-3 text-primary">Durable identity</p>
+                <h2 className="type-heading-lg mb-4">Crossed Swords, Black</h2>
+                <p className="type-body-md text-muted-foreground">
+                  Use the black crossed swords as the master mark and the default
+                  reference for reproduction. Track-specific colors are welcome
+                  when context benefits from differentiation. Preserve recognition
+                  and document deliberate geometry changes as a new mark version.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-4" aria-label={`${brandReign.steward} track color examples`}>
+                  {trackColors.map((color) => (
+                    <div key={`${color.name}-${color.value}`} className="text-center">
+                      <div className="flex size-16 items-center justify-center rounded-full border border-border bg-white">
+                        <span
+                          className="block size-9"
+                          style={{
+                            backgroundColor: color.value,
+                            mask: "url('/assets/logos/symbol-black.svg') center / contain no-repeat",
+                            WebkitMask: "url('/assets/logos/symbol-black.svg') center / contain no-repeat",
+                          }}
+                          aria-hidden
+                        />
+                      </div>
+                      <span className="mt-2 block type-label-sm text-muted-foreground">{color.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
           <div className="bg-primary/10 border border-primary/20 rounded-lg p-6 mb-12">
             <p className="text-base mb-3 font-medium">
               Download all logo files:
@@ -42,10 +96,11 @@ export default function LogosPage() {
 
         <div className="space-y-16">
           <section>
-            <h2 className="type-heading-lg mb-6">Logotype</h2>
+            <h2 className="type-heading-lg mb-6">Suede-Era Logotype Archive</h2>
             <p className="text-base mb-6 text-foreground/70">
-              The full logotype combines the logomark with the &quot;Raid
-              Guild&quot; wordmark. The wordmark is not used solo.
+              These preserved lockups combine the swords with the Suede-era
+              &quot;Raid Guild&quot; wordmark. They remain available for historical
+              continuity but are not more canonical than the standalone swords.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Left Column - Floating Logos */}
