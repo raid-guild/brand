@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "media.githubusercontent.com",
+        pathname: "/media/raid-guild/brand/**",
+      },
+      {
+        protocol: "https",
         hostname: "www.raidguild.org",
         pathname: "/witch/images/**",
       },

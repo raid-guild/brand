@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BrandReignPanel, ReignHeroMark } from "@/components/brand/BrandReignPanel";
+import { BrandReignPanel } from "@/components/brand/BrandReignPanel";
 import { useTheme } from "@/lib/theme-context";
 
 const HERO_IMAGES = [
@@ -111,6 +111,13 @@ const HERO_IMAGES = [
   "/assets/webp/scroll100/1440x1440/warriors-armed-bw.webp",
 ];
 
+const TW_HERO_IMAGE =
+  "https://www.raidguild.org/witch/images/witchcraft-08_0-15-1.png";
+const LOUCHI_HERO_IMAGE =
+  "https://raw.githubusercontent.com/raid-guild/website/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo/sky-citadel.png";
+const SUEDE_ASSET_ROOT =
+  "https://media.githubusercontent.com/media/raid-guild/brand/8f0b5eecd9fe0c086e138ba33307110e1d902b06/public";
+
 export default function Home() {
   const { brandReign } = useTheme();
   // Calculate current image based on 2-minute intervals
@@ -120,6 +127,12 @@ export default function Home() {
   }, []);
 
   const [currentImage, setCurrentImage] = useState<string>(getImageForInterval);
+  const heroImage =
+    brandReign.id === "louchi"
+      ? LOUCHI_HERO_IMAGE
+      : brandReign.id === "tw"
+        ? TW_HERO_IMAGE
+        : `${SUEDE_ASSET_ROOT}${currentImage}`;
 
   // Update image every minute to catch 2-minute boundaries
   useEffect(() => {
@@ -154,18 +167,14 @@ export default function Home() {
         {/* Right Column - Image */}
         <div className="flex justify-center lg:justify-end lg:pr-[100px] lg:pt-[20px]">
           <div className="relative w-full lg:max-w-[500px] aspect-[3/4] rounded-lg overflow-hidden">
-            {brandReign.id === "louchi" ? (
-              <ReignHeroMark />
-            ) : (
-              <Image
-                key={currentImage}
-                src={currentImage}
-                alt={`${brandReign.steward} reign RaidGuild artwork`}
-                fill
-                className="object-contain"
-                priority
-              />
-            )}
+            <Image
+              key={heroImage}
+              src={heroImage}
+              alt={`${brandReign.steward} reign RaidGuild artwork`}
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
         </div>
       </div>
