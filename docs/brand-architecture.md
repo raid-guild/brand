@@ -17,6 +17,8 @@ The Guild is not limited to today's practices. AI and Web3 are current expressio
 | Steward reign | **When?** | Versions the Guild identity over time and preserves historical visual and verbal systems. |
 | Practice identity | **Where and for what?** | Differentiates a current area of expertise. Multiple practices can coexist within one reign. |
 
+A steward provides direction and accountability for an era, but a reign is never the work of one person. Identity, illustration, language, interfaces, implementation, critique, and adoption emerge through multiple Guild contributors. Naming a reign identifies its stewardship and timeframe; it does not erase collective authorship.
+
 A practice does not become a reign because it looks different. A new reign does not require every practice to discard a useful identity. Historical change and present-day specialization can eventually be surfaced together, but the guide should keep these controls conceptually separate.
 
 ## Endorsement Standard
@@ -30,4 +32,3 @@ Distinct branding is a feature when the provenance is clear. Every endorsed prac
 5. Avoid implying that its specialty or visual system represents the entire Guild.
 
 This is a minimum viable architecture, not a mandate for a global rebrand. It allows independently owned practices to remain distinctive while making the network, endorsement, and operational continuity visible.
-

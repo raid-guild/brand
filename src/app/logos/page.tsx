@@ -22,7 +22,8 @@ export default function LogosPage() {
           <p className="text-lg mb-8 text-foreground/80">
             The crossed swords are RaidGuild&apos;s canonical identifier. Everything
             around the mark—including its drawing, lockup, typography, color,
-            and world—may evolve during a steward&apos;s reign.
+            and world—may evolve during a stewarded reign. Those expressions
+            are collective work, even when an era is named for its steward.
           </p>
 
           <section className="mb-12 rounded-lg border border-border bg-card p-6 text-card-foreground">

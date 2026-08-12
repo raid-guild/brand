@@ -2,7 +2,7 @@
 
 Latest reign: Louchi / Venture Beyond
 
-A living, versioned repository of brand guidance, assets, and resources for designers and developers. RaidGuild's identity evolves with its elected brand steward; older reigns remain selectable instead of being overwritten.
+A living, versioned repository of brand guidance, assets, and resources for designers and developers. Each reign records collective identity work shaped under a steward's direction; older reigns remain selectable instead of being overwritten.
 
 The black crossed swords are the canonical master mark. Track colors and the surrounding visual system may change between reigns.
 

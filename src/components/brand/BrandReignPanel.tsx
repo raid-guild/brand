@@ -16,7 +16,7 @@ export function BrandReignPanel() {
             <span className="rounded-full bg-primary px-3 py-1 text-primary-foreground">
               {brandReign.status === "latest" ? "Latest reign" : "Archived reign"}
             </span>
-            <span className="text-muted-foreground">Brand steward</span>
+            <span className="text-muted-foreground">Stewarded era</span>
           </div>
           <h2 id="reign-heading" className="type-display-sm mb-4">
             {brandReign.steward}
@@ -24,6 +24,15 @@ export function BrandReignPanel() {
           <p className="type-body-lg max-w-3xl text-muted-foreground">
             {brandReign.summary}
           </p>
+          <p className="mt-4 type-body-md max-w-3xl text-muted-foreground">
+            {brandReign.contributionNote}
+          </p>
+          {brandReign.evidenceNote ? (
+            <p className="mt-4 border-l-2 border-primary pl-4 type-body-sm max-w-3xl text-muted-foreground">
+              <span className="type-label-sm text-primary">Archive note</span><br />
+              {brandReign.evidenceNote}
+            </p>
+          ) : null}
           {brandReign.sourceUrl ? (
             <Link
               href={brandReign.sourceUrl}
@@ -34,15 +43,19 @@ export function BrandReignPanel() {
               {brandReign.sourceLabel}
               <ExternalLink className="size-4" aria-hidden />
             </Link>
-          ) : null}
+          ) : (
+            <p className="mt-5 type-label-md text-primary">
+              Source: {brandReign.sourceLabel}
+            </p>
+          )}
         </div>
 
         <div className="rounded-lg border border-border bg-card p-6 text-card-foreground">
           <p className="type-label-sm mb-3 text-primary">Change is a feature</p>
           <p className="type-body-md text-muted-foreground">
-            RaidGuild&apos;s identity evolves with its elected brand steward. Each
-            reign is preserved as a usable version instead of being erased by
-            the next one.
+            A steward gives an era direction; the work is always collective.
+            Each reign records the shared output of many contributors and is
+            preserved instead of being erased by the next one.
           </p>
           <div className="mt-6 flex flex-wrap gap-2" aria-label="Brand reign archive">
             {BRAND_REIGNS.map((reign) => (

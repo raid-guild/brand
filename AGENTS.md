@@ -5,12 +5,12 @@ Single-file brief for AI assistants. Keep this in your context when generating U
 Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://github.com/raid-guild/brand)
 
 ## Durable Identity & Versioning
-- RaidGuild is intentionally mutable. The election of a new brand steward can introduce a new visual reign; this evolution is a feature, not a defect.
+- RaidGuild is intentionally mutable. The election of a new brand steward can introduce a new visual reign; this evolution is a feature, not a defect. A reign names stewardship and timeframe, never sole authorship: brand work is always a group effort with multiple contributors.
 - The black crossed-swords logomark is the canonical master mark and the only currently durable brand element.
 - The mark may use color variations for different tracks or programs. Even its geometry may evolve, but alterations must preserve recognition and be documented as a new mark version.
 - Wordmarks, lockups, palettes, typography, illustration, motion, and voice treatments belong to a named steward reign. Do not present one reign's expression as timeless RaidGuild canon.
 - The guide defaults to the latest available reign and stores the user's selection under `raidguild-brand-reign`. Reign definitions live in `src/lib/brand-reigns.ts`; CSS is selected with `data-brand-reign` on `<html>`.
-- Reigns: **Louchi** (latest, Venture Beyond), **Suede** (archived current-repo system), **TW** (archived at `https://www.raidguild.org/witch`), and **Ven** (reserved; reference files pending).
+- Reigns: **Louchi** (latest, Venture Beyond), **Suede** (archived current-repo system), **TW** (archived at `https://www.raidguild.org/witch`), and **Ven** (archived, partially reconstructed from a surviving RG UI one-sheet).
 
 ## Brand Architecture
 - RaidGuild is the center of gravity: the builder-owned collective, shared talent pool, community, reputation, and source of new applied-edge practices.
@@ -42,6 +42,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 
 ## Brand Tokens & Semantics (from `src/app/globals.css`)
 - **Louchi / latest anchors**: ink `#102d2c`, deep teal `#0a292b`, cyan `#b8e0df`, parchment `#efe9d7`, coral `#ee3c78`, acid lime `#d7e34d`. Direction: Moebius-influenced speculative worlds, expansive editorial typography, spatial composition, and cinematic motion.
+- **Ven / archived reconstruction**: black `#000000`, Raid pink `#ff3864`, white `#ffffff`, graphite `#2b2c34`, violet `#b66ad6`, signal yellow `#fcfb75`. Direction: high-contrast RG UI system, ornate display typography, technical mono annotation, fantasy line icons, and violet-to-pink framing. Mark as partially reconstructed from surviving sheets.
 - **Suede / archived palettes (hex)**:
   - Moloch: 100 `#f1efee`, 200 `#efc5bb`, 300 `#e39b8b`, 400 `#d25c41`, 500 `#bd482d` (primary), 600 `#8b3521`, 700 `#5c2316`, 800 `#29100a`.  
   - Scroll: 100 `#f9f7e7`, 200 `#ece5ac`, 300 `#dccd6a`, 400 `#d2c141`, 500 `#b5a22c`, 600 `#837820`, 700 `#534a13`, 800 `#211e07`.  
@@ -78,7 +79,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 - Iconography: `iconography/page.tsx` references SVG sets in `public/assets/icon` (8bit roles, D&D service icons, magic set).
 - Cohort guide icon assets: this repo also exposes a subset of brand icons under `/dd` (D&D-style line icons for roles, tools, and encounters) and `public/assets/icon/magic` (magic UI glyphs like stars, crystals, lanterns, flasks). the /8bit folder has special 8bit style icons for the different roles in RaidGuild
 - In documentation and MDX content, prefer these SVG icons over raw emojis. Use them via `<img src="/icon/dd/swords.svg" />` or `<img src="/icon/magic/star.svg" />` with semantic `alt` text, and avoid relying on emoji-only headings.
-- Illustrations: `illustrations/page.tsx` is reign-aware. Louchi references the `public/images/neo` set pinned to Venture Beyond commit `6e5f3ec`; TW references the `/witch/images/witchcraft-*` archive; Suede uses `public/assets/webp` in color (`-c`) and B&W (`-bw`) across multiple aspect ratios.
+- Illustrations: `illustrations/page.tsx` is reign-aware. Louchi references the `public/images/neo` set pinned to Venture Beyond commit `6e5f3ec`; TW references the `/witch/images/witchcraft-*` archive; Suede uses `public/assets/webp` in color (`-c`) and B&W (`-bw`) across multiple aspect ratios; Ven presents a clearly labeled directional reconstruction from its surviving one-sheet.
 - Home (`page.tsx`): quick links to PDF, Figma, GitHub; “For Archers” (design) and “For Warriors” (dev) navigation.
 - Machine API: `GET /api/machine/brand-guidelines` returns the complete versioned brand package after an x402 payment; `GET /.well-known/agents.json` publicly advertises its payment and response contract. The payload source is `src/lib/machine-api/brand-guidelines.ts`.
 

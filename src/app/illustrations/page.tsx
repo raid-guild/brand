@@ -63,6 +63,10 @@ export default function IllustrationsPage() {
     return <SuedeIllustrations />;
   }
 
+  if (brandReign.id === "ven") {
+    return <VenIllustrations />;
+  }
+
   const isLouchi = brandReign.id === "louchi";
   const illustrations = isLouchi ? LOUCHI_ILLUSTRATIONS : TW_ILLUSTRATIONS;
 
@@ -142,6 +146,102 @@ export default function IllustrationsPage() {
               </article>
             ))}
           </div>
+        </section>
+      </div>
+    </div>
+  );
+}
+
+function VenIllustrations() {
+  const primary = [
+    { name: "Black", value: "#000000", rgb: "0 / 0 / 0" },
+    { name: "Raid Pink", value: "#FF3864", rgb: "255 / 56 / 100" },
+    { name: "White", value: "#FFFFFF", rgb: "255 / 255 / 255" },
+  ];
+  const secondary = [
+    { name: "Graphite", value: "#2B2C34", rgb: "43 / 44 / 52" },
+    { name: "Violet", value: "#B66AD6", rgb: "182 / 106 / 214" },
+    { name: "Signal Yellow", value: "#FCFB75", rgb: "252 / 251 / 117" },
+  ];
+
+  return (
+    <div className="container-custom py-16">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-12 max-w-4xl">
+          <p className="type-label-sm mb-3 text-primary">Ven · Archived reconstruction</p>
+          <h1 className="type-display-lg mb-6">Graphic Language</h1>
+          <p className="type-body-lg mb-6 text-muted-foreground">
+            The surviving RG UI sheets point to a nocturnal, interface-first
+            world: black fields, electric pink line work, ornate display type,
+            fantasy role icons, technical labels, and violet-to-pink framing.
+          </p>
+          <div className="rounded-lg border border-primary/30 bg-primary/10 p-6">
+            <p className="type-body-md">
+              This is a directional reconstruction from the surviving overview
+              and colour sheet, not a claim that the complete original
+              illustration library has been recovered.
+            </p>
+          </div>
+        </div>
+
+        <section className="mb-12 bg-black p-6 text-[#FF3864] md:p-10">
+          <div className="mb-14 grid gap-6 md:grid-cols-2">
+            <h2 className="type-heading-md">3.7&nbsp;&nbsp;Colour</h2>
+            <p className="type-code-sm max-w-sm leading-relaxed">
+              ARCHIVE PLATE / PARTIAL RECONSTRUCTION<br />
+              Exact values sampled from the surviving RG UI reference.
+            </p>
+          </div>
+
+          {[{ label: "Primary Colours", colors: primary }, { label: "Secondary Colours", colors: secondary }].map((group) => (
+            <div key={group.label} className="mb-10 border-t border-[#FF3864] pt-3">
+              <p className="type-code-sm mb-4">{group.label}</p>
+              <div className="grid gap-3 md:grid-cols-3">
+                {group.colors.map((color) => (
+                  <article key={color.value}>
+                    <div
+                      className="aspect-[1.55/1] border border-white/30"
+                      style={{ backgroundColor: color.value }}
+                    />
+                    <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 type-code-sm leading-relaxed">
+                      <dt>NAME:</dt><dd>{color.name}</dd>
+                      <dt>RGB:</dt><dd>{color.rgb}</dd>
+                      <dt>HEX:</dt><dd>{color.value}</dd>
+                    </dl>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+
+          <div className="mt-14 flex items-end justify-between gap-4">
+            <span
+              className="block size-10 bg-[#FF3864]"
+              style={{
+                mask: "url('/assets/logos/symbol-black.svg') center / contain no-repeat",
+                WebkitMask: "url('/assets/logos/symbol-black.svg') center / contain no-repeat",
+              }}
+              role="img"
+              aria-label="RaidGuild crossed swords"
+            />
+            <p className="type-code-sm">VEN / RG UI / ARCHIVE PLATE 01</p>
+          </div>
+        </section>
+
+        <section className="grid gap-6 md:grid-cols-3">
+          {["Icons as roles", "Systems as artifacts", "Workflow as brand"].map((title, index) => (
+            <article key={title} className="border border-border bg-card p-6 text-card-foreground">
+              <p className="type-code-sm mb-12 text-primary">VEN—0{index + 1}</p>
+              <h2 className="type-heading-md mb-3">{title}</h2>
+              <p className="type-body-md text-muted-foreground">
+                {index === 0
+                  ? "Line icons connected Guild roles and fantasy language to practical product work."
+                  : index === 1
+                    ? "Components, tokens, and Storybook were presented as part of the identity—not merely implementation detail."
+                    : "The one-sheet documents contribution and handoff, making collective maintenance visible inside the brand itself."}
+              </p>
+            </article>
+          ))}
         </section>
       </div>
     </div>

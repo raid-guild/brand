@@ -187,7 +187,7 @@ const payload = {
   schema:
     "https://www.brand.raidguild.org/schemas/brand-guidelines-v1.json",
   schemaVersion: "1.0.0",
-  contentVersion: "2026-louchi-architecture",
+  contentVersion: "2026-louchi-architecture-ven-archive",
   name: "RaidGuild Brand Archive",
   description:
     "A machine-readable guide to the RaidGuild brand, design system, voice, implementation patterns, and complete public asset inventory.",
@@ -201,7 +201,7 @@ const payload = {
     architecture: BRAND_ARCHITECTURE,
     identity: {
       summary:
-        "RaidGuild is a deliberately evolving identity. The crossed swords are the durable signal; each elected brand steward may build a new visual world around them.",
+        "RaidGuild is a deliberately evolving, collectively produced identity. The crossed swords are the durable signal; each elected brand steward may guide a new visual world built by many contributors.",
       logoRules: [
         "Use the black crossed swords as the canonical master mark.",
         "Color variations of the crossed swords may identify different tracks or programs.",
@@ -212,7 +212,7 @@ const payload = {
     },
     versioning: {
       model:
-        "Brand releases are named for the elected brand steward's reign. The guide defaults to the latest available reign and preserves older reigns as selectable versions.",
+        "Brand releases are named for the elected brand steward's reign to identify direction and timeframe, not sole authorship. Each era is a group effort with multiple contributors. The guide defaults to the latest available reign and preserves older reigns as selectable versions.",
       defaultReign: "louchi",
       durableIdentity: "black crossed swords",
       reigns: [
@@ -260,8 +260,22 @@ const payload = {
         {
           id: "ven",
           steward: "Ven",
-          status: "reference-pending",
-          available: false,
+          status: "archived",
+          available: true,
+          source: "Surviving RG UI overview and colour sheet",
+          evidence: "partial-reconstruction",
+          palette: {
+            black: "#000000",
+            raidPink: "#ff3864",
+            white: "#ffffff",
+            graphite: "#2b2c34",
+            violet: "#b66ad6",
+            signalYellow: "#fcfb75",
+          },
+          direction:
+            "High-contrast design-system language using black fields, electric pink line work, ornate display typography, monospaced technical annotation, fantasy role icons, and violet-to-pink framing.",
+          archiveNote:
+            "The surviving one-sheet credits multiple contributors across brand stewardship, design systems, icons, and implementation. Palette values are sampled from the reference; the complete original source package has not been recovered.",
         },
       ],
       implementation: {

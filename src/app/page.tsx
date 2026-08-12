@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BrandReignPanel } from "@/components/brand/BrandReignPanel";
+import { BrandReignPanel, ReignHeroMark } from "@/components/brand/BrandReignPanel";
 import { useTheme } from "@/lib/theme-context";
 
 const HERO_IMAGES = [
@@ -158,23 +158,27 @@ export default function Home() {
             RaidGuild Brand Archive
           </h1>
           <p className="type-body-lg text-foreground/80">
-            A living guide to the identity stewarded by {brandReign.steward}.
-            The crossed swords remain the shared signal; each reign builds a
-            new world around them.
+            A living guide to the collective identity work shaped during the
+            {` ${brandReign.steward}`} reign. The crossed swords remain the shared
+            signal; each era builds a new world around them.
           </p>
         </div>
 
         {/* Right Column - Image */}
         <div className="flex justify-center lg:justify-end lg:pr-[100px] lg:pt-[20px]">
           <div className="relative w-full lg:max-w-[500px] aspect-[3/4] rounded-lg overflow-hidden">
-            <Image
-              key={heroImage}
-              src={heroImage}
-              alt={`${brandReign.steward} reign RaidGuild artwork`}
-              fill
-              className="object-contain"
-              priority
-            />
+            {brandReign.id === "ven" ? (
+              <ReignHeroMark />
+            ) : (
+              <Image
+                key={heroImage}
+                src={heroImage}
+                alt={`${brandReign.steward} reign RaidGuild artwork`}
+                fill
+                className="object-contain"
+                priority
+              />
+            )}
           </div>
         </div>
       </div>

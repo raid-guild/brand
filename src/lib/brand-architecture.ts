@@ -21,7 +21,7 @@ export const BRAND_ARCHITECTURE = {
     reign: {
       question: "When?",
       description:
-        "A reign versions the Guild's identity over time. It records the visual and verbal world stewarded during a period and preserves earlier expressions as history.",
+        "A reign versions the Guild's identity over time. It records the collective visual and verbal work shaped under a steward's direction and preserves earlier expressions as history.",
     },
     practice: {
       question: "Where and for what?",
@@ -40,4 +40,3 @@ export const BRAND_ARCHITECTURE = {
     ],
   },
 } as const;
-

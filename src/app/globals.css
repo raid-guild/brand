@@ -351,6 +351,63 @@
   --font-body: "RG Fratelli", Arial, sans-serif;
 }
 
+/*
+ * Ven archive reconstruction. Exact palette values are sampled from the
+ * surviving RG UI colour sheet; semantic mappings recreate its high-contrast
+ * black/pink design-system posture without claiming a complete source system.
+ */
+[data-brand-reign="ven"] {
+  --moloch-100: #ffe5eb;
+  --moloch-200: #ffbdcc;
+  --moloch-300: #ff85a0;
+  --moloch-400: #ff5d82;
+  --moloch-500: #ff3864;
+  --moloch-600: #d9244e;
+  --moloch-700: #8f1735;
+  --moloch-800: #000000;
+  --scroll-100: #ffffff;
+  --scroll-200: #f1f1f2;
+  --scroll-300: #fcfb75;
+  --scroll-400: #e9e85f;
+  --scroll-500: #b6b63e;
+  --scroll-600: #77772b;
+  --scroll-700: #2b2c34;
+  --scroll-800: #000000;
+  --neutral-100: #ffffff;
+  --neutral-200: #dedee2;
+  --neutral-300: #b6b6be;
+  --neutral-400: #878893;
+  --neutral-500: #686974;
+  --neutral-600: #4b4c56;
+  --neutral-700: #2b2c34;
+  --neutral-800: #000000;
+  --neutral-white: #ffffff;
+  --neutral-black: #000000;
+  --background: #ffffff;
+  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  --primary: #ff3864;
+  --primary-foreground: #000000;
+  --secondary: #b66ad6;
+  --secondary-foreground: #000000;
+  --muted: #f1f1f2;
+  --muted-foreground: #4b4c56;
+  --accent: #fcfb75;
+  --accent-foreground: #000000;
+  --destructive: #d9244e;
+  --border: #b6b6be;
+  --input: #b6b6be;
+  --ring: #ff3864;
+  --reign-ink: #ff3864;
+  --reign-deep: #000000;
+  --reign-field: #ffffff;
+  --reign-signal: #ff3864;
+  --reign-highlight: #fcfb75;
+}
+
 .dark {
   /* Dark Theme - added here */
   --background: var(--moloch-800);
@@ -377,6 +434,20 @@
   --muted-foreground: var(--scroll-200);
   --border: #f9f7e74d;
   --input: #f9f7e74d;
+}
+
+.dark[data-brand-reign="ven"] {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #2b2c34;
+  --card-foreground: #ffffff;
+  --popover: #2b2c34;
+  --popover-foreground: #ffffff;
+  --primary-foreground: #000000;
+  --muted: #2b2c34;
+  --muted-foreground: #dedee2;
+  --border: #686974;
+  --input: #686974;
 }
 
 @layer base {
