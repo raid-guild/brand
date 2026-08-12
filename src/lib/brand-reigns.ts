@@ -91,11 +91,11 @@ export const BRAND_REIGNS: readonly BrandReign[] = [
     available: true,
     summary:
       "A high-contrast early design-system era built from black fields, electric pink, white, graphite, violet, and signal yellow. Surviving sheets show ornate display type, monospaced technical annotation, fantasy line icons, and a UI-library workflow.",
-    sourceLabel: "Surviving RG UI one-sheet",
+    sourceLabel: "Surviving RG UI sheets and illustration",
     contributionNote:
       "The surviving one-sheet explicitly credits multiple contributors across brand stewardship, design systems, icons, and implementation.",
     evidenceNote:
-      "Reconstructed from a surviving overview and colour sheet. Palette values are sampled from the reference; a complete original source package has not yet been recovered.",
+      "Reconstructed from a surviving overview, colour sheet, and neon sword-and-skull illustration. Palette values are sampled from the reference; a complete original source package has not yet been recovered.",
     palette: [
       { name: "Black", value: "#000000", role: "Primary field" },
       { name: "Raid Pink", value: "#FF3864", role: "Primary signal" },

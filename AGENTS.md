@@ -42,7 +42,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 
 ## Brand Tokens & Semantics (from `src/app/globals.css`)
 - **Louchi / latest anchors**: ink `#102d2c`, deep teal `#0a292b`, cyan `#b8e0df`, parchment `#efe9d7`, coral `#ee3c78`, acid lime `#d7e34d`. Direction: Moebius-influenced speculative worlds, expansive editorial typography, spatial composition, and cinematic motion.
-- **Ven / archived reconstruction**: black `#000000`, Raid pink `#ff3864`, white `#ffffff`, graphite `#2b2c34`, violet `#b66ad6`, signal yellow `#fcfb75`. Direction: high-contrast RG UI system, ornate display typography, technical mono annotation, fantasy line icons, and violet-to-pink framing. Mark as partially reconstructed from surviving sheets.
+- **Ven / archived reconstruction**: black `#000000`, Raid pink `#ff3864`, white `#ffffff`, graphite `#2b2c34`, violet `#b66ad6`, signal yellow `#fcfb75`. Direction: high-contrast RG UI system, ornate display typography, technical mono annotation, fantasy line icons, and violet-to-pink framing. A recovered neon sword-and-skull illustration lives at `public/images/reigns/ven/skull-sword.png`. Mark the overall system as partially reconstructed from surviving artifacts.
 - **Suede / archived palettes (hex)**:
   - Moloch: 100 `#f1efee`, 200 `#efc5bb`, 300 `#e39b8b`, 400 `#d25c41`, 500 `#bd482d` (primary), 600 `#8b3521`, 700 `#5c2316`, 800 `#29100a`.  
   - Scroll: 100 `#f9f7e7`, 200 `#ece5ac`, 300 `#dccd6a`, 400 `#d2c141`, 500 `#b5a22c`, 600 `#837820`, 700 `#534a13`, 800 `#211e07`.  

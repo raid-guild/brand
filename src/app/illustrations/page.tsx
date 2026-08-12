@@ -184,6 +184,39 @@ function VenIllustrations() {
           </div>
         </div>
 
+        <section className="mb-12 grid overflow-hidden border border-[#FF3864] bg-black text-white lg:grid-cols-[.9fr_1.1fr]">
+          <div className="relative min-h-[42rem] lg:min-h-[52rem]">
+            <Image
+              src="/images/reigns/ven/skull-sword.png"
+              alt="Ven-era neon line illustration of a sword rising through a horned skull"
+              fill
+              priority
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-contain"
+            />
+          </div>
+          <div className="flex flex-col justify-end border-t border-[#FF3864]/50 p-8 lg:border-l lg:border-t-0 lg:p-12">
+            <p className="type-code-sm mb-5 tracking-[0.2em] text-[#FF3864]">
+              VEN—ILLUSTRATION / RECOVERED ARTIFACT
+            </p>
+            <h2 className="type-display-sm mb-6 text-[#FF3864]">
+              Mythic symbols.<br />Interface voltage.
+            </h2>
+            <p className="type-body-lg max-w-xl text-white/75">
+              A sword, horned skull, geometric frame, and cosmic marks are
+              rendered as deliberately raw neon linework. The artifact shows
+              the secondary violet and yellow acting as structural colors—not
+              merely decorative swatches.
+            </p>
+            <dl className="mt-10 grid grid-cols-2 gap-px bg-[#FF3864]/40 type-code-sm">
+              <div className="bg-black p-4"><dt className="text-white/50">FORMAT</dt><dd className="mt-2">PNG / ALPHA</dd></div>
+              <div className="bg-black p-4"><dt className="text-white/50">SOURCE</dt><dd className="mt-2">SURVIVING VEN ART</dd></div>
+              <div className="bg-black p-4"><dt className="text-white/50">DIMENSIONS</dt><dd className="mt-2">1420 × 1800</dd></div>
+              <div className="bg-black p-4"><dt className="text-white/50">STATUS</dt><dd className="mt-2">ARCHIVED</dd></div>
+            </dl>
+          </div>
+        </section>
+
         <section className="mb-12 bg-black p-6 text-[#FF3864] md:p-10">
           <div className="mb-14 grid gap-6 md:grid-cols-2">
             <h2 className="type-heading-md">3.7&nbsp;&nbsp;Colour</h2>

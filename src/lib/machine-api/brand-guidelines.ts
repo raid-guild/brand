@@ -262,7 +262,7 @@ const payload = {
           steward: "Ven",
           status: "archived",
           available: true,
-          source: "Surviving RG UI overview and colour sheet",
+          source: "Surviving RG UI overview, colour sheet, and sword-and-skull illustration",
           evidence: "partial-reconstruction",
           palette: {
             black: "#000000",
@@ -275,7 +275,7 @@ const payload = {
           direction:
             "High-contrast design-system language using black fields, electric pink line work, ornate display typography, monospaced technical annotation, fantasy role icons, and violet-to-pink framing.",
           archiveNote:
-            "The surviving one-sheet credits multiple contributors across brand stewardship, design systems, icons, and implementation. Palette values are sampled from the reference; the complete original source package has not been recovered.",
+            "The surviving one-sheet credits multiple contributors across brand stewardship, design systems, icons, and implementation. Palette values are sampled from the reference, and a 1420x1800 neon sword-and-skull PNG survives as an illustration artifact; the complete original source package has not been recovered.",
         },
       ],
       implementation: {
