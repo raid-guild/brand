@@ -8,9 +8,9 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500"] });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"] });
 
 export const metadata: Metadata = {
-  title: "RaidGuild AI — Sub-brand Guidelines",
+  title: "RaidGuild AI — Practice Guidelines",
   description:
-    "Design system for raidguild.ai, RaidGuild's AI consulting agency. Built to contrast with the main RaidGuild brand.",
+    "Design system for raidguild.ai, an endorsed RaidGuild practice with a deliberately distinct identity.",
 };
 
 const COLORS = [
@@ -64,7 +64,7 @@ const LOCKUPS = [
   },
 ];
 
-export default function AiSubBrandPage() {
+export default function AiPracticePage() {
   return (
     <div className={`${inter.className} min-h-screen w-full bg-[#060609] text-[#E8E6E3]`}>
       <div className="max-w-5xl mx-auto px-6 py-16 md:py-24">
@@ -78,11 +78,12 @@ export default function AiSubBrandPage() {
           <h1
             className={`${spaceGrotesk.className} text-4xl md:text-5xl font-bold mb-4`}
           >
-            RaidGuild AI — Sub-brand Guidelines
+            RaidGuild AI — Practice Guidelines
           </h1>
           <p className="text-lg text-[#E8E6E3] max-w-2xl">
-            The design system for raidguild.ai, RaidGuild&apos;s AI consulting
-            agency. It contrasts with the main RaidGuild brand on purpose.
+            The design system for raidguild.ai, a specialized practice backed
+            by RaidGuild&apos;s builder network and operating layer. Its distinct
+            voice is intentional.
           </p>
         </section>
 
@@ -92,19 +93,23 @@ export default function AiSubBrandPage() {
             Relationship to RaidGuild
           </h2>
           <p className="text-[#E8E6E3] max-w-2xl mb-4">
-            raidguild.ai was built by Dekan and Sam Kuhlman as a deliberate
-            visual break from the main RaidGuild brand — dark, technical, and
-            fantasy-free, where the main brand is warm, illustrated, and
-            D&amp;D-flavored.
+            raidguild.ai is a focused expression for applied AI work: dark,
+            technical, and deliberately distinct from the Guild&apos;s atmospheric
+            umbrella identity.
           </p>
           <p className="text-[#737B8C] max-w-2xl">
-            Rule of thumb: raidguild.ai and its sub-pages use this system.
-            Everything else — the main site, the cohort, the portal — uses the
-            system at{" "}
+            It is not a separate organization. It is an endorsed RaidGuild
+            practice drawing from the same builder pool and operating through
+            RaidGuild LLC. raidguild.ai and its sub-pages use this system; the
+            Guild-level identity is documented at{" "}
             <Link href="/" className="text-[#2FD09A] hover:underline">
               brand.raidguild.org
             </Link>
-            . The two are not meant to blend.
+            . They need clear provenance, not identical styling. See the{" "}
+            <Link href="/architecture" className="text-[#2FD09A] hover:underline">
+              brand architecture
+            </Link>
+            .
           </p>
         </section>
 

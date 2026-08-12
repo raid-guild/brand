@@ -1,6 +1,7 @@
 import "server-only";
 
 import { createHash } from "node:crypto";
+import { BRAND_ARCHITECTURE } from "@/lib/brand-architecture";
 
 const LIVE_BASE_URL = "https://www.brand.raidguild.org";
 const RAW_BASE_URL =
@@ -186,7 +187,7 @@ const payload = {
   schema:
     "https://www.brand.raidguild.org/schemas/brand-guidelines-v1.json",
   schemaVersion: "1.0.0",
-  contentVersion: "2026-louchi",
+  contentVersion: "2026-louchi-architecture",
   name: "RaidGuild Brand Archive",
   description:
     "A machine-readable guide to the RaidGuild brand, design system, voice, implementation patterns, and complete public asset inventory.",
@@ -197,6 +198,7 @@ const payload = {
     githubTree: "https://github.com/raid-guild/brand/tree/main/public",
   },
   guidelines: {
+    architecture: BRAND_ARCHITECTURE,
     identity: {
       summary:
         "RaidGuild is a deliberately evolving identity. The crossed swords are the durable signal; each elected brand steward may build a new visual world around them.",
@@ -804,6 +806,11 @@ const payload = {
     },
   },
   references: [
+    {
+      name: "Brand architecture",
+      repoPath: "docs/brand-architecture.md",
+      url: "https://github.com/raid-guild/brand/blob/main/docs/brand-architecture.md",
+    },
     {
       name: "Agent handbook",
       repoPath: "AGENTS.md",

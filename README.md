@@ -6,6 +6,8 @@ A living, versioned repository of brand guidance, assets, and resources for desi
 
 The black crossed swords are the canonical master mark. Track colors and the surrounding visual system may change between reigns.
 
+RaidGuild's architecture has two independent axes: **steward reigns** version the Guild identity over time, while **practices** (internally, spears) differentiate specialized fronts that can coexist. Practices may have distinct positioning and visual systems, but share RaidGuild's builder pool, endorsement, and RaidGuild LLC operating layer. See [`docs/brand-architecture.md`](docs/brand-architecture.md).
+
 Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://github.com/raid-guild/brand)
 
 ## For AI Agents

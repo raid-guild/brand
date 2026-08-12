@@ -36,7 +36,9 @@ const schema = {
     guidelines: {
       type: "object",
       required: [
+        "architecture",
         "identity",
+        "versioning",
         "colors",
         "typography",
         "layout",

@@ -12,6 +12,15 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 - The guide defaults to the latest available reign and stores the user's selection under `raidguild-brand-reign`. Reign definitions live in `src/lib/brand-reigns.ts`; CSS is selected with `data-brand-reign` on `<html>`.
 - Reigns: **Louchi** (latest, Venture Beyond), **Suede** (archived current-repo system), **TW** (archived at `https://www.raidguild.org/witch`), and **Ven** (reserved; reference files pending).
 
+## Brand Architecture
+- RaidGuild is the center of gravity: the builder-owned collective, shared talent pool, community, reputation, and source of new applied-edge practices.
+- Specialized practices are called **spears** internally. They may own their positioning, specialization, and visual expression while drawing on the shared builder pool.
+- RaidGuild LLC is the common legal and operating entity, registered through MiDAO. Contracts, treasury, and delivery workflows can run through the LLC.
+- Keep the two axes separate: a **reign** answers “when?” and versions the Guild identity through time; a **practice** answers “where and for what?” and differentiates simultaneous areas of expertise.
+- A practice may deliberately look different. Preserve provenance with the crossed-swords mark or an approved variant, the phrase “A RaidGuild practice,” the operating disclosure “Operating through RaidGuild LLC” where trust matters, and a route back to RaidGuild.org.
+- Do not present a practice's specialty or visual system as the whole Guild. Do not call a distinct practice a separate organization.
+- Canonical guidance: `docs/brand-architecture.md`; public guide: `/architecture`.
+
 ## Using This in Another Project
 - Copy this file into the consuming repo (root recommended) or fetch it from the GitHub URL into your agent’s context.
 - If the repo already has an `AGENTS.md`, merge this content into their file (or add as `RG_BRAND_AGENTS.md`) and include both in your agent context.

@@ -48,6 +48,7 @@ type NavItem = NavItemWithHref | NavItemWithAnchor;
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Brand Guide", href: "/" },
+  { label: "Architecture", href: "/architecture" },
   { label: "RaidGuild.org", href: "https://www.raidguild.org/", isExternal: true },
 ];
 

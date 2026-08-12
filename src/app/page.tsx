@@ -232,16 +232,27 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
             <Link
+              href="/architecture"
+              className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
+            >
+              <h3 className="type-heading-sm mb-2 group-hover:text-primary transition-colors">
+                Brand Architecture
+              </h3>
+              <p className="type-body-sm text-muted-foreground">
+                How the shared Guild, historical reigns, and specialized
+                practices fit together
+              </p>
+            </Link>
+            <Link
               href="/ai"
-              target="topw"
               className="p-6 border border-border rounded-lg hover:border-[#2FD09A] hover:bg-muted/50 transition-all group"
             >
               <h3 className="type-heading-sm mb-2 group-hover:text-[#2FD09A] transition-colors">
-                AI Sub-brand
+                AI Practice
               </h3>
               <p className="type-body-sm text-muted-foreground">
-                Design system for raidguild.ai, RaidGuild&apos;s AI
-                consulting agency
+                A distinct practice identity endorsed by and operating through
+                RaidGuild
               </p>
             </Link>
           </div>

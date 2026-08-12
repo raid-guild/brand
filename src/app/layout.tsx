@@ -8,7 +8,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "RaidGuild Brand Archive",
   description:
-    "A living, versioned guide to RaidGuild identity across brand steward reigns.",
+    "A living guide to RaidGuild identity across brand steward reigns and endorsed practices.",
 };
 
 export default function RootLayout({
