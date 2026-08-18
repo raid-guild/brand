@@ -520,6 +520,7 @@ const payload = {
         louchi: {
           source:
             "https://github.com/raid-guild/website/tree/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo",
+          characterStyleGuide: `${LIVE_BASE_URL}/images/reigns/louchi/character-style-guide.png`,
           direction:
             "Moebius-influenced speculative landscapes with cyan horizons, coral structures, and atmospheric detail.",
         },

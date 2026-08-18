@@ -147,16 +147,17 @@ export const brandSystemSchema = z.object({
           direction: z.string().min(1),
           hero: z.object({
             title: z.string().min(1),
-            src: z.string().url(),
+            src: z.union([z.string().url(), z.string().startsWith("/")]),
             alt: z.string().min(1),
             aspect: z.string().min(1),
           }).optional(),
           items: z.array(
             z.object({
               title: z.string().min(1),
-              src: z.string().url(),
+              src: z.union([z.string().url(), z.string().startsWith("/")]),
               alt: z.string().min(1),
               aspect: z.string().min(1),
+              kind: z.enum(["artwork", "art-direction"]).optional(),
             }),
           ).min(1),
         }),

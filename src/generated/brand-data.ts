@@ -1436,6 +1436,13 @@ export const BRAND_SYSTEM = {
           },
           "items": [
             {
+              "title": "Character Style Guide",
+              "src": "/images/reigns/louchi/character-style-guide.png",
+              "alt": "Louchi-era character art-direction sheet showing three RaidGuild explorers and guidance for their clean, flat, Moebius-influenced visual language",
+              "aspect": "aspect-[1746/2484]",
+              "kind": "art-direction"
+            },
+            {
               "title": "Sky Citadel",
               "src": "https://raw.githubusercontent.com/raid-guild/website/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo/sky-citadel.png",
               "alt": "A cloaked traveler overlooking a floating coral citadel",

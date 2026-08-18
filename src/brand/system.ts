@@ -324,6 +324,7 @@ const brandSystemSource = {
             aspect: "aspect-[3824/1632]",
           },
           items: [
+            { title: "Character Style Guide", src: "/images/reigns/louchi/character-style-guide.png", alt: "Louchi-era character art-direction sheet showing three RaidGuild explorers and guidance for their clean, flat, Moebius-influenced visual language", aspect: "aspect-[1746/2484]", kind: "art-direction" },
             { title: "Sky Citadel", src: "https://raw.githubusercontent.com/raid-guild/website/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo/sky-citadel.png", alt: "A cloaked traveler overlooking a floating coral citadel", aspect: "aspect-[972/1619]" },
             { title: "Protocol Garden", src: "https://raw.githubusercontent.com/raid-guild/website/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo/field-protocol-garden.png", alt: "A cartographer studying a luminous network city", aspect: "aspect-[971/1619]" },
             { title: "Signal Commons", src: "https://raw.githubusercontent.com/raid-guild/website/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo/field-signal-commons.png", alt: "A floating civic commons above the clouds", aspect: "aspect-[1122/1402]" },

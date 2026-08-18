@@ -22,6 +22,14 @@ export default function IllustrationsPage() {
   const collection =
     BRAND_SYSTEM.assets.illustrations.referenceCollections[brandReign.id];
   const hero = "hero" in collection ? collection.hero : null;
+  const artDirection = collection.items.find(
+    (illustration) =>
+      "kind" in illustration && illustration.kind === "art-direction",
+  );
+  const galleryItems = collection.items.filter(
+    (illustration) =>
+      !("kind" in illustration) || illustration.kind !== "art-direction",
+  );
 
   return (
     <div className="container-custom py-16">
@@ -66,6 +74,39 @@ export default function IllustrationsPage() {
           </section>
         ) : null}
 
+        {isLouchi && artDirection ? (
+          <section className="mb-14">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+              <div className="max-w-3xl">
+                <p className="type-label-sm mb-3 text-primary">Art Direction</p>
+                <h2 className="type-heading-lg">Character Style Guide</h2>
+                <p className="type-body-md mt-3 text-muted-foreground">
+                  Use this sheet when commissioning Louchi-era class and role
+                  characters. Preserve the flat color, readable silhouettes,
+                  restrained linework, and transparent output described here.
+                </p>
+              </div>
+              <Link
+                href={artDirection.src}
+                className="type-label-md text-primary hover:text-primary/80"
+                target="_blank"
+              >
+                Open full-resolution PNG
+              </Link>
+            </div>
+            <div className="overflow-hidden rounded-lg border border-border bg-white">
+              <Image
+                src={artDirection.src}
+                alt={artDirection.alt}
+                width={1746}
+                height={2484}
+                sizes="(min-width: 1280px) 1280px, 100vw"
+                className="h-auto w-full"
+              />
+            </div>
+          </section>
+        ) : null}
+
         <section>
           <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
             <h2 className="type-heading-lg">Reign Reference Set</h2>
@@ -74,7 +115,7 @@ export default function IllustrationsPage() {
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {collection.items.map((illustration) => (
+            {galleryItems.map((illustration) => (
               <article
                 key={illustration.src}
                 className="overflow-hidden rounded-lg border border-border bg-card text-card-foreground"
