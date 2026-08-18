@@ -2,148 +2,38 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { BRAND_SYSTEM } from "@/generated/brand-data";
 
 type IllustrationVariant = "color" | "bw";
-type IllustrationSize = "1440x1440" | "1080x1440" | "1440x550";
-type BackgroundVariant = "scroll100" | "moloch800" | "moloch500" | "scroll700";
+type IllustrationSize =
+  keyof typeof BRAND_SYSTEM.assets.illustrations.scenesBySize;
+type BackgroundVariant =
+  (typeof BRAND_SYSTEM.assets.illustrations.palettes)[number];
 
-interface Illustration {
-  name: string;
-  displayName: string;
-  sizes: IllustrationSize[];
-}
+const illustrationSizes = Object.keys(
+  BRAND_SYSTEM.assets.illustrations.scenesBySize,
+) as IllustrationSize[];
 
-const illustrations: Illustration[] = [
-  { name: "castle-flag", displayName: "Castle Flag", sizes: ["1440x1440"] },
-  { name: "castle-staff", displayName: "Castle Staff", sizes: ["1440x1440"] },
-  { name: "desk-work", displayName: "Desk Work", sizes: ["1440x1440"] },
-  { name: "forge-anvil", displayName: "Forge Anvil", sizes: ["1440x1440"] },
-  {
-    name: "forge-building",
-    displayName: "Forge Building",
-    sizes: ["1440x1440"],
-  },
-  { name: "forge-duo", displayName: "Forge Duo", sizes: ["1440x1440"] },
-  { name: "forge-fire", displayName: "Forge Fire", sizes: ["1440x1440"] },
-  { name: "forge-work", displayName: "Forge Work", sizes: ["1440x1440"] },
-  { name: "portal-arch", displayName: "Portal Arch", sizes: ["1440x1440"] },
-  { name: "ravens-flight", displayName: "Ravens Flight", sizes: ["1440x1440"] },
-  { name: "stairs-spiral", displayName: "Stairs Spiral", sizes: ["1440x1440"] },
-  {
-    name: "stone-monuments",
-    displayName: "Stone Monuments",
-    sizes: ["1440x1440"],
-  },
-  { name: "table-castle", displayName: "Table Castle", sizes: ["1440x1440"] },
-  { name: "tree-mech", displayName: "Tree Mech", sizes: ["1440x1440"] },
-  { name: "trio-arch", displayName: "Trio Arch", sizes: ["1440x1440"] },
-  { name: "trio-backs", displayName: "Trio Backs", sizes: ["1440x1440"] },
-  { name: "trio-beast", displayName: "Trio Beast", sizes: ["1440x1440"] },
-  { name: "trio-mountain", displayName: "Trio Mountain", sizes: ["1440x1440"] },
-  { name: "trio-orb", displayName: "Trio Orb", sizes: ["1440x1440"] },
-  { name: "trio-portal", displayName: "Trio Portal", sizes: ["1440x1440"] },
-  {
-    name: "trio-portraits",
-    displayName: "Trio Portraits",
-    sizes: ["1440x1440"],
-  },
-  { name: "trio-profiles", displayName: "Trio Profiles", sizes: ["1440x1440"] },
-  { name: "trio-warriors", displayName: "Trio Warriors", sizes: ["1440x1440"] },
-  { name: "trio-weapons", displayName: "Trio Weapons", sizes: ["1440x1440"] },
-  { name: "trio-wings", displayName: "Trio Wings", sizes: ["1440x1440"] },
-  { name: "warrior-solo", displayName: "Warrior Solo", sizes: ["1440x1440"] },
-  {
-    name: "warriors-armed",
-    displayName: "Warriors Armed",
-    sizes: ["1440x1440"],
-  },
-  {
-    name: "warriors-belts",
-    displayName: "Warriors Belts",
-    sizes: ["1440x1440"],
-  },
-  {
-    name: "warriors-casual",
-    displayName: "Warriors Casual",
-    sizes: ["1440x1440"],
-  },
-  {
-    name: "warriors-confident",
-    displayName: "Warriors Confident",
-    sizes: ["1440x1440"],
-  },
-  {
-    name: "warriors-forward",
-    displayName: "Warriors Forward",
-    sizes: ["1440x1440"],
-  },
-  {
-    name: "warriors-magic",
-    displayName: "Warriors Magic",
-    sizes: ["1440x1440"],
-  },
-  {
-    name: "warriors-masked",
-    displayName: "Warriors Masked",
-    sizes: ["1440x1440"],
-  },
-  {
-    name: "warriors-moloch",
-    displayName: "Warriors Moloch",
-    sizes: ["1440x1440"],
-  },
-  { name: "warriors-orbs", displayName: "Warriors Orbs", sizes: ["1440x1440"] },
-  {
-    name: "warriors-ready",
-    displayName: "Warriors Ready",
-    sizes: ["1440x1440"],
-  },
-  {
-    name: "warriors-standing",
-    displayName: "Warriors Standing",
-    sizes: ["1440x1440"],
-  },
-  {
-    name: "warriors-triangle",
-    displayName: "Warriors Triangle",
-    sizes: ["1440x1440"],
-  },
-  {
-    name: "warriors-white",
-    displayName: "Warriors White",
-    sizes: ["1440x1440"],
-  },
-  { name: "arch-gate", displayName: "Arch Gate", sizes: ["1080x1440"] },
-  { name: "book-orb", displayName: "Book Orb", sizes: ["1080x1440"] },
-  {
-    name: "compass-circular",
-    displayName: "Compass Circular",
-    sizes: ["1080x1440"],
-  },
-  { name: "raven-solo", displayName: "Raven Solo", sizes: ["1080x1440"] },
-  { name: "stairs-cloud", displayName: "Stairs Cloud", sizes: ["1080x1440"] },
-  { name: "stairs-curve", displayName: "Stairs Curve", sizes: ["1080x1440"] },
-  { name: "stairs-twist", displayName: "Stairs Twist", sizes: ["1080x1440"] },
-  {
-    name: "stone-pedestal",
-    displayName: "Stone Pedestal",
-    sizes: ["1080x1440"],
-  },
-  {
-    name: "tower-floating",
-    displayName: "Tower Floating",
-    sizes: ["1080x1440"],
-  },
-  {
-    name: "tower-platform",
-    displayName: "Tower Platform",
-    sizes: ["1080x1440"],
-  },
-  { name: "tower-tree", displayName: "Tower Tree", sizes: ["1080x1440"] },
-  { name: "tree-island", displayName: "Tree Island", sizes: ["1080x1440"] },
-  { name: "ship-front", displayName: "Ship Front", sizes: ["1440x550"] },
-  { name: "ship-mech", displayName: "Ship Mech", sizes: ["1440x550"] },
-];
+const backgroundLabels: Record<BackgroundVariant, string> = {
+  moloch500: "Moloch 500",
+  moloch800: "Moloch 800",
+  scroll100: "Scroll 100",
+  scroll700: "Scroll 700",
+};
+
+const illustrations = Object.entries(
+  BRAND_SYSTEM.assets.illustrations.scenesBySize,
+).flatMap(([size, collection]) =>
+  collection.scenes.map((name) => ({
+    name,
+    displayName: name
+      .split("-")
+      .map((word) => word[0].toUpperCase() + word.slice(1))
+      .join(" "),
+    sizes: [size as IllustrationSize],
+  })),
+);
 
 export default function IllustrationGallery() {
   const [selectedIllustration, setSelectedIllustration] = useState(
@@ -185,106 +75,49 @@ export default function IllustrationGallery() {
       <div className="flex-1 flex flex-col gap-4">
         {/* Controls */}
         <div className="flex flex-wrap gap-4 items-center">
-          {/* Size Filter */}
-          <div className="flex gap-2 border border-border rounded-lg p-1">
-            <button
-              onClick={() => setSize("1440x1440")}
-              className={`px-4 py-2 rounded type-body-sm transition-colors ${
-                size === "1440x1440"
-                  ? "bg-primary text-primary-foreground"
-                  : "hover:bg-muted"
-              }`}
-            >
-              1440x1440
-            </button>
-            <button
-              onClick={() => setSize("1080x1440")}
-              className={`px-4 py-2 rounded type-body-sm transition-colors ${
-                size === "1080x1440"
-                  ? "bg-primary text-primary-foreground"
-                  : "hover:bg-muted"
-              }`}
-            >
-              1080x1440
-            </button>
-            <button
-              onClick={() => setSize("1440x550")}
-              className={`px-4 py-2 rounded type-body-sm transition-colors ${
-                size === "1440x550"
-                  ? "bg-primary text-primary-foreground"
-                  : "hover:bg-muted"
-              }`}
-            >
-              1440x550
-            </button>
+          <div className="flex gap-2 rounded-lg border border-border p-1">
+            {illustrationSizes.map((option) => (
+              <Button
+                key={option}
+                type="button"
+                size="sm"
+                variant={size === option ? "primary" : "ghost"}
+                onClick={() => setSize(option)}
+              >
+                {option}
+              </Button>
+            ))}
           </div>
 
-          {/* Variant Toggle */}
-          <div className="flex gap-2 border border-border rounded-lg p-1">
-            <button
-              onClick={() => setVariant("color")}
-              className={`px-4 py-2 rounded type-body-sm transition-colors ${
-                variant === "color"
-                  ? "bg-primary text-primary-foreground"
-                  : "hover:bg-muted"
-              }`}
-            >
-              Color
-            </button>
-            <button
-              onClick={() => setVariant("bw")}
-              className={`px-4 py-2 rounded type-body-sm transition-colors ${
-                variant === "bw"
-                  ? "bg-primary text-primary-foreground"
-                  : "hover:bg-muted"
-              }`}
-            >
-              Black & White
-            </button>
+          <div className="flex gap-2 rounded-lg border border-border p-1">
+            {([
+              ["color", "Color"],
+              ["bw", "Black & White"],
+            ] as const).map(([option, label]) => (
+              <Button
+                key={option}
+                type="button"
+                size="sm"
+                variant={variant === option ? "primary" : "ghost"}
+                onClick={() => setVariant(option)}
+              >
+                {label}
+              </Button>
+            ))}
           </div>
 
-          {/* Background Variant Toggle */}
-          <div className="flex gap-2 border border-border rounded-lg p-1">
-            <button
-              onClick={() => setBackground("scroll100")}
-              className={`px-4 py-2 rounded type-body-sm transition-colors ${
-                background === "scroll100"
-                  ? "bg-primary text-primary-foreground"
-                  : "hover:bg-muted"
-              }`}
-            >
-              Scroll 100
-            </button>
-            <button
-              onClick={() => setBackground("scroll700")}
-              className={`px-4 py-2 rounded type-body-sm transition-colors ${
-                background === "scroll700"
-                  ? "bg-primary text-primary-foreground"
-                  : "hover:bg-muted"
-              }`}
-            >
-              Scroll 700
-            </button>
-            <button
-              onClick={() => setBackground("moloch500")}
-              className={`px-4 py-2 rounded type-body-sm transition-colors ${
-                background === "moloch500"
-                  ? "bg-primary text-primary-foreground"
-                  : "hover:bg-muted"
-              }`}
-            >
-              Moloch 500
-            </button>
-            <button
-              onClick={() => setBackground("moloch800")}
-              className={`px-4 py-2 rounded type-body-sm transition-colors ${
-                background === "moloch800"
-                  ? "bg-primary text-primary-foreground"
-                  : "hover:bg-muted"
-              }`}
-            >
-              Moloch 800
-            </button>
+          <div className="flex flex-wrap gap-2 rounded-lg border border-border p-1">
+            {BRAND_SYSTEM.assets.illustrations.palettes.map((option) => (
+              <Button
+                key={option}
+                type="button"
+                size="sm"
+                variant={background === option ? "primary" : "ghost"}
+                onClick={() => setBackground(option)}
+              >
+                {backgroundLabels[option]}
+              </Button>
+            ))}
           </div>
         </div>
 
@@ -314,22 +147,17 @@ export default function IllustrationGallery() {
             </h3>
             <p className="type-body-sm text-muted-foreground">
               {size} • {variant === "color" ? "Full Color" : "Black & White"} •{" "}
-              {background === "scroll100"
-                ? "Scroll 100"
-                : background === "scroll700"
-                  ? "Scroll 700"
-                  : background === "moloch500"
-                    ? "Moloch 500"
-                    : "Moloch 800"}
+              {backgroundLabels[background]}
             </p>
           </div>
-          <a
-            href={getImagePath(selectedIllustration.name, variant, size, false)}
-            download
-            className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors type-body-sm"
-          >
-            Download
-          </a>
+          <Button asChild size="sm">
+            <a
+              href={getImagePath(selectedIllustration.name, variant, size, false)}
+              download
+            >
+              Download
+            </a>
+          </Button>
         </div>
       </div>
 

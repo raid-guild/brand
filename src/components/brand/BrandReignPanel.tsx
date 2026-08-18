@@ -14,7 +14,11 @@ export function BrandReignPanel() {
         <div>
           <div className="mb-4 flex flex-wrap items-center gap-3 type-label-sm">
             <span className="rounded-full bg-primary px-3 py-1 text-primary-foreground">
-              {brandReign.status === "latest" ? "Latest reign" : "Archived reign"}
+              {brandReign.status === "latest"
+                ? "Latest reign"
+                : brandReign.status === "reconstructed"
+                  ? "Reconstructed reign"
+                  : "Archived reign"}
             </span>
             <span className="text-muted-foreground">Stewarded era</span>
           </div>

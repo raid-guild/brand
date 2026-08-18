@@ -1,6 +1,6 @@
 # Brand System Consolidation Implementation Handoff
 
-Status: Proposed implementation specification  
+Status: In progress — Phases 0 and 1 implemented; Phase 2 is next
 Prepared: 2026-08-18  
 Baseline branch: `feat/versioned-brand-reigns`  
 Baseline commit: `db32a52`  
@@ -588,6 +588,13 @@ Do not require all 848 legacy illustrations to download during ordinary pull-req
 | Asset host | Versioned object storage/CDN with immutable caching | Engineering / operations |
 | Component distribution | shadcn registry before compiled package | Engineering |
 | Stable component set | Begin with primitives; review compositions individually | Design and engineering |
+
+### Recorded Phase 0 Decisions
+
+- Moloch 100 is `#f1efee`, matching the current CSS and agent-facing brand guidance.
+- npm is the project package manager; `package-lock.json` is canonical and the Bun lockfiles are removed.
+- The application package name is `raidguild-brand`.
+- The standalone Separator entry remains out of the component contract until a component is implemented.
 
 Record decisions in this document or in short architecture decision records before implementing dependent phases.
 

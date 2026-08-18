@@ -15,7 +15,7 @@ export const maziusDisplay = localFont({
       style: "bold",
     },
   ],
-  variable: "--font-display",
+  variable: "--font-mazius-display",
   display: "swap",
 });
 
@@ -33,13 +33,13 @@ export const ebGaramond = localFont({
       style: "italic",
     },
   ],
-  variable: "--font-body",
+  variable: "--font-eb-garamond",
   display: "swap",
 });
 
 export const ubuntuMono = Ubuntu_Mono({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-ubuntu-mono",
   weight: ["400", "700"],
   display: "swap",
 });

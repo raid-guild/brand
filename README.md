@@ -10,12 +10,20 @@ RaidGuild's architecture has two independent axes: **steward reigns** version th
 
 Implementation planning: [`docs/brand-system-implementation-handoff.md`](docs/brand-system-implementation-handoff.md) consolidates the architecture audit, structured source-of-truth work, Storybook rollout, asset contract, testing, and downstream distribution plan.
 
+Brand-system checks:
+
+```bash
+npm run generate:brand
+npm run check:brand
+npm run test:brand
+```
+
 Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://github.com/raid-guild/brand)
 
 ## For AI Agents
 
 - Load `AGENTS.md` into your assistant context before generating UI or copy. It condenses tokens, components, assets, and prompting rules.
-- When updating brand tokens, components, or asset paths, keep `AGENTS.md` in sync so agents stay accurate.
+- Update canonical data in `src/brand/system.ts`, run `npm run generate:brand`, and keep `AGENTS.md` in sync so agents stay accurate. Use `npm run check:brand` to detect stale generated artifacts.
 
 ## Paid Machine API
 
@@ -43,8 +51,9 @@ X402_FACILITATOR_URL=https://x402.org/facilitator
 
 The current configuration targets Base Sepolia. The discovery document is
 public; the full payload is returned only after successful payment. Update the
-payload in `src/lib/machine-api/brand-guidelines.ts` whenever tokens, guidance,
-components, or asset paths change.
+canonical source in `src/brand/system.ts` and run `npm run generate:brand`
+whenever tokens, components, or asset paths change. Keep narrative guidance in
+`src/lib/machine-api/brand-guidelines.ts` aligned with that generated data.
 
 ## Setting Up a New App with RaidGuild Brand Guidelines
 
@@ -67,19 +76,20 @@ Create a `public/fonts/` directory and add the RaidGuild brand fonts:
 ```
 public/
   fonts/
-    ├── MAZIUSREVIEW20.09-Regular.otf
     ├── MAZIUSREVIEW20.09-Regular.woff
+    ├── MaziusDisplay-Bold.otf
     ├── EBGaramond-VariableFont_wght.ttf
     └── EBGaramond-Italic-VariableFont_wght.ttf
 ```
 
-Copy `src/lib/fonts.ts`: into your project.
+Copy `src/lib/fonts.ts` into your project.
 
 Update your `src/app/layout.tsx` to include the fonts:
 
 ```typescript
 import type { Metadata } from "next";
 import { maziusDisplay, ebGaramond, ubuntuMono } from "@/lib/fonts";
+import { ThemeProvider } from "@/lib/theme-context";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -93,22 +103,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-brand-reign="louchi">
       <body
         className={`${maziusDisplay.variable} ${ebGaramond.variable} ${ubuntuMono.variable}`}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
 }
 ```
 
-### 2. Update Global CSS
+### 3. Update Global CSS
 
-Replace your `src/app/globals.css` with the RaidGuild brand styles from the globall.css file in this repo.
+Copy both `src/app/globals.css` and `src/generated/brand-tokens.css`; the former contains Tailwind mappings and handwritten utilities, while the latter is generated from `src/brand/system.ts`.
 
-### 3. Add Components
+### 4. Add Components
 
 #### EXAMPLE
 
@@ -158,14 +168,14 @@ import { Switch } from "@/components/ui/switch";
 export default function HomePage() {
   return (
     <div className="container-custom py-16">
-      <h1 className="text-display-lg mb-8">Welcome to RaidGuild</h1>
-      <p className="text-body-lg text-muted-foreground mb-8">
+      <h1 className="type-display-lg mb-8">Welcome to RaidGuild</h1>
+      <p className="type-body-lg text-muted-foreground mb-8">
         Built with the RaidGuild brand guidelines
       </p>
 
       <div className="flex items-center space-x-2">
         <Switch id="example-switch" />
-        <label htmlFor="example-switch" className="text-body-base">
+        <label htmlFor="example-switch" className="type-body-md">
           Example switch component
         </label>
       </div>
@@ -174,14 +184,15 @@ export default function HomePage() {
 }
 ```
 
-### 4. Available Typography Classes
+### 5. Available Typography Classes
 
-- **Display**: `.text-display-lg`, `.text-display-md`, `.text-display-sm`
-- **Headings**: `.text-heading-lg`, `.text-heading-md`
-- **Body**: `.text-body-lg`, `.text-body-base`, `.text-body-sm`
-- **Labels**: `.text-label` (uppercase with letter spacing)
+- **Display**: `.type-display-lg`, `.type-display-md`, `.type-display-sm`
+- **Headings**: `.type-heading-lg`, `.type-heading-md`, `.type-heading-sm`
+- **Body**: `.type-body-lg`, `.type-body-md`, `.type-body-sm`
+- **Labels**: `.type-label`, `.type-label-md`, `.type-label-sm`
+- **Code**: `.type-code-lg`, `.type-code-md`, `.type-code-sm`
 
-### 5. Available Color Classes
+### 6. Available Color Classes
 
 The brand includes two main color palettes:
 
@@ -190,11 +201,11 @@ The brand includes two main color palettes:
 
 Use with Tailwind classes like `bg-moloch-400`, `text-scroll-600`, etc.
 
-### 6. Grid System
+### 7. Grid System
 
 Use `.container-custom` for consistent max-width and padding, and `.grid-custom` for responsive grid layouts that adapt from 4 columns (mobile) to 12 columns (desktop).
 
-### 7. UI Components Catalog
+### 8. UI Components Catalog
 
 A comprehensive catalog of all available UI components is available in `docs/ui-components.md`. This document is **essential** when working with LLM developer agents.
 

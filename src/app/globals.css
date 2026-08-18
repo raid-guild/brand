@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "../generated/brand-tokens.css";
 
 @font-face {
   font-family: "RG Alchemion";
@@ -98,19 +99,15 @@
   --letter-spacing-code-sm: 0em; /* 0% */
 
   /* Font Families */
-  --font-display: var(--font-display);
-  --font-body: var(--font-body);
-  --font-mono: var(--font-mono);
+  --font-display: var(--font-mazius-display);
+  --font-body: var(--font-eb-garamond);
+  --font-mono: var(--font-ubuntu-mono);
 
   /* Grid System */
   --grid-column-width: 5.75rem; /* 92px */
   --grid-gap: 1rem; /* 16px */
   --container-padding: 1rem; /* 16px */
-  --container-padding-mobile: 0.25rem; /* 4px */
   --container-max-width: 80rem; /* 1280px */
-  --container-width-mobile: 26rem; /* 416px */
-  --container-width-tablet: 53rem; /* 848px */
-  --container-width-desktop: 80rem; /* 1280px */
 
   /* Shadcn Colors */
   --color-background: var(--background);
@@ -150,305 +147,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-:root {
-  --radius: 0.625rem;
-
-  /* Brand Colors - Moloch */
-  --moloch-100: #f1efee;
-  --moloch-200: #efc5bb;
-  --moloch-300: #e39b8b;
-  --moloch-400: #d25c41;
-  --moloch-500: #bd482d;
-  --moloch-600: #8b3521;
-  --moloch-700: #5c2316;
-  --moloch-800: #29100a;
-
-  /* Brand Colors - Scroll */
-  --scroll-100: #f9f7e7;
-  --scroll-200: #ece5ac;
-  --scroll-300: #dccd6a;
-  --scroll-400: #d2c141;
-  --scroll-500: #b5a22c;
-  --scroll-600: #837820;
-  --scroll-700: #534a13;
-  --scroll-800: #211e07;
-
-  /* Brand Colors - Neutral */
-  --neutral-100: #f1efee;
-  --neutral-200: #d5cecd;
-  --neutral-300: #b9aeac;
-  --neutral-400: #9e8e8a;
-  --neutral-500: #806f6b;
-  --neutral-600: #645754;
-  --neutral-700: #433937;
-  --neutral-800: #221d1c;
-  --neutral-white: #fafafa;
-  --neutral-black: #0d0d0d;
-
-  /* Light Theme - Using brand colors */
-  --background: var(--scroll-100);
-  --foreground: var(--moloch-800);
-  --card: var(--scroll-100);
-  --card-foreground: var(--moloch-800);
-  --popover: var(--scroll-100);
-  --popover-foreground: var(--moloch-800);
-  --primary: var(--moloch-500);
-  --primary-foreground: var(--scroll-100);
-  --secondary: var(--neutral-100);
-  --secondary-foreground: var(--moloch-800);
-  --muted: var(--neutral-100);
-  --muted-foreground: var(--neutral-600);
-  --accent: var(--moloch-500);
-  --accent-foreground: var(--scroll-100);
-  --destructive: var(--moloch-300);
-  --border: var(--neutral-200);
-  --input: var(--neutral-200);
-  --ring: var(--moloch-500);
-  --chart-1: var(--moloch-500);
-  --chart-2: var(--moloch-600);
-  --chart-3: var(--scroll-500);
-  --chart-4: var(--scroll-600);
-  --chart-5: var(--neutral-500);
-  --sidebar: var(--scroll-100);
-  --sidebar-foreground: var(--moloch-800);
-  --sidebar-primary: var(--moloch-500);
-  --sidebar-primary-foreground: var(--scroll-100);
-  --sidebar-accent: var(--neutral-100);
-  --sidebar-accent-foreground: var(--moloch-800);
-  --sidebar-border: var(--neutral-200);
-  --sidebar-ring: var(--moloch-500);
-
-  /* Steward reign metadata (Suede fallback) */
-  --reign-ink: #29100a;
-  --reign-deep: #29100a;
-  --reign-field: #f9f7e7;
-  --reign-signal: #bd482d;
-  --reign-highlight: #534a13;
-}
-
-/*
- * Brand reigns are versioned expressions, not replacements for RaidGuild's
- * durable identity. Legacy Moloch/Scroll aliases remain available so existing
- * components can inherit a selected reign without duplicating the guide.
- */
-[data-brand-reign="louchi"] {
-  --moloch-100: #e7f4f3;
-  --moloch-200: #b8e0df;
-  --moloch-300: #78c5c3;
-  --moloch-400: #ee709a;
-  --moloch-500: #ee3c78;
-  --moloch-600: #b84067;
-  --moloch-700: #315654;
-  --moloch-800: #0a292b;
-  --scroll-100: #efe9d7;
-  --scroll-200: #e5dfc8;
-  --scroll-300: #d7e34d;
-  --scroll-400: #c7d13f;
-  --scroll-500: #9fa82f;
-  --scroll-600: #667325;
-  --scroll-700: #102d2c;
-  --scroll-800: #071c1d;
-  --neutral-100: #e7eeea;
-  --neutral-200: #cbd9d3;
-  --neutral-300: #a7bdb7;
-  --neutral-400: #799590;
-  --neutral-500: #58746f;
-  --neutral-600: #3e5d59;
-  --neutral-700: #274440;
-  --neutral-800: #102d2c;
-  --neutral-white: #fffdf5;
-  --neutral-black: #060609;
-  --background: var(--scroll-100);
-  --foreground: var(--scroll-700);
-  --card: #f5f0e2;
-  --card-foreground: var(--scroll-700);
-  --popover: #f5f0e2;
-  --popover-foreground: var(--scroll-700);
-  --primary: var(--moloch-500);
-  --primary-foreground: var(--scroll-100);
-  --secondary: var(--moloch-200);
-  --secondary-foreground: var(--scroll-700);
-  --muted: #e2e9df;
-  --muted-foreground: #3e5d59;
-  --accent: var(--scroll-300);
-  --accent-foreground: var(--scroll-700);
-  --destructive: #b84031;
-  --border: #9db2ac;
-  --input: #9db2ac;
-  --ring: var(--moloch-500);
-  --chart-1: var(--moloch-500);
-  --chart-2: var(--moloch-300);
-  --chart-3: var(--scroll-300);
-  --chart-4: #b84031;
-  --chart-5: var(--scroll-700);
-  --sidebar: var(--scroll-100);
-  --sidebar-foreground: var(--scroll-700);
-  --sidebar-primary: var(--moloch-500);
-  --sidebar-primary-foreground: var(--scroll-100);
-  --sidebar-accent: var(--moloch-200);
-  --sidebar-accent-foreground: var(--scroll-700);
-  --sidebar-border: #9db2ac;
-  --sidebar-ring: var(--moloch-500);
-  --reign-ink: #102d2c;
-  --reign-deep: #0a292b;
-  --reign-field: #b8e0df;
-  --reign-signal: #ee3c78;
-  --reign-highlight: #d7e34d;
-}
-
-[data-brand-reign="suede"] {
-  --reign-ink: #29100a;
-  --reign-deep: #29100a;
-  --reign-field: #f9f7e7;
-  --reign-signal: #bd482d;
-  --reign-highlight: #534a13;
-}
-
-[data-brand-reign="tw"] {
-  --moloch-100: #f4ded7;
-  --moloch-200: #e6b7a9;
-  --moloch-300: #d78d76;
-  --moloch-400: #c76548;
-  --moloch-500: #a8452c;
-  --moloch-600: #813420;
-  --moloch-700: #542116;
-  --moloch-800: #29100a;
-  --scroll-100: #f9f7e7;
-  --scroll-200: #eee9c8;
-  --scroll-300: #e0d889;
-  --scroll-400: #c8bc55;
-  --scroll-500: #a89b37;
-  --scroll-600: #7a6f26;
-  --scroll-700: #534a13;
-  --scroll-800: #211e07;
-  --background: var(--moloch-500);
-  --foreground: var(--moloch-800);
-  --card: var(--scroll-100);
-  --card-foreground: var(--moloch-800);
-  --popover: var(--scroll-100);
-  --popover-foreground: var(--moloch-800);
-  --primary: var(--moloch-800);
-  --primary-foreground: var(--scroll-100);
-  --secondary: var(--scroll-100);
-  --secondary-foreground: var(--moloch-800);
-  --muted: #c9654d;
-  --muted-foreground: var(--moloch-800);
-  --accent: var(--scroll-100);
-  --accent-foreground: var(--moloch-800);
-  --destructive: #742618;
-  --border: #29100a4d;
-  --input: #29100a4d;
-  --ring: var(--scroll-100);
-  --reign-ink: #29100a;
-  --reign-deep: #29100a;
-  --reign-field: #f9f7e7;
-  --reign-signal: #a8452c;
-  --reign-highlight: #f9f7e7;
-}
-
-[data-brand-reign="tw"] body {
-  --font-display: "RG Alchemion", Arial, sans-serif;
-  --font-body: "RG Fratelli", Arial, sans-serif;
-}
-
-/*
- * Ven archive reconstruction. Exact palette values are sampled from the
- * surviving RG UI colour sheet; semantic mappings recreate its high-contrast
- * black/pink design-system posture without claiming a complete source system.
- */
-[data-brand-reign="ven"] {
-  --moloch-100: #ffe5eb;
-  --moloch-200: #ffbdcc;
-  --moloch-300: #ff85a0;
-  --moloch-400: #ff5d82;
-  --moloch-500: #ff3864;
-  --moloch-600: #d9244e;
-  --moloch-700: #8f1735;
-  --moloch-800: #000000;
-  --scroll-100: #ffffff;
-  --scroll-200: #f1f1f2;
-  --scroll-300: #fcfb75;
-  --scroll-400: #e9e85f;
-  --scroll-500: #b6b63e;
-  --scroll-600: #77772b;
-  --scroll-700: #2b2c34;
-  --scroll-800: #000000;
-  --neutral-100: #ffffff;
-  --neutral-200: #dedee2;
-  --neutral-300: #b6b6be;
-  --neutral-400: #878893;
-  --neutral-500: #686974;
-  --neutral-600: #4b4c56;
-  --neutral-700: #2b2c34;
-  --neutral-800: #000000;
-  --neutral-white: #ffffff;
-  --neutral-black: #000000;
-  --background: #000000;
-  --foreground: #ffffff;
-  --card: #2b2c34;
-  --card-foreground: #ffffff;
-  --popover: #2b2c34;
-  --popover-foreground: #ffffff;
-  --primary: #ff3864;
-  --primary-foreground: #000000;
-  --secondary: #b66ad6;
-  --secondary-foreground: #000000;
-  --muted: #2b2c34;
-  --muted-foreground: #dedee2;
-  --accent: #fcfb75;
-  --accent-foreground: #000000;
-  --destructive: #d9244e;
-  --border: #686974;
-  --input: #686974;
-  --ring: #ff3864;
-  --reign-ink: #ff3864;
-  --reign-deep: #000000;
-  --reign-field: #ffffff;
-  --reign-signal: #ff3864;
-  --reign-highlight: #fcfb75;
-}
-
-.dark {
-  /* Dark Theme - added here */
-  --background: var(--moloch-800);
-  --foreground: var(--scroll-100);
-}
-
-.dark[data-brand-reign="louchi"] {
-  --background: var(--moloch-800);
-  --foreground: var(--scroll-100);
-  --card: #102d2c;
-  --card-foreground: var(--scroll-100);
-  --popover: #102d2c;
-  --popover-foreground: var(--scroll-100);
-  --muted: #274440;
-  --muted-foreground: #b8e0df;
-  --border: #58746f;
-  --input: #58746f;
-}
-
-.dark[data-brand-reign="tw"] {
-  --background: var(--moloch-800);
-  --foreground: var(--scroll-100);
-  --muted: var(--moloch-700);
-  --muted-foreground: var(--scroll-200);
-  --border: #f9f7e74d;
-  --input: #f9f7e74d;
-}
-
-.dark[data-brand-reign="ven"] {
-  --background: #000000;
-  --foreground: #ffffff;
-  --card: #2b2c34;
-  --card-foreground: #ffffff;
-  --popover: #2b2c34;
-  --popover-foreground: #ffffff;
-  --primary-foreground: #000000;
-  --muted: #2b2c34;
-  --muted-foreground: #dedee2;
-  --border: #686974;
-  --input: #686974;
-}
 
 @layer base {
   * {
@@ -456,7 +154,14 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-variant: normal;
+    font-variant-caps: normal;
+    font-feature-settings: "smcp" 0, "c2sc" 0, "pcap" 0, "c2pc" 0;
     transition: background-color 240ms ease, color 240ms ease;
+  }
+  strong,
+  b {
+    font-weight: inherit;
   }
 }
 
@@ -611,7 +316,7 @@
 
   @media (min-width: 1024px) {
     .container-custom {
-      max-width: var(--container-width-desktop);
+      max-width: var(--container-max-width);
       padding-left: 0;
       padding-right: 0;
     }

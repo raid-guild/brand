@@ -64,7 +64,7 @@ The **black crossed swords** are the canonical master mark and the only currentl
 
 The following Moloch and Scroll system is the **Suede archive**, preserved for projects using that reign.
 
-The primary palette is a warm, high-contrast combination of red, off-black, and off-white — warm and energetic, meant to inspire action. All colors are defined as CSS custom properties in `src/app/globals.css`.
+The primary palette is a warm, high-contrast combination of red, off-black, and off-white — warm and energetic, meant to inspire action. Canonical values live in `src/brand/system.ts` and are emitted as CSS custom properties in `src/generated/brand-tokens.css`.
 
 **Primary colors (use these first):**
 
@@ -79,7 +79,7 @@ The primary palette is a warm, high-contrast combination of red, off-black, and 
 
 | Step | Hex |
 | --- | --- |
-| Moloch 100 | `#FAEEEB` |
+| Moloch 100 | `#F1EFEE` |
 | Moloch 200 | `#EFC5BB` |
 | Moloch 300 | `#E39B8B` |
 | Moloch 400 | `#D25C41` |
@@ -118,7 +118,7 @@ The primary palette is a warm, high-contrast combination of red, off-black, and 
 
 **Semantic mapping (light theme):** background `Scroll 100`, foreground `Moloch 800`, primary `Moloch 500` on `Scroll 100`, secondary/muted `Neutral 100` with `Neutral 600` text, accent `Moloch 500`, border/input `Neutral 200`, focus ring `Moloch 500`. Dark theme flips background to `Moloch 800` with `Scroll 100` text. Prefer Tailwind utilities: `bg-moloch-500`, `text-scroll-100`, etc.
 
-- Tokens source (raw CSS bytes): `https://raw.githubusercontent.com/raid-guild/brand/main/src/app/globals.css` (browse: <https://github.com/raid-guild/brand/blob/main/src/app/globals.css>)
+- Generated tokens (raw CSS bytes): `https://raw.githubusercontent.com/raid-guild/brand/main/src/generated/brand-tokens.css` (canonical data: <https://github.com/raid-guild/brand/blob/main/src/brand/system.ts>)
 
 ### 2.2 Typography
 
@@ -142,10 +142,8 @@ Louchi retains the Suede font families but changes their composition: larger Maz
 | Heading Large | 36px | 120% | 0% | `type-heading-lg` |
 | Heading Medium | 28px | 130% | 0% | `type-heading-md` |
 | Body Large | 20px | 140% | 0% | `type-body-lg` |
-| Body Base | 16px | 160% | 0% | `text-body-base` |
+| Body Medium | 16px | 160% | 0% | `type-body-md` |
 | Body Small | 12px | 160% | 0% | `type-body-sm` |
-
-> Note the exception: Body Base uses `text-body-base` (not `type-body-base`). All other tokens follow the `type-*` convention.
 
 Additional utility classes available: `type-heading-sm`, `type-body-md`, `type-label`, `type-label-md`, `type-label-sm`, `type-code-lg`, `type-code-md`, `type-code-sm`.
 

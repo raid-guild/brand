@@ -1,16 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { BRAND_SYSTEM } from "@/generated/brand-data";
 import { useTheme } from "@/lib/theme-context";
 
-const TYPE_SCALE = [
-  { name: "Display Large", className: "type-display-lg", detail: "80px / 110% / -2%" },
-  { name: "Display Medium", className: "type-display-md", detail: "60px / 120% / -1%" },
-  { name: "Display Small", className: "type-display-sm", detail: "48px / 120% / 0%" },
-  { name: "Heading Large", className: "type-heading-lg", detail: "36px / 120% / 0%" },
-  { name: "Heading Medium", className: "type-heading-md", detail: "28px / 130% / 0%" },
-  { name: "Body Large", className: "type-body-lg", detail: "20px / 140% / 0%" },
-] as const;
+const TYPE_SCALE = BRAND_SYSTEM.typography.scale.map((token) => ({
+  name: token.token,
+  className: token.className,
+  detail: `${token.sizePx}px / ${token.lineHeight * 100}% / ${token.letterSpacing}`,
+}));
 
 export default function TypographyPage() {
   const { brandReign } = useTheme();

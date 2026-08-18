@@ -3,58 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import IllustrationGallery from "@/components/illustrations/IllustrationGallery";
+import { BRAND_SYSTEM } from "@/generated/brand-data";
 import { useTheme } from "@/lib/theme-context";
 
-const LOUCHI_COMMIT = "6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65";
-const LOUCHI_RAW = `https://raw.githubusercontent.com/raid-guild/website/${LOUCHI_COMMIT}/public/images/neo`;
-
-const LOUCHI_ILLUSTRATIONS = [
-  {
-    title: "Sky Citadel",
-    src: `${LOUCHI_RAW}/sky-citadel.png`,
-    alt: "A cloaked traveler overlooking a floating coral citadel",
-    aspect: "aspect-[972/1619]",
-  },
-  {
-    title: "Protocol Garden",
-    src: `${LOUCHI_RAW}/field-protocol-garden.png`,
-    alt: "A cartographer studying a luminous network city",
-    aspect: "aspect-[971/1619]",
-  },
-  {
-    title: "Signal Commons",
-    src: `${LOUCHI_RAW}/field-signal-commons.png`,
-    alt: "A floating civic commons above the clouds",
-    aspect: "aspect-[1122/1402]",
-  },
-  {
-    title: "Autonomous Treasury",
-    src: `${LOUCHI_RAW}/field-autonomous-treasury.png`,
-    alt: "Engineers inspecting a monumental autonomous treasury",
-    aspect: "aspect-[1003/1568]",
-  },
-] as const;
-
-const TW_ILLUSTRATIONS = [
-  {
-    title: "Witchcraft 08",
-    src: "https://www.raidguild.org/witch/images/witchcraft-08_0-15-1.png",
-    alt: "TW-era RaidGuild witchcraft illustration",
-    aspect: "aspect-[2544/2944]",
-  },
-  {
-    title: "Witchcraft 05",
-    src: "https://www.raidguild.org/witch/images/witchcraft-05_0-20.png",
-    alt: "TW-era surreal fantasy landscape",
-    aspect: "aspect-[6667/5417]",
-  },
-  {
-    title: "Witchcraft 04",
-    src: "https://www.raidguild.org/witch/images/witchcraft-04_0-2.png",
-    alt: "TW-era graphic fantasy scene",
-    aspect: "aspect-[6667/5417]",
-  },
-] as const;
 
 export default function IllustrationsPage() {
   const { brandReign } = useTheme();
@@ -64,11 +15,13 @@ export default function IllustrationsPage() {
   }
 
   if (brandReign.id === "ven") {
-    return <VenIllustrations />;
+    return <VenIllustrations palette={brandReign.palette} />;
   }
 
   const isLouchi = brandReign.id === "louchi";
-  const illustrations = isLouchi ? LOUCHI_ILLUSTRATIONS : TW_ILLUSTRATIONS;
+  const collection =
+    BRAND_SYSTEM.assets.illustrations.referenceCollections[brandReign.id];
+  const hero = "hero" in collection ? collection.hero : null;
 
   return (
     <div className="container-custom py-16">
@@ -77,9 +30,7 @@ export default function IllustrationsPage() {
           <p className="type-label-sm mb-3 text-primary">{brandReign.label}</p>
           <h1 className="type-display-lg mb-6">Illustrations</h1>
           <p className="type-body-lg mb-8 text-muted-foreground">
-            {isLouchi
-              ? "Expansive speculative landscapes place RaidGuild builders inside unfamiliar, optimistic worlds. The compositions pair fine atmospheric detail with bold coral structures and cyan horizons—a distinctly Moebius-influenced direction."
-              : "The TW reign used surreal witchcraft scenes, dense graphic symbols, and high-energy crops. Rust, parchment, oversized type, and playful motion turned the guild into a strange, kinetic spellbook."}
+            {collection.direction}
           </p>
           <div className="rounded-lg border border-primary/20 bg-primary/10 p-6">
             <p className="type-body-md mb-3">
@@ -96,12 +47,12 @@ export default function IllustrationsPage() {
           </div>
         </div>
 
-        {isLouchi ? (
+        {isLouchi && hero ? (
           <section className="mb-14 overflow-hidden rounded-lg border border-border bg-[var(--reign-deep)]">
-            <div className="relative aspect-[3824/1632] w-full">
+            <div className={`relative w-full ${hero.aspect}`}>
               <Image
-                src={`${LOUCHI_RAW}/raidguild-panorama.png`}
-                alt="A panoramic view of the Louchi-era RaidGuild world"
+                src={hero.src}
+                alt={hero.alt}
                 fill
                 priority
                 sizes="(min-width: 1280px) 1280px, 100vw"
@@ -109,7 +60,7 @@ export default function IllustrationsPage() {
               />
             </div>
             <div className="flex items-center justify-between gap-4 p-5 text-[var(--reign-field)]">
-              <h2 className="type-heading-sm">RaidGuild Panorama</h2>
+              <h2 className="type-heading-sm">{hero.title}</h2>
               <span className="type-code-sm">Venture Beyond / 2026</span>
             </div>
           </section>
@@ -123,7 +74,7 @@ export default function IllustrationsPage() {
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {illustrations.map((illustration) => (
+            {collection.items.map((illustration) => (
               <article
                 key={illustration.src}
                 className="overflow-hidden rounded-lg border border-border bg-card text-card-foreground"
@@ -152,17 +103,24 @@ export default function IllustrationsPage() {
   );
 }
 
-function VenIllustrations() {
-  const primary = [
-    { name: "Black", value: "#000000", rgb: "0 / 0 / 0" },
-    { name: "Raid Pink", value: "#FF3864", rgb: "255 / 56 / 100" },
-    { name: "White", value: "#FFFFFF", rgb: "255 / 255 / 255" },
-  ];
-  const secondary = [
-    { name: "Graphite", value: "#2B2C34", rgb: "43 / 44 / 52" },
-    { name: "Violet", value: "#B66AD6", rgb: "182 / 106 / 214" },
-    { name: "Signal Yellow", value: "#FCFB75", rgb: "252 / 251 / 117" },
-  ];
+function VenIllustrations({
+  palette,
+}: {
+  palette: readonly { name: string; value: string }[];
+}) {
+  const colors = palette.map((color) => {
+    const channels = color.value
+      .slice(1)
+      .match(/.{2}/g)
+      ?.map((channel) => Number.parseInt(channel, 16));
+
+    return {
+      ...color,
+      rgb: channels?.join(" / ") ?? "Unavailable",
+    };
+  });
+  const primary = colors.slice(0, 3);
+  const secondary = colors.slice(3);
 
   return (
     <div className="container-custom py-16">

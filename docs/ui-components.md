@@ -317,13 +317,6 @@ Collapsible content sections.
 
 ---
 
-#### **Separator** (if exists)
-Visual divider between content sections.
-
-**Use when:** You need to visually separate content areas.
-
----
-
 ### Overlay & Modal Components
 
 #### **Dialog** (`dialog.tsx`)
@@ -1063,4 +1056,3 @@ When using components, ensure:
 
 **Last Updated:** Generated from component analysis
 **Total Components:** 42+ UI components available
-

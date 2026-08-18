@@ -9,7 +9,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 - The black crossed-swords logomark is the canonical master mark and the only currently durable brand element.
 - The mark may use color variations for different tracks or programs. Even its geometry may evolve, but alterations must preserve recognition and be documented as a new mark version.
 - Wordmarks, lockups, palettes, typography, illustration, motion, and voice treatments belong to a named steward reign. Do not present one reign's expression as timeless RaidGuild canon.
-- The guide defaults to the latest available reign and stores the user's selection under `raidguild-brand-reign`. Reign definitions live in `src/lib/brand-reigns.ts`; CSS is selected with `data-brand-reign` on `<html>`.
+- The guide defaults to the latest available reign and stores the user's selection under `raidguild-brand-reign`. Canonical reign definitions live in `src/brand/system.ts`; `src/lib/brand-reigns.ts` is a compatibility adapter over generated data. CSS is selected with `data-brand-reign` on `<html>`.
 - Reigns: **Louchi** (latest, Venture Beyond), **Suede** (archived current-repo system), **TW** (archived at `https://www.raidguild.org/witch`), and **Ven** (archived, partially reconstructed from a surviving RG UI one-sheet).
 
 ## Brand Architecture
@@ -30,7 +30,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 
 ## How to Use With an Agent
 - Always import components from `@/components/ui/*` instead of hand-rolling UI.
-- Follow tokens and utilities from `src/app/globals.css` and fonts from `src/lib/fonts.ts`.
+- Follow canonical brand data from `src/brand/system.ts`, generated tokens from `src/generated/brand-tokens.css`, handwritten utilities from `src/app/globals.css`, and fonts from `src/lib/fonts.ts`.
 - Honor semantic colors (primary, background, foreground, etc.) rather than hardcoding hex unless specifying brand palette values.
 - If you need something not listed, propose a combination of existing components first.
 
@@ -38,9 +38,9 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 - Install deps: `npm install class-variance-authority clsx lucide-react tailwind-merge` and `npm install -D @tailwindcss/postcss tw-animate-css`.
 - Fonts: place `MAZIUSREVIEW20.09-Regular.woff`, `MaziusDisplay-Bold.otf`, `EBGaramond-VariableFont_wght.ttf`, `EBGaramond-Italic-VariableFont_wght.ttf` under `public/fonts/`.
 - Layout: set `data-brand-reign="louchi"` on `<html>`, wrap `<body>` with font variables `maziusDisplay`, `ebGaramond`, `ubuntuMono` from `src/lib/fonts.ts`, and use `<ThemeProvider>` from `src/lib/theme-context.tsx` for reign selection plus light/dark appearance.
-- Replace your `globals.css` with `src/app/globals.css` to get tokens, utilities, and Tailwind `@theme inline`.
+- Copy `src/app/globals.css` and `src/generated/brand-tokens.css` together to get generated tokens, handwritten utilities, and Tailwind `@theme inline` mappings.
 
-## Brand Tokens & Semantics (from `src/app/globals.css`)
+## Brand Tokens & Semantics (from `src/brand/system.ts`)
 - **Louchi / latest anchors**: ink `#102d2c`, deep teal `#0a292b`, cyan `#b8e0df`, parchment `#efe9d7`, coral `#ee3c78`, acid lime `#d7e34d`. Direction: Moebius-influenced speculative worlds, expansive editorial typography, spatial composition, and cinematic motion.
 - **Ven / archived reconstruction**: black `#000000`, Raid pink `#ff3864`, white `#ffffff`, graphite `#2b2c34`, violet `#b66ad6`, signal yellow `#fcfb75`. Direction: high-contrast RG UI system, ornate display typography, technical mono annotation, fantasy line icons, and violet-to-pink framing. A recovered neon sword-and-skull illustration lives at `public/images/reigns/ven/skull-sword.png`. Mark the overall system as partially reconstructed from surviving artifacts.
 - **Suede / archived palettes (hex)**:
@@ -74,14 +74,14 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 
 ## Assets & References (pages under `src/app/`)
 - Logos: `logos/page.tsx` + SVGs under `public/assets/logos`. `symbol-black.svg` is the canonical master mark. Full Moloch/Scroll logotypes and variants are preserved as Suede-era archive assets.
-- Colors: `colors/page.tsx` shows palettes and hexes; developer note points to `globals.css`.
+- Colors: `colors/page.tsx` shows palettes and hexes; developer guidance points to `src/brand/system.ts` and `src/generated/brand-tokens.css`.
 - Typography: `typography/page.tsx` shows specimens, usage guidance; font downloads link.
 - Iconography: `iconography/page.tsx` references SVG sets in `public/assets/icon` (8bit roles, D&D service icons, magic set).
 - Cohort guide icon assets: this repo also exposes a subset of brand icons under `/dd` (D&D-style line icons for roles, tools, and encounters) and `public/assets/icon/magic` (magic UI glyphs like stars, crystals, lanterns, flasks). the /8bit folder has special 8bit style icons for the different roles in RaidGuild
 - In documentation and MDX content, prefer these SVG icons over raw emojis. Use them via `<img src="/icon/dd/swords.svg" />` or `<img src="/icon/magic/star.svg" />` with semantic `alt` text, and avoid relying on emoji-only headings.
 - Illustrations: `illustrations/page.tsx` is reign-aware. Louchi references the `public/images/neo` set pinned to Venture Beyond commit `6e5f3ec`; TW references the `/witch/images/witchcraft-*` archive; Suede uses `public/assets/webp` in color (`-c`) and B&W (`-bw`) across multiple aspect ratios; Ven presents a clearly labeled directional reconstruction from its surviving one-sheet.
 - Home (`page.tsx`): quick links to PDF, Figma, GitHub; “For Archers” (design) and “For Warriors” (dev) navigation.
-- Machine API: `GET /api/machine/brand-guidelines` returns the complete versioned brand package after an x402 payment; `GET /.well-known/agents.json` publicly advertises its payment and response contract. The payload source is `src/lib/machine-api/brand-guidelines.ts`.
+- Machine API: `GET /api/machine/brand-guidelines` returns the complete versioned brand package after an x402 payment; `GET /.well-known/agents.json` publicly advertises its payment and response contract. Structured facts come from generated brand data; narrative payload guidance remains in `src/lib/machine-api/brand-guidelines.ts`.
 
 ## Accessibility & UX Checklist
 - Every input needs a label + `FormMessage` for errors; preserve focus-visible rings (`ring-2 ring-moloch-500 ring-offset-2` via tokens).
@@ -93,7 +93,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 ```text
 You are building UI for RaidGuild. Use the official design system.
 - Import components from @/components/ui/* (see docs/ui-components.md).
-- Use brand tokens from src/app/globals.css (semantic colors, radius, typography utilities).
+- Use generated brand tokens from src/generated/brand-tokens.css and utilities from src/app/globals.css.
 - Font variables: maziusDisplay (display), ebGaramond (body), ubuntuMono (mono) from src/lib/fonts.ts.
 - Honor ThemeProvider light/dark and focus-visible rings.
 - Prefer composition of existing components; no bespoke UI unless necessary.
@@ -104,8 +104,8 @@ You are building UI for RaidGuild. Use the official design system.
 - Deep component guidance: `docs/ui-components.md`.
 - Consolidation and Storybook implementation handoff: `docs/brand-system-implementation-handoff.md`.
 - Setup and quick reference: `README.md`.
-- Tokens and utilities source: `src/app/globals.css`.
+- Canonical data: `src/brand/system.ts`; generated tokens: `src/generated/brand-tokens.css`; utilities: `src/app/globals.css`.
 - Fonts: `src/lib/fonts.ts`; theme toggling: `src/lib/theme-context.tsx`.
 
 ## Maintenance
-- Update this file and `src/lib/machine-api/brand-guidelines.ts` whenever brand tokens, component APIs, asset paths, or setup steps change. Keeping both agent-facing surfaces accurate ensures AI agents stay aligned with the source of truth.
+- Update the appropriate module under `src/brand/`, run `npm run generate:brand`, and update this file when brand tokens, component APIs, asset paths, or setup steps change. `npm run check:brand` verifies generated output freshness; `npm run test:brand` validates the canonical source, public manifest, machine payload, and content hash.

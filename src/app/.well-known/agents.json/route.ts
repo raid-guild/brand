@@ -57,7 +57,8 @@ export function GET() {
           "AGENTS.md",
           "docs/brand-voice.md",
           "docs/ui-components.md",
-          "src/app/globals.css",
+          "src/brand/system.ts",
+          "src/generated/brand-tokens.css",
           "public/assets",
         ],
         response: {

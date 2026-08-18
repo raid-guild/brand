@@ -281,8 +281,12 @@ npm install -D @tailwindcss/postcss tw-animate-css`}</code>
                   <code className="bg-muted px-1.5 py-0.5 rounded text-sm">
                     src/app/globals.css
                   </code>{" "}
-                  with the RaidGuild brand styles from the globals.css file in
-                  this repo.
+                  and copy{" "}
+                  <code className="bg-muted px-1.5 py-0.5 rounded text-sm">
+                    src/generated/brand-tokens.css
+                  </code>{" "}
+                  so the handwritten utilities and generated reign tokens stay
+                  together.
                 </p>
               </div>
 
