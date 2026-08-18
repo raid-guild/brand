@@ -49,6 +49,8 @@ selection. NavigationMenu covers viewport variants plus keyboard expansion,
 dismissal, and focus movement between menu triggers.
 Carousel covers horizontal, vertical, and multiple-visible layouts plus button
 and orientation-aware keyboard navigation.
+Form covers empty, validation-error, submitting, and completed states plus an
+end-to-end invalid-to-successful submission flow.
 
 Canonical story IDs live in `src/brand/components.ts`, including the overlay
 state and interaction stories. The Storybook contract test prevents literal CSF

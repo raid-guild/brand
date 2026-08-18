@@ -92,6 +92,12 @@ const additionalStoryIds: Partial<
   ],
   dialog: ["overlays-dialog--open", "overlays-dialog--interaction"],
   drawer: ["overlays-drawer--open", "overlays-drawer--interaction"],
+  form: [
+    "experimental-form--error",
+    "experimental-form--submitting",
+    "experimental-form--completed",
+    "experimental-form--interaction",
+  ],
   "date-picker": [
     "experimental-date-picker--selected",
     "experimental-date-picker--disabled",

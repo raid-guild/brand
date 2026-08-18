@@ -788,7 +788,11 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "experimental-form--default"
+        "experimental-form--default",
+        "experimental-form--error",
+        "experimental-form--submitting",
+        "experimental-form--completed",
+        "experimental-form--interaction"
       ],
       "accessibilityExpected": false,
       "interactionTestExpected": true
