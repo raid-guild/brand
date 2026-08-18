@@ -18,6 +18,18 @@ npm run check:brand
 npm run test:brand
 ```
 
+Component workshop:
+
+```bash
+npm run storybook
+npm run build-storybook
+npm run test:stories
+```
+
+Storybook defaults to the Louchi reign and provides independent reign and
+light/dark appearance controls. See
+[`docs/storybook.md`](docs/storybook.md) for coverage and accessibility policy.
+
 Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://github.com/raid-guild/brand)
 
 ## For AI Agents

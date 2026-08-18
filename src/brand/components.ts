@@ -18,13 +18,31 @@ const interactionComponents = new Set<string>([
   "dialog", "drawer", "form", "multiselect", "navigation-menu", "sheet", "wizard",
 ]);
 
+const defaultStoryIds: Partial<Record<(typeof componentIds)[number], string>> = {
+  badge: "primitives-badge--default",
+  button: "primitives-button--default",
+  checkbox: "primitives-checkbox--default",
+  dialog: "overlays-dialog--default",
+  input: "primitives-input--default",
+  kbd: "primitives-keyboard-key--default",
+  label: "primitives-label--default",
+  progress: "primitives-progress--default",
+  "radio-group": "primitives-radio-group--default",
+  select: "primitives-select--default",
+  skeleton: "primitives-skeleton--default",
+  slider: "primitives-slider--default",
+  switch: "primitives-switch--default",
+  textarea: "primitives-textarea--default",
+  toggle: "primitives-toggle--default",
+};
+
 export const COMPONENTS = componentIds.map((id) => ({
   id,
   sourcePath: `src/components/ui/${id}.tsx`,
   stability: experimentalComponents.has(id) ? "experimental" : "stable",
   dependencies: [],
   providers: [],
-  storyIds: [],
+  storyIds: defaultStoryIds[id] ? [defaultStoryIds[id]] : [],
   accessibilityExpected: !experimentalComponents.has(id),
   interactionTestExpected: interactionComponents.has(id),
 }));

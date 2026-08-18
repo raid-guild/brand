@@ -106,7 +106,7 @@ Once a reign version is published, its source palette, type assignments, marks, 
 
 ### Storybook status
 
-No Storybook configuration or story files currently exist. The `/ui` route is a hand-built gallery backed by 42 files in `src/components/ui` and 42 matching examples in `src/components/examples`.
+Phase 2 foundation is implemented with Storybook 10 on the Next.js Vite framework. The workshop has independent reign and appearance globals, generated tokens and application fonts, accessibility and browser interaction tests, foundational token and typography stories, and initial stories for 15 stable primitives plus Dialog. Static builds and story tests run in CI. The `/ui` route remains the curated public gallery; completing stories for all 42 components remains Phase 3 work. See `docs/storybook.md` for current coverage and reviewed accessibility debt.
 
 The existing gallery is useful migration material, but it does not provide isolated states, interaction tests, accessibility checks, visual comparisons, or an installable component contract.
 

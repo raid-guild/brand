@@ -584,7 +584,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-badge--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -604,7 +606,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-button--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -654,7 +658,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-checkbox--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -704,7 +710,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "overlays-dialog--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": true
     },
@@ -754,7 +762,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-input--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -774,7 +784,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-keyboard-key--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -784,7 +796,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-label--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -844,7 +858,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-progress--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -854,7 +870,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-radio-group--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -874,7 +892,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-select--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -904,7 +924,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-skeleton--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -914,7 +936,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-slider--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -924,7 +948,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-switch--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -954,7 +980,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-textarea--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },
@@ -964,7 +992,9 @@ export const BRAND_SYSTEM = {
       "stability": "stable",
       "dependencies": [],
       "providers": [],
-      "storyIds": [],
+      "storyIds": [
+        "primitives-toggle--default"
+      ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
     },

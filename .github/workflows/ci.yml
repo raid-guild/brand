@@ -42,3 +42,12 @@ jobs:
 
       - name: Build playbook
         run: npm run build
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Install Storybook test browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Test stable stories
+        run: npm run test:stories
