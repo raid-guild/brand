@@ -75,6 +75,12 @@ const additionalStoryIds: Partial<
     "experimental-combobox--selected",
     "experimental-combobox--interaction",
   ],
+  command: [
+    "experimental-command--empty-results",
+    "experimental-command--dialog",
+    "experimental-command--interaction",
+    "experimental-command--dialog-interaction",
+  ],
   "data-table": [
     "experimental-data-table--empty",
     "experimental-data-table--interaction",
@@ -90,6 +96,10 @@ const additionalStoryIds: Partial<
     "experimental-multiselect--selected",
     "experimental-multiselect--disabled",
     "experimental-multiselect--interaction",
+  ],
+  "navigation-menu": [
+    "navigation-navigation-menu--without-viewport",
+    "navigation-navigation-menu--interaction",
   ],
   sheet: ["overlays-sheet--open", "overlays-sheet--interaction"],
   wizard: [

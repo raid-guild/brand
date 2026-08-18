@@ -44,6 +44,9 @@ range, disabled, month-navigation, and popover date-selection behavior.
 DataTable covers its empty state and sortable row model. Wizard covers optional
 progress and summary regions plus forward, backward, validation, and completion
 behavior.
+Command covers inline and dialog palettes, empty filtering, and keyboard
+selection. NavigationMenu covers viewport variants plus keyboard expansion,
+dismissal, and focus movement between menu triggers.
 
 Canonical story IDs live in `src/brand/components.ts`, including the overlay
 state and interaction stories. The Storybook contract test prevents literal CSF

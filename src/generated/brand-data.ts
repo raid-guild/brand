@@ -700,7 +700,11 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "experimental-command--default"
+        "experimental-command--default",
+        "experimental-command--empty-results",
+        "experimental-command--dialog",
+        "experimental-command--interaction",
+        "experimental-command--dialog-interaction"
       ],
       "accessibilityExpected": false,
       "interactionTestExpected": true
@@ -880,7 +884,9 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "navigation-navigation-menu--default"
+        "navigation-navigation-menu--default",
+        "navigation-navigation-menu--without-viewport",
+        "navigation-navigation-menu--interaction"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": true
