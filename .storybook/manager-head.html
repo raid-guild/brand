@@ -1,0 +1,13 @@
+<script>
+  (() => {
+    const url = new URL(window.location.href);
+
+    if (!url.searchParams.has("path")) {
+      url.searchParams.set(
+        "path",
+        "/story/foundations-brand-tokens--semantic-surfaces",
+      );
+      window.location.replace(url.toString());
+    }
+  })();
+</script>

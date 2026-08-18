@@ -14,6 +14,8 @@ npm run test:stories
 
 The local workshop runs at `http://localhost:6006`. The static build is written
 to `storybook-static/`, which is intentionally ignored by Git.
+Fresh visits to the workshop root open the semantic brand-token story instead
+of Storybook's empty “No Preview” state.
 
 ## Theme controls
 
@@ -30,12 +32,9 @@ the workshop. Practice selection is intentionally not part of either control.
 
 Foundation stories cover generated brand tokens, typography, and the complete
 four-reign by two-appearance visual matrix. Every component in the canonical
-42-component registry now has a colocated default story. The first migration of
-complex components renders the matching curated `*Example` component; these
-stories establish render and accessibility coverage while direct API stories
-and interaction states are added incrementally. Popover is covered directly
-because no matching example existed. Dialog, Sheet, and Drawer now use their
-direct APIs; each includes a forced-open state and a browser interaction test
+42-component registry now has colocated stories that exercise the component API
+directly; Storybook no longer depends on the curated `*Example` gallery adapters.
+Dialog, Sheet, and Drawer each include a forced-open state and a browser interaction test
 that opens, verifies, and closes the overlay. Combobox and Multiselect also use
 direct controlled examples with selected and interaction states; their browser
 tests cover filtering and selection, plus removing a Multiselect value.
@@ -52,9 +51,9 @@ and orientation-aware keyboard navigation.
 Form covers empty, validation-error, submitting, and completed states plus an
 end-to-end invalid-to-successful submission flow.
 
-Canonical story IDs live in `src/brand/components.ts`, including the overlay
-state and interaction stories. The Storybook contract test prevents literal CSF
-stability tags from drifting away from that component metadata.
+Canonical story IDs live in `src/brand/components.ts`, including representative
+variants and interaction states. The Storybook contract test prevents literal
+CSF stability tags from drifting away from that component metadata.
 
 ## Accessibility policy
 

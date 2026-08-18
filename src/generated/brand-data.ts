@@ -575,7 +575,8 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "data-display-accordion--default"
+        "data-display-accordion--default",
+        "data-display-accordion--multiple"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
@@ -599,7 +600,8 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "navigation-breadcrumb--default"
+        "navigation-breadcrumb--default",
+        "navigation-breadcrumb--collapsed"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
@@ -638,7 +640,8 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "data-display-card--default"
+        "data-display-card--default",
+        "data-display-card--with-action"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
@@ -665,7 +668,9 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "experimental-chart--default"
+        "experimental-chart--default",
+        "experimental-chart--bar",
+        "experimental-chart--pie"
       ],
       "accessibilityExpected": false,
       "interactionTestExpected": false
@@ -776,7 +781,8 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "navigation-dropdown-menu--default"
+        "navigation-dropdown-menu--default",
+        "navigation-dropdown-menu--open"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
@@ -804,7 +810,8 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "overlays-hover-card--default"
+        "overlays-hover-card--default",
+        "overlays-hover-card--open"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
@@ -828,7 +835,9 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "data-display-item--default"
+        "data-display-item--default",
+        "data-display-item--compact",
+        "data-display-item--spacious"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
@@ -905,7 +914,8 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "navigation-pagination--default"
+        "navigation-pagination--default",
+        "navigation-pagination--first-page"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
@@ -991,7 +1001,8 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "experimental-sidebar--default"
+        "experimental-sidebar--default",
+        "experimental-sidebar--compact"
       ],
       "accessibilityExpected": false,
       "interactionTestExpected": false
@@ -1039,7 +1050,8 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "data-display-table--default"
+        "data-display-table--default",
+        "data-display-table--empty"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
@@ -1051,7 +1063,8 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "navigation-tabs--default"
+        "navigation-tabs--default",
+        "navigation-tabs--disabled"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
@@ -1087,7 +1100,9 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "overlays-tooltip--default"
+        "overlays-tooltip--default",
+        "overlays-tooltip--open",
+        "overlays-tooltip--right"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": false

@@ -66,6 +66,8 @@ const defaultStoryIds: Partial<Record<(typeof componentIds)[number], string>> = 
 const additionalStoryIds: Partial<
   Record<(typeof componentIds)[number], readonly string[]>
 > = {
+  accordion: ["data-display-accordion--multiple"],
+  breadcrumb: ["navigation-breadcrumb--collapsed"],
   calendar: [
     "experimental-calendar--selected",
     "experimental-calendar--range",
@@ -76,6 +78,8 @@ const additionalStoryIds: Partial<
     "experimental-carousel--vertical",
     "experimental-carousel--interaction",
   ],
+  card: ["data-display-card--with-action"],
+  chart: ["experimental-chart--bar", "experimental-chart--pie"],
   combobox: [
     "experimental-combobox--selected",
     "experimental-combobox--interaction",
@@ -92,12 +96,15 @@ const additionalStoryIds: Partial<
   ],
   dialog: ["overlays-dialog--open", "overlays-dialog--interaction"],
   drawer: ["overlays-drawer--open", "overlays-drawer--interaction"],
+  "dropdown-menu": ["navigation-dropdown-menu--open"],
   form: [
     "experimental-form--error",
     "experimental-form--submitting",
     "experimental-form--completed",
     "experimental-form--interaction",
   ],
+  "hover-card": ["overlays-hover-card--open"],
+  item: ["data-display-item--compact", "data-display-item--spacious"],
   "date-picker": [
     "experimental-date-picker--selected",
     "experimental-date-picker--disabled",
@@ -108,11 +115,16 @@ const additionalStoryIds: Partial<
     "experimental-multiselect--disabled",
     "experimental-multiselect--interaction",
   ],
+  pagination: ["navigation-pagination--first-page"],
   "navigation-menu": [
     "navigation-navigation-menu--without-viewport",
     "navigation-navigation-menu--interaction",
   ],
   sheet: ["overlays-sheet--open", "overlays-sheet--interaction"],
+  sidebar: ["experimental-sidebar--compact"],
+  table: ["data-display-table--empty"],
+  tabs: ["navigation-tabs--disabled"],
+  tooltip: ["overlays-tooltip--open", "overlays-tooltip--right"],
   wizard: [
     "experimental-wizard--without-summary",
     "experimental-wizard--without-progress",
