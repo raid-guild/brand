@@ -66,8 +66,17 @@ const defaultStoryIds: Partial<Record<(typeof componentIds)[number], string>> = 
 const additionalStoryIds: Partial<
   Record<(typeof componentIds)[number], readonly string[]>
 > = {
+  combobox: [
+    "experimental-combobox--selected",
+    "experimental-combobox--interaction",
+  ],
   dialog: ["overlays-dialog--open", "overlays-dialog--interaction"],
   drawer: ["overlays-drawer--open", "overlays-drawer--interaction"],
+  multiselect: [
+    "experimental-multiselect--selected",
+    "experimental-multiselect--disabled",
+    "experimental-multiselect--interaction",
+  ],
   sheet: ["overlays-sheet--open", "overlays-sheet--interaction"],
 };
 

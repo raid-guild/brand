@@ -36,7 +36,9 @@ stories establish render and accessibility coverage while direct API stories
 and interaction states are added incrementally. Popover is covered directly
 because no matching example existed. Dialog, Sheet, and Drawer now use their
 direct APIs; each includes a forced-open state and a browser interaction test
-that opens, verifies, and closes the overlay.
+that opens, verifies, and closes the overlay. Combobox and Multiselect also use
+direct controlled examples with selected and interaction states; their browser
+tests cover filtering and selection, plus removing a Multiselect value.
 
 Canonical story IDs live in `src/brand/components.ts`, including the overlay
 state and interaction stories. The Storybook contract test prevents literal CSF

@@ -368,6 +368,12 @@ const MultipleSelector = React.forwardRef<
       <Command
         ref={dropdownRef}
         {...commandProps}
+        label={
+          commandProps?.label ??
+          inputProps?.["aria-label"] ??
+          placeholder ??
+          "Options"
+        }
         onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => {
           handleKeyDown(e);
           commandProps?.onKeyDown?.(e);
@@ -413,6 +419,7 @@ const MultipleSelector = React.forwardRef<
                   {option.label}
                   <button
                     type="button"
+                    aria-label={`Remove ${option.label}`}
                     className={cn(
                       "ml-1 rounded-full outline-none ring-offset-background focus:ring-2 focus:ring-ring focus:ring-offset-2",
                       (disabled || option.fixed) && "hidden"
@@ -473,6 +480,7 @@ const MultipleSelector = React.forwardRef<
           </div>
           <button
             type="button"
+            aria-label="Clear all selections"
             onClick={() => {
               setSelected(selected.filter((s) => s.fixed));
               onChange?.(selected.filter((s) => s.fixed));

@@ -683,7 +683,9 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "experimental-combobox--default"
+        "experimental-combobox--default",
+        "experimental-combobox--selected",
+        "experimental-combobox--interaction"
       ],
       "accessibilityExpected": false,
       "interactionTestExpected": true
@@ -855,7 +857,10 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "experimental-multiselect--default"
+        "experimental-multiselect--default",
+        "experimental-multiselect--selected",
+        "experimental-multiselect--disabled",
+        "experimental-multiselect--interaction"
       ],
       "accessibilityExpected": false,
       "interactionTestExpected": true
