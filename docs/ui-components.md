@@ -639,14 +639,15 @@ Date picker component combining input and calendar.
 #### **Carousel** (`carousel.tsx`)
 Carousel/slider component for image or content slideshows.
 
-**Exports:** Carousel components
+**Exports:** `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`,
+`CarouselNext`, `CarouselApi`
 
 **Features:**
-- Auto-play support
 - Navigation arrows
-- Dot indicators
 - Touch/swipe support
-- Keyboard navigation
+- Horizontal and vertical orientation
+- Orientation-aware keyboard navigation
+- Embla options and plugin integration
 
 **Use when:** You need image carousels, content sliders, or testimonials.
 

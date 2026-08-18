@@ -47,6 +47,8 @@ behavior.
 Command covers inline and dialog palettes, empty filtering, and keyboard
 selection. NavigationMenu covers viewport variants plus keyboard expansion,
 dismissal, and focus movement between menu triggers.
+Carousel covers horizontal, vertical, and multiple-visible layouts plus button
+and orientation-aware keyboard navigation.
 
 Canonical story IDs live in `src/brand/components.ts`, including the overlay
 state and interaction stories. The Storybook contract test prevents literal CSF

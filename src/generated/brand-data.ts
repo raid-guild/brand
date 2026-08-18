@@ -650,7 +650,10 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "experimental-carousel--default"
+        "experimental-carousel--default",
+        "experimental-carousel--multiple-visible",
+        "experimental-carousel--vertical",
+        "experimental-carousel--interaction"
       ],
       "accessibilityExpected": false,
       "interactionTestExpected": true

@@ -71,6 +71,11 @@ const additionalStoryIds: Partial<
     "experimental-calendar--range",
     "experimental-calendar--interaction",
   ],
+  carousel: [
+    "experimental-carousel--multiple-visible",
+    "experimental-carousel--vertical",
+    "experimental-carousel--interaction",
+  ],
   combobox: [
     "experimental-combobox--selected",
     "experimental-combobox--interaction",
