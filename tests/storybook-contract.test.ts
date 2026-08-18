@@ -7,7 +7,7 @@ import { COMPONENTS } from "../src/brand/components";
 
 const storiesDirectory = path.resolve("src/components/ui");
 
-test("component story stability tags match canonical metadata", () => {
+test("component story IDs and stability tags match canonical metadata", () => {
   const storyFiles = readdirSync(storiesDirectory).filter((file) =>
     file.endsWith(".stories.tsx"),
   );
@@ -27,15 +27,28 @@ test("component story stability tags match canonical metadata", () => {
 
     assert.ok(metadata, `missing canonical metadata for ${componentId}`);
     assert.ok(title, `${componentId} story must publish a literal title`);
-    assert.ok(metadata.storyIds.length > 0, `${componentId} must publish a default story ID`);
-    const expectedDefaultStoryId = `${title
+    assert.ok(metadata.storyIds.length > 0, `${componentId} must publish story IDs`);
+    const storyIdPrefix = title
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-|-$/g, "")}--default`;
-    assert.ok(
-      metadata.storyIds.includes(expectedDefaultStoryId),
-      `${componentId} metadata must reference ${expectedDefaultStoryId}`,
+      .replace(/^-|-$/g, "");
+    const exportedStories = [...storySource.matchAll(/export const (\w+): Story/g)].map(
+      ([, name]) =>
+        `${storyIdPrefix}--${name
+          .replace(/([a-z0-9])([A-Z])/g, "$1-$2")
+          .toLowerCase()}`,
     );
+    assert.equal(
+      new Set(metadata.storyIds).size,
+      metadata.storyIds.length,
+      `${componentId} metadata story IDs must be unique`,
+    );
+    for (const storyId of metadata.storyIds) {
+      assert.ok(
+        exportedStories.includes(storyId),
+        `${componentId} metadata references missing story ${storyId}`,
+      );
+    }
     assert.match(
       storySource,
       new RegExp(`tags: \\[\"${metadata.stability}\"\\]`),

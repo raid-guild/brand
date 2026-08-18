@@ -731,7 +731,9 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "overlays-dialog--default"
+        "overlays-dialog--default",
+        "overlays-dialog--open",
+        "overlays-dialog--interaction"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": true
@@ -743,7 +745,9 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "overlays-drawer--default"
+        "overlays-drawer--default",
+        "overlays-drawer--open",
+        "overlays-drawer--interaction"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": true
@@ -947,7 +951,9 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "overlays-sheet--default"
+        "overlays-sheet--default",
+        "overlays-sheet--open",
+        "overlays-sheet--interaction"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": true

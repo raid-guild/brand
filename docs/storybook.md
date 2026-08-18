@@ -34,12 +34,13 @@ four-reign by two-appearance visual matrix. Every component in the canonical
 complex components renders the matching curated `*Example` component; these
 stories establish render and accessibility coverage while direct API stories
 and interaction states are added incrementally. Popover is covered directly
-because no matching example existed. Dialog includes an open state and a browser
-interaction test that opens, verifies, and closes the overlay.
+because no matching example existed. Dialog, Sheet, and Drawer now use their
+direct APIs; each includes a forced-open state and a browser interaction test
+that opens, verifies, and closes the overlay.
 
-Canonical default story IDs live in `src/brand/components.ts`. The Storybook
-contract test prevents literal CSF stability tags from drifting away from that
-component metadata.
+Canonical story IDs live in `src/brand/components.ts`, including the overlay
+state and interaction stories. The Storybook contract test prevents literal CSF
+stability tags from drifting away from that component metadata.
 
 ## Accessibility policy
 

@@ -63,13 +63,24 @@ const defaultStoryIds: Partial<Record<(typeof componentIds)[number], string>> = 
   wizard: "experimental-wizard--default",
 };
 
+const additionalStoryIds: Partial<
+  Record<(typeof componentIds)[number], readonly string[]>
+> = {
+  dialog: ["overlays-dialog--open", "overlays-dialog--interaction"],
+  drawer: ["overlays-drawer--open", "overlays-drawer--interaction"],
+  sheet: ["overlays-sheet--open", "overlays-sheet--interaction"],
+};
+
 export const COMPONENTS = componentIds.map((id) => ({
   id,
   sourcePath: `src/components/ui/${id}.tsx`,
   stability: experimentalComponents.has(id) ? "experimental" : "stable",
   dependencies: [],
   providers: [],
-  storyIds: defaultStoryIds[id] ? [defaultStoryIds[id]] : [],
+  storyIds: [
+    ...(defaultStoryIds[id] ? [defaultStoryIds[id]] : []),
+    ...(additionalStoryIds[id] ?? []),
+  ],
   accessibilityExpected: !experimentalComponents.has(id),
   interactionTestExpected: interactionComponents.has(id),
 }));
