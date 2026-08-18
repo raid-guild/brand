@@ -192,30 +192,26 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Link
-              href="/assets/RaidGuild_brand_guidelines.pdf"
+              href="/logos"
               className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <h3 className="type-heading-sm mb-2 group-hover:text-primary transition-colors">
-                Brand Guidelines (PDF)
+                Logos
               </h3>
               <p className="type-body-sm text-muted-foreground">
-                Download the complete brand guidelines document
+                Find the canonical mark and reign-specific logo assets
               </p>
             </Link>
 
             <Link
-              href="https://www.figma.com/design/i12YX9sbqeBXFJvExzA5PM/Raid-Guild-%7C-FINAL-%7C-Brand-%7C-Website-%7C-Archive-%7C-Q4-2025?node-id=1859-175&p=f&t=hEppjEwjbW1ZjeF0-0"
+              href="/architecture"
               className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <h3 className="type-heading-sm mb-2 group-hover:text-primary transition-colors">
-                Brand Guidelines (Figma)
+                Brand Architecture
               </h3>
               <p className="type-body-sm text-muted-foreground">
-                View and use brand assets in Figma
+                Understand how reigns, practices, and the Guild relate
               </p>
             </Link>
 
