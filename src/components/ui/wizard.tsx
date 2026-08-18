@@ -23,12 +23,6 @@ export interface WizardStep {
   onStepComplete?: () => void;
 }
 
-interface StepComponentProps {
-  isActive?: boolean;
-  data?: Record<string, unknown>;
-  onUpdate?: (data: Record<string, unknown>) => void;
-}
-
 interface WizardProps {
   steps: WizardStep[];
   onComplete?: (data: Record<string, unknown>) => void;
@@ -57,29 +51,7 @@ export function Wizard({
   const isLastStep = currentStep === steps.length - 1;
   // const canProceed = completedSteps.has(currentStep);
 
-  const goToStep = async (stepIndex: number) => {
-    const currentStepData = steps[currentStep];
-    if (currentStepData.validation) {
-      setIsValidating(true);
-
-      try {
-        const isValid = await currentStepData.validation();
-        if (isValid) {
-          setCompletedSteps((prev) => new Set([...prev, currentStep]));
-        } else {
-          setCompletedSteps((prev) => {
-            const newSet = new Set([...prev]);
-            newSet.delete(currentStep);
-            return newSet;
-          });
-        }
-      } catch (error) {
-        console.error("Validation failed:", error);
-      } finally {
-        setIsValidating(false);
-      }
-    }
-
+  const goToStep = (stepIndex: number) => {
     if (stepIndex >= 0 && stepIndex < steps.length) {
       setCurrentStep(stepIndex);
     }
@@ -113,6 +85,7 @@ export function Wizard({
       if (isLastStep) {
         onComplete?.({});
       } else {
+        currentStepData.onStepComplete?.();
         goToStep(currentStep + 1);
       }
     }
@@ -147,16 +120,21 @@ export function Wizard({
                 {Math.round(progress)}%
               </Badge>
             </div>
-            <ProgressBar value={progress} className="h-2" />
+            <ProgressBar
+              value={progress}
+              className="h-2"
+              aria-label="Wizard progress"
+            />
           </CardHeader>
         </Card>
       )}
 
       {/* Step Progress Indicators */}
-      <div className="flex items-center gap-4">
+      <ol className="flex items-center gap-4" aria-label="Wizard steps">
         {steps.map((step, index) => (
-          <div
+          <li
             key={step.id}
+            aria-current={index === currentStep ? "step" : undefined}
             className={cn(
               "flex items-center gap-2 h-8 px-5 rounded-md font-medium pointer-events-none",
               index === currentStep
@@ -177,27 +155,19 @@ export function Wizard({
             <span className="hidden sm:inline type-body-md font-body">
               {step.title}
             </span>
-          </div>
+          </li>
         ))}
-      </div>
+      </ol>
 
       {/* <Separator /> */}
 
       {/* Current Step Content */}
       <div>
-        <div className="text-heading-md mb-7">{steps[currentStep].title}</div>
+        <h2 className="type-heading-md mb-7">{steps[currentStep].title}</h2>
         {steps[currentStep].description && (
           <CardDescription>{steps[currentStep].description}</CardDescription>
         )}
-        <div className="min-h-[300px]">
-          {React.isValidElement(steps[currentStep].component)
-            ? React.cloneElement(steps[currentStep].component, {
-                isActive: true,
-                data: {},
-                onUpdate: () => {},
-              } as StepComponentProps)
-            : steps[currentStep].component}
-        </div>
+        <div className="min-h-[300px]">{steps[currentStep].component}</div>
       </div>
 
       {/* Navigation Buttons */}

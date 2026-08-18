@@ -41,6 +41,9 @@ direct controlled examples with selected and interaction states; their browser
 tests cover filtering and selection, plus removing a Multiselect value.
 Calendar and DatePicker use deterministic August 2026 fixtures to cover selected,
 range, disabled, month-navigation, and popover date-selection behavior.
+DataTable covers its empty state and sortable row model. Wizard covers optional
+progress and summary regions plus forward, backward, validation, and completion
+behavior.
 
 Canonical story IDs live in `src/brand/components.ts`, including the overlay
 state and interaction stories. The Storybook contract test prevents literal CSF

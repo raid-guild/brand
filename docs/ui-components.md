@@ -515,18 +515,17 @@ Table component for displaying tabular data.
 ---
 
 #### **DataTable** (`data-table.tsx`)
-Enhanced table component with sorting, filtering, and pagination.
+TanStack-powered table component with an internal sortable row model.
 
-**Exports:** Data table components
+**Exports:** `DataTable`
 
 **Features:**
-- Column sorting
-- Filtering
-- Pagination integration
-- Selection
-- Column visibility
+- Column-driven sorting
+- Semantic table primitives
+- Empty state
+- Custom cell and header rendering
 
-**Use when:** You need advanced table functionality with sorting and filtering.
+**Use when:** You need structured tabular data with custom columns and sorting.
 
 ---
 

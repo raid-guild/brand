@@ -430,7 +430,7 @@ const payload = {
         data: {
           choices: ["Table", "DataTable", "Badge", "Chart"],
           usage:
-            "Use Table for semantic tabular data, DataTable for sorting/filtering, Badge for compact status, and Chart for data visualization.",
+            "Use Table for semantic tabular data, DataTable for column-driven sorting, Badge for compact status, and Chart for data visualization.",
         },
         navigation: {
           choices: [

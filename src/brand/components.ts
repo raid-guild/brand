@@ -75,6 +75,10 @@ const additionalStoryIds: Partial<
     "experimental-combobox--selected",
     "experimental-combobox--interaction",
   ],
+  "data-table": [
+    "experimental-data-table--empty",
+    "experimental-data-table--interaction",
+  ],
   dialog: ["overlays-dialog--open", "overlays-dialog--interaction"],
   drawer: ["overlays-drawer--open", "overlays-drawer--interaction"],
   "date-picker": [
@@ -88,6 +92,12 @@ const additionalStoryIds: Partial<
     "experimental-multiselect--interaction",
   ],
   sheet: ["overlays-sheet--open", "overlays-sheet--interaction"],
+  wizard: [
+    "experimental-wizard--without-summary",
+    "experimental-wizard--without-progress",
+    "experimental-wizard--interaction",
+    "experimental-wizard--validation",
+  ],
 };
 
 export const COMPONENTS = componentIds.map((id) => ({

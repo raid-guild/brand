@@ -23,7 +23,9 @@ test("component story IDs and stability tags match canonical metadata", () => {
     const componentId = storyFile.replace(".stories.tsx", "");
     const metadata = COMPONENTS.find(({ id }) => id === componentId);
     const storySource = readFileSync(path.join(storiesDirectory, storyFile), "utf8");
-    const title = storySource.match(/title: "([^"]+)"/)?.[1];
+    const title = storySource.match(
+      /const meta = \{[\s\S]*?title: "([^"]+)"/,
+    )?.[1];
 
     assert.ok(metadata, `missing canonical metadata for ${componentId}`);
     assert.ok(title, `${componentId} story must publish a literal title`);

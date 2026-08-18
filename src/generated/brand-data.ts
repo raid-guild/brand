@@ -712,7 +712,9 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "experimental-data-table--default"
+        "experimental-data-table--default",
+        "experimental-data-table--empty",
+        "experimental-data-table--interaction"
       ],
       "accessibilityExpected": false,
       "interactionTestExpected": true
@@ -1084,7 +1086,11 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "experimental-wizard--default"
+        "experimental-wizard--default",
+        "experimental-wizard--without-summary",
+        "experimental-wizard--without-progress",
+        "experimental-wizard--interaction",
+        "experimental-wizard--validation"
       ],
       "accessibilityExpected": false,
       "interactionTestExpected": true
