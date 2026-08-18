@@ -13,14 +13,29 @@ test("component story stability tags match canonical metadata", () => {
   );
 
   assert.ok(storyFiles.length > 0, "expected component stories");
+  assert.equal(
+    storyFiles.length,
+    COMPONENTS.length,
+    "every canonical component must have a colocated story",
+  );
 
   for (const storyFile of storyFiles) {
     const componentId = storyFile.replace(".stories.tsx", "");
     const metadata = COMPONENTS.find(({ id }) => id === componentId);
     const storySource = readFileSync(path.join(storiesDirectory, storyFile), "utf8");
+    const title = storySource.match(/title: "([^"]+)"/)?.[1];
 
     assert.ok(metadata, `missing canonical metadata for ${componentId}`);
+    assert.ok(title, `${componentId} story must publish a literal title`);
     assert.ok(metadata.storyIds.length > 0, `${componentId} must publish a default story ID`);
+    const expectedDefaultStoryId = `${title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "")}--default`;
+    assert.ok(
+      metadata.storyIds.includes(expectedDefaultStoryId),
+      `${componentId} metadata must reference ${expectedDefaultStoryId}`,
+    );
     assert.match(
       storySource,
       new RegExp(`tags: \\[\"${metadata.stability}\"\\]`),

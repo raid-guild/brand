@@ -29,12 +29,13 @@ the workshop. Practice selection is intentionally not part of either control.
 ## Current coverage
 
 Foundation stories cover generated brand tokens, typography, and the complete
-four-reign by two-appearance visual matrix. Colocated component stories cover:
-
-- Badge, Button, Checkbox, Input, Keyboard Key, Label, Progress, Radio Group,
-  Select, Skeleton, Slider, Switch, Textarea, and Toggle.
-- Dialog, including an open state and a browser interaction test that opens,
-  verifies, and closes the overlay.
+four-reign by two-appearance visual matrix. Every component in the canonical
+42-component registry now has a colocated default story. The first migration of
+complex components renders the matching curated `*Example` component; these
+stories establish render and accessibility coverage while direct API stories
+and interaction states are added incrementally. Popover is covered directly
+because no matching example existed. Dialog includes an open state and a browser
+interaction test that opens, verifies, and closes the overlay.
 
 Canonical default story IDs live in `src/brand/components.ts`. The Storybook
 contract test prevents literal CSF stability tags from drifting away from that
@@ -43,7 +44,9 @@ component metadata.
 ## Accessibility policy
 
 The accessibility addon runs against every story. Stable stories fail browser
-tests on violations by default. The following reviewed, pre-existing cases use
+tests on violations by default. Migrating the curated examples also fixed their
+low-contrast source links, duplicate breadcrumb landmark labels, and an
+unfocusable scroll viewport. The following reviewed, pre-existing cases use
 `todo` so they remain visible in Storybook and test output while the underlying
 token or primitive work is scheduled:
 

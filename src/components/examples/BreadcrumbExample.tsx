@@ -24,7 +24,7 @@ export function BreadcrumbExample() {
           </Link>
           <Link
             href="https://github.com/raid-guild/brand/blob/main/src/components/ui/breadcrumb.tsx"
-            className="type-body-sm text-primary hover:text-primary/80 transition-colors underline"
+            className="type-body-sm text-foreground hover:text-foreground/70 transition-colors underline decoration-primary decoration-2 underline-offset-2"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -32,7 +32,7 @@ export function BreadcrumbExample() {
           </Link>
           <Link
             href="https://github.com/raid-guild/brand/blob/main/src/components/examples/BreadcrumbExample.tsx"
-            className="type-body-sm text-primary hover:text-primary/80 transition-colors underline"
+            className="type-body-sm text-foreground hover:text-foreground/70 transition-colors underline decoration-primary decoration-2 underline-offset-2"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -43,7 +43,7 @@ export function BreadcrumbExample() {
       <div className="space-y-6">
         <div className="p-6 border border-border rounded-lg">
           <h3 className="type-heading-sm mb-4">Basic Breadcrumb</h3>
-          <Breadcrumb>
+          <Breadcrumb aria-label="Basic breadcrumb">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
@@ -66,7 +66,7 @@ export function BreadcrumbExample() {
 
         <div className="p-6 border border-border rounded-lg">
           <h3 className="type-heading-sm mb-4">Breadcrumb with Multiple Levels</h3>
-          <Breadcrumb>
+          <Breadcrumb aria-label="Multi-level breadcrumb">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
@@ -96,4 +96,3 @@ export function BreadcrumbExample() {
     </section>
   );
 }
-
