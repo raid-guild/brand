@@ -102,6 +102,7 @@ You are building UI for RaidGuild. Use the official design system.
 
 ## If You Need More Detail
 - Deep component guidance: `docs/ui-components.md`.
+- Consolidation and Storybook implementation handoff: `docs/brand-system-implementation-handoff.md`.
 - Setup and quick reference: `README.md`.
 - Tokens and utilities source: `src/app/globals.css`.
 - Fonts: `src/lib/fonts.ts`; theme toggling: `src/lib/theme-context.tsx`.

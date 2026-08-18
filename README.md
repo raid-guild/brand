@@ -8,6 +8,8 @@ The black crossed swords are the canonical master mark. Track colors and the sur
 
 RaidGuild's architecture has two independent axes: **steward reigns** version the Guild identity over time, while **practices** (internally, spears) differentiate specialized fronts that can coexist. Practices may have distinct positioning and visual systems, but share RaidGuild's builder pool, endorsement, and RaidGuild LLC operating layer. See [`docs/brand-architecture.md`](docs/brand-architecture.md).
 
+Implementation planning: [`docs/brand-system-implementation-handoff.md`](docs/brand-system-implementation-handoff.md) consolidates the architecture audit, structured source-of-truth work, Storybook rollout, asset contract, testing, and downstream distribution plan.
+
 Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://github.com/raid-guild/brand)
 
 ## For AI Agents
