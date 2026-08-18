@@ -623,7 +623,10 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "experimental-calendar--default"
+        "experimental-calendar--default",
+        "experimental-calendar--selected",
+        "experimental-calendar--range",
+        "experimental-calendar--interaction"
       ],
       "accessibilityExpected": false,
       "interactionTestExpected": true
@@ -721,7 +724,10 @@ export const BRAND_SYSTEM = {
       "dependencies": [],
       "providers": [],
       "storyIds": [
-        "experimental-date-picker--default"
+        "experimental-date-picker--default",
+        "experimental-date-picker--selected",
+        "experimental-date-picker--disabled",
+        "experimental-date-picker--interaction"
       ],
       "accessibilityExpected": false,
       "interactionTestExpected": true

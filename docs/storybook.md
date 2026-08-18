@@ -39,6 +39,8 @@ direct APIs; each includes a forced-open state and a browser interaction test
 that opens, verifies, and closes the overlay. Combobox and Multiselect also use
 direct controlled examples with selected and interaction states; their browser
 tests cover filtering and selection, plus removing a Multiselect value.
+Calendar and DatePicker use deterministic August 2026 fixtures to cover selected,
+range, disabled, month-navigation, and popover date-selection behavior.
 
 Canonical story IDs live in `src/brand/components.ts`, including the overlay
 state and interaction stories. The Storybook contract test prevents literal CSF

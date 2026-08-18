@@ -66,12 +66,22 @@ const defaultStoryIds: Partial<Record<(typeof componentIds)[number], string>> = 
 const additionalStoryIds: Partial<
   Record<(typeof componentIds)[number], readonly string[]>
 > = {
+  calendar: [
+    "experimental-calendar--selected",
+    "experimental-calendar--range",
+    "experimental-calendar--interaction",
+  ],
   combobox: [
     "experimental-combobox--selected",
     "experimental-combobox--interaction",
   ],
   dialog: ["overlays-dialog--open", "overlays-dialog--interaction"],
   drawer: ["overlays-drawer--open", "overlays-drawer--interaction"],
+  "date-picker": [
+    "experimental-date-picker--selected",
+    "experimental-date-picker--disabled",
+    "experimental-date-picker--interaction",
+  ],
   multiselect: [
     "experimental-multiselect--selected",
     "experimental-multiselect--disabled",
