@@ -108,6 +108,12 @@ Once a reign version is published, its source palette, type assignments, marks, 
 
 Phase 2 foundation is implemented with Storybook 10 on the Next.js Vite framework. The workshop has independent reign and appearance globals, generated tokens and application fonts, accessibility and browser interaction tests, and foundational token and typography stories. All 42 canonical components now have colocated direct-API stories and generated deep-link IDs, and every high-risk interaction named below has browser coverage. Static builds and story tests run in CI, while `/ui` remains the curated public gallery. See `docs/storybook.md` for current coverage and reviewed accessibility debt.
 
+Louchi 1.1 now synchronizes the Venture Beyond website at commit `4ffb591`:
+the full moonlit semantic surface map, day/night appearance guidance, panorama
+and landmark references, and the accessible Hero Discovery interaction are
+represented in canonical data, generated outputs, `/illustrations`, the machine
+payload, and Storybook.
+
 The existing gallery is useful migration material, but it does not provide isolated states, interaction tests, accessibility checks, visual comparisons, or an installable component contract.
 
 ## Target Architecture

@@ -150,6 +150,8 @@ function generatePublicManifest() {
           available: reign.available,
           source: reign.sourceUrl ?? reign.sourceLabel,
           dataVersion: reign.dataVersion,
+          ...(reign.appearances ? { appearances: reign.appearances } : {}),
+          ...(reign.motion ? { motion: reign.motion } : {}),
           ...(reign.evidenceNote ? { evidence: reign.evidenceNote } : {}),
         })),
         practices: BRAND_SYSTEM.practices,
@@ -157,27 +159,18 @@ function generatePublicManifest() {
       colors: {
         note: "Semantic tokens are remapped by data-brand-reign. Moloch and Scroll retain compatibility names while their values follow the selected reign.",
         louchi: BRAND_SYSTEM.reigns[0].palette.map(({ name, value, role }) => ({ name, hex: value.toUpperCase(), role })),
-        primary: [
-          { name: "Moloch 800", hex: BRAND_SYSTEM.baseTokens["--moloch-800"].toUpperCase(), role: "Primary dark / foreground text" },
-          { name: "Moloch 500", hex: BRAND_SYSTEM.baseTokens["--moloch-500"].toUpperCase(), role: "Primary action" },
-          { name: "Scroll 100", hex: BRAND_SYSTEM.baseTokens["--scroll-100"].toUpperCase(), role: "Primary light / background" },
-          { name: "Scroll 700", hex: BRAND_SYSTEM.baseTokens["--scroll-700"].toUpperCase(), role: "Deep warm accent" },
-        ],
+        primary: BRAND_SYSTEM.reigns[0].palette.map(({ name, value, role }) => ({
+          name,
+          hex: value.toUpperCase(),
+          role,
+        })),
         scales: {
           moloch: colorScale("moloch"),
           scroll: colorScale("scroll"),
           neutral: colorScale("neutral"),
         },
-        semanticLight: {
-          background: "Scroll 100 (#F9F7E7)",
-          foreground: "Moloch 800 (#29100A)",
-          primary: "Moloch 500 (#BD482D) on Scroll 100",
-          secondaryMuted: "Neutral 100 (#F1EFEE) with Neutral 600 (#645754) text",
-          accent: "Moloch 500 (#BD482D)",
-          borderInput: "Neutral 200 (#D5CECD)",
-          focusRing: "Moloch 500 (#BD482D)",
-        },
-        semanticDark: "Background flips to Moloch 800 (#29100A) with Scroll 100 (#F9F7E7) text.",
+        semanticLight: BRAND_SYSTEM.reigns[0].tokens,
+        semanticDark: BRAND_SYSTEM.reigns[0].darkTokens,
       },
       typography: {
         reigns: Object.fromEntries(
@@ -239,6 +232,7 @@ function generatePublicManifest() {
         folder: `${LIVE_BASE_URL}/assets/webp/`,
         totalFiles,
         reignReferences: illustrations.reignReferences,
+        referenceCollections: illustrations.referenceCollections,
         urlTemplates: {
           full: `${LIVE_BASE_URL}/assets/webp/{palette}/{size}/{scene}-{tone}.webp`,
           thumbnail: `${LIVE_BASE_URL}/assets/webp/{palette}/thumbnails/{size}/{scene}-{tone}.webp`,

@@ -68,6 +68,10 @@ const payload = {
         ),
         direction: reign.direction,
         dataVersion: reign.dataVersion,
+        ...("appearances" in reign && reign.appearances
+          ? { appearances: reign.appearances }
+          : {}),
+        ...("motion" in reign && reign.motion ? { motion: reign.motion } : {}),
         ...(reign.evidenceNote
           ? { evidence: "partial-reconstruction", archiveNote: reign.evidenceNote }
           : {}),
@@ -81,35 +85,18 @@ const payload = {
     },
     colors: {
       primary: {
-        background: "#f9f7e7",
-        foreground: "#29100a",
-        action: "#bd482d",
-        warmAccent: "#534a13",
+        background: "#efe9d7",
+        foreground: "#102d2c",
+        action: "#ee3c78",
+        highlight: "#d7e34d",
       },
       scales: {
         moloch: getTokenScale("moloch"),
         scroll: getTokenScale("scroll"),
         neutral: getTokenScale("neutral"),
       },
-      semanticLight: {
-        background: "scroll-100",
-        foreground: "moloch-800",
-        card: "scroll-100",
-        primary: "moloch-500",
-        primaryForeground: "scroll-100",
-        secondary: "neutral-100",
-        muted: "neutral-100",
-        mutedForeground: "neutral-600",
-        accent: "moloch-500",
-        destructive: "moloch-300",
-        border: "neutral-200",
-        input: "neutral-200",
-        ring: "moloch-500",
-      },
-      semanticDark: {
-        background: "moloch-800",
-        foreground: "scroll-100",
-      },
+      semanticLight: BRAND_SYSTEM.reigns[0].tokens,
+      semanticDark: BRAND_SYSTEM.reigns[0].darkTokens,
       rule:
         "Use semantic color tokens instead of hardcoded hex values except when defining the brand palette itself.",
     },
@@ -518,11 +505,12 @@ const payload = {
         2,
       reignReferences: {
         louchi: {
-          source:
-            "https://github.com/raid-guild/website/tree/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo",
+          source: BRAND_SYSTEM.assets.illustrations.reignReferences.louchi,
           characterStyleGuide: `${LIVE_BASE_URL}/images/reigns/louchi/character-style-guide.png`,
           direction:
-            "Moebius-influenced speculative landscapes with cyan horizons, coral structures, and atmospheric detail.",
+            BRAND_SYSTEM.assets.illustrations.referenceCollections.louchi.direction,
+          references:
+            BRAND_SYSTEM.assets.illustrations.referenceCollections.louchi,
         },
         tw: {
           source: "https://www.raidguild.org/witch/images/",
@@ -610,6 +598,11 @@ const payload = {
       name: "Brand voice",
       repoPath: "docs/brand-voice.md",
       url: "https://github.com/raid-guild/brand/blob/main/docs/brand-voice.md",
+    },
+    {
+      name: "Louchi hero discovery",
+      repoPath: "docs/louchi-hero-discovery.md",
+      url: "https://github.com/raid-guild/brand/blob/main/docs/louchi-hero-discovery.md",
     },
     {
       name: "UI component catalog",

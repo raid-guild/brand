@@ -9,6 +9,12 @@ export const brandColorSchema = z.object({
   role: z.string().min(1),
 });
 
+const appearanceGuidanceSchema = z.object({
+  label: z.string().min(1),
+  direction: z.string().min(1),
+  palette: z.array(brandColorSchema).min(1),
+});
+
 export const brandReignSchema = z.object({
   id: z.string().regex(/^[a-z][a-z0-9-]*$/),
   steward: z.string().min(1),
@@ -24,6 +30,20 @@ export const brandReignSchema = z.object({
   palette: z.array(brandColorSchema).min(1),
   tokens: cssTokenMapSchema,
   darkTokens: cssTokenMapSchema.optional(),
+  appearances: z.object({
+    light: appearanceGuidanceSchema,
+    dark: appearanceGuidanceSchema.optional(),
+  }).optional(),
+  motion: z.object({
+    principles: z.array(z.string().min(1)).min(1),
+    discoveryPattern: z.object({
+      trigger: z.string().min(1),
+      reveal: z.string().min(1),
+      navigation: z.string().min(1),
+      touch: z.string().min(1),
+      reducedMotion: z.string().min(1),
+    }),
+  }).optional(),
   typography: z.object({
     display: z.string().min(1),
     body: z.string().min(1),
@@ -157,7 +177,12 @@ export const brandSystemSchema = z.object({
               src: z.union([z.string().url(), z.string().startsWith("/")]),
               alt: z.string().min(1),
               aspect: z.string().min(1),
-              kind: z.enum(["artwork", "art-direction"]).optional(),
+              kind: z.enum([
+                "artwork",
+                "art-direction",
+                "appearance-artwork",
+                "interaction-overlay",
+              ]).optional(),
             }),
           ).min(1),
         }),

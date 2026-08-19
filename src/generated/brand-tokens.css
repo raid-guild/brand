@@ -246,16 +246,32 @@
 }
 
 .dark[data-brand-reign="louchi"] {
-  --background: var(--moloch-800);
-  --foreground: var(--scroll-100);
-  --card: #102d2c;
-  --card-foreground: var(--scroll-100);
-  --popover: #102d2c;
-  --popover-foreground: var(--scroll-100);
-  --muted: #274440;
+  --background: #071722;
+  --foreground: #e8e6d9;
+  --card: #0a1f2d;
+  --card-foreground: #f1edde;
+  --popover: #06141f;
+  --popover-foreground: #f1edde;
+  --primary: #ee3c78;
+  --primary-foreground: #f1edde;
+  --secondary: #173c4d;
+  --secondary-foreground: #f1edde;
+  --muted: #163949;
   --muted-foreground: #b8e0df;
-  --border: #58746f;
-  --input: #58746f;
+  --accent: #8fe3ef;
+  --accent-foreground: #071722;
+  --border: #3e5d68;
+  --input: #3e5d68;
+  --ring: #8fe3ef;
+  --sidebar: #06141f;
+  --sidebar-foreground: #e8e6d9;
+  --sidebar-accent: #173c4d;
+  --sidebar-accent-foreground: #f1edde;
+  --sidebar-border: #3e5d68;
+  --sidebar-ring: #8fe3ef;
+  --reign-deep: #06141f;
+  --reign-field: #e8e6d9;
+  --reign-highlight: #8fe3ef;
 }
 
 .dark[data-brand-reign="tw"] {

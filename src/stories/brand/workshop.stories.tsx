@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { ArrowRight, BookOpen, Boxes, Braces, TestTube2 } from "lucide-react";
+import { ArrowRight, BookOpen, Boxes, Braces, Compass, TestTube2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -34,6 +34,12 @@ const workshopLinks = [
     description: "Start with the stable Button API and its variants.",
     href: "/?path=/story/primitives-button--default",
     icon: Boxes,
+  },
+  {
+    title: "Hero Discovery",
+    description: "Exercise Louchi's layered day/night wayfinding pattern.",
+    href: "/?path=/story/brand-hero-discovery--default",
+    icon: Compass,
   },
   {
     title: "Interaction Tests",

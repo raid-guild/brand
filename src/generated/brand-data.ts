@@ -4,9 +4,9 @@
 export const BRAND_SYSTEM = {
   "release": {
     "schemaVersion": "1.0.0",
-    "brandVersion": "2026.8.0",
-    "generatedAt": "2026-08-18T00:00:00.000Z",
-    "sourceRevision": "feat/versioned-brand-reigns@221764d",
+    "brandVersion": "2026.8.1",
+    "generatedAt": "2026-08-19T00:00:00.000Z",
+    "sourceRevision": "feat/versioned-brand-reigns@554fdad",
     "compatibility": {
       "minimumSchemaVersion": "1.0.0",
       "deprecatedBefore": null
@@ -203,23 +203,112 @@ export const BRAND_SYSTEM = {
         "--reign-highlight": "#d7e34d"
       },
       "darkTokens": {
-        "--background": "var(--moloch-800)",
-        "--foreground": "var(--scroll-100)",
-        "--card": "#102d2c",
-        "--card-foreground": "var(--scroll-100)",
-        "--popover": "#102d2c",
-        "--popover-foreground": "var(--scroll-100)",
-        "--muted": "#274440",
+        "--background": "#071722",
+        "--foreground": "#e8e6d9",
+        "--card": "#0a1f2d",
+        "--card-foreground": "#f1edde",
+        "--popover": "#06141f",
+        "--popover-foreground": "#f1edde",
+        "--primary": "#ee3c78",
+        "--primary-foreground": "#f1edde",
+        "--secondary": "#173c4d",
+        "--secondary-foreground": "#f1edde",
+        "--muted": "#163949",
         "--muted-foreground": "#b8e0df",
-        "--border": "#58746f",
-        "--input": "#58746f"
+        "--accent": "#8fe3ef",
+        "--accent-foreground": "#071722",
+        "--border": "#3e5d68",
+        "--input": "#3e5d68",
+        "--ring": "#8fe3ef",
+        "--sidebar": "#06141f",
+        "--sidebar-foreground": "#e8e6d9",
+        "--sidebar-accent": "#173c4d",
+        "--sidebar-accent-foreground": "#f1edde",
+        "--sidebar-border": "#3e5d68",
+        "--sidebar-ring": "#8fe3ef",
+        "--reign-deep": "#06141f",
+        "--reign-field": "#e8e6d9",
+        "--reign-highlight": "#8fe3ef"
+      },
+      "appearances": {
+        "light": {
+          "label": "Day",
+          "direction": "Cyan horizons, parchment surfaces, deep-teal structure, coral signals, and acid-lime highlights preserve the open speculative-world atmosphere.",
+          "palette": [
+            {
+              "name": "Day Sky",
+              "value": "#b8e0df",
+              "role": "Atmosphere and open field"
+            },
+            {
+              "name": "Day Parchment",
+              "value": "#efe9d7",
+              "role": "Primary surface"
+            },
+            {
+              "name": "Day Ink",
+              "value": "#102d2c",
+              "role": "Type and structure"
+            }
+          ]
+        },
+        "dark": {
+          "label": "Night",
+          "direction": "Moonlit navy surfaces, restrained cyan luminescence, darkened artwork, and coral signals extend the same Louchi world after dusk.",
+          "palette": [
+            {
+              "name": "Night Sky",
+              "value": "#071722",
+              "role": "Primary moonlit field"
+            },
+            {
+              "name": "Night Depth",
+              "value": "#06141f",
+              "role": "Deep section and overlay surface"
+            },
+            {
+              "name": "Night Surface",
+              "value": "#0a1f2d",
+              "role": "Raised moonlit surface"
+            },
+            {
+              "name": "Moon Cyan",
+              "value": "#8fe3ef",
+              "role": "Luminous wayfinding and focus"
+            },
+            {
+              "name": "Moon Parchment",
+              "value": "#e8e6d9",
+              "role": "Primary night text"
+            },
+            {
+              "name": "Night Coral",
+              "value": "#a72d68",
+              "role": "Atmospheric signal field"
+            }
+          ]
+        }
+      },
+      "motion": {
+        "principles": [
+          "Use cinematic depth and atmospheric crossfades to reveal information, not as ambient decoration alone.",
+          "Keep navigational markers legible while layered artwork moves independently.",
+          "Pair hover discovery with equivalent keyboard focus and touch behavior."
+        ],
+        "discoveryPattern": {
+          "trigger": "Hover or focus the Venture Beyond title to begin discovery; touch interfaces use an explicit tap state.",
+          "reveal": "Part foreground layers laterally, strengthen landmark contrast, and expose orbital wayfinding without changing the underlying world geometry.",
+          "navigation": "Landmarks route to bringing a challenge, exploring specialist practices, and joining the Guild.",
+          "touch": "Keep the discovery state open long enough to inspect and select landmarks; never require hover as the only path.",
+          "reducedMotion": "Reveal landmarks immediately with no parallax, curtain travel, orbit animation, or long atmospheric crossfade when reduced motion is requested."
+        }
       },
       "typography": {
         "display": "Mazius Display",
         "body": "EB Garamond",
         "mono": "Ubuntu Mono"
       },
-      "dataVersion": "1.0.0",
+      "dataVersion": "1.1.0",
       "evidenceNote": null
     },
     {
@@ -1420,17 +1509,17 @@ export const BRAND_SYSTEM = {
         }
       },
       "reignReferences": {
-        "louchi": "https://github.com/raid-guild/website/tree/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo",
+        "louchi": "https://github.com/raid-guild/website/tree/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo",
         "tw": "https://www.raidguild.org/witch/images/",
         "suede": "https://www.brand.raidguild.org/assets/webp/",
         "ven": "/images/reigns/ven/skull-sword.png"
       },
       "referenceCollections": {
         "louchi": {
-          "direction": "Expansive speculative landscapes place RaidGuild builders inside unfamiliar, optimistic worlds, pairing atmospheric detail with coral structures and cyan horizons.",
+          "direction": "Expansive speculative landscapes place RaidGuild builders inside unfamiliar, optimistic worlds. Day and moonlit appearances pair atmospheric depth with coral structures, cyan wayfinding, layered discovery, and cinematic motion.",
           "hero": {
             "title": "RaidGuild Panorama",
-            "src": "https://raw.githubusercontent.com/raid-guild/website/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo/raidguild-panorama.png",
+            "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/raidguild-panorama.png",
             "alt": "A panoramic view of the Louchi-era RaidGuild world",
             "aspect": "aspect-[3824/1632]"
           },
@@ -1443,26 +1532,40 @@ export const BRAND_SYSTEM = {
               "kind": "art-direction"
             },
             {
+              "title": "Moonlit RaidGuild Panorama",
+              "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/raidguild-panorama-night-v1.webp",
+              "alt": "A moonlit panoramic view of the Louchi-era RaidGuild world",
+              "aspect": "aspect-[3824/1632]",
+              "kind": "appearance-artwork"
+            },
+            {
+              "title": "Hero Landmark Overlay",
+              "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/hero-landmarks-v1.png",
+              "alt": "Transparent landmark overlay identifying navigational destinations in the RaidGuild panorama",
+              "aspect": "aspect-[1919/820]",
+              "kind": "interaction-overlay"
+            },
+            {
               "title": "Sky Citadel",
-              "src": "https://raw.githubusercontent.com/raid-guild/website/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo/sky-citadel.png",
+              "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/sky-citadel.png",
               "alt": "A cloaked traveler overlooking a floating coral citadel",
               "aspect": "aspect-[972/1619]"
             },
             {
               "title": "Protocol Garden",
-              "src": "https://raw.githubusercontent.com/raid-guild/website/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo/field-protocol-garden.png",
+              "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/field-protocol-garden.png",
               "alt": "A cartographer studying a luminous network city",
               "aspect": "aspect-[971/1619]"
             },
             {
               "title": "Signal Commons",
-              "src": "https://raw.githubusercontent.com/raid-guild/website/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo/field-signal-commons.png",
+              "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/field-signal-commons.png",
               "alt": "A floating civic commons above the clouds",
               "aspect": "aspect-[1122/1402]"
             },
             {
               "title": "Autonomous Treasury",
-              "src": "https://raw.githubusercontent.com/raid-guild/website/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo/field-autonomous-treasury.png",
+              "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/field-autonomous-treasury.png",
               "alt": "Engineers inspecting a monumental autonomous treasury",
               "aspect": "aspect-[1003/1568]"
             }

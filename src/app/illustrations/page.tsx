@@ -26,10 +26,23 @@ export default function IllustrationsPage() {
     (illustration) =>
       "kind" in illustration && illustration.kind === "art-direction",
   );
+  const appearanceArtwork = collection.items.find(
+    (illustration) =>
+      "kind" in illustration && illustration.kind === "appearance-artwork",
+  );
+  const interactionOverlay = collection.items.find(
+    (illustration) =>
+      "kind" in illustration && illustration.kind === "interaction-overlay",
+  );
   const galleryItems = collection.items.filter(
     (illustration) =>
-      !("kind" in illustration) || illustration.kind !== "art-direction",
+      !("kind" in illustration) ||
+      !["art-direction", "appearance-artwork", "interaction-overlay"].includes(
+        illustration.kind,
+      ),
   );
+  const appearances = isLouchi ? BRAND_SYSTEM.reigns[0].appearances : null;
+  const motion = isLouchi ? BRAND_SYSTEM.reigns[0].motion : null;
 
   return (
     <div className="container-custom py-16">
@@ -56,20 +69,88 @@ export default function IllustrationsPage() {
         </div>
 
         {isLouchi && hero ? (
-          <section className="mb-14 overflow-hidden rounded-lg border border-border bg-[var(--reign-deep)]">
-            <div className={`relative w-full ${hero.aspect}`}>
-              <Image
-                src={hero.src}
-                alt={hero.alt}
-                fill
-                priority
-                sizes="(min-width: 1280px) 1280px, 100vw"
-                className="object-cover"
-              />
+          <section className="mb-14">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p className="type-label-sm mb-3 text-primary">Appearance</p>
+                <h2 className="type-heading-lg">One World, Day and Night</h2>
+              </div>
+              <p className="type-body-sm max-w-xl text-muted-foreground">
+                Night is the dark appearance of the Louchi reign, not a separate
+                identity or reign.
+              </p>
             </div>
-            <div className="flex items-center justify-between gap-4 p-5 text-[var(--reign-field)]">
-              <h2 className="type-heading-sm">{hero.title}</h2>
-              <span className="type-code-sm">Venture Beyond / 2026</span>
+            <div className="grid gap-6 lg:grid-cols-2">
+              {[
+                { artwork: hero, guidance: appearances?.light },
+                { artwork: appearanceArtwork, guidance: appearances?.dark },
+              ].map(({ artwork, guidance }) =>
+                artwork ? (
+                  <article
+                    key={artwork.src}
+                    className="overflow-hidden rounded-lg border border-border bg-[var(--reign-deep)]"
+                  >
+                    <div className={`relative w-full ${artwork.aspect}`}>
+                      <Image
+                        src={artwork.src}
+                        alt={artwork.alt}
+                        fill
+                        priority={artwork === hero}
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-5 text-[var(--reign-field)]">
+                      <div className="flex items-center justify-between gap-4">
+                        <h3 className="type-heading-sm">
+                          {guidance?.label ?? artwork.title}
+                        </h3>
+                        <span className="type-code-sm">Louchi 1.1</span>
+                      </div>
+                      {guidance ? (
+                        <p className="type-body-sm mt-3 opacity-75">
+                          {guidance.direction}
+                        </p>
+                      ) : null}
+                    </div>
+                  </article>
+                ) : null,
+              )}
+            </div>
+          </section>
+        ) : null}
+
+        {isLouchi && hero && interactionOverlay && motion ? (
+          <section className="mb-14 rounded-lg border border-border bg-card p-6 text-card-foreground lg:p-8">
+            <div className="grid gap-8 lg:grid-cols-[1.35fr_.65fr] lg:items-center">
+              <div
+                className={`relative overflow-hidden rounded-md bg-[var(--reign-deep)] ${hero.aspect}`}
+              >
+                <Image src={hero.src} alt={hero.alt} fill className="object-cover" />
+                <Image
+                  src={interactionOverlay.src}
+                  alt={interactionOverlay.alt}
+                  fill
+                  className="object-cover drop-shadow-[0_0_10px_rgba(238,60,120,.45)]"
+                />
+              </div>
+              <div>
+                <p className="type-label-sm text-primary">Motion Pattern</p>
+                <h2 className="type-heading-lg mt-3">Hero Discovery</h2>
+                <p className="type-body-md mt-4 text-muted-foreground">
+                  {motion.discoveryPattern.reveal}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {motion.principles.map((principle) => (
+                    <li key={principle} className="type-body-sm border-l-2 border-primary pl-4">
+                      {principle}
+                    </li>
+                  ))}
+                </ul>
+                <p className="type-code-sm mt-6 rounded-md bg-muted p-4 text-muted-foreground">
+                  Reduced motion: {motion.discoveryPattern.reducedMotion}
+                </p>
+              </div>
             </div>
           </section>
         ) : null}

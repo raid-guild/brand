@@ -1,10 +1,10 @@
 {
   "$schema": "https://raidguild.org/schemas/brand-manifest-v1.json",
   "name": "RaidGuild Brand Assets Manifest",
-  "version": "2026.8.0",
+  "version": "2026.8.1",
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-08-18T00:00:00.000Z",
-  "sourceRevision": "feat/versioned-brand-reigns@221764d",
+  "generatedAt": "2026-08-19T00:00:00.000Z",
+  "sourceRevision": "feat/versioned-brand-reigns@554fdad",
   "brandRefresh": "Louchi / Venture Beyond",
   "description": "Machine-readable inventory of RaidGuild brand assets and its versioned steward-reign guidance.",
   "sourceOfTruth": "https://github.com/raid-guild/brand",
@@ -50,7 +50,80 @@
           "status": "latest",
           "available": true,
           "source": "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign",
-          "dataVersion": "1.0.0"
+          "dataVersion": "1.1.0",
+          "appearances": {
+            "light": {
+              "label": "Day",
+              "direction": "Cyan horizons, parchment surfaces, deep-teal structure, coral signals, and acid-lime highlights preserve the open speculative-world atmosphere.",
+              "palette": [
+                {
+                  "name": "Day Sky",
+                  "value": "#b8e0df",
+                  "role": "Atmosphere and open field"
+                },
+                {
+                  "name": "Day Parchment",
+                  "value": "#efe9d7",
+                  "role": "Primary surface"
+                },
+                {
+                  "name": "Day Ink",
+                  "value": "#102d2c",
+                  "role": "Type and structure"
+                }
+              ]
+            },
+            "dark": {
+              "label": "Night",
+              "direction": "Moonlit navy surfaces, restrained cyan luminescence, darkened artwork, and coral signals extend the same Louchi world after dusk.",
+              "palette": [
+                {
+                  "name": "Night Sky",
+                  "value": "#071722",
+                  "role": "Primary moonlit field"
+                },
+                {
+                  "name": "Night Depth",
+                  "value": "#06141f",
+                  "role": "Deep section and overlay surface"
+                },
+                {
+                  "name": "Night Surface",
+                  "value": "#0a1f2d",
+                  "role": "Raised moonlit surface"
+                },
+                {
+                  "name": "Moon Cyan",
+                  "value": "#8fe3ef",
+                  "role": "Luminous wayfinding and focus"
+                },
+                {
+                  "name": "Moon Parchment",
+                  "value": "#e8e6d9",
+                  "role": "Primary night text"
+                },
+                {
+                  "name": "Night Coral",
+                  "value": "#a72d68",
+                  "role": "Atmospheric signal field"
+                }
+              ]
+            }
+          },
+          "motion": {
+            "principles": [
+              "Use cinematic depth and atmospheric crossfades to reveal information, not as ambient decoration alone.",
+              "Keep navigational markers legible while layered artwork moves independently.",
+              "Pair hover discovery with equivalent keyboard focus and touch behavior."
+            ],
+            "discoveryPattern": {
+              "trigger": "Hover or focus the Venture Beyond title to begin discovery; touch interfaces use an explicit tap state.",
+              "reveal": "Part foreground layers laterally, strengthen landmark contrast, and expose orbital wayfinding without changing the underlying world geometry.",
+              "navigation": "Landmarks route to bringing a challenge, exploring specialist practices, and joining the Guild.",
+              "touch": "Keep the discovery state open long enough to inspect and select landmarks; never require hover as the only path.",
+              "reducedMotion": "Reveal landmarks immediately with no parallax, curtain travel, orbit animation, or long atmospheric crossfade when reduced motion is requested."
+            }
+          }
         },
         {
           "id": "suede",
@@ -116,24 +189,34 @@
       ],
       "primary": [
         {
-          "name": "Moloch 800",
-          "hex": "#29100A",
-          "role": "Primary dark / foreground text"
+          "name": "Ink",
+          "hex": "#102D2C",
+          "role": "Canonical dark ink"
         },
         {
-          "name": "Moloch 500",
-          "hex": "#BD482D",
-          "role": "Primary action"
+          "name": "Deep Teal",
+          "hex": "#0A292B",
+          "role": "Immersive surface"
         },
         {
-          "name": "Scroll 100",
-          "hex": "#F9F7E7",
-          "role": "Primary light / background"
+          "name": "Cyan",
+          "hex": "#B8E0DF",
+          "role": "Open field"
         },
         {
-          "name": "Scroll 700",
-          "hex": "#534A13",
-          "role": "Deep warm accent"
+          "name": "Parchment",
+          "hex": "#EFE9D7",
+          "role": "Primary canvas"
+        },
+        {
+          "name": "Coral",
+          "hex": "#EE3C78",
+          "role": "Signal and action"
+        },
+        {
+          "name": "Acid Lime",
+          "hex": "#D7E34D",
+          "role": "Highlight and status"
         }
       ],
       "scales": {
@@ -171,15 +254,97 @@
         }
       },
       "semanticLight": {
-        "background": "Scroll 100 (#F9F7E7)",
-        "foreground": "Moloch 800 (#29100A)",
-        "primary": "Moloch 500 (#BD482D) on Scroll 100",
-        "secondaryMuted": "Neutral 100 (#F1EFEE) with Neutral 600 (#645754) text",
-        "accent": "Moloch 500 (#BD482D)",
-        "borderInput": "Neutral 200 (#D5CECD)",
-        "focusRing": "Moloch 500 (#BD482D)"
+        "--moloch-100": "#e7f4f3",
+        "--moloch-200": "#b8e0df",
+        "--moloch-300": "#78c5c3",
+        "--moloch-400": "#ee709a",
+        "--moloch-500": "#ee3c78",
+        "--moloch-600": "#b84067",
+        "--moloch-700": "#315654",
+        "--moloch-800": "#0a292b",
+        "--scroll-100": "#efe9d7",
+        "--scroll-200": "#e5dfc8",
+        "--scroll-300": "#d7e34d",
+        "--scroll-400": "#c7d13f",
+        "--scroll-500": "#9fa82f",
+        "--scroll-600": "#667325",
+        "--scroll-700": "#102d2c",
+        "--scroll-800": "#071c1d",
+        "--neutral-100": "#e7eeea",
+        "--neutral-200": "#cbd9d3",
+        "--neutral-300": "#a7bdb7",
+        "--neutral-400": "#799590",
+        "--neutral-500": "#58746f",
+        "--neutral-600": "#3e5d59",
+        "--neutral-700": "#274440",
+        "--neutral-800": "#102d2c",
+        "--neutral-white": "#fffdf5",
+        "--neutral-black": "#060609",
+        "--background": "var(--scroll-100)",
+        "--foreground": "var(--scroll-700)",
+        "--card": "#f5f0e2",
+        "--card-foreground": "var(--scroll-700)",
+        "--popover": "#f5f0e2",
+        "--popover-foreground": "var(--scroll-700)",
+        "--primary": "var(--moloch-500)",
+        "--primary-foreground": "var(--scroll-100)",
+        "--secondary": "var(--moloch-200)",
+        "--secondary-foreground": "var(--scroll-700)",
+        "--muted": "#e2e9df",
+        "--muted-foreground": "#3e5d59",
+        "--accent": "var(--scroll-300)",
+        "--accent-foreground": "var(--scroll-700)",
+        "--destructive": "#b84031",
+        "--border": "#9db2ac",
+        "--input": "#9db2ac",
+        "--ring": "var(--moloch-500)",
+        "--chart-1": "var(--moloch-500)",
+        "--chart-2": "var(--moloch-300)",
+        "--chart-3": "var(--scroll-300)",
+        "--chart-4": "#b84031",
+        "--chart-5": "var(--scroll-700)",
+        "--sidebar": "var(--scroll-100)",
+        "--sidebar-foreground": "var(--scroll-700)",
+        "--sidebar-primary": "var(--moloch-500)",
+        "--sidebar-primary-foreground": "var(--scroll-100)",
+        "--sidebar-accent": "var(--moloch-200)",
+        "--sidebar-accent-foreground": "var(--scroll-700)",
+        "--sidebar-border": "#9db2ac",
+        "--sidebar-ring": "var(--moloch-500)",
+        "--reign-ink": "#102d2c",
+        "--reign-deep": "#0a292b",
+        "--reign-field": "#b8e0df",
+        "--reign-signal": "#ee3c78",
+        "--reign-highlight": "#d7e34d"
       },
-      "semanticDark": "Background flips to Moloch 800 (#29100A) with Scroll 100 (#F9F7E7) text."
+      "semanticDark": {
+        "--background": "#071722",
+        "--foreground": "#e8e6d9",
+        "--card": "#0a1f2d",
+        "--card-foreground": "#f1edde",
+        "--popover": "#06141f",
+        "--popover-foreground": "#f1edde",
+        "--primary": "#ee3c78",
+        "--primary-foreground": "#f1edde",
+        "--secondary": "#173c4d",
+        "--secondary-foreground": "#f1edde",
+        "--muted": "#163949",
+        "--muted-foreground": "#b8e0df",
+        "--accent": "#8fe3ef",
+        "--accent-foreground": "#071722",
+        "--border": "#3e5d68",
+        "--input": "#3e5d68",
+        "--ring": "#8fe3ef",
+        "--sidebar": "#06141f",
+        "--sidebar-foreground": "#e8e6d9",
+        "--sidebar-accent": "#173c4d",
+        "--sidebar-accent-foreground": "#f1edde",
+        "--sidebar-border": "#3e5d68",
+        "--sidebar-ring": "#8fe3ef",
+        "--reign-deep": "#06141f",
+        "--reign-field": "#e8e6d9",
+        "--reign-highlight": "#8fe3ef"
+      }
     },
     "typography": {
       "reigns": {
@@ -1082,10 +1247,91 @@
       "folder": "https://www.brand.raidguild.org/assets/webp/",
       "totalFiles": 848,
       "reignReferences": {
-        "louchi": "https://github.com/raid-guild/website/tree/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo",
+        "louchi": "https://github.com/raid-guild/website/tree/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo",
         "tw": "https://www.raidguild.org/witch/images/",
         "suede": "https://www.brand.raidguild.org/assets/webp/",
         "ven": "/images/reigns/ven/skull-sword.png"
+      },
+      "referenceCollections": {
+        "louchi": {
+          "direction": "Expansive speculative landscapes place RaidGuild builders inside unfamiliar, optimistic worlds. Day and moonlit appearances pair atmospheric depth with coral structures, cyan wayfinding, layered discovery, and cinematic motion.",
+          "hero": {
+            "title": "RaidGuild Panorama",
+            "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/raidguild-panorama.png",
+            "alt": "A panoramic view of the Louchi-era RaidGuild world",
+            "aspect": "aspect-[3824/1632]"
+          },
+          "items": [
+            {
+              "title": "Character Style Guide",
+              "src": "/images/reigns/louchi/character-style-guide.png",
+              "alt": "Louchi-era character art-direction sheet showing three RaidGuild explorers and guidance for their clean, flat, Moebius-influenced visual language",
+              "aspect": "aspect-[1746/2484]",
+              "kind": "art-direction"
+            },
+            {
+              "title": "Moonlit RaidGuild Panorama",
+              "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/raidguild-panorama-night-v1.webp",
+              "alt": "A moonlit panoramic view of the Louchi-era RaidGuild world",
+              "aspect": "aspect-[3824/1632]",
+              "kind": "appearance-artwork"
+            },
+            {
+              "title": "Hero Landmark Overlay",
+              "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/hero-landmarks-v1.png",
+              "alt": "Transparent landmark overlay identifying navigational destinations in the RaidGuild panorama",
+              "aspect": "aspect-[1919/820]",
+              "kind": "interaction-overlay"
+            },
+            {
+              "title": "Sky Citadel",
+              "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/sky-citadel.png",
+              "alt": "A cloaked traveler overlooking a floating coral citadel",
+              "aspect": "aspect-[972/1619]"
+            },
+            {
+              "title": "Protocol Garden",
+              "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/field-protocol-garden.png",
+              "alt": "A cartographer studying a luminous network city",
+              "aspect": "aspect-[971/1619]"
+            },
+            {
+              "title": "Signal Commons",
+              "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/field-signal-commons.png",
+              "alt": "A floating civic commons above the clouds",
+              "aspect": "aspect-[1122/1402]"
+            },
+            {
+              "title": "Autonomous Treasury",
+              "src": "https://raw.githubusercontent.com/raid-guild/website/4ffb59154966bd9ed08e54275cb145c288fa77ed/public/images/neo/field-autonomous-treasury.png",
+              "alt": "Engineers inspecting a monumental autonomous treasury",
+              "aspect": "aspect-[1003/1568]"
+            }
+          ]
+        },
+        "tw": {
+          "direction": "Surreal witchcraft scenes, dense graphic symbols, high-energy crops, rust, parchment, oversized type, and playful motion.",
+          "items": [
+            {
+              "title": "Witchcraft 08",
+              "src": "https://www.raidguild.org/witch/images/witchcraft-08_0-15-1.png",
+              "alt": "TW-era RaidGuild witchcraft illustration",
+              "aspect": "aspect-[2544/2944]"
+            },
+            {
+              "title": "Witchcraft 05",
+              "src": "https://www.raidguild.org/witch/images/witchcraft-05_0-20.png",
+              "alt": "TW-era surreal fantasy landscape",
+              "aspect": "aspect-[6667/5417]"
+            },
+            {
+              "title": "Witchcraft 04",
+              "src": "https://www.raidguild.org/witch/images/witchcraft-04_0-2.png",
+              "alt": "TW-era graphic fantasy scene",
+              "aspect": "aspect-[6667/5417]"
+            }
+          ]
+        }
       },
       "urlTemplates": {
         "full": "https://www.brand.raidguild.org/assets/webp/{palette}/{size}/{scene}-{tone}.webp",

@@ -58,6 +58,9 @@ Carousel covers horizontal, vertical, and multiple-visible layouts plus button
 and orientation-aware keyboard navigation.
 Form covers empty, validation-error, submitting, and completed states plus an
 end-to-end invalid-to-successful submission flow.
+The Brand/Hero Discovery pattern covers Louchi 1.1 day/night appearance,
+layered landmark reveal, equivalent hover/focus/tap discovery, and the three
+Guild wayfinding routes.
 
 Canonical story IDs live in `src/brand/components.ts`, including representative
 variants and interaction states. The Storybook contract test prevents literal
