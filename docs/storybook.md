@@ -18,6 +18,13 @@ Fresh visits to the workshop root open the reign-aware `Brand/Workshop` story
 instead of Storybook's empty “No Preview” state. The workshop title in the
 manager sidebar returns to the same landing story.
 
+Railway serves the static build with `http-server`, which preserves Storybook's
+`.html` iframe URLs and their story-selection query strings:
+
+```bash
+npx --yes http-server@14.1.1 storybook-static -p $PORT -c-1
+```
+
 ## Theme controls
 
 The preview toolbar exposes two independent globals:
