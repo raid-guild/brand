@@ -14,8 +14,9 @@ npm run test:stories
 
 The local workshop runs at `http://localhost:6006`. The static build is written
 to `storybook-static/`, which is intentionally ignored by Git.
-Fresh visits to the workshop root open the semantic brand-token story instead
-of Storybook's empty “No Preview” state.
+Fresh visits to the workshop root open the reign-aware `Brand/Workshop` story
+instead of Storybook's empty “No Preview” state. The workshop title in the
+manager sidebar returns to the same landing story.
 
 ## Theme controls
 
