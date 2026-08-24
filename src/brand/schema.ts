@@ -20,6 +20,7 @@ export const brandReignSchema = z.object({
   steward: z.string().min(1),
   label: z.string().min(1),
   status: z.enum(["latest", "archived", "reconstructed", "unavailable"]),
+  maturity: z.enum(["development", "stable", "partial"]),
   available: z.boolean(),
   summary: z.string().min(1),
   direction: z.string().min(1),
@@ -49,7 +50,7 @@ export const brandReignSchema = z.object({
     body: z.string().min(1),
     mono: z.string().min(1).optional(),
   }),
-  dataVersion: z.string().min(1),
+  dataVersion: z.string().min(1).nullable(),
 });
 
 export const practiceSchema = z.object({
@@ -257,8 +258,9 @@ export const publicBrandManifestSchema = z.object({
         z.object({
           id: z.string().min(1),
           status: z.enum(["latest", "archived", "reconstructed", "unavailable"]),
+          maturity: z.enum(["development", "stable", "partial"]),
           available: z.boolean(),
-          dataVersion: z.string().min(1),
+          dataVersion: z.string().min(1).nullable(),
         }).passthrough(),
       ),
       practices: z.array(z.unknown()),
@@ -293,8 +295,9 @@ export const machineBrandPayloadSchema = z.object({
         z.object({
           id: z.string().min(1),
           status: z.enum(["latest", "archived", "reconstructed", "unavailable"]),
+          maturity: z.enum(["development", "stable", "partial"]),
           available: z.boolean(),
-          dataVersion: z.string().min(1),
+          dataVersion: z.string().min(1).nullable(),
         }).passthrough(),
       ),
     }).passthrough(),

@@ -1,10 +1,8 @@
 import { useEffect, useId, useRef, useState } from "react";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { BRAND_SYSTEM } from "@raidguild/brand-system";
+import { Button, Label, Switch } from "@raidguild/brand-system/components";
 import { expect, userEvent, within } from "storybook/test";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
-import { BRAND_SYSTEM } from "@/generated/brand-data";
 import styles from "./hero-discovery.module.css";
 
 const collection =

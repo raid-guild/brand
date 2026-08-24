@@ -1,15 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
+import { BRAND_SYSTEM } from "@raidguild/brand-system";
+import { Badge, Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from "@raidguild/brand-system/components";
 import { ArrowRight, BookOpen, Boxes, Braces, Compass, TestTube2 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { BRAND_SYSTEM } from "@/generated/brand-data";
 
 type WorkshopProps = {
   reignId?: string;

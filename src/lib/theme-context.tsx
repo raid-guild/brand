@@ -10,10 +10,10 @@ import {
   type BrandReignId,
 } from "@/lib/brand-reigns";
 
-type Theme = "light" | "dark";
+export type ThemeAppearance = "light" | "dark";
 
 interface ThemeContextType {
-  theme: Theme;
+  theme: ThemeAppearance;
   toggleTheme: () => void;
   brandReign: BrandReign;
   setBrandReign: (reign: BrandReignId) => void;
@@ -21,14 +21,24 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+export interface ThemeProviderProps {
+  children: React.ReactNode;
+  defaultAppearance?: ThemeAppearance;
+  defaultReign?: BrandReignId;
+}
+
+export function ThemeProvider({
+  children,
+  defaultAppearance = "light",
+  defaultReign = DEFAULT_BRAND_REIGN,
+}: ThemeProviderProps) {
+  const [theme, setTheme] = useState<ThemeAppearance>(defaultAppearance);
   const [brandReignId, setBrandReignId] =
-    useState<BrandReignId>(DEFAULT_BRAND_REIGN);
+    useState<BrandReignId>(defaultReign);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme;
-    if (savedTheme) {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light" || savedTheme === "dark") {
       setTheme(savedTheme);
     }
 

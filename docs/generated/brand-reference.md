@@ -6,11 +6,11 @@
 - Default reign: `louchi`
 - Canonical mark: `/assets/logos/symbol-black.svg`
 
-| Reign | Status | Data version | Source |
-| --- | --- | --- | --- |
-| Louchi — Latest | latest | 1.1.0 | Venture Beyond redesign |
-| Suede | archived | 1.0.0 | Brand repository |
-| TW | archived | 1.0.0 | Witch archive |
-| Ven | reconstructed | 0.1.0-reconstructed | Surviving RG UI sheets and illustration |
+| Reign | Status | Maturity | Data version | Source |
+| --- | --- | --- | --- | --- |
+| Louchi — Latest | latest | development | Unversioned | Venture Beyond redesign |
+| Suede | archived | stable | 1.0.0 | Brand repository |
+| TW | archived | stable | 1.0.0 | Witch archive |
+| Ven | reconstructed | partial | 0.1.0-reconstructed | Surviving RG UI sheets and illustration |
 
 Practices are a separate registry and are not nested under reigns.

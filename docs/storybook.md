@@ -58,9 +58,17 @@ Carousel covers horizontal, vertical, and multiple-visible layouts plus button
 and orientation-aware keyboard navigation.
 Form covers empty, validation-error, submitting, and completed states plus an
 end-to-end invalid-to-successful submission flow.
-The Brand/Hero Discovery pattern covers Louchi 1.1 day/night appearance,
+The Brand/Hero Discovery pattern covers Louchi's in-development day/night appearance,
 layered landmark reveal, equivalent hover/focus/tap discovery, and the three
 Guild wayfinding routes.
+
+## Package contract
+
+Storybook consumes `ThemeProvider`, canonical brand data, and representative UI
+components through the same `@raidguild/brand-system` exports available to
+downstream applications. The package is built before local, static, and test
+Storybook commands so the workshop cannot silently document unpublished source
+paths. See `docs/package-contract.md` for installation and versioning details.
 
 Canonical story IDs live in `src/brand/components.ts`, including representative
 variants and interaction states. The Storybook contract test prevents literal

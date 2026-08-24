@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "../..",
+    "incremental": false,
+    "jsx": "react-jsx",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "../../src/brand/**/*.ts",
+    "../../src/components/ui/**/*.tsx",
+    "../../src/generated/**/*.ts",
+    "../../src/lib/brand-reigns.ts",
+    "../../src/lib/theme-context.tsx",
+    "../../src/lib/utils.ts"
+  ]
+}

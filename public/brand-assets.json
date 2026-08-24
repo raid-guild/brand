@@ -48,9 +48,10 @@
           "id": "louchi",
           "steward": "Louchi",
           "status": "latest",
+          "maturity": "development",
           "available": true,
           "source": "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign",
-          "dataVersion": "1.1.0",
+          "dataVersion": null,
           "appearances": {
             "light": {
               "label": "Day",
@@ -129,6 +130,7 @@
           "id": "suede",
           "steward": "Suede",
           "status": "archived",
+          "maturity": "stable",
           "available": true,
           "source": "https://github.com/raid-guild/brand",
           "dataVersion": "1.0.0"
@@ -137,6 +139,7 @@
           "id": "tw",
           "steward": "TW",
           "status": "archived",
+          "maturity": "stable",
           "available": true,
           "source": "https://www.raidguild.org/witch",
           "dataVersion": "1.0.0"
@@ -145,6 +148,7 @@
           "id": "ven",
           "steward": "Ven",
           "status": "reconstructed",
+          "maturity": "partial",
           "available": true,
           "source": "Surviving RG UI sheets and illustration",
           "dataVersion": "0.1.0-reconstructed",

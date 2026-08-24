@@ -105,7 +105,7 @@ export default function IllustrationsPage() {
                         <h3 className="type-heading-sm">
                           {guidance?.label ?? artwork.title}
                         </h3>
-                        <span className="type-code-sm">Louchi 1.1</span>
+                        <span className="type-code-sm">In Development</span>
                       </div>
                       {guidance ? (
                         <p className="type-body-sm mt-3 opacity-75">

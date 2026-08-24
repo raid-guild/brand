@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/nextjs-vite";
-import { ThemeProvider } from "../src/lib/theme-context";
+import { ThemeProvider } from "@raidguild/brand-system";
+import "@raidguild/brand-system/tokens.css";
 import { maziusDisplay, ebGaramond, ubuntuMono } from "../src/lib/fonts";
 import "../src/app/globals.css";
 

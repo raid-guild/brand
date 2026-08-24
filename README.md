@@ -16,7 +16,15 @@ Brand-system checks:
 npm run generate:brand
 npm run check:brand
 npm run test:brand
+npm run build:package
+npm run pack:package
 ```
+
+The installable `@raidguild/brand-system` contract packages canonical data,
+theme runtime, components, semantic token CSS, fonts, and logos. It defaults to
+the latest reign—currently Louchi, which remains explicitly in development and
+unversioned as a reign. Package SemVer is independent. See
+[`docs/package-contract.md`](docs/package-contract.md).
 
 Component workshop:
 
@@ -68,6 +76,10 @@ whenever tokens, components, or asset paths change. Keep narrative guidance in
 `src/lib/machine-api/brand-guidelines.ts` aligned with that generated data.
 
 ## Setting Up a New App with RaidGuild Brand Guidelines
+
+For new consumers, prefer the package contract documented above. The source-copy
+instructions below remain available for projects that intentionally vendor and
+customize the components.
 
 This guide will help you integrate the RaidGuild brand guidelines into a new Next.js application.
 

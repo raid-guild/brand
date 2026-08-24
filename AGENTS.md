@@ -24,12 +24,12 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 ## Using This in Another Project
 - Copy this file into the consuming repo (root recommended) or fetch it from the GitHub URL into your agent’s context.
 - If the repo already has an `AGENTS.md`, merge this content into their file (or add as `RG_BRAND_AGENTS.md`) and include both in your agent context.
-- Align paths: if your UI components aren’t under `@/components/ui/*`, update the import path note to match your structure.
+- Install the package contract when consuming the system outside this repository. Use local `@/components/ui/*` paths only while developing this source repository.
 - Apply setup: install the listed deps, add the fonts, include `globals.css`, and wire `fonts.ts` + `ThemeProvider` so tokens/utilities/components exist in your codebase.
 - Keep in sync: when you change tokens, component APIs, or asset locations in your fork, update this file so agents stay accurate.
 
 ## How to Use With an Agent
-- Always import components from `@/components/ui/*` instead of hand-rolling UI.
+- In downstream projects, import components from `@raidguild/brand-system/components` instead of hand-rolling UI. Inside this source repository, use `@/components/ui/*` while authoring individual components.
 - Follow canonical brand data from `src/brand/system.ts`, generated tokens from `src/generated/brand-tokens.css`, handwritten utilities from `src/app/globals.css`, and fonts from `src/lib/fonts.ts`.
 - Honor semantic colors (primary, background, foreground, etc.) rather than hardcoding hex unless specifying brand palette values.
 - If you need something not listed, propose a combination of existing components first.
@@ -41,7 +41,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 - Copy `src/app/globals.css` and `src/generated/brand-tokens.css` together to get generated tokens, handwritten utilities, and Tailwind `@theme inline` mappings.
 
 ## Brand Tokens & Semantics (from `src/brand/system.ts`)
-- **Louchi / latest anchors**: ink `#102d2c`, deep teal `#0a292b`, cyan `#b8e0df`, parchment `#efe9d7`, coral `#ee3c78`, acid lime `#d7e34d`. Louchi 1.1 night adds night sky `#071722`, night depth `#06141f`, moon cyan `#8fe3ef`, and moon parchment `#e8e6d9`. Direction: Moebius-influenced speculative worlds, expansive editorial typography, spatial composition, and cinematic motion. Day/night is an appearance choice within Louchi, not a separate reign.
+- **Louchi / latest / in development anchors**: ink `#102d2c`, deep teal `#0a292b`, cyan `#b8e0df`, parchment `#efe9d7`, coral `#ee3c78`, acid lime `#d7e34d`. Its night appearance adds night sky `#071722`, night depth `#06141f`, moon cyan `#8fe3ef`, and moon parchment `#e8e6d9`. Direction: Moebius-influenced speculative worlds, expansive editorial typography, spatial composition, and cinematic motion. Day/night is an appearance choice within Louchi, not a separate reign. Louchi has no data version until the steward declares a stable baseline; package SemVer is independent.
 - **Ven / archived reconstruction**: black `#000000`, Raid pink `#ff3864`, white `#ffffff`, graphite `#2b2c34`, violet `#b66ad6`, signal yellow `#fcfb75`. Direction: high-contrast RG UI system, ornate display typography, technical mono annotation, fantasy line icons, and violet-to-pink framing. A recovered neon sword-and-skull illustration lives at `public/images/reigns/ven/skull-sword.png`. Mark the overall system as partially reconstructed from surviving artifacts.
 - **Suede / archived palettes (hex)**:
   - Moloch: 100 `#f1efee`, 200 `#efc5bb`, 300 `#e39b8b`, 400 `#d25c41`, 500 `#bd482d` (primary), 600 `#8b3521`, 700 `#5c2316`, 800 `#29100a`.  
@@ -68,7 +68,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 - Optional: if a future theme or utility class forces `text-transform: uppercase` on specific elements (like breadcrumbs), add a scoped override (for example, `text-transform: none` on those selectors) to keep casing consistent with authored copy.
 
 ## Components (must-use)
-- Source of truth: `docs/ui-components.md`. Import path: `@/components/ui/<component>`.
+- Source of truth: `docs/ui-components.md`. Downstream import path: `@raidguild/brand-system/components`; source-repository path: `@/components/ui/<component>`.
 - Highlights: Button (variants: primary, secondary, ghost, moloch), Form system (Form, FormField, FormLabel, FormControl, FormMessage, RequiredFieldIndicator) with React Hook Form, Card/Tabs/Accordion for structure, Dialog/Sheet/Drawer for overlays, Table/DataTable, Select/Combobox/Multiselect, Badge variants (default, secondary, destructive, outline, moloch, scroll), Tooltip/Popover/HoverCard, Wizard, Sidebar, Command palette, Progress, Slider, DatePicker/Calendar, Carousel, Breadcrumb/Pagination/NavigationMenu.
 - Patterns: prefer composition over custom styling; keep accessibility (Radix primitives, focus-visible rings). Use `cn` from `src/lib/utils.ts` for class merging.
 
@@ -92,7 +92,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 ## Suggested Prompt Snippet (for agents)
 ```text
 You are building UI for RaidGuild. Use the official design system.
-- Import components from @/components/ui/* (see docs/ui-components.md).
+- Import components from @raidguild/brand-system/components (see docs/ui-components.md).
 - Use generated brand tokens from src/generated/brand-tokens.css and utilities from src/app/globals.css.
 - Font variables: maziusDisplay (display), ebGaramond (body), ubuntuMono (mono) from src/lib/fonts.ts.
 - Honor ThemeProvider light/dark and focus-visible rings.

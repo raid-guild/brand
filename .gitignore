@@ -13,6 +13,7 @@
 # testing
 /coverage
 /storybook-static
+/packages/*/dist
 
 # next.js
 /.next/

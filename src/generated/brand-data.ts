@@ -100,6 +100,7 @@ export const BRAND_SYSTEM = {
       "steward": "Louchi",
       "label": "Louchi — Latest",
       "status": "latest",
+      "maturity": "development",
       "available": true,
       "summary": "A Moebius-influenced system of deep teal, cyan, parchment, coral, and acid lime, built around expansive editorial type and speculative-world imagery.",
       "direction": "Moebius-influenced speculative worlds, expansive editorial typography, spatial composition, and cinematic motion.",
@@ -308,7 +309,7 @@ export const BRAND_SYSTEM = {
         "body": "EB Garamond",
         "mono": "Ubuntu Mono"
       },
-      "dataVersion": "1.1.0",
+      "dataVersion": null,
       "evidenceNote": null
     },
     {
@@ -316,6 +317,7 @@ export const BRAND_SYSTEM = {
       "steward": "Suede",
       "label": "Suede",
       "status": "archived",
+      "maturity": "stable",
       "available": true,
       "summary": "The warm Moloch and Scroll system: calligraphic editorial typography, D&D role language, and a red, parchment, and earthen-gold palette.",
       "direction": "Warm Moloch and Scroll palettes, Mazius and EB Garamond typography, D&D role language, and technology-forward line art.",
@@ -370,6 +372,7 @@ export const BRAND_SYSTEM = {
       "steward": "TW",
       "label": "TW",
       "status": "archived",
+      "maturity": "stable",
       "available": true,
       "summary": "A high-energy Webflow era using rust red, parchment, oversized custom type, tickers, and playful motion.",
       "direction": "Oversized Alchemion and Fratelli typography, tickers, playful motion, rust red, and parchment.",
@@ -454,6 +457,7 @@ export const BRAND_SYSTEM = {
       "steward": "Ven",
       "label": "Ven",
       "status": "reconstructed",
+      "maturity": "partial",
       "available": true,
       "summary": "A high-contrast early design-system era built from black fields, electric pink, white, graphite, violet, and signal yellow.",
       "direction": "High-contrast design-system language using black fields, electric pink line work, ornate display typography, monospaced technical annotation, fantasy role icons, and violet-to-pink framing.",
@@ -1605,6 +1609,7 @@ export const BRAND_REIGNS = [
     "steward": "Louchi",
     "label": "Louchi — Latest",
     "status": "latest",
+    "maturity": "development",
     "available": true,
     "summary": "A Moebius-influenced system of deep teal, cyan, parchment, coral, and acid lime, built around expansive editorial type and speculative-world imagery.",
     "sourceLabel": "Venture Beyond redesign",
@@ -1641,6 +1646,7 @@ export const BRAND_REIGNS = [
         "role": "Highlight and status"
       }
     ],
+    "dataVersion": null,
     "sourceUrl": "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign",
     "evidenceNote": null
   },
@@ -1649,6 +1655,7 @@ export const BRAND_REIGNS = [
     "steward": "Suede",
     "label": "Suede",
     "status": "archived",
+    "maturity": "stable",
     "available": true,
     "summary": "The warm Moloch and Scroll system: calligraphic editorial typography, D&D role language, and a red, parchment, and earthen-gold palette.",
     "sourceLabel": "Brand repository",
@@ -1680,6 +1687,7 @@ export const BRAND_REIGNS = [
         "role": "Canonical mark"
       }
     ],
+    "dataVersion": "1.0.0",
     "sourceUrl": "https://github.com/raid-guild/brand",
     "evidenceNote": null
   },
@@ -1688,6 +1696,7 @@ export const BRAND_REIGNS = [
     "steward": "TW",
     "label": "TW",
     "status": "archived",
+    "maturity": "stable",
     "available": true,
     "summary": "A high-energy Webflow era using rust red, parchment, oversized custom type, tickers, and playful motion.",
     "sourceLabel": "Witch archive",
@@ -1709,6 +1718,7 @@ export const BRAND_REIGNS = [
         "role": "Canvas and contrast"
       }
     ],
+    "dataVersion": "1.0.0",
     "sourceUrl": "https://www.raidguild.org/witch",
     "evidenceNote": null
   },
@@ -1717,6 +1727,7 @@ export const BRAND_REIGNS = [
     "steward": "Ven",
     "label": "Ven",
     "status": "reconstructed",
+    "maturity": "partial",
     "available": true,
     "summary": "A high-contrast early design-system era built from black fields, electric pink, white, graphite, violet, and signal yellow.",
     "sourceLabel": "Surviving RG UI sheets and illustration",
@@ -1753,6 +1764,7 @@ export const BRAND_REIGNS = [
         "role": "Secondary highlight"
       }
     ],
+    "dataVersion": "0.1.0-reconstructed",
     "sourceUrl": null,
     "evidenceNote": "Partially reconstructed from a surviving overview, colour sheet, and neon sword-and-skull illustration."
   }

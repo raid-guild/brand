@@ -28,7 +28,7 @@ Requirements:
 - [Requirement 3]
 
 Make sure to:
-- Import components from @/components/ui/[component-name]
+- Import components from @raidguild/brand-system/components in downstream apps
 - Follow the design system patterns
 - Use the correct variants and props
 - Include proper form handling if needed
@@ -76,10 +76,13 @@ Follow the table patterns shown in the catalog.
 
 ## Import Path
 
-All components are imported from:
+Installed consumers import from the versioned package barrel:
 ```typescript
-import { ComponentName } from "@/components/ui/component-name";
+import { ComponentName } from "@raidguild/brand-system/components";
 ```
+
+When developing this source repository itself, individual component modules
+remain under `@/components/ui/[component-name]`.
 
 ## Component List
 

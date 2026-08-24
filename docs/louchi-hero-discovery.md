@@ -37,7 +37,7 @@ The revealed landmarks connect three core intents:
 
 ## Source assets
 
-The approved Louchi 1.1 sources are pinned to RaidGuild website commit
+The approved Louchi development sources are pinned to RaidGuild website commit
 `4ffb59154966bd9ed08e54275cb145c288fa77ed`:
 
 - `raidguild-panorama.png` — day panorama

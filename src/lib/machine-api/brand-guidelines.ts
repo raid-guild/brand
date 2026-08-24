@@ -61,6 +61,7 @@ const payload = {
         id: reign.id,
         steward: reign.steward,
         status: reign.status,
+        maturity: reign.maturity,
         available: reign.available,
         source: reign.sourceUrl ?? reign.sourceLabel,
         palette: Object.fromEntries(
@@ -349,7 +350,7 @@ const payload = {
         "Do not force uppercase, pseudo-small-caps, or extra bolding in body copy and navigation.",
     },
     implementation: {
-      componentImport: "@/components/ui/<component>",
+      componentImport: "@raidguild/brand-system/components",
       componentRule:
         "Compose the existing UI components before proposing bespoke UI.",
       components: componentCatalog,
@@ -433,7 +434,7 @@ const payload = {
         },
       },
       patterns: [
-        "Import every component from @/components/ui/<component>; do not recreate an existing primitive.",
+        "Import components from @raidguild/brand-system/components; do not recreate an existing primitive.",
         "Prefer composition over custom component styling.",
         "Use semantic tokens for colors and preserve focus-visible rings.",
         "Keep component state local unless it must be shared across components.",
