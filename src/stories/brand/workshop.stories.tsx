@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import { BRAND_SYSTEM } from "@raidguild/brand-system";
 import { Badge, Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from "@raidguild/brand-system/components";
-import { ArrowRight, BookOpen, Boxes, Braces, Compass, TestTube2 } from "lucide-react";
+import { ArrowRight, BookOpen, Boxes, Braces, Compass, PackageOpen, TestTube2 } from "lucide-react";
 
 type WorkshopProps = {
   reignId?: string;
@@ -32,6 +32,12 @@ const workshopLinks = [
     description: "Exercise Louchi's layered day/night wayfinding pattern.",
     href: "/?path=/story/brand-hero-discovery--default",
     icon: Compass,
+  },
+  {
+    title: "Development Package",
+    description: "Download the latest commit-specific installable tarball.",
+    href: "/packages/raidguild-brand-system-dev.tgz",
+    icon: PackageOpen,
   },
   {
     title: "Interaction Tests",

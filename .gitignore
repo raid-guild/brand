@@ -14,6 +14,7 @@
 /coverage
 /storybook-static
 /packages/*/dist
+/public/packages
 
 # next.js
 /.next/

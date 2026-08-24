@@ -26,6 +26,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 - If the repo already has an `AGENTS.md`, merge this content into their file (or add as `RG_BRAND_AGENTS.md`) and include both in your agent context.
 - Install the package contract when consuming the system outside this repository. Use local `@/components/ui/*` paths only while developing this source repository.
 - Apply setup: install the listed deps, add the fonts, include `globals.css`, and wire `fonts.ts` + `ThemeProvider` so tokens/utilities/components exist in your codebase.
+- Development builds expose a commit-specific `@raidguild/brand-system` tarball through `/packages/brand-system.json`; pin the manifest's versioned URL for reproducible downstream installs.
 - Keep in sync: when you change tokens, component APIs, or asset locations in your fork, update this file so agents stay accurate.
 
 ## How to Use With an Agent

@@ -25,6 +25,9 @@ theme runtime, components, semantic token CSS, fonts, and logos. It defaults to
 the latest reign—currently Louchi, which remains explicitly in development and
 unversioned as a reign. Package SemVer is independent. See
 [`docs/package-contract.md`](docs/package-contract.md).
+Development deployments expose the current tarball manifest at
+`/packages/brand-system.json` and a convenience download at
+`/packages/raidguild-brand-system-dev.tgz`.
 
 Component workshop:
 

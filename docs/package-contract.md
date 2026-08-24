@@ -52,3 +52,25 @@ Create a locally installable tarball with:
 ```bash
 npm pack ./packages/brand-system
 ```
+
+## Development downloads
+
+Production builds publish an immutable commit-specific prerelease tarball and
+a replaceable development alias:
+
+```text
+/packages/raidguild-brand-system-0.1.0-dev.sha<commit>.tgz
+/packages/raidguild-brand-system-dev.tgz
+```
+
+Package metadata, the exact download path, revision, and SHA-512 integrity are
+available from `/packages/brand-system.json`. Portal should install the
+commit-specific URL recorded there when it needs a reproducible dependency.
+
+```bash
+npm install https://raidguild-brand-guide-production.up.railway.app/packages/raidguild-brand-system-0.1.0-dev.sha<commit>.tgz
+```
+
+The brand guide and static Storybook builds both publish these files. Generated
+tarballs remain outside Git and are recreated from the checked-out revision on
+every production build.
