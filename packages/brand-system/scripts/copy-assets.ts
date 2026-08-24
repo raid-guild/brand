@@ -10,6 +10,7 @@ await cp(
   resolve(repositoryRoot, "src/generated/brand-tokens.css"),
   resolve(outputRoot, "tokens.css"),
 );
+await cp(resolve(packageRoot, "src/fonts.css"), resolve(outputRoot, "fonts.css"));
 await cp(resolve(repositoryRoot, "public/fonts"), resolve(outputRoot, "fonts"), {
   recursive: true,
 });

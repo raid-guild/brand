@@ -1,4 +1,3 @@
-import { Ubuntu_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
 // Primary Display Font - Mazius Display
@@ -37,9 +36,19 @@ export const ebGaramond = localFont({
   display: "swap",
 });
 
-export const ubuntuMono = Ubuntu_Mono({
-  subsets: ["latin"],
+export const ubuntuMono = localFont({
+  src: [
+    {
+      path: "../../public/fonts/UbuntuMono-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/UbuntuMono-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-ubuntu-mono",
-  weight: ["400", "700"],
   display: "swap",
 });

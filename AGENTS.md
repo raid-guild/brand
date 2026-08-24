@@ -37,7 +37,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 
 ## Quick Start (Dev Setup)
 - Install deps: `npm install class-variance-authority clsx lucide-react tailwind-merge` and `npm install -D @tailwindcss/postcss tw-animate-css`.
-- Fonts: place `MAZIUSREVIEW20.09-Regular.woff`, `MaziusDisplay-Bold.otf`, `EBGaramond-VariableFont_wght.ttf`, `EBGaramond-Italic-VariableFont_wght.ttf` under `public/fonts/`.
+- Fonts: package consumers import `@raidguild/brand-system/fonts.css`. Source-vendored setups place `MAZIUSREVIEW20.09-Regular.woff`, `MaziusDisplay-Bold.otf`, `EBGaramond-VariableFont_wght.ttf`, `EBGaramond-Italic-VariableFont_wght.ttf`, `UbuntuMono-Regular.ttf`, and `UbuntuMono-Bold.ttf` under `public/fonts/`.
 - Layout: set `data-brand-reign="louchi"` on `<html>`, wrap `<body>` with font variables `maziusDisplay`, `ebGaramond`, `ubuntuMono` from `src/lib/fonts.ts`, and use `<ThemeProvider>` from `src/lib/theme-context.tsx` for reign selection plus light/dark appearance.
 - Copy `src/app/globals.css` and `src/generated/brand-tokens.css` together to get generated tokens, handwritten utilities, and Tailwind `@theme inline` mappings.
 
@@ -54,6 +54,7 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 
 ## Typography
 - Families: `--font-display` (Mazius Display), `--font-body` (EB Garamond), `--font-mono` (Ubuntu Mono).
+- Ubuntu Mono is the utility/data voice for dates, metadata, status labels, kickers, ranks, statistics, step numbers, graph labels, technical identifiers, and compact controls. Do not use it for headings or normal paragraphs.
 - Louchi retains those families but uses much larger display moments, tighter leading, editorial contrast, and Ubuntu Mono for field-note metadata. TW remaps display/body to Alchemion and Fratelli using the archived `/witch/fonts` files.
 - Utility classes (preferred): `type-display-lg/md/sm`, `type-heading-lg/md/sm`, `type-body-lg/md/sm`, `type-label`, `type-label-md`, `type-label-sm`, `type-code-lg/md/sm`. Uses weights, letter spacing, and line heights defined in globals.
 

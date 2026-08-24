@@ -32,4 +32,5 @@ test("package declares stable entry points and bundled assets", async () => {
   assert.ok(packageJson.exports["."]);
   assert.ok(packageJson.exports["./components"]);
   assert.equal(packageJson.exports["./tokens.css"], "./dist/tokens.css");
+  assert.equal(packageJson.exports["./fonts.css"], "./dist/fonts.css");
 });

@@ -139,6 +139,9 @@ export const brandSystemSchema = z.object({
         file: z.string().min(1),
         family: z.string().min(1),
         weight: z.string().min(1),
+        license: z.string().min(1).optional(),
+        licenseFile: z.string().min(1).optional(),
+        sourceUrl: z.string().url().optional(),
       }),
     ),
     social: z.array(

@@ -56,19 +56,17 @@ export default function TypographyPage() {
           name: "Ubuntu Mono",
           className: "font-mono",
           sample: "RG—26.002 / SIGNAL ACTIVE",
-          role: "Labels, coordinates, and technical metadata",
+          role: "Utility labels, metadata, and numeric data",
           description:
             brandReign.id === "louchi"
-              ? "Used heavily for field-note metadata, navigation labels, coordinates, and technical signals."
-              : "Used for code, utility labels, and technical content.",
+              ? "The system utility voice for dates, field-note metadata, status labels, ranks, statistics, graph labels, technical identifiers, and compact controls—not headings or running copy."
+              : "Used for dates, metadata, status labels, numeric data, identifiers, and compact utility controls—not headings or running copy.",
         },
       ];
 
   const sourceUrl = isTw
     ? "https://www.raidguild.org/witch/fonts/"
-    : brandReign.id === "louchi"
-      ? "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign/public/fonts"
-      : "https://github.com/raid-guild/brand/tree/main/public/fonts";
+    : "https://github.com/raid-guild/brand/tree/main/public/fonts";
 
   return (
     <div className="container-custom py-16">

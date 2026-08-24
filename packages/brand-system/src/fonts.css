@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Mazius Display";
+  src: url("./fonts/MAZIUSREVIEW20.09-Regular.woff") format("woff");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Mazius Display";
+  src: url("./fonts/MaziusDisplay-Bold.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("./fonts/EBGaramond-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400 800;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("./fonts/EBGaramond-Italic-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400 800;
+}
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("./fonts/UbuntuMono-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Ubuntu Mono";
+  src: url("./fonts/UbuntuMono-Bold.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+:root {
+  --font-mazius-display: "Mazius Display";
+  --font-eb-garamond: "EB Garamond";
+  --font-ubuntu-mono: "Ubuntu Mono";
+  --font-display: var(--font-mazius-display);
+  --font-body: var(--font-eb-garamond);
+  --font-mono: var(--font-ubuntu-mono);
+}

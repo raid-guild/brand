@@ -564,11 +564,14 @@ const payload = {
           url: "https://www.raidguild.org/witch/fonts/Fratelli.otf",
         },
       ],
-      files: BRAND_SYSTEM.assets.fonts.map(({ file }) => ({
-        file,
-        url: `${LIVE_BASE_URL}/fonts/${file}`,
+      files: BRAND_SYSTEM.assets.fonts.map((font) => ({
+        ...font,
+        url: `${LIVE_BASE_URL}/fonts/${font.file}`,
+        ...("licenseFile" in font && font.licenseFile
+          ? { licenseUrl: `${LIVE_BASE_URL}/fonts/${font.licenseFile}` }
+          : {}),
       })),
-      note: "Ubuntu Mono is loaded through next/font/google and is not stored as a local asset.",
+      note: "Ubuntu Mono Regular and Bold are packaged local assets for compact utility and factual data. Do not use the mono family for headings or normal paragraphs.",
     },
     social: {
       dimensions: "400x400",

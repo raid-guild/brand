@@ -33,8 +33,10 @@ The preview toolbar exposes two independent globals:
 - `appearance`: light or dark. Light is the default.
 
 The preview applies the selected `data-brand-reign`, semantic appearance class,
-generated token CSS, local font variables, and `ThemeProvider` without reloading
-the workshop. Practice selection is intentionally not part of either control.
+generated token CSS, packaged `fonts.css`, and `ThemeProvider` without reloading
+the workshop. Storybook does not import repository-local font loaders, so a
+missing package font fails the same integration path consumers use. Practice
+selection is intentionally not part of either control.
 
 ## Current coverage
 

@@ -34,6 +34,7 @@
       "require": "./dist/components.cjs"
     },
     "./tokens.css": "./dist/tokens.css",
+    "./fonts.css": "./dist/fonts.css",
     "./fonts/*": "./dist/fonts/*",
     "./logos/*": "./dist/logos/*",
     "./package.json": "./package.json"

@@ -299,7 +299,10 @@ function generateMarkdownReference() {
 async function validateCriticalLocalAssets() {
   const paths = [
     ...BRAND_SYSTEM.assets.logos.map((asset) => `public/assets/logos/${asset.file}`),
-    ...BRAND_SYSTEM.assets.fonts.map((asset) => `public/fonts/${asset.file}`),
+    ...BRAND_SYSTEM.assets.fonts.flatMap((asset) => [
+      `public/fonts/${asset.file}`,
+      ...(asset.licenseFile ? [`public/fonts/${asset.licenseFile}`] : []),
+    ]),
     ...BRAND_SYSTEM.assets.social.map((asset) => `public/assets/social/${asset.file}`),
     `public/assets/${BRAND_SYSTEM.assets.guidelinesPdf.file}`,
   ];

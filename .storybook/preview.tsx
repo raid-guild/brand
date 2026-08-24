@@ -1,10 +1,8 @@
 import type { Preview } from "@storybook/nextjs-vite";
 import { ThemeProvider } from "@raidguild/brand-system";
 import "@raidguild/brand-system/tokens.css";
-import { maziusDisplay, ebGaramond, ubuntuMono } from "../src/lib/fonts";
+import "@raidguild/brand-system/fonts.css";
 import "../src/app/globals.css";
-
-const fontClasses = `${maziusDisplay.variable} ${ebGaramond.variable} ${ubuntuMono.variable}`;
 
 const preview: Preview = {
   globalTypes: {
@@ -47,14 +45,13 @@ const preview: Preview = {
         root.dataset.brandReign = brandReign;
         root.classList.remove("light", "dark");
         root.classList.add(appearance);
-        document.body.classList.add(...fontClasses.split(" "));
         localStorage.setItem("raidguild-brand-reign", brandReign);
         localStorage.setItem("theme", appearance);
       }
 
       return (
         <ThemeProvider key={`${brandReign}-${appearance}`}>
-          <div className={`${fontClasses} min-h-screen bg-background p-8 text-foreground`}>
+          <div className="min-h-screen bg-background p-8 text-foreground">
             <Story />
           </div>
         </ThemeProvider>

@@ -106,7 +106,9 @@ public/
     ├── MAZIUSREVIEW20.09-Regular.woff
     ├── MaziusDisplay-Bold.otf
     ├── EBGaramond-VariableFont_wght.ttf
-    └── EBGaramond-Italic-VariableFont_wght.ttf
+    ├── EBGaramond-Italic-VariableFont_wght.ttf
+    ├── UbuntuMono-Regular.ttf
+    └── UbuntuMono-Bold.ttf
 ```
 
 Copy `src/lib/fonts.ts` into your project.

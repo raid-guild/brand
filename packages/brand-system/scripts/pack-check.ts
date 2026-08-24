@@ -13,7 +13,11 @@ const requiredFiles = [
   "dist/components.cjs",
   "dist/components.d.ts",
   "dist/tokens.css",
+  "dist/fonts.css",
   "dist/fonts/EBGaramond-VariableFont_wght.ttf",
+  "dist/fonts/UbuntuMono-Regular.ttf",
+  "dist/fonts/UbuntuMono-Bold.ttf",
+  "dist/fonts/UbuntuMono-UFL.txt",
   "dist/logos/symbol-black.svg",
 ];
 

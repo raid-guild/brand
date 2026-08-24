@@ -591,7 +591,7 @@ export const BRAND_SYSTEM = {
         "name": "Ubuntu Mono",
         "cssVariable": "--font-mono",
         "sourceVariable": "--font-ubuntu-mono",
-        "role": "Code and technical content"
+        "role": "Compact utility, metadata, labels, identifiers, and numeric data"
       }
     ],
     "scale": [
@@ -1411,6 +1411,22 @@ export const BRAND_SYSTEM = {
         "file": "EBGaramond-Italic-VariableFont_wght.ttf",
         "family": "EB Garamond",
         "weight": "Italic Variable"
+      },
+      {
+        "file": "UbuntuMono-Regular.ttf",
+        "family": "Ubuntu Mono",
+        "weight": "Regular 400",
+        "license": "Ubuntu Font Licence 1.0",
+        "licenseFile": "UbuntuMono-UFL.txt",
+        "sourceUrl": "https://github.com/google/fonts/blob/90abd17b4f97671435798b6147b698aa9087612f/ufl/ubuntumono/UbuntuMono-Regular.ttf"
+      },
+      {
+        "file": "UbuntuMono-Bold.ttf",
+        "family": "Ubuntu Mono",
+        "weight": "Bold 700",
+        "license": "Ubuntu Font Licence 1.0",
+        "licenseFile": "UbuntuMono-UFL.txt",
+        "sourceUrl": "https://github.com/google/fonts/blob/90abd17b4f97671435798b6147b698aa9087612f/ufl/ubuntumono/UbuntuMono-Bold.ttf"
       }
     ],
     "social": [

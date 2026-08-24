@@ -13,6 +13,7 @@ Until registry publication is configured, validate the package with
 import { ThemeProvider } from "@raidguild/brand-system";
 import { Button } from "@raidguild/brand-system/components";
 import "@raidguild/brand-system/tokens.css";
+import "@raidguild/brand-system/fonts.css";
 
 export function App() {
   return (
@@ -26,3 +27,7 @@ export function App() {
 `ThemeProvider` defaults to the latest reign. Pin an initial historical reign
 with `defaultReign="suede"`. User selections are persisted under
 `raidguild-brand-reign`.
+
+The font stylesheet provides Mazius Display for display type, EB Garamond for
+body copy, and Ubuntu Mono for compact utility and factual data. Ubuntu Mono is
+not intended for headings or running paragraphs.

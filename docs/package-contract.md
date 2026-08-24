@@ -26,10 +26,13 @@ import {
   Card,
 } from "@raidguild/brand-system/components";
 import "@raidguild/brand-system/tokens.css";
+import "@raidguild/brand-system/fonts.css";
 ```
 
 The package also exports font files under `@raidguild/brand-system/fonts/*` and
-logo files under `@raidguild/brand-system/logos/*`.
+logo files under `@raidguild/brand-system/logos/*`. `fonts.css` defines local
+Mazius Display, EB Garamond, and Ubuntu Mono faces without a Google Fonts
+runtime dependency.
 
 `ThemeProvider` uses the latest reign by default and persists a user's valid
 selection under `raidguild-brand-reign`. Use `defaultReign="suede"` when an

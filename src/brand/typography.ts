@@ -2,7 +2,7 @@ export const TYPOGRAPHY = {
   families: [
     { id: "display", name: "Mazius Display", cssVariable: "--font-display", sourceVariable: "--font-mazius-display", role: "Display, headlines, and brand graphics" },
     { id: "body", name: "EB Garamond", cssVariable: "--font-body", sourceVariable: "--font-eb-garamond", role: "Body copy and supporting UI text" },
-    { id: "mono", name: "Ubuntu Mono", cssVariable: "--font-mono", sourceVariable: "--font-ubuntu-mono", role: "Code and technical content" },
+    { id: "mono", name: "Ubuntu Mono", cssVariable: "--font-mono", sourceVariable: "--font-ubuntu-mono", role: "Compact utility, metadata, labels, identifiers, and numeric data" },
   ],
   scale: [
     { token: "Display Large", className: "type-display-lg", sizePx: 80, lineHeight: 1.1, letterSpacing: "-0.02em" },
