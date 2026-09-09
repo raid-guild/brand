@@ -10,6 +10,18 @@ type WorkshopProps = {
 
 const workshopLinks = [
   {
+    title: "Venture Interactions",
+    description: "Portal energy, the foliage front door, member motion, creed video and safe three-step inquiry previews.",
+    href: "/?path=/story/brand-venture-interactions--portal-chooser",
+    icon: Compass,
+  },
+  {
+    title: "Venture Beyond",
+    description: "Current Louchi headings, retalic accents, CTA spacing, card rails, and motion decisions.",
+    href: "/?path=/story/brand-venture-beyond--typography-and-actions",
+    icon: Compass,
+  },
+  {
     title: "Brand Tokens",
     description: "Inspect semantic surfaces and the complete reign matrix.",
     href: "/?path=/story/foundations-brand-tokens--semantic-surfaces",

@@ -103,7 +103,7 @@ export const BRAND_SYSTEM = {
       "maturity": "development",
       "available": true,
       "summary": "A Moebius-influenced system of deep teal, cyan, parchment, coral, and acid lime, built around expansive editorial type and speculative-world imagery.",
-      "direction": "Moebius-influenced speculative worlds, expansive editorial typography, spatial composition, and cinematic motion.",
+      "direction": "Moebius-influenced speculative worlds, heavy uppercase Afacad Flux with reverse-italic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
       "sourceLabel": "Venture Beyond redesign",
       "sourceUrl": "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign",
       "contributionNote": "Stewarded by Louchi and made real through the work, critique, and adoption of many Guild contributors.",
@@ -112,6 +112,11 @@ export const BRAND_SYSTEM = {
           "name": "Ink",
           "value": "#102d2c",
           "role": "Canonical dark ink"
+        },
+        {
+          "name": "Navy",
+          "value": "#191e4e",
+          "role": "Night canvas and day headings"
         },
         {
           "name": "Deep Teal",
@@ -140,6 +145,9 @@ export const BRAND_SYSTEM = {
         }
       ],
       "tokens": {
+        "--font-display": "'Afacad Flux', sans-serif",
+        "--font-body": "'Ubuntu', sans-serif",
+        "--reign-navy": "#191e4e",
         "--moloch-100": "#e7f4f3",
         "--moloch-200": "#b8e0df",
         "--moloch-300": "#78c5c3",
@@ -204,14 +212,14 @@ export const BRAND_SYSTEM = {
         "--reign-highlight": "#d7e34d"
       },
       "darkTokens": {
-        "--background": "#071722",
-        "--foreground": "#e8e6d9",
-        "--card": "#0a1f2d",
-        "--card-foreground": "#f1edde",
-        "--popover": "#06141f",
-        "--popover-foreground": "#f1edde",
+        "--background": "#191e4e",
+        "--foreground": "#efe9d7",
+        "--card": "#242953",
+        "--card-foreground": "#efe9d7",
+        "--popover": "#191e4e",
+        "--popover-foreground": "#efe9d7",
         "--primary": "#ee3c78",
-        "--primary-foreground": "#f1edde",
+        "--primary-foreground": "#efe9d7",
         "--secondary": "#173c4d",
         "--secondary-foreground": "#f1edde",
         "--muted": "#163949",
@@ -259,17 +267,17 @@ export const BRAND_SYSTEM = {
           "palette": [
             {
               "name": "Night Sky",
-              "value": "#071722",
+              "value": "#191e4e",
               "role": "Primary moonlit field"
             },
             {
               "name": "Night Depth",
-              "value": "#06141f",
+              "value": "#191e4e",
               "role": "Deep section and overlay surface"
             },
             {
               "name": "Night Surface",
-              "value": "#0a1f2d",
+              "value": "#242953",
               "role": "Raised moonlit surface"
             },
             {
@@ -305,8 +313,8 @@ export const BRAND_SYSTEM = {
         }
       },
       "typography": {
-        "display": "Mazius Display",
-        "body": "EB Garamond",
+        "display": "Afacad Flux",
+        "body": "Ubuntu",
         "mono": "Ubuntu Mono"
       },
       "dataVersion": null,
@@ -574,17 +582,17 @@ export const BRAND_SYSTEM = {
     "families": [
       {
         "id": "display",
-        "name": "Mazius Display",
+        "name": "Afacad Flux",
         "cssVariable": "--font-display",
-        "sourceVariable": "--font-mazius-display",
-        "role": "Display, headlines, and brand graphics"
+        "sourceVariable": "--font-afacad",
+        "role": "Louchi uppercase display, 900 weight; reverse-italic accents at 1000 with skewX(12deg). Archived reigns retain their fonts."
       },
       {
         "id": "body",
-        "name": "EB Garamond",
+        "name": "Ubuntu",
         "cssVariable": "--font-body",
-        "sourceVariable": "--font-eb-garamond",
-        "role": "Body copy and supporting UI text"
+        "sourceVariable": "--font-ubuntu",
+        "role": "Louchi body copy and supporting UI text; archived reigns retain their fonts"
       },
       {
         "id": "mono",
@@ -1378,6 +1386,24 @@ export const BRAND_SYSTEM = {
     ],
     "fonts": [
       {
+        "file": "AfacadFlux-Variable.ttf",
+        "family": "Afacad Flux",
+        "weight": "Variable 100–1000",
+        "license": "SIL Open Font License 1.1"
+      },
+      {
+        "file": "Ubuntu-Variable.ttf",
+        "family": "Ubuntu",
+        "weight": "Variable",
+        "license": "Ubuntu Font Licence 1.0"
+      },
+      {
+        "file": "Ubuntu-Italic-Variable.ttf",
+        "family": "Ubuntu",
+        "weight": "Italic Variable",
+        "license": "Ubuntu Font Licence 1.0"
+      },
+      {
         "file": "MAZIUSREVIEW20.09-Regular.otf",
         "family": "Mazius Display",
         "weight": "Regular"
@@ -1635,6 +1661,11 @@ export const BRAND_REIGNS = [
         "name": "Ink",
         "value": "#102d2c",
         "role": "Canonical dark ink"
+      },
+      {
+        "name": "Navy",
+        "value": "#191e4e",
+        "role": "Night canvas and day headings"
       },
       {
         "name": "Deep Teal",

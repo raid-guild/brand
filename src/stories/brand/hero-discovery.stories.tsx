@@ -1,25 +1,29 @@
 import { useEffect, useId, useRef, useState } from "react";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { BRAND_SYSTEM } from "@raidguild/brand-system";
 import { Button, Label, Switch } from "@raidguild/brand-system/components";
 import { expect, userEvent, within } from "storybook/test";
 import styles from "./hero-discovery.module.css";
-
-const collection =
-  BRAND_SYSTEM.assets.illustrations.referenceCollections.louchi;
-const panorama = collection.hero;
-const night = collection.items.find(
-  (item) => "kind" in item && item.kind === "appearance-artwork",
-);
-const landmarks = collection.items.find(
-  (item) => "kind" in item && item.kind === "interaction-overlay",
-);
 
 function HeroDiscovery() {
   const [exploring, setExploring] = useState(false);
   const [isNight, setIsNight] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const toggleId = useId();
+  const video = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const el = video.current;
+    if (!el) return;
+    const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+    let visible = true;
+    const sync = () => { if (!visible || document.hidden || reduced.matches) el.pause(); else void el.play().catch(() => {}); };
+    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); });
+    observer.observe(el);
+    document.addEventListener("visibilitychange", sync);
+    reduced.addEventListener("change", sync);
+    sync();
+    return () => { observer.disconnect(); document.removeEventListener("visibilitychange", sync); reduced.removeEventListener("change", sync); };
+  }, [isNight]);
 
   const reveal = () => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -43,22 +47,8 @@ function HeroDiscovery() {
       onMouseEnter={reveal}
       onMouseLeave={rest}
     >
-      <div
-        className={styles.panorama}
-        style={{ backgroundImage: `url(${panorama?.src})` }}
-        aria-hidden="true"
-      />
-      <div
-        className={styles.night}
-        style={{ backgroundImage: `url(${night?.src})` }}
-        aria-hidden="true"
-      />
+      <video ref={video} key={String(isNight)} className={styles.panorama} muted loop playsInline preload="metadata" poster={`/images/neo/hero-${isNight ? "dark" : "light"}-poster.png`} src={`/videos/venture/hero-${isNight ? "dark" : "light"}-pingpong.mp4`} aria-hidden="true" />
       <div className={styles.wash} aria-hidden="true" />
-      <div
-        className={styles.landmarks}
-        style={{ backgroundImage: `url(${landmarks?.src})` }}
-        aria-hidden="true"
-      />
       <div className={styles.curtainLeft} aria-hidden="true" />
       <div className={styles.curtainRight} aria-hidden="true" />
 
@@ -108,6 +98,7 @@ function HeroDiscovery() {
 const meta = {
   title: "Brand/Hero Discovery",
   component: HeroDiscovery,
+  globals: { brandReign: "louchi" },
   parameters: { layout: "fullscreen" },
 } satisfies Meta<typeof HeroDiscovery>;
 

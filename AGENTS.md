@@ -42,20 +42,20 @@ Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://gith
 - Copy `src/app/globals.css` and `src/generated/brand-tokens.css` together to get generated tokens, handwritten utilities, and Tailwind `@theme inline` mappings.
 
 ## Brand Tokens & Semantics (from `src/brand/system.ts`)
-- **Louchi / latest / in development anchors**: ink `#102d2c`, deep teal `#0a292b`, cyan `#b8e0df`, parchment `#efe9d7`, coral `#ee3c78`, acid lime `#d7e34d`. Its night appearance adds night sky `#071722`, night depth `#06141f`, moon cyan `#8fe3ef`, and moon parchment `#e8e6d9`. Direction: Moebius-influenced speculative worlds, expansive editorial typography, spatial composition, and cinematic motion. Day/night is an appearance choice within Louchi, not a separate reign. Louchi has no data version until the steward declares a stable baseline; package SemVer is independent.
+- **Louchi / latest / in development anchors**: ink `#102d2c`, deep teal `#0a292b`, cyan `#b8e0df`, parchment `#efe9d7`, coral `#ee3c78`, acid lime `#d7e34d`. Its night appearance adds night sky `#191e4e`, night depth `#191e4e`, moon cyan `#8fe3ef`, and moon parchment `#efe9d7`. Direction: Moebius-influenced speculative worlds, expansive editorial typography, spatial composition, and cinematic motion. Day/night is an appearance choice within Louchi, not a separate reign. Louchi has no data version until the steward declares a stable baseline; package SemVer is independent.
 - **Ven / archived reconstruction**: black `#000000`, Raid pink `#ff3864`, white `#ffffff`, graphite `#2b2c34`, violet `#b66ad6`, signal yellow `#fcfb75`. Direction: high-contrast RG UI system, ornate display typography, technical mono annotation, fantasy line icons, and violet-to-pink framing. A recovered neon sword-and-skull illustration lives at `public/images/reigns/ven/skull-sword.png`. Mark the overall system as partially reconstructed from surviving artifacts.
 - **Suede / archived palettes (hex)**:
   - Moloch: 100 `#f1efee`, 200 `#efc5bb`, 300 `#e39b8b`, 400 `#d25c41`, 500 `#bd482d` (primary), 600 `#8b3521`, 700 `#5c2316`, 800 `#29100a`.  
   - Scroll: 100 `#f9f7e7`, 200 `#ece5ac`, 300 `#dccd6a`, 400 `#d2c141`, 500 `#b5a22c`, 600 `#837820`, 700 `#534a13`, 800 `#211e07`.  
   - Neutral: 100 `#f1efee`, 200 `#d5cecd`, 300 `#b9aeac`, 400 `#9e8e8a`, 500 `#806f6b`, 600 `#645754`, 700 `#433937`, 800 `#221d1c`, white `#fafafa`, black `#0d0d0d`.
-- **Semantic map**: compatibility token names are remapped per reign. For Louchi day, background is parchment, foreground is ink, primary is coral, and accent is acid lime. Louchi night remaps the full surface system: background `#071722`, foreground `#e8e6d9`, card `#0a1f2d`, popover `#06141f`, secondary `#173c4d`, muted `#163949`, and accent/focus `#8fe3ef`. Honor `ThemeProvider` and consume semantic variables rather than these hex values directly.
+- **Semantic map**: compatibility token names are remapped per reign. For Louchi day, background is parchment, foreground is ink, primary is coral, and accent is acid lime. Louchi night remaps the full surface system: background `#191e4e`, foreground `#efe9d7`, card `#242953`, popover `#191e4e`, secondary `#173c4d`, muted `#163949`, and accent/focus `#8fe3ef`. Honor `ThemeProvider` and consume semantic variables rather than these hex values directly.
 - **Radius**: base `--radius: 0.625rem`; derived `radius-sm/md/lg/xl`.
 - **Grid**: `container-custom` (max 1280px, responsive padding), `grid-custom` (4 cols mobile → 8 tablet → 12 desktop, 92px columns, 16px gaps).
 
 ## Typography
-- Families: `--font-display` (Mazius Display), `--font-body` (EB Garamond), `--font-mono` (Ubuntu Mono).
+- Families are reign-specific: Louchi uses Afacad Flux / Ubuntu / Ubuntu Mono; archived defaults use Mazius Display / EB Garamond / Ubuntu Mono.
 - Ubuntu Mono is the utility/data voice for dates, metadata, status labels, kickers, ranks, statistics, step numbers, graph labels, technical identifiers, and compact controls. Do not use it for headings or normal paragraphs.
-- Louchi retains those families but uses much larger display moments, tighter leading, editorial contrast, and Ubuntu Mono for field-note metadata. TW remaps display/body to Alchemion and Fratelli using the archived `/witch/fonts` files.
+- Louchi now uses self-hosted **Afacad Flux** display (900, accent 1000), **Ubuntu** body, and **Ubuntu Mono** utility. Display headings are uppercase, tight leading, with upright accent text transformed by `skewX(12deg)` (reverse italic). No proprietary Grinder font is included. Mazius/EB Garamond remain archived-reign defaults. TW remaps display/body to Alchemion and Fratelli using the archived `/witch/fonts` files.
 - Utility classes (preferred): `type-display-lg/md/sm`, `type-heading-lg/md/sm`, `type-body-lg/md/sm`, `type-label`, `type-label-md`, `type-label-sm`, `type-code-lg/md/sm`. Uses weights, letter spacing, and line heights defined in globals.
 
 ## Copy & capitalization
@@ -110,4 +110,7 @@ You are building UI for RaidGuild. Use the official design system.
 - Fonts: `src/lib/fonts.ts`; theme toggling: `src/lib/theme-context.tsx`.
 
 ## Maintenance
+- September 2026 Louchi workshop baseline: website commit `eab88cc`. Navy `#191e4e` is the current night canvas; raised cards use `#242953`, text parchment `#efe9d7`. See `docs/louchi-venture-sync.md` for provenance, current coverage and pending parity work. Current fonts are shipped through package `fonts.css`; source app font faces are in `globals.css`.
+- Storybook `Brand/Venture Beyond` covers current accent headings, standalone CTA spacing (24px), pill geometry, manual card rails and motion/routing rules. `Brand/Hero Discovery` uses current foliage and video exports. Keep old reigns independent; do not globally replace archival fonts.
+- `Brand/Venture Interactions` covers the portal renderer, blank/stamped interiors, member drift/pause/drag, counter-moving tickers, foliage entrance, creed crossfade, and three-step form validation/success/error. Form snapshots must never submit to a real API or emit analytics. See `src/stories/brand/website-snapshot/README.md` before resyncing.
 - Update the appropriate module under `src/brand/`, run `npm run generate:brand`, and update this file when brand tokens, component APIs, asset paths, or setup steps change. `npm run check:brand` verifies generated output freshness; `npm run test:brand` validates the canonical source, public manifest, machine payload, and content hash.

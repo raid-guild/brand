@@ -69,6 +69,9 @@
 }
 
 [data-brand-reign="louchi"] {
+  --font-display: 'Afacad Flux', sans-serif;
+  --font-body: 'Ubuntu', sans-serif;
+  --reign-navy: #191e4e;
   --moloch-100: #e7f4f3;
   --moloch-200: #b8e0df;
   --moloch-300: #78c5c3;
@@ -246,14 +249,14 @@
 }
 
 .dark[data-brand-reign="louchi"] {
-  --background: #071722;
-  --foreground: #e8e6d9;
-  --card: #0a1f2d;
-  --card-foreground: #f1edde;
-  --popover: #06141f;
-  --popover-foreground: #f1edde;
+  --background: #191e4e;
+  --foreground: #efe9d7;
+  --card: #242953;
+  --card-foreground: #efe9d7;
+  --popover: #191e4e;
+  --popover-foreground: #efe9d7;
   --primary: #ee3c78;
-  --primary-foreground: #f1edde;
+  --primary-foreground: #efe9d7;
   --secondary: #173c4d;
   --secondary-foreground: #f1edde;
   --muted: #163949;

@@ -2,6 +2,24 @@
 @import "tw-animate-css";
 @import "../generated/brand-tokens.css";
 
+@font-face { font-family: "Afacad Flux"; src: url("/fonts/AfacadFlux-Variable.ttf") format("truetype"); font-weight: 100 1000; font-style: normal; font-display: swap; }
+@font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Italic-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: italic; font-display: swap; }
+
+/* Louchi's current expression; archived reigns keep their original typography. */
+[data-brand-reign="louchi"] body {
+  --font-afacad: "Afacad Flux", sans-serif;
+  --font-ubuntu: "Ubuntu", sans-serif;
+  --font-display: "Afacad Flux", sans-serif;
+  --font-body: "Ubuntu", sans-serif;
+}
+[data-brand-reign="louchi"] :is(.type-display-lg, .type-display-md, .type-display-sm, .type-heading-lg, .type-heading-md, .type-heading-sm) {
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -.015em;
+}
+
 @font-face {
   font-family: "RG Alchemion";
   src: url("https://www.raidguild.org/witch/fonts/Alchemion.otf") format("opentype");

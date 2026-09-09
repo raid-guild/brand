@@ -80,17 +80,17 @@
               "palette": [
                 {
                   "name": "Night Sky",
-                  "value": "#071722",
+                  "value": "#191e4e",
                   "role": "Primary moonlit field"
                 },
                 {
                   "name": "Night Depth",
-                  "value": "#06141f",
+                  "value": "#191e4e",
                   "role": "Deep section and overlay surface"
                 },
                 {
                   "name": "Night Surface",
-                  "value": "#0a1f2d",
+                  "value": "#242953",
                   "role": "Raised moonlit surface"
                 },
                 {
@@ -166,6 +166,11 @@
           "role": "Canonical dark ink"
         },
         {
+          "name": "Navy",
+          "hex": "#191E4E",
+          "role": "Night canvas and day headings"
+        },
+        {
           "name": "Deep Teal",
           "hex": "#0A292B",
           "role": "Immersive surface"
@@ -196,6 +201,11 @@
           "name": "Ink",
           "hex": "#102D2C",
           "role": "Canonical dark ink"
+        },
+        {
+          "name": "Navy",
+          "hex": "#191E4E",
+          "role": "Night canvas and day headings"
         },
         {
           "name": "Deep Teal",
@@ -258,6 +268,9 @@
         }
       },
       "semanticLight": {
+        "--font-display": "'Afacad Flux', sans-serif",
+        "--font-body": "'Ubuntu', sans-serif",
+        "--reign-navy": "#191e4e",
         "--moloch-100": "#e7f4f3",
         "--moloch-200": "#b8e0df",
         "--moloch-300": "#78c5c3",
@@ -322,14 +335,14 @@
         "--reign-highlight": "#d7e34d"
       },
       "semanticDark": {
-        "--background": "#071722",
-        "--foreground": "#e8e6d9",
-        "--card": "#0a1f2d",
-        "--card-foreground": "#f1edde",
-        "--popover": "#06141f",
-        "--popover-foreground": "#f1edde",
+        "--background": "#191e4e",
+        "--foreground": "#efe9d7",
+        "--card": "#242953",
+        "--card-foreground": "#efe9d7",
+        "--popover": "#191e4e",
+        "--popover-foreground": "#efe9d7",
         "--primary": "#ee3c78",
-        "--primary-foreground": "#f1edde",
+        "--primary-foreground": "#efe9d7",
         "--secondary": "#173c4d",
         "--secondary-foreground": "#f1edde",
         "--muted": "#163949",
@@ -352,21 +365,21 @@
     },
     "typography": {
       "reigns": {
-        "louchi": "Mazius Display, EB Garamond, Ubuntu Mono",
+        "louchi": "Afacad Flux, Ubuntu, Ubuntu Mono",
         "suede": "Mazius Display, EB Garamond, Ubuntu Mono",
         "tw": "RG Alchemion, RG Fratelli",
         "ven": "Mazius Display, EB Garamond, Ubuntu Mono"
       },
       "families": [
         {
-          "name": "Mazius Display",
+          "name": "Afacad Flux",
           "cssVar": "--font-display",
-          "role": "Display, headlines, and brand graphics"
+          "role": "Louchi uppercase display, 900 weight; reverse-italic accents at 1000 with skewX(12deg). Archived reigns retain their fonts."
         },
         {
-          "name": "EB Garamond",
+          "name": "Ubuntu",
           "cssVar": "--font-body",
-          "role": "Body copy and supporting UI text"
+          "role": "Louchi body copy and supporting UI text; archived reigns retain their fonts"
         },
         {
           "name": "Ubuntu Mono",
@@ -1431,6 +1444,27 @@
     "fonts": {
       "folder": "https://www.brand.raidguild.org/fonts/",
       "items": [
+        {
+          "file": "AfacadFlux-Variable.ttf",
+          "family": "Afacad Flux",
+          "weight": "Variable 100–1000",
+          "license": "SIL Open Font License 1.1",
+          "url": "https://www.brand.raidguild.org/fonts/AfacadFlux-Variable.ttf"
+        },
+        {
+          "file": "Ubuntu-Variable.ttf",
+          "family": "Ubuntu",
+          "weight": "Variable",
+          "license": "Ubuntu Font Licence 1.0",
+          "url": "https://www.brand.raidguild.org/fonts/Ubuntu-Variable.ttf"
+        },
+        {
+          "file": "Ubuntu-Italic-Variable.ttf",
+          "family": "Ubuntu",
+          "weight": "Italic Variable",
+          "license": "Ubuntu Font Licence 1.0",
+          "url": "https://www.brand.raidguild.org/fonts/Ubuntu-Italic-Variable.ttf"
+        },
         {
           "file": "MAZIUSREVIEW20.09-Regular.otf",
           "family": "Mazius Display",

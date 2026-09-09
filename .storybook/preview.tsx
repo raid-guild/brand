@@ -43,6 +43,7 @@ const preview: Preview = {
       if (typeof document !== "undefined") {
         const root = document.documentElement;
         root.dataset.brandReign = brandReign;
+        root.dataset.theme = appearance;
         root.classList.remove("light", "dark");
         root.classList.add(appearance);
         localStorage.setItem("raidguild-brand-reign", brandReign);

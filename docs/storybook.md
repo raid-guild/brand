@@ -40,6 +40,11 @@ selection is intentionally not part of either control.
 
 ## Current coverage
 
+The September 2026 Louchi refresh adds **Brand/Venture Beyond** for current
+Afacad Flux / Ubuntu typography, reverse-italic accents, pill controls, card-rail
+navigation and motion rules. See `docs/louchi-venture-sync.md` for the source
+commit, designer provenance, coverage and remaining parity work.
+
 Foundation stories cover generated brand tokens, typography, and the complete
 four-reign by two-appearance visual matrix. Every component in the canonical
 42-component registry now has colocated stories that exercise the component API

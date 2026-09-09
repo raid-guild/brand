@@ -1,4 +1,25 @@
 @font-face {
+  font-family: "Afacad Flux";
+  src: url("./fonts/AfacadFlux-Variable.ttf") format("truetype");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./fonts/Ubuntu-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url("./fonts/Ubuntu-Italic-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
   font-family: "Mazius Display";
   src: url("./fonts/MAZIUSREVIEW20.09-Regular.woff") format("woff");
   font-display: swap;
@@ -47,6 +68,8 @@
 }
 
 :root {
+  --font-afacad: "Afacad Flux";
+  --font-ubuntu: "Ubuntu";
   --font-mazius-display: "Mazius Display";
   --font-eb-garamond: "EB Garamond";
   --font-ubuntu-mono: "Ubuntu Mono";

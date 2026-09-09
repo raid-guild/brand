@@ -20,6 +20,7 @@
   inset: 0;
   position: absolute;
 }
+.panorama { width: 100%; height: 100%; object-fit: cover; }
 
 .night {
   opacity: 0;
@@ -48,14 +49,15 @@
 
 .curtainLeft,
 .curtainRight {
-  background-image: linear-gradient(90deg, rgba(4, 33, 31, .96), rgba(17, 67, 57, .68));
+  background-image: url('/images/neo/hero-foreground.png');
+  background-size: auto 100%;
   transition: transform .7s cubic-bezier(.16, .76, .18, 1);
   width: 51%;
   z-index: 2;
 }
 
-.curtainLeft { right: auto; transform: translateX(-14%); }
-.curtainRight { left: auto; transform: translateX(14%); }
+.curtainLeft { right: auto; background-position: left center; transform: translateX(-14%); }
+.curtainRight { left: auto; background-position: right center; transform: translateX(14%); }
 .exploring .curtainLeft { transform: translateX(-82%); }
 .exploring .curtainRight { transform: translateX(82%); }
 
@@ -80,11 +82,12 @@
 .title {
   font-family: var(--font-display), serif;
   font-size: clamp(4.5rem, 11vw, 9rem);
-  letter-spacing: -.065em;
-  line-height: .7;
+  font-weight: 900;
+  letter-spacing: -.015em;
+  line-height: .9;
 }
 
-.title em { color: var(--hero-signal); font-style: normal; }
+.title em { display: inline-block; color: var(--hero-signal); font-style: normal; font-weight: 1000; transform: skewX(12deg); }
 
 .instruction {
   display: block;

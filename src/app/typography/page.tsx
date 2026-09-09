@@ -35,22 +35,22 @@ export default function TypographyPage() {
       ]
     : [
         {
-          name: "Mazius Display",
+          name: brandReign.id === "louchi" ? "Afacad Flux" : "Mazius Display",
           className: "font-display",
           sample: "Venture beyond the familiar.",
           role: "Display, headlines, and brand graphics",
           description:
             brandReign.id === "louchi"
-              ? "Used expansively with tight line height and occasional coral italic emphasis to frame speculative-world imagery."
+              ? "Heavy uppercase display with tight leading. Coral accents use upright weight 1000 and CSS skewX(12deg) for reverse italic."
               : "A calligraphic high-contrast serif used for expressive headlines and brand graphics.",
         },
         {
-          name: "EB Garamond",
+          name: brandReign.id === "louchi" ? "Ubuntu" : "EB Garamond",
           className: "font-body",
           sample: "Build digital worlds worth inhabiting.",
           role: "Body and supporting copy",
           description:
-            "The readable editorial counterweight to Mazius Display across long-form copy and interfaces.",
+            brandReign.id === "louchi" ? "Clear, unskewed supporting copy beneath Afacad Flux display headings." : "The readable editorial counterweight to Mazius Display across long-form copy and interfaces.",
         },
         {
           name: "Ubuntu Mono",
