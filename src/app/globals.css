@@ -2,6 +2,9 @@
 @import "tw-animate-css";
 @import "../generated/brand-tokens.css";
 
+@font-face { font-family: "Grinder"; src: url("/brand-fonts/louchi/Grinder-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Grinder"; src: url("/brand-fonts/louchi/Grinder-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Grinder Retalic"; src: url("/brand-fonts/louchi/Grinder-Retalic.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Afacad Flux"; src: url("/fonts/AfacadFlux-Variable.ttf") format("truetype"); font-weight: 100 1000; font-style: normal; font-display: swap; }
 @font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
 @font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Italic-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: italic; font-display: swap; }
@@ -10,11 +13,15 @@
 [data-brand-reign="louchi"] body {
   --font-afacad: "Afacad Flux", sans-serif;
   --font-ubuntu: "Ubuntu", sans-serif;
-  --font-display: "Afacad Flux", sans-serif;
+  --font-grinder: "Grinder", "Afacad Flux", sans-serif;
+  --font-grinder-retalic: "Grinder Retalic", "Afacad Flux", sans-serif;
+  --font-retalic: var(--font-grinder-retalic);
+  --font-display: var(--font-grinder);
   --font-body: "Ubuntu", sans-serif;
 }
 [data-brand-reign="louchi"] :is(.type-display-lg, .type-display-md, .type-display-sm, .type-heading-lg, .type-heading-md, .type-heading-sm) {
-  font-weight: 900;
+  font-weight: 400;
+  font-synthesis: none;
   text-transform: uppercase;
   line-height: 1;
   letter-spacing: -.015em;

@@ -1,6 +1,6 @@
 export const TYPOGRAPHY = {
   families: [
-    { id: "display", name: "Afacad Flux", cssVariable: "--font-display", sourceVariable: "--font-afacad", role: "Louchi uppercase display, 900 weight; reverse-italic accents at 1000 with skewX(12deg). Archived reigns retain their fonts." },
+    { id: "display", name: "Grinder", cssVariable: "--font-display", sourceVariable: "--font-grinder", role: "Louchi uppercase display, native regular/italic and Retalic cuts at weight 400; no synthetic skew. Commercial web fonts in the guide only; package consumers use Afacad Flux fallback or their own licensed files. Archived reigns retain their fonts." },
     { id: "body", name: "Ubuntu", cssVariable: "--font-body", sourceVariable: "--font-ubuntu", role: "Louchi body copy and supporting UI text; archived reigns retain their fonts" },
     { id: "mono", name: "Ubuntu Mono", cssVariable: "--font-mono", sourceVariable: "--font-ubuntu-mono", role: "Compact utility, metadata, labels, identifiers, and numeric data" },
   ],

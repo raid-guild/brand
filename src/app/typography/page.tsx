@@ -35,13 +35,13 @@ export default function TypographyPage() {
       ]
     : [
         {
-          name: brandReign.id === "louchi" ? "Afacad Flux" : "Mazius Display",
+          name: brandReign.id === "louchi" ? "Grinder" : "Mazius Display",
           className: "font-display",
           sample: "Venture beyond the familiar.",
           role: "Display, headlines, and brand graphics",
           description:
             brandReign.id === "louchi"
-              ? "Heavy uppercase display with tight leading. Coral accents use upright weight 1000 and CSS skewX(12deg) for reverse italic."
+              ? "Grinder Regular and Italic at native weight 400. Coral accents use the separate Grinder Retalic cut, without synthetic skew or bold. Guide-only licensed webfonts; package consumers retain the open Afacad Flux fallback."
               : "A calligraphic high-contrast serif used for expressive headlines and brand graphics.",
         },
         {
@@ -50,7 +50,7 @@ export default function TypographyPage() {
           sample: "Build digital worlds worth inhabiting.",
           role: "Body and supporting copy",
           description:
-            brandReign.id === "louchi" ? "Clear, unskewed supporting copy beneath Afacad Flux display headings." : "The readable editorial counterweight to Mazius Display across long-form copy and interfaces.",
+            brandReign.id === "louchi" ? "Clear, unskewed supporting copy beneath Grinder display headings." : "The readable editorial counterweight to Mazius Display across long-form copy and interfaces.",
         },
         {
           name: "Ubuntu Mono",

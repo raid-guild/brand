@@ -1,24 +1,24 @@
 # Louchi / Venture Beyond workshop sync
 
-Baseline: [website eab88cc](https://github.com/raid-guild/website/tree/eab88cc).
+Baseline: [website a00dd80](https://github.com/raid-guild/website/tree/a00dd80).
 Design and asset handoff: Luis Blanco (Louchi), [original branch](https://github.com/luisblancoach/website/tree/handoff/venture-beyond-dekan), tip a195359. The website retains original commits as ancestry. This brand-repo copy records source provenance; it does not claim authorship of those assets. Stewardship is not sole authorship: the implementation, critique and refinements are collaborative.
 
 ## Current examples
 
 - Brand / Venture Beyond / Typography And Actions: all six section-heading pairings, pill anatomy and 24px separation from copy.
 - Night: explicit navy appearance for side-by-side review.
-- Mobile Card Rail: horizontal swipe, visible 44px previous/next controls, disabled ends, counter, next-card preview and interaction test. Desktop Spears stay a two-column grid in the website; Field Notes use a rail at all sizes.
+- Mobile Card Rail: horizontal swipe, visible 44px previous/next controls, disabled ends, counter, next-card preview and interaction test. Desktop Spears use four columns. Field notes, artifacts and collaborators now share the elastic gallery.
 - Motion And Routing: agreed video, discovery, reduced-motion and navigation behavior.
 - Brand / Hero Discovery: actual current day/night forward-reverse videos and foliage, hover/focus/tap interaction, offscreen/hidden-tab/reduced-motion playback protection.
 - Foundations and all existing primitive stories inherit updated Louchi fonts and semantic surfaces. Archived reign font mappings are unchanged.
-- Brand / Venture Interactions: multicolor portal chooser (stamped or blank), real team-wall drag/pause/drift and counter-moving tickers, foliage front door, forward-only creed loop, three-step inquiry with local validation and success/server-error previews.
-- Responsive Spears demonstrates the desktop two-column grid switching to a mobile rail. Field Notes demonstrates the all-size rail with current artwork.
+- Brand / Venture Interactions: multicolor portal chooser (illustrated or blank, on magenta, title beneath the portals), real team-wall drag/pause/drift and counter-moving tickers, foliage front door, forward-only creed loop, three-step inquiry with local validation and success/server-error previews.
+- Responsive Spears demonstrates the desktop four-column grid switching to a mobile rail. The older Field Notes rail is retained as a historical study; Brand / Elastic Gallery is the current collection pattern.
 
 ## Typography and assets
 
-Afacad Flux is the deliberately chosen open font alternative, not a recreation of the proprietary Grinder cuts. It is copied from the website with its OFL. Ubuntu variable files are copied from the installed Ubuntu font distribution and use the Ubuntu Font Licence already bundled alongside Ubuntu Mono. No additional commercial font is included.
+Grinder Regular, Italic and Retalic are the current display cuts. Louchi supplied the package and the project owner reports rights were obtained. The webfonts live in public/brand-fonts/louchi for guide rendering, outside the reusable package font directory. Confirm redistribution terms before distributing these files to third parties. Afacad Flux/OFL remains the open package fallback; Ubuntu and Ubuntu Mono retain their existing licences.
 
-Display: weight 900, uppercase, tracking -.015em, line height around 1.0. Accents: upright weight 1000 then positive 12-degree skew (tops lean left). Ubuntu paragraphs remain unskewed; Ubuntu Mono labels and controls retain their utility voice.
+Display and accents: native weight 400, uppercase, no synthetic bold or skew. Use the separate Grinder Retalic family for accents, with enough line spacing to separate cuts. Ubuntu paragraphs remain unskewed; Ubuntu Mono labels and controls retain their utility voice.
 
 Videos and foreground artwork originate in Louchi's handoff/Assets.zip as integrated by the website. The workshop copies the processed hero ping-pong loops, forward-only creed crossfade and horizontal spear illustrations. Do not reverse the creed walker scene: the bird would fly backwards.
 
@@ -32,4 +32,19 @@ No story content or statistics should be treated as verified project claims. Tal
 
 ## Verification
 
-The full 142-story browser suite passes, including accessibility checks (existing documented exceptions remain unchanged), portal Escape dismissal, member pause state, rail navigation and form validation. The date-picker's existing selected-date story exposed a month initialization bug; the calendar now starts on its selected date rather than the current month. Typecheck, static Storybook build and canonical brand tests also run before handoff. Form success/error fixtures are local-only and protected by a no-fetch/no-analytics contract test.
+September 22 update: website baseline a00dd80. New Brand / Elastic Gallery stories
+use local fixtures, adaptive columns, stable resting hover slots, fixed caption
+heights, filtering, keyboard dismissal and a sticky right-hand detail panel.
+The shared layout snapshot includes four-across Spears, the brick member wall,
+oppositely tilted ribbons and the ship-hint clearance. Portal interiors now use
+illustrations on an always-magenta canvas with a smaller bottom title. Motion
+previews retain hover/focus/reduced-motion behavior without per-strip controls.
+
+Current verification: all 144 Storybook tests (including 21 brand-story
+interaction/accessibility tests), 12 brand-contract tests and TypeScript checking
+pass. Selected gallery filters
+use near-black text on pink for contrast; the detail panel is a named region
+rather than a nested complementary landmark. These are intentional workshop
+accessibility corrections to propose back to the website.
+
+Previous baseline: the full 142-story browser suite passed, including accessibility checks (existing documented exceptions remain unchanged), portal Escape dismissal, member pause state, rail navigation and form validation. The date-picker's existing selected-date story exposed a month initialization bug; the calendar now starts on its selected date rather than the current month. Typecheck, static Storybook build and canonical brand tests also run before handoff. Form success/error fixtures are local-only and protected by a no-fetch/no-analytics contract test.

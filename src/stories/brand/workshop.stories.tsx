@@ -9,6 +9,7 @@ type WorkshopProps = {
 };
 
 const workshopLinks = [
+  { title: "Elastic Gallery", description: "Responsive full-width collection, stable elastic rows and right-hand details.", href: "/?path=/story/brand-elastic-gallery--default", icon: Boxes },
   {
     title: "Venture Interactions",
     description: "Portal energy, the foliage front door, member motion, creed video and safe three-step inquiry previews.",

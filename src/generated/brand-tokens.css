@@ -69,7 +69,8 @@
 }
 
 [data-brand-reign="louchi"] {
-  --font-display: 'Afacad Flux', sans-serif;
+  --font-display: 'Grinder', 'Afacad Flux', sans-serif;
+  --font-retalic: 'Grinder Retalic', 'Afacad Flux', sans-serif;
   --font-body: 'Ubuntu', sans-serif;
   --reign-navy: #191e4e;
   --moloch-100: #e7f4f3;

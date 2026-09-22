@@ -12,9 +12,10 @@
   --coral: var(--color-pink);
   --rust: #b84031;
   --acid: #d7e34d;
-  /* Afacad substitutes for the unlicensed display cuts; Ubuntu follows the handoff. */
-  --font-display: var(--font-afacad);
-  --font-retalic: var(--font-afacad);
+  /* Supplied Grinder display cuts; Ubuntu follows the handoff for body copy. */
+  --font-display: var(--font-grinder);
+  --font-retalic: var(--font-grinder-retalic);
+  font-synthesis: none;
   --font-body: var(--font-ubuntu);
   background: var(--paper);
   color: var(--ink);
@@ -23,6 +24,17 @@
 }
 
 .site ::selection { background: var(--coral); color: var(--paper); }
+.unchartedPortal { position: relative; margin-top: 16px; z-index: 10; }
+.unchartedPortal details[open] > div { position: absolute; bottom: 100%; left: 0; }
+.portalMessage .unchartedPortal button { display: inline-block; background: none; border: 0; border-radius: 0; margin: 0; padding: 10px 0; color: #efe9d7; font: inherit; letter-spacing: normal; text-transform: none; transform: none; }
+.unchartedShip { position: absolute; bottom: clamp(112px, 14svh, 160px); left: 160px; z-index: 12; }
+@media (max-width: 799px) { .unchartedShip { left: 24px; } }
+.unchartedShip details[open] > div { position: absolute; bottom: 100%; left: 0; }
+.unchartedWalker { position: relative; z-index: 3; display: flex; justify-content: center; margin-top: 16px; }
+.unchartedWalker details[open] > div { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); }
+.unchartedPortal, .unchartedShip, .unchartedWalker { display: flex; align-items: center; gap: 4px; }
+.unchartedPortal > details, .unchartedShip > details, .unchartedWalker > details { position: static; }
+.unchartedWalker { width: fit-content; margin-inline: auto; }
 
 .handbookLink { display: inline-block; margin-top: 16px; font-size: 12px; text-decoration: underline; text-underline-offset: 5px; }
 
@@ -282,6 +294,21 @@
 .fieldIntro { display: grid; grid-template-columns: 1fr 300px; margin: 0 auto 85px; max-width: 1300px; position: relative; }
 .fieldIntro::after { background: radial-gradient(circle, transparent 0 15px, rgba(16,45,44,.095) 16px 17px, transparent 18px), linear-gradient(90deg, transparent calc(50% - .5px), rgba(16,45,44,.075) 50%, transparent calc(50% + .5px)), linear-gradient(transparent calc(50% - .5px), rgba(16,45,44,.075) 50%, transparent calc(50% + .5px)); content: ""; height: 92px; opacity: .7; pointer-events: none; position: absolute; right: clamp(255px, 25vw, 375px); top: -18px; transform: rotate(12deg); width: 92px; }
 .fieldIntro .sectionLabel { grid-column: 1 / -1; }
+.networkProof { max-width: 1267px; margin: 0 auto 48px; padding: 24px 0; border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; color: var(--ink); }
+.networkProof > p { font-family: var(--font-body), sans-serif; font-size: 17px; line-height: 1.5; margin: 0 0 24px; }
+.networkProof ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 32px; list-style: none; margin: 0; padding: 0; }
+.networkProof li { display: flex; align-items: center; justify-content: center; min-width: 0; height: 56px; }
+.networkProof img { width: auto; height: auto; max-width: min(150px, 100%); max-height: 44px; filter: brightness(0) saturate(100%) invert(13%) sepia(18%) saturate(1335%) hue-rotate(129deg) brightness(92%) contrast(94%); }
+.networkProof small { display: block; font-size: 11px; line-height: 1.5; margin-top: 24px; }
+:global(html[data-theme="dark"]) .site .networkProof { color: var(--paper); }
+:global(html[data-theme="dark"]) .site .networkProof img { filter: brightness(0) invert(94%) sepia(12%) saturate(332%) hue-rotate(353deg); }
+@media (max-width: 800px) {
+  .networkProof { margin: 0 22px 32px; }
+  .networkProof ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+}
+@media (min-width: 801px) and (max-width: 1500px) {
+  .networkProof { margin-left: 5vw; margin-right: 5vw; }
+}
 .fieldAside p { line-height: 1.45; max-width: 300px; }
 .fieldControls { align-items: center; display: flex; justify-content: space-between; margin: 0 auto 24px; max-width: 1300px; position: relative; }
 .fieldControls p { font-size: 9px; letter-spacing: .15em; margin: 0; }
@@ -330,14 +357,14 @@
 .teamWall .memberMarquee:active { cursor: grabbing; }
 .memberMarquee:focus-visible { outline: 2px solid var(--coral); outline-offset: -2px; }
 .memberLoop { display: flex; gap: 14px; width: max-content; }
-.teamWall .memberRail { animation: none; transform: none; flex-shrink: 0; user-select: none; }
+.teamWall .memberRail { --brick-width: 230px; animation: none; transform: none; flex-shrink: 0; user-select: none; display: grid; grid-auto-flow: column; grid-auto-columns: var(--brick-width); grid-template-rows: repeat(2, 72px); gap: 8px 14px; }
+.teamWall .memberRail > a, .teamWall .memberRail > div { min-width: 0; }
+.teamWall .memberRail > :nth-child(even) { transform: translateX(calc((var(--brick-width) + 14px) / 2)); }
 .memberRail > a:focus-visible { outline: 3px solid var(--coral); outline-offset: -4px; }
-.teamMotionToggle { background: transparent; border: 0; color: inherit; cursor: pointer; font-family: var(--font-mono), monospace; font-size: 11px; margin: 8px 12px; padding: 5px; text-decoration: underline; text-underline-offset: 4px; }
 :global(html[data-theme="dark"]) .site .teamNetwork { color: var(--paper); }
 :global(html[data-theme="dark"]) .site .teamCopy h3,
 :global(html[data-theme="dark"]) .site .memberRail small { color: var(--paper); }
 @media (prefers-reduced-motion: reduce) {
-  .teamMotionToggle { display: none; }
   .memberRail[aria-hidden="true"] { display: none; }
   .creedMoons { animation: none; }
 }
@@ -447,14 +474,20 @@
 
 :global(html[data-theme="dark"]) .site .footer { background: var(--color-navy); color: var(--color-cream); }
 
-.siteGlitching > .header, .siteGlitching > .hero { animation: realityGlitch 3.4s steps(1, end) both; transform-origin: center; will-change: filter, transform; }
+/* Keep the portal's energy; avoid filtering the entire video scene underneath. */
+.siteGlitching > .header, .siteGlitching > .hero { animation: none; }
+.site[data-motion-paused="true"] .loopTrack,
+.site[data-motion-paused="true"] .portalTrigger,
+.site[data-motion-paused="true"] .portalTriggerMark > i,
+.site[data-motion-paused="true"] .heroWaypoint > i,
+.site[data-motion-paused="true"] .orbit::after { animation-play-state: paused !important; }
 .siteGlitching::after { animation: glitchBands 3.4s steps(2, end) both; background: repeating-linear-gradient(0deg, transparent 0 8px, rgba(109,230,223,.12) 9px, transparent 10px 17px, rgba(238,60,120,.1) 18px, transparent 19px 26px); content: ""; inset: 0; mix-blend-mode: screen; pointer-events: none; position: fixed; z-index: 99; }
 
-.portalOverlay { background: #041618; color: var(--paper); inset: 0; isolation: isolate; overflow: hidden; position: fixed; z-index: 100; }
+.portalOverlay { background: var(--coral, #ee3d79); color: var(--paper); inset: 0; isolation: isolate; overflow: hidden; position: fixed; z-index: 100; }
 .portalOverlay::before { animation: portalReveal .8s cubic-bezier(.16,.76,.18,1) both; background: radial-gradient(ellipse at 59% 49%, rgba(238,60,120,.13), transparent 22%), radial-gradient(ellipse at 82% 49%, rgba(109,230,223,.12), transparent 22%), radial-gradient(ellipse at 71% 49%, transparent 10%, rgba(4,22,24,.2) 42%, rgba(2,12,14,.86) 88%); content: ""; inset: 0; pointer-events: none; position: absolute; z-index: 2; }
 .portalOverlay::after { background-image: linear-gradient(rgba(239,233,215,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(239,233,215,.025) 1px, transparent 1px); background-size: 52px 52px; content: ""; inset: 0; -webkit-mask-image: radial-gradient(ellipse at 66% 50%, transparent 12%, #000 72%); mask-image: radial-gradient(ellipse at 66% 50%, transparent 12%, #000 72%); opacity: .5; pointer-events: none; position: absolute; z-index: 2; }
 .portalCanvas { inset: 0; position: absolute; z-index: 1; }
-.portalForming { animation: portalWorldForm 3.4s linear both; }
+.portalForming { background: var(--coral, #ee3d79); }
 .portalForming::before { animation: portalVignetteForm 3.4s ease-in both; }
 .portalForming::after { animation: gridForm 3.4s ease-in both; }
 .portalForming .portalAtmosphere { animation: atmosphereTurn 28s linear infinite, atmosphereIgnite 3.4s ease-in both; }
@@ -520,7 +553,6 @@
 .portalClosing .portalMessage, .portalClosing .portalBreach, .portalClosing .portalReadout, .portalClosing .portalCoordinates, .portalClosing .portalClose { animation: copyDeparture .35s ease forwards; }
 
 @keyframes portalReveal { from { opacity: 0; transform: scale(1.08); } to { opacity: 1; transform: scale(1); } }
-@keyframes portalWorldForm { 0%, 38% { background: rgba(4,22,24,0); } 56% { background: rgba(4,22,24,.12); } 72% { background: rgba(4,22,24,.48); } 88% { background: rgba(4,22,24,.88); } 100% { background: #041618; } }
 @keyframes portalVignetteForm { 0%, 30% { opacity: 0; } 55% { opacity: .18; } 76% { opacity: .62; } 100% { opacity: 1; } }
 @keyframes gridForm { 0%, 56% { opacity: 0; } 100% { opacity: .5; } }
 @keyframes atmosphereIgnite { 0%, 38% { opacity: 0; } 100% { opacity: .75; } }
@@ -538,7 +570,7 @@
 @keyframes breachSignal { 0%, 8%, 13%, 22%, 31%, 44% { opacity: 0; } 9%, 12%, 23%, 30%, 45%, 88% { opacity: .8; } 100% { opacity: 0; } }
 @keyframes copyDeparture { to { opacity: 0; transform: translateX(-50px); } }
 @keyframes machineDeparture { 35% { opacity: 1; transform: translate(-50%, -50%) scale(.9); } 100% { opacity: 0; transform: translate(-50%, -50%) scale(2.9); } }
-@keyframes portalDeparture { 0%, 45% { background: #041618; opacity: 1; } 78% { background: var(--paper); opacity: 1; } 100% { background: var(--paper); opacity: 0; } }
+@keyframes portalDeparture { 0%, 45% { background: var(--coral, #ee3d79); opacity: 1; } 78% { background: var(--paper); opacity: 1; } 100% { background: var(--paper); opacity: 0; } }
 
 /* Finalized 1440px Code Transfer composition. */
 @media (min-width: 1000px) {
@@ -642,6 +674,7 @@
   .teamWall { height: 384px; overflow: hidden; position: relative; width: 820px; }
   .memberMarquee { border: 0; height: 384px; margin: 0; overflow: hidden; padding: 0; }
   .memberRail { animation: none; column-gap: 14px; display: grid; grid-auto-flow: column; grid-template-rows: repeat(4, 90px); row-gap: 8px; transform: translateX(-799.25px); width: max-content; }
+  .teamWall .memberRail { --brick-width: 290px; grid-template-rows: repeat(4, 90px); }
   .memberRail > a, .memberRail > div { border: 2px solid var(--coral); border-radius: 16px; gap: 16px; height: 90px; min-width: 213.75px; padding: 18px; }
   .memberRail img { border-radius: 27px; filter: none; height: 54px; width: 54px; }
   .memberRail strong { color: var(--coral); font-family: var(--font-display), sans-serif; font-size: 24px; font-style: italic; line-height: 32px; }
@@ -821,10 +854,11 @@
 
 /* Integration: open display face, retained local routes, responsive handoff. */
 .site h1, .site h2, .rosterHeading h3, .teamCopy h3, .discipline h3, .missionCopy h3, .creed blockquote { font-weight: 900; text-transform: uppercase; letter-spacing: -.015em; }
-/* Reverse italic accents: positive skew leans the letter tops to the left. */
-.site h1 em, .site h2 em, .site h3 em, .creed em { display: inline-block; font-style: normal; font-weight: 1000; font-variation-settings: "slnt" 0; transform: skewX(12deg); transform-origin: center; }
-.hero h1 { line-height: .73; }
-.hero h1 > span { display: inline-block; transform: skewX(12deg); }
+/* The supplied Retalic face provides the reverse lean without synthetic skew. */
+.site h1 em, .site h2 em, .site h3 em, .creed em { display: inline-block; font-family: var(--font-retalic), sans-serif; font-style: normal; font-weight: 400; transform: none; }
+.hero h1 { line-height: .86; }
+.hero h1 > span { display: inline-block; font-family: var(--font-retalic), sans-serif; font-weight: 400; transform: none; }
+.site .hero h1 em { font-family: var(--font-display), sans-serif; font-style: italic; font-weight: 400; transform: none; }
 .fieldIntro h2 > em { font-size: 1.1em; white-space: nowrap; }
 :global(html[data-theme="dark"]) .site .fieldIntro h2,
 :global(html[data-theme="dark"]) .site .fieldIntro .sectionLabel { color: var(--paper); }
@@ -837,9 +871,9 @@
 .carouselButtons button:disabled { opacity: .3; cursor: default; }
 .spearControls { display: none; }
 /* Continuous, opposite-direction bands from the design walkthrough. */
-.loopBand { grid-column: 1 / -1; min-width: 0; overflow: hidden; position: relative; color: var(--paper); }
-.wordBand { background: var(--coral); }
-.metricBand { background: var(--deep); }
+.loopBand { grid-column: 1 / -1; min-width: 0; overflow: hidden; position: relative; color: var(--paper); width: 104%; margin: 2vw -2%; transform: rotate(2deg); transform-origin: center; }
+.wordBand { background: var(--coral); margin-top: calc(-2vw - 12px); z-index: 10; }
+.metricBand { background: var(--deep); transform: rotate(-2deg); }
 .loopViewport { overflow: hidden; }
 .loopTrack { display: flex; width: max-content; animation: bandDrift 60s linear infinite; }
 .loopGroup { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-around; gap: 32px; padding: 20px 16px; min-width: 100vw; }
@@ -851,7 +885,6 @@
 .metricItem { display: flex; align-items: center; gap: 22px; border-left: 1px solid rgba(239,233,215,.25); padding-left: 24px; width: 300px; flex-shrink: 0; }
 .metricItem strong { color: var(--coral); font-family: var(--font-display); font-size: clamp(40px, 4vw, 56px); font-weight: 900; font-style: italic; }
 .metricItem span { font-family: var(--font-mono); font-size: 14px; line-height: 1.35; max-width: 165px; }
-.loopPause { position: absolute; right: 4px; top: 4px; border: 1px solid currentColor; border-radius: 50%; width: 28px; height: 28px; background: var(--deep); color: var(--paper); cursor: pointer; font-size: 12px; }
 @keyframes bandDrift { to { transform: translateX(-50%); } }
 :global(html[data-theme="dark"]) .site .metricBand { background: #252a61; }
 :global(html[data-theme="dark"]) .site .contactFormShell { background: #252a61; }
@@ -871,13 +904,20 @@
 :global(html[data-theme="dark"]) .site .memberRail > a:hover strong,
 :global(html[data-theme="dark"]) .site .memberRail > a:focus-visible strong { color: var(--paper); }
 .site .problemSpear { background: transparent; }
+/* Keep foreground and surface changes paired, including the transparent
+   discovery card. Its base selector previously overrode only the hover surface. */
+.site .discipline:hover,
+.site .discipline:focus-within { background: var(--sky); color: var(--ink); }
+.site .discipline:is(:hover, :focus-within) .disciplineTag,
+.site .discipline:is(:hover, :focus-within) .disciplineTop i,
+.site .discipline:is(:hover, :focus-within) .spearEndorsement { color: inherit; }
 :global(html[data-theme="dark"]) .site .header .nav,
 :global(html[data-theme="dark"]) .site .celestialToggle { background: rgba(25,30,78,.92); border-color: rgba(185,224,223,.4); }
 .site .nav a:focus-visible { outline: 2px solid var(--coral); outline-offset: 6px; }
 @media (prefers-reduced-motion: reduce) {
   .loopTrack { animation: none; transform: none; width: 100%; }
   .loopGroup { flex-wrap: wrap; min-width: 0; width: 100%; }
-  .loopGroup[aria-hidden="true"], .loopPause { display: none; }
+  .loopGroup[aria-hidden="true"] { display: none; }
   .metricItem { width: min(300px, 100%); }
 }
 .practice { height: auto; }
@@ -890,6 +930,7 @@
 .teamCopy > .pill, .practiceAside > .pill, .fieldAside > .pill { margin-top: 24px; }
 .pill > span { white-space: normal; }
 .contact, .fieldNotes, .keepers { height: auto; }
+.fieldNotes { padding-inline: 0; overflow: clip; }
 .contactFormShell { height: auto; min-height: 720px; }
 .contactDruid { object-fit: contain; }
 .contactFormShell :global(.hire-us-wizard) > div:first-child > div { height: auto; min-height: 32px; padding-top: 6px; padding-bottom: 6px; }
@@ -929,6 +970,74 @@
   .heroCopy { left: 12%; }
   .heroSupplement, .heroExploring .heroSupplement { top: 455px; left: 21%; }
 }
+/* Desktop composition pass: full-bleed worlds, contained readable modules.
+   Keep this separate from mobile; do not emulate browser zoom on text or controls. */
+@media (min-width: 1000px) {
+  .site { --composition-gutter: max(40px, calc((100% - 1160px) / 2)); }
+  .hero, .heroStage { height: clamp(680px, 85vh, 800px); min-height: 0; }
+  .heroArt, .heroImage, .heroNightImage, .heroWash { height: 100%; }
+  .heroCopy { top: 26%; width: 460px; }
+  .hero h1 { font-size: 76px; line-height: .92; }
+  .eyebrow { font-size: 16px; line-height: 24px; margin-bottom: 20px; }
+  .heroSupplement, .heroExploring .heroSupplement { top: 53%; width: 340px; }
+  .heroDek { font-size: 20px; line-height: 28px; width: 100%; }
+  .waypointShip { left: 42%; top: 75%; }
+  .waypointCitadel { left: 60%; top: 45%; }
+  .waypointProcession { left: 73%; top: 25%; }
+  .heroIndex, .heroScrollCue { bottom: 44px; }
+  .heroIndex strong { font-size: 64px; line-height: 1; }
+
+  .prologue { grid-template-columns: var(--composition-gutter) minmax(0, 1fr) minmax(0, 1.1fr) var(--composition-gutter); grid-template-rows: auto; padding: 64px 0 0; column-gap: 0; row-gap: 40px; }
+  .guildVisual { grid-column: 2; height: auto; padding: 0 40px 0 0; justify-content: center; }
+  .guildBuilders { height: 440px; width: 100%; }
+  .prologueCopy { grid-column: 3; align-self: center; padding: 0; }
+  .sectionLabel { font-size: 18px; line-height: 24px; }
+  .prologue h2, .rosterHeading h3, .teamCopy h3 { font-size: 34px; line-height: 1.08; }
+  .prologue h2 em, .rosterHeading h3 em, .teamCopy h3 em { font-size: 44px; line-height: 1.08; }
+  .prologue > .loopBand { grid-column: 1 / -1; }
+
+  .keepers { padding: 64px var(--composition-gutter) 16px; }
+  .rosterHeading { min-height: 0; padding: 0 0 28px; gap: 32px; }
+  .stewardTrack { padding: 0 0 20px; }
+  .stewardCard { min-height: 340px; padding: 18px; }
+  .stewardPortrait { height: 132px; width: 132px; margin: 18px auto 12px; }
+  .stewardCard > p { font-size: 13px; line-height: 20px; letter-spacing: 1px; }
+  .teamNetwork { height: auto; min-height: 0; padding: 20px 0 64px; gap: 40px; grid-template-columns: minmax(0, 1fr) minmax(0, 460px); }
+  .teamNetwork .teamWall { width: 100%; }
+  .teamCopy { padding: 0 40px 0 0; width: auto; }
+
+  .practice { padding: 72px var(--composition-gutter); }
+  .practiceHeading { max-width: none; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
+  .practice h2, .fieldIntro h2 { font-size: 44px; line-height: 1.06; }
+  .practice h2 em, .fieldIntro h2 b { font-size: 56px; line-height: 1.06; }
+  .disciplineGrid { margin-top: 32px; max-width: none; }
+  .spearGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .spearGrid .discipline { min-width: 0; padding: 24px 20px 30px; }
+  .spearGrid .disciplineArt { height: 180px; margin-top: 12px; }
+  .disciplineTop { font-size: 16px; }
+
+  .fieldNotes { padding: 72px 0 56px; }
+  .fieldIntro { max-width: none; margin: 0 var(--composition-gutter) 32px; padding: 0; gap: 40px; }
+  .fieldAside { padding-top: 0; align-self: end; }
+  .networkProof { margin: 0 var(--composition-gutter) 32px; max-width: none; }
+  .fieldControls { margin: 0 var(--composition-gutter) 20px; }
+  .fieldTrack { padding: 0 var(--composition-gutter) 24px; gap: 32px; scroll-padding-left: var(--composition-gutter); }
+  .featuredMission { flex-basis: min(1040px, calc(100vw - 120px)); grid-template-columns: 1fr 1fr; height: auto; min-height: 560px; }
+  .missionArt { min-height: 560px; }
+  .missionCopy { padding: 36px; }
+  .missionCopy h3 { font-size: 32px; line-height: 1.1; margin-bottom: 20px; }
+  .missionCopy dl { margin-top: 28px; }
+
+  .creed { height: auto; min-height: 460px; padding: 80px var(--composition-gutter); }
+  .creed blockquote { font-size: 44px; line-height: 1.08; letter-spacing: 2px; margin-top: 48px; }
+  .contact { padding: 64px var(--composition-gutter); gap: 48px; }
+  .contactDruid { height: 320px; margin-bottom: 24px; }
+  .contactDek { margin-top: 20px; }
+  .contactProtocol { margin-top: 28px; }
+  .contactFormShell { min-height: 0; padding: 36px; }
+  .footer { padding: 48px var(--composition-gutter) 32px; gap: 32px; }
+}
+
 @media (max-width: 999px) {
   .prologue { grid-template-columns: 1fr; padding: 64px 24px 0; }
   .guildVisual { display: flex; justify-content: center; }
@@ -972,3 +1081,30 @@
   .missionImage { transition: none; }
   .portalAtmosphere, .portalMachine::before, .portalMachine::after, .portalHalo, .portalHalo::before, .portalThreshold, .portalThreshold::after, .portalMessage > p span { animation: none; }
 }
+/* Transit windows lead; the invitation sits quietly beneath them. */
+.portalOverlay::before { background: radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(40,15,12,.28) 100%); }
+.portalMachine { top: 39%; height: min(57dvh, 600px); width: min(30vw, 400px); }
+.portalSpear { left: 20%; }
+.portalProblem { left: 50%; }
+.portalJoin { left: 80%; }
+.portalChoiceLabel { color: var(--paper); bottom: -36px; font-size: clamp(16px, 1.8vw, 26px); }
+.portalChoiceLabel small, .portalChoiceLabel b { opacity: .9; }
+.portalMessage { animation: portalInvitationIn .7s ease both; top: auto; bottom: 20px; left: 24px; width: calc(100% - 48px); transform: none; text-align: center; }
+.portalMessage h2 { font-size: clamp(22px, 2.8vw, 40px); line-height: 1.2; letter-spacing: -.02em; text-shadow: none; }
+.portalMessage h2 em { color: var(--paper); }
+.portalMessage .unchartedPortal { margin-top: 8px; }
+.portalCoordinates { display: none; }
+@keyframes portalInvitationIn { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 700px) {
+  .portalMachine { top: 38%; height: 44dvh; width: 29vw; }
+  .portalChoiceLabel { bottom: -48px; font-size: 14px; line-height: 1.2; }
+  .portalChoiceLabel b { display: none; }
+  .portalMessage { bottom: 24px; }
+}
+@media (max-height: 550px) {
+  .portalMachine { top: 36%; height: 42dvh; }
+  .portalChoiceLabel { bottom: -24px; }
+  .portalChoiceLabel b { display: none; }
+  .portalMessage { bottom: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .portalMessage { animation: none; } }

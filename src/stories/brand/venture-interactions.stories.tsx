@@ -11,7 +11,7 @@ import site from "./website-snapshot/HomeExperience.module.css";
 import styles from "./venture-elements.module.css";
 
 const routes = [
-  { title: "Hire a specialist", detail: "Choose an established practice", destination: "Active Spears", position: site.portalSpear },
+  { title: "Explore practices", detail: "Choose an established practice", destination: "Active Spears", position: site.portalSpear },
   { title: "Start a project", detail: "Bring the Guild an ambitious problem", destination: "Contact form", position: site.portalProblem },
   { title: "Join the Guild", detail: "Discover the builder community", destination: "The Guild", position: site.portalJoin },
 ];
@@ -31,11 +31,10 @@ function Portals({ initiallyOpen = false, blank = false }: { initiallyOpen?: boo
         <DialogTitle className="sr-only">Choose your portal</DialogTitle><DialogDescription className="sr-only">Choose a practice, bring a project, or meet the Guild.</DialogDescription>
         <div className={site.portalAtmosphere} aria-hidden="true" />
         {routes.map((route, i) => <button type="button" key={route.title} className={`${site.portalMachine} ${route.position}`} onPointerEnter={() => setHot(i)} onPointerLeave={() => setHot(null)} onFocus={() => setHot(i)} onBlur={() => setHot(null)} onClick={() => { setDestination(route.destination); setOpen(false); }}>
-          <PortalEnergy energized={hot === i} />
-          <span className={site.portalThreshold} aria-hidden="true">{!blank && <span className={site.iconLogo} style={{ width: 64, height: 64 }} />}</span>
+          <PortalEnergy energized={hot === i} destinationSrc={blank ? undefined : ["/images/neo/field-protocol-garden.png", "/images/neo/sky-citadel.png", "/images/neo/hero-dark-poster.png"][i]} />
           <span className={site.portalChoiceLabel}><small>0{i + 1} / TRANSIT</small><strong>{route.title}</strong><b>{route.detail}</b><i>↓</i></span>
         </button>)}
-        <div className={site.portalMessage} aria-hidden="true"><p>Three transit windows open</p><h2>Choose your<br /><em>portal.</em></h2></div>
+        <div className={site.portalMessage} aria-hidden="true"><h2>Choose your <em>portal.</em></h2></div>
       </DialogContent>
     </Dialog>
   </div>;
@@ -52,7 +51,7 @@ function TeamMotion() {
     <p className={styles.label}>[ Stewards / static specimen ]</p>
     <div className={styles.grid}>{[{ name: "Dekan", role: "Knowledge steward", image: "dekan" }, { name: "ECWireless", role: "Infrastructure steward", image: "ecwireless" }].map(person => <article className={styles.card} key={person.name}><img src={`/images/member-${person.image}.png`} alt="" style={{ width: 150, height: 150, borderRadius: "50%", objectFit: "cover" }} /><p className={styles.label}>{person.role}</p><h3>{person.name}</h3><p>Static card. Reign stewardship is a group effort, not sole authorship.</p></article>)}</div>
     <div style={{ marginTop: 32 }}><p className={styles.label}>[ The team / moving member wall ]</p><TeamWall members={members} /></div>
-    <div className={styles.actions}><p className={styles.copy}>Drag/swipe to browse; hover or focus to pause. The explicit pause control persists until resumed. Reduced-motion preferences stop automatic drift.</p></div>
+    <div className={styles.actions}><p className={styles.copy}>Drag/swipe to browse; hover or focus to pause. Offscreen motion sleeps; no per-strip pause buttons. Reduced-motion preferences stop automatic drift.</p></div>
     <LoopBand label="Guild ticker">{["One Guild", "Many edges", "Builder-owned", "Applied AI"].map(word => <span className={site.tickerWord} key={word}>{word}</span>)}</LoopBand>
     <LoopBand label="Counter-moving specimen" reverse>{["Shared craft", "Shared reputation", "Open experiments"].map(word => <span className={site.tickerWord} key={word}>{word}</span>)}</LoopBand>
   </div>;
@@ -92,10 +91,10 @@ function Creed() {
 const meta = { title: "Brand/Venture Interactions", component: Portals, globals: { brandReign: "louchi" }, parameters: { layout: "fullscreen" } } satisfies Meta<typeof Portals>;
 export default meta;
 type Story = StoryObj<typeof meta>;
-export const PortalChooser: Story = { play: async ({ canvasElement }) => { const canvas = within(canvasElement); await userEvent.click(canvas.getByRole("button", { name: "Open a portal" })); const page = within(canvasElement.ownerDocument.body); await expect(page.getByRole("dialog")).toBeVisible(); await userEvent.keyboard("{Escape}"); await waitFor(() => expect(page.queryByRole("dialog")).not.toBeInTheDocument()); } };
+export const PortalChooser: Story = { play: async ({ canvasElement }) => { const canvas = within(canvasElement); await userEvent.click(canvas.getByRole("button", { name: "Open a portal" })); const page = within(canvasElement.ownerDocument.body); await waitFor(() => expect(page.getByRole("dialog")).toBeVisible()); await userEvent.keyboard("{Escape}"); await waitFor(() => expect(page.queryByRole("dialog")).not.toBeInTheDocument()); } };
 export const PortalOpen: Story = { args: { initiallyOpen: true } };
 export const BlankInteriors: Story = { args: { initiallyOpen: true, blank: true } };
-export const TeamAndTickers: Story = { render: () => <TeamMotion />, play: async ({ canvasElement }) => { const canvas = within(canvasElement); const pause = canvas.getByRole("button", { name: "Pause movement" }); await userEvent.click(pause); await expect(canvas.getByRole("button", { name: "Resume movement" })).toHaveAttribute("aria-pressed", "true"); } };
+export const TeamAndTickers: Story = { render: () => <TeamMotion />, play: async ({ canvasElement }) => { const canvas = within(canvasElement); await expect(canvas.queryByRole("button", { name: "Pause movement" })).not.toBeInTheDocument(); } };
 export const ContactForm: Story = { render: () => <Contact /> };
 export const ContactServerError: Story = { render: () => <Contact outcome="error" initialStatus="error" /> };
 export const ContactSuccess: Story = { render: () => <Contact initialStatus="success" /> };

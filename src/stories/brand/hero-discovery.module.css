@@ -82,12 +82,12 @@
 .title {
   font-family: var(--font-display), serif;
   font-size: clamp(4.5rem, 11vw, 9rem);
-  font-weight: 900;
+  font-weight: 400;
   letter-spacing: -.015em;
   line-height: .9;
 }
 
-.title em { display: inline-block; color: var(--hero-signal); font-style: normal; font-weight: 1000; transform: skewX(12deg); }
+.title em { display: inline-block; color: var(--hero-signal); font-style: normal; font-family: var(--font-retalic); font-weight: 400; transform: none; }
 
 .instruction {
   display: block;

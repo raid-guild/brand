@@ -103,7 +103,7 @@ export const BRAND_SYSTEM = {
       "maturity": "development",
       "available": true,
       "summary": "A Moebius-influenced system of deep teal, cyan, parchment, coral, and acid lime, built around expansive editorial type and speculative-world imagery.",
-      "direction": "Moebius-influenced speculative worlds, heavy uppercase Afacad Flux with reverse-italic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
+      "direction": "Moebius-influenced speculative worlds, uppercase Grinder with native Retalic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
       "sourceLabel": "Venture Beyond redesign",
       "sourceUrl": "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign",
       "contributionNote": "Stewarded by Louchi and made real through the work, critique, and adoption of many Guild contributors.",
@@ -145,7 +145,8 @@ export const BRAND_SYSTEM = {
         }
       ],
       "tokens": {
-        "--font-display": "'Afacad Flux', sans-serif",
+        "--font-display": "'Grinder', 'Afacad Flux', sans-serif",
+        "--font-retalic": "'Grinder Retalic', 'Afacad Flux', sans-serif",
         "--font-body": "'Ubuntu', sans-serif",
         "--reign-navy": "#191e4e",
         "--moloch-100": "#e7f4f3",
@@ -313,7 +314,7 @@ export const BRAND_SYSTEM = {
         }
       },
       "typography": {
-        "display": "Afacad Flux",
+        "display": "Grinder",
         "body": "Ubuntu",
         "mono": "Ubuntu Mono"
       },
@@ -582,10 +583,10 @@ export const BRAND_SYSTEM = {
     "families": [
       {
         "id": "display",
-        "name": "Afacad Flux",
+        "name": "Grinder",
         "cssVariable": "--font-display",
-        "sourceVariable": "--font-afacad",
-        "role": "Louchi uppercase display, 900 weight; reverse-italic accents at 1000 with skewX(12deg). Archived reigns retain their fonts."
+        "sourceVariable": "--font-grinder",
+        "role": "Louchi uppercase display, native regular/italic and Retalic cuts at weight 400; no synthetic skew. Commercial web fonts in the guide only; package consumers use Afacad Flux fallback or their own licensed files. Archived reigns retain their fonts."
       },
       {
         "id": "body",

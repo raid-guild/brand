@@ -1,0 +1,122 @@
+"use client";
+
+// Adapted from Dekan's elastic experiments gallery and the Portal gallery study.
+// Screenshots only: the live artifacts load in their own tab, never in this page.
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import styles from "./ArtifactGallery.module.css";
+
+export type GalleryItem = { id: string; title: string; category: string; description: string; image?: string | null; href?: string; kind?: "post" | "collaborator" | "experiment" };
+type Artifact = GalleryItem;
+
+export default function ArtifactGallery({ collaborators = [], items = [] }: { collaborators?: GalleryItem[]; items?: GalleryItem[] }) {
+  const [posts] = useState<GalleryItem[]>(items.filter(item => item.kind === "post"));
+  const [postsState] = useState<"loading" | "live" | "error">("live");
+  const [modules] = useState(items.filter(item => item.kind !== "post" && item.kind !== "collaborator"));
+  const [filter, setFilter] = useState("all");
+  const experiments = modules.map(item => ({ ...item, kind: "experiment" as const }));
+  const collection = Array.from({ length: Math.max(posts.length, collaborators.length, experiments.length) }, (_, index) =>
+    [posts[index], experiments[index], collaborators[index]].filter(Boolean)).flat();
+  const artifacts = collection.filter(item => filter === "all" || item.kind === filter);
+  const [catalogState] = useState<'loading' | 'live' | 'fallback'>('live');
+  const [selected, setSelected] = useState<string | null>(null);
+  const [peek, setPeek] = useState<string | null>(null);
+  const [columns, setColumns] = useState(4);
+  const grid = useRef<HTMLDivElement>(null);
+  const closeButton = useRef<HTMLButtonElement>(null);
+  const previous = useRef<string | null>(null);
+  const zones = useRef<{ id: string; rect: DOMRect }[]>([]);
+  useEffect(() => {
+    // Hit zones use viewport coordinates. Scrolling changes those coordinates
+    // even while the pointer remains inside the gallery.
+    const invalidateZones = () => {
+      zones.current = [];
+      setPeek(null);
+    };
+    window.addEventListener("scroll", invalidateZones, { capture: true, passive: true });
+    window.addEventListener("resize", invalidateZones);
+    return () => {
+      window.removeEventListener("scroll", invalidateZones, true);
+      window.removeEventListener("resize", invalidateZones);
+    };
+  }, []);
+  useEffect(() => {
+    const root = grid.current;
+    if (!root) return;
+    let lastWidth = -1;
+    const observer = new ResizeObserver(([entry]) => {
+      const width = entry.contentRect.width;
+      // Elastic title wrapping can resize the height; that is not a breakpoint
+      // change and must not cancel the hover that caused it.
+      if (Math.abs(width - lastWidth) < 1) return;
+      lastWidth = width;
+      setColumns(Math.max(2, Math.floor(width / 190)));
+      setPeek(null); zones.current = [];
+    });
+    observer.observe(root);
+    return () => observer.disconnect();
+  }, []);
+  const select = (id: string | null) => {
+    setPeek(null); setSelected(id);
+  };
+  useEffect(() => {
+    const root = grid.current;
+    if (!root) return;
+    if (selected) {
+      closeButton.current?.focus({ preventScroll: true });
+      if (matchMedia("(max-width: 800px)").matches) closeButton.current?.closest("[data-gallery-detail]")?.scrollIntoView({ block: "start", behavior: "instant" });
+    }
+    else if (previous.current) root.querySelector<HTMLButtonElement>(`[data-artifact="${previous.current}"] button`)?.focus({ preventScroll: true });
+    previous.current = selected; zones.current = [];
+  }, [selected]);
+  const active = artifacts.find(item => item.id === selected);
+  const screenshot = (item: Artifact) => item.image === undefined ? `/images/artifacts/${item.id}.png` : item.image;
+  const preview = (item: Artifact, detail = false) => screenshot(item)
+    ? <Image className={item.kind === "collaborator" ? styles.logo : undefined} src={screenshot(item)!} alt={detail ? `Preview of ${item.title}` : ''} width={1280} height={720} unoptimized={screenshot(item)!.startsWith('https:')} sizes="(max-width: 600px) 90vw, (max-width: 999px) 45vw, 760px" />
+    : <span className={styles.placeholder} aria-hidden="true">{item.category}<b>↗</b></span>;
+  const card = (item: typeof artifacts[number]) => <article key={item.id} data-artifact={item.id} className={styles.card}>
+    <button type="button" aria-expanded={selected === item.id} aria-controls="artifact-detail" aria-label={`Unfold ${item.title}`} onClick={() => select(item.id)} onFocus={() => setPeek(item.id)} onBlur={() => setPeek(null)}>
+      <span className={styles.visual}>{preview(item)}<b aria-hidden="true">+</b></span>
+      <span className={styles.caption}><strong>{item.title}</strong><small>{item.category}</small></span>
+    </button>
+  </article>;
+  const rows = (items: GalleryItem[]) => Array.from({ length: Math.ceil(items.length / columns) }, (_, row) => {
+    const itemsInRow = items.slice(row * columns, (row + 1) * columns);
+    return <div key={row} data-elastic-row className={styles.row} style={{ gridTemplateColumns: Array.from({ length: columns }, (_, index) => itemsInRow[index]?.id === peek ? "minmax(0, 1.5fr)" : "minmax(0, 1fr)").join(" ") }}>{itemsInRow.map(card)}</div>;
+  });
+  return <section className={styles.section} aria-labelledby="artifact-heading">
+    <h3 id="artifact-heading" className={styles.srOnly}>Explore the frontier collection</h3>
+    <div className={styles.guide}><span>{String(artifacts.length).padStart(2, '0')} / DISCOVERIES</span><span>{active ? "Select a preview to switch" : "Select a tile to unfold"}</span></div>
+    {postsState === "error" && <p>Community posts are temporarily unavailable. <a href="https://portal.raidguild.org/posts">Read them on Portal →</a></p>}
+    {artifacts.length === 0 && <p>{filter === "post" && postsState === "loading" ? "Loading the latest public posts…" : "No entries in this collection."}</p>}
+    <div className={styles.layout} onKeyDown={event => { if (event.key === "Escape" && selected) { event.preventDefault(); select(null); } }}>
+    <div ref={grid} className={styles.previews} onPointerLeave={() => setPeek(null)} onPointerMove={event => {
+      if ((!active && columns === 1) || event.pointerType === "touch" || !matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+      // Use each row's resting, equal-width slots rather than the moving card
+      // edges. Re-entering during a transition cannot shift the hit boundaries.
+      if (!zones.current.length) zones.current = Array.from(grid.current!.querySelectorAll<HTMLElement>("[data-elastic-row]")).flatMap(row => {
+        const bounds = row.getBoundingClientRect();
+        const width = bounds.width / columns;
+        return Array.from(row.querySelectorAll<HTMLElement>("[data-artifact]")).map((el, index) => ({
+          id: el.dataset.artifact!, rect: new DOMRect(bounds.left + index * width, bounds.top, width, bounds.height),
+        }));
+      });
+      const hit = zones.current.find(({ rect }) => event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom);
+      setPeek(hit?.id || null);
+    }} onPointerEnter={() => { zones.current = []; }}>
+      {rows(artifacts)}
+    </div>
+    <div role="region" data-gallery-detail className={styles.detail} id="artifact-detail" aria-label="Discovery details">
+      <div className={styles.filters} aria-label="Filter the collection">
+        {[["all", "Everything"], ["post", "Field notes"], ["experiment", "Experiments"], ["collaborator", "Built with"]].map(([value, label]) =>
+          <button key={value} type="button" aria-pressed={filter === value} onClick={() => { setSelected(null); previous.current = null; setFilter(value); setPeek(null); zones.current = []; }}>{label}</button>)}
+      </div>
+      {active ? <>
+          <button ref={closeButton} className={styles.back} onClick={() => select(null)}>← Back to the collection <span aria-hidden="true">×</span></button>
+          <div className={styles.feature}>{preview(active, true)}<div><p>{active.category}</p><h4>{active.title}</h4><p>{active.description}</p>{active.kind !== "collaborator" && <a href={active.href || `https://portal-artifacts-production.up.railway.app/${active.id}/`} target="_blank" rel="noopener noreferrer">{active.kind === "post" ? "Read the post" : "Explore experiment"} ↗<small>Opens in a new tab</small></a>}</div></div>
+      </> : <div className={styles.empty}><span aria-hidden="true">↖</span><h4>Follow your curiosity.</h4><p>Select a card to explore a field note, a public experiment, or someone we’ve built with.</p><p>Choose a category above to narrow the collection.</p></div>}
+    </div>
+    </div>
+    <p className={styles.footnote}>{catalogState === 'fallback' ? 'The live experiment catalog is unavailable. Showing selected experiments. ' : 'Field notes, public experiments, clients, collaborators, and member-built projects. '}<a href="https://portal.raidguild.org/modules" target="_blank" rel="noopener noreferrer">Browse Portal modules ↗</a></p>
+  </section>;
+}

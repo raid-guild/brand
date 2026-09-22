@@ -131,7 +131,7 @@ const brandSystemSource = {
       maturity: "development",
       available: true,
       summary: "A Moebius-influenced system of deep teal, cyan, parchment, coral, and acid lime, built around expansive editorial type and speculative-world imagery.",
-      direction: "Moebius-influenced speculative worlds, heavy uppercase Afacad Flux with reverse-italic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
+      direction: "Moebius-influenced speculative worlds, uppercase Grinder with native Retalic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
       sourceLabel: "Venture Beyond redesign",
       sourceUrl: "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign",
       contributionNote: "Stewarded by Louchi and made real through the work, critique, and adoption of many Guild contributors.",
@@ -145,7 +145,7 @@ const brandSystemSource = {
         { name: "Acid Lime", value: "#d7e34d", role: "Highlight and status" },
       ],
       tokens: {
-        "--font-display": "'Afacad Flux', sans-serif", "--font-body": "'Ubuntu', sans-serif",
+        "--font-display": "'Grinder', 'Afacad Flux', sans-serif", "--font-retalic": "'Grinder Retalic', 'Afacad Flux', sans-serif", "--font-body": "'Ubuntu', sans-serif",
         "--reign-navy": "#191e4e",
         "--moloch-100": "#e7f4f3", "--moloch-200": "#b8e0df", "--moloch-300": "#78c5c3", "--moloch-400": "#ee709a",
         "--moloch-500": "#ee3c78", "--moloch-600": "#b84067", "--moloch-700": "#315654", "--moloch-800": "#0a292b",
@@ -208,7 +208,7 @@ const brandSystemSource = {
           reducedMotion: "Reveal landmarks immediately with no parallax, curtain travel, orbit animation, or long atmospheric crossfade when reduced motion is requested.",
         },
       },
-      typography: { display: "Afacad Flux", body: "Ubuntu", mono: "Ubuntu Mono" },
+      typography: { display: "Grinder", body: "Ubuntu", mono: "Ubuntu Mono" },
       dataVersion: null,
     },
     {
