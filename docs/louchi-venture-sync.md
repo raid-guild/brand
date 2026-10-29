@@ -3,6 +3,14 @@
 Baseline: [website a00dd80](https://github.com/raid-guild/website/tree/a00dd80).
 Design and asset handoff: Luis Blanco (Louchi), [original branch](https://github.com/luisblancoach/website/tree/handoff/venture-beyond-dekan), tip a195359. The website retains original commits as ancestry. This brand-repo copy records source provenance; it does not claim authorship of those assets. Stewardship is not sole authorship: the implementation, critique and refinements are collaborative.
 
+The layout and interaction workshop still uses that `a00dd80` snapshot. Its
+display webfonts now follow the later website
+[`review/venture-beyond-redesign` revision `a6418ea`](https://github.com/raid-guild/website/tree/a6418ea),
+including the September 30 font update
+[`877ba222aa060cce370668c8c05e64d74187a620`](https://github.com/raid-guild/website/commit/877ba222aa060cce370668c8c05e64d74187a620).
+This typography update does not imply the other workshop snapshots have been
+resynced to that revision.
+
 ## Current examples
 
 - Brand / Venture Beyond / Typography And Actions: all six section-heading pairings, pill anatomy and 24px separation from copy.
@@ -16,7 +24,7 @@ Design and asset handoff: Luis Blanco (Louchi), [original branch](https://github
 
 ## Typography and assets
 
-Grinder Regular, Italic and Retalic are the current display cuts. Louchi supplied the package and the project owner reports rights were obtained. The webfonts live in public/brand-fonts/louchi for guide rendering, outside the reusable package font directory. Confirm redistribution terms before distributing these files to third parties. Afacad Flux/OFL remains the open package fallback; Ubuntu and Ubuntu Mono retain their existing licences.
+Grinder Refined Regular, Italic and Retalic are the current display cuts. Louchi supplied the package and the project owner reports rights were obtained. The webfonts live in public/brand-fonts/louchi for guide rendering, outside the reusable package font directory. The older Grinder cuts remain in that site directory as historical assets. The adjacent README records file hashes and provenance. Confirm redistribution terms before distributing these files to third parties. Afacad Flux/OFL remains the open package fallback; Ubuntu and Ubuntu Mono retain their existing licences.
 
 Display and accents: native weight 400, uppercase, no synthetic bold or skew. Use the separate Grinder Retalic family for accents, with enough line spacing to separate cuts. Ubuntu paragraphs remain unskewed; Ubuntu Mono labels and controls retain their utility voice.
 
