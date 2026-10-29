@@ -11,14 +11,14 @@ function Pill({ children, filled = false }: { children: React.ReactNode; filled?
 function Elements() {
   return <main className={styles.sheet}>
     <p className={styles.label}>[ Louchi / Venture Beyond ]</p>
-    <p className={styles.copy}>Website baseline a00dd80 · September 2026. Stewarded by Louchi, developed collaboratively. Grinder is the current display face, using the webfont package supplied by Louchi with rights reported by the project owner.</p>
+    <p className={styles.copy}>Layout baseline a00dd80 · September 2026. Display fonts follow the later website revision a6418ea. Stewarded by Louchi, developed collaboratively. Grinder Refined is the current display face, using the webfont package supplied by Louchi with rights reported by the project owner.</p>
     {[["The Guild", "The network", "is the engine"], ["The Team", "A wide network", "of builders"], ["Selected Expeditions", "Proof from", "the frontier"], ["Active Spears", "Specialized at", "the applied edge"], ["Current Stewards", "Keepers of", "the signal"], ["Begin a Transmission", "What impossible thing", "are you building?"]].map(([label, first, accent]) => <section key={label}>
       <p className={styles.label}>[ {label} ]</p>
       <h2 className={styles.heading}>{first}<br /><em>{accent}</em></h2>
       <p className={styles.copy}>A network of creative and technical people solving ambitious problems together.</p>
       <div className={styles.actions}><Pill>Enter Discord</Pill><Pill filled>Join the Guild</Pill></div>
     </section>)}
-    <section className={styles.notes}><h2>Typography rules</h2><p>Grinder Regular/Italic and native Grinder Retalic: weight 400, no synthetic skew or bold. Uppercase display copy with enough leading to separate the two cuts. Ubuntu for paragraphs; Ubuntu Mono for bracket labels, metadata and controls. Keep 24px between copy and standalone CTAs. Do not apply skew to body copy or controls.</p><p>Pink on cream is an expressive display pairing, not an accessible small-text pairing. These workshop buttons use dark text for contrast; the live cream-on-pink / pink-on-cream small labels still need designer review.</p></section>
+    <section className={styles.notes}><h2>Typography rules</h2><p>Grinder Refined Regular/Italic and native Grinder Refined Retalic: weight 400, no synthetic skew or bold. Uppercase display copy with enough leading to separate the two cuts. Ubuntu for paragraphs; Ubuntu Mono for bracket labels, metadata and controls. Keep 24px between copy and standalone CTAs. Do not apply skew to body copy or controls.</p><p>Pink on cream is an expressive display pairing, not an accessible small-text pairing. These workshop buttons use dark text for contrast; the live cream-on-pink / pink-on-cream small labels still need designer review.</p></section>
   </main>;
 }
 

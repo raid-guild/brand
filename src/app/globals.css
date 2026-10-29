@@ -2,9 +2,9 @@
 @import "tw-animate-css";
 @import "../generated/brand-tokens.css";
 
-@font-face { font-family: "Grinder"; src: url("/brand-fonts/louchi/Grinder-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "Grinder"; src: url("/brand-fonts/louchi/Grinder-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: "Grinder Retalic"; src: url("/brand-fonts/louchi/Grinder-Retalic.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Grinder"; src: url("/brand-fonts/louchi/Grinder-Refined-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Grinder"; src: url("/brand-fonts/louchi/Grinder-Refined-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Grinder Retalic"; src: url("/brand-fonts/louchi/Grinder-Refined-Retalic.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Afacad Flux"; src: url("/fonts/AfacadFlux-Variable.ttf") format("truetype"); font-weight: 100 1000; font-style: normal; font-display: swap; }
 @font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
 @font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Italic-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: italic; font-display: swap; }
