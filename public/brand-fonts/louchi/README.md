@@ -1,6 +1,6 @@
-# Grinder webfont provenance
+# Louchi display font provenance
 
-The active Grinder Refined Regular, Italic and Retalic WOFF2 files were copied
+The historical Grinder Refined Regular, Italic and Retalic WOFF2 files were copied
 unchanged from `raid-guild/website` revision `a6418ea` on
 `review/venture-beyond-redesign`. That revision contains the September 30 font
 update at commit `877ba222aa060cce370668c8c05e64d74187a620`:
@@ -20,3 +20,8 @@ These files support the brand guide and Storybook preview. They are deliberately
 outside public/fonts, which the reusable package build copies. Do not add these
 files to the package or offer a font download without confirming redistribution
 terms. Afacad Flux remains the openly licensed package fallback.
+
+
+## November 2026 Last Duel update
+
+Louchi supplied six Last Duel OTF cuts: Ex2, BoldEx2, Oblique, BoldOblique, Ex2Retalic, and BoldEx2Retalic. The originals are retained outside the deployed public tree in `assets/fonts/last-duel/`. `scripts/prepare-last-duel-fonts.py` derives only the WOFF2 web cuts in this directory. To rerun it, install the pinned dependencies with `python -m pip install -r scripts/requirements-fonts.txt`, then run `python scripts/prepare-last-duel-fonts.py` from the repository root. The active guide uses native weights and styles. These webfont assets are guide-only and remain outside the reusable package. The earlier Grinder files are retained as historical assets with no active CSS references.

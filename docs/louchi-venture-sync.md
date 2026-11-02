@@ -24,9 +24,9 @@ resynced to that revision.
 
 ## Typography and assets
 
-Grinder Refined Regular, Italic and Retalic are the current display cuts. Louchi supplied the package and the project owner reports rights were obtained. The webfonts live in public/brand-fonts/louchi for guide rendering, outside the reusable package font directory. The older Grinder cuts remain in that site directory as historical assets. The adjacent README records file hashes and provenance. Confirm redistribution terms before distributing these files to third parties. Afacad Flux/OFL remains the open package fallback; Ubuntu and Ubuntu Mono retain their existing licences.
+Last Duel Extended 2 Regular/Bold, Oblique/Bold Oblique, and Retalic Extended 2 Regular/Bold are the current display cuts. Louchi supplied the files for the RaidGuild guide in November 2026. The webfonts live in public/brand-fonts/louchi for guide rendering, outside the reusable package font directory. The older Grinder cuts remain in that site directory as historical assets. The adjacent README records source and conversion provenance. Confirm redistribution terms before distributing these files to third parties. Afacad Flux/OFL remains the open package fallback; Ubuntu and Ubuntu Mono retain their existing licences.
 
-Display and accents: native weight 400, uppercase, no synthetic bold or skew. Use the separate Grinder Retalic family for accents, with enough line spacing to separate cuts. Ubuntu paragraphs remain unskewed; Ubuntu Mono labels and controls retain their utility voice.
+Display and accents: native weights 400 and 700, uppercase, no synthetic bold or skew. Use the separate Last Duel Retalic family for accents, with enough line spacing to separate cuts. Ubuntu paragraphs remain unskewed; Ubuntu Mono labels and controls retain their utility voice.
 
 Videos and foreground artwork originate in Louchi's handoff/Assets.zip as integrated by the website. The workshop copies the processed hero ping-pong loops, forward-only creed crossfade and horizontal spear illustrations. Do not reverse the creed walker scene: the bird would fly backwards.
 
