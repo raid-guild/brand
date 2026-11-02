@@ -13,7 +13,7 @@ const items: GalleryItem[] = Array.from({ length: 18 }, (_, index) => ({
 }));
 const collaborators: GalleryItem[] = [{ id: "guild", title: "Collaborator specimen", kind: "collaborator", category: "Built with", description: "Placeholder for a client or collaborator; not a new partnership claim.", image: "/assets/logos/symbol-black.svg" }];
 function Gallery() { return <div className={site.site}><ArtifactGallery items={items} collaborators={collaborators} /></div>; }
-const meta = { title: "Brand/Elastic Gallery", component: Gallery, parameters: { layout: "fullscreen", docs: { description: { component: "Website a00dd80. Adaptive columns, resting hover slots, fixed caption heights, sticky right-hand details; stacked below 800px. Native Grinder Retalic. Local fixtures only." } } } } satisfies Meta<typeof Gallery>;
+const meta = { title: "Brand/Elastic Gallery", component: Gallery, parameters: { layout: "fullscreen", docs: { description: { component: "Website a00dd80. Adaptive columns, resting hover slots, fixed caption heights, sticky right-hand details; stacked below 800px. Native Last Duel Retalic. Local fixtures only." } } } } satisfies Meta<typeof Gallery>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 export const Default: Story = { play: async ({ canvasElement }) => {

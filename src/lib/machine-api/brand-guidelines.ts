@@ -571,7 +571,7 @@ const payload = {
           ? { licenseUrl: `${LIVE_BASE_URL}/fonts/${font.licenseFile}` }
           : {}),
       })),
-      note: "Ubuntu Mono Regular and Bold are packaged local assets for compact utility and factual data. Do not use the mono family for headings or normal paragraphs.",
+      note: "Louchi's Last Duel cuts are guide-only assets under /brand-fonts/louchi/ and are excluded from the reusable package. Ubuntu Mono Regular and Bold are packaged local assets for compact utility and factual data. Do not use the mono family for headings or normal paragraphs.",
     },
     social: {
       dimensions: "400x400",

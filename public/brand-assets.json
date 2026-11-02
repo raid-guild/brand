@@ -268,8 +268,8 @@
         }
       },
       "semanticLight": {
-        "--font-display": "'Grinder', 'Afacad Flux', sans-serif",
-        "--font-retalic": "'Grinder Retalic', 'Afacad Flux', sans-serif",
+        "--font-display": "'Last Duel', 'Afacad Flux', sans-serif",
+        "--font-retalic": "'Last Duel Retalic', 'Afacad Flux', sans-serif",
         "--font-body": "'Ubuntu', sans-serif",
         "--reign-navy": "#191e4e",
         "--moloch-100": "#e7f4f3",
@@ -366,16 +366,16 @@
     },
     "typography": {
       "reigns": {
-        "louchi": "Grinder, Ubuntu, Ubuntu Mono",
+        "louchi": "Last Duel, Ubuntu, Ubuntu Mono",
         "suede": "Mazius Display, EB Garamond, Ubuntu Mono",
         "tw": "RG Alchemion, RG Fratelli",
         "ven": "Mazius Display, EB Garamond, Ubuntu Mono"
       },
       "families": [
         {
-          "name": "Grinder",
+          "name": "Last Duel",
           "cssVar": "--font-display",
-          "role": "Louchi uppercase display, native regular/italic and Retalic cuts at weight 400; no synthetic skew. Commercial web fonts in the guide only; package consumers use Afacad Flux fallback or their own licensed files. Archived reigns retain their fonts."
+          "role": "Louchi uppercase display, native regular/bold and oblique cuts plus separate Retalic at weights 400/700; no synthetic skew or bold. Commercial web fonts in the guide only; package consumers use Afacad Flux fallback or their own licensed files. Archived reigns retain their fonts."
         },
         {
           "name": "Ubuntu",

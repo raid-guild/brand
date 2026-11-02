@@ -103,7 +103,7 @@ export const BRAND_SYSTEM = {
       "maturity": "development",
       "available": true,
       "summary": "A Moebius-influenced system of deep teal, cyan, parchment, coral, and acid lime, built around expansive editorial type and speculative-world imagery.",
-      "direction": "Moebius-influenced speculative worlds, uppercase Grinder with native Retalic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
+      "direction": "Moebius-influenced speculative worlds, uppercase Last Duel with native Retalic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
       "sourceLabel": "Venture Beyond redesign",
       "sourceUrl": "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign",
       "contributionNote": "Stewarded by Louchi and made real through the work, critique, and adoption of many Guild contributors.",
@@ -145,8 +145,8 @@ export const BRAND_SYSTEM = {
         }
       ],
       "tokens": {
-        "--font-display": "'Grinder', 'Afacad Flux', sans-serif",
-        "--font-retalic": "'Grinder Retalic', 'Afacad Flux', sans-serif",
+        "--font-display": "'Last Duel', 'Afacad Flux', sans-serif",
+        "--font-retalic": "'Last Duel Retalic', 'Afacad Flux', sans-serif",
         "--font-body": "'Ubuntu', sans-serif",
         "--reign-navy": "#191e4e",
         "--moloch-100": "#e7f4f3",
@@ -314,7 +314,7 @@ export const BRAND_SYSTEM = {
         }
       },
       "typography": {
-        "display": "Grinder",
+        "display": "Last Duel",
         "body": "Ubuntu",
         "mono": "Ubuntu Mono"
       },
@@ -583,10 +583,10 @@ export const BRAND_SYSTEM = {
     "families": [
       {
         "id": "display",
-        "name": "Grinder",
+        "name": "Last Duel",
         "cssVariable": "--font-display",
-        "sourceVariable": "--font-grinder",
-        "role": "Louchi uppercase display, native regular/italic and Retalic cuts at weight 400; no synthetic skew. Commercial web fonts in the guide only; package consumers use Afacad Flux fallback or their own licensed files. Archived reigns retain their fonts."
+        "sourceVariable": "--font-last-duel",
+        "role": "Louchi uppercase display, native regular/bold and oblique cuts plus separate Retalic at weights 400/700; no synthetic skew or bold. Commercial web fonts in the guide only; package consumers use Afacad Flux fallback or their own licensed files. Archived reigns retain their fonts."
       },
       {
         "id": "body",

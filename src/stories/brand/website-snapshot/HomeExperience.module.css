@@ -12,9 +12,9 @@
   --coral: var(--color-pink);
   --rust: #b84031;
   --acid: #d7e34d;
-  /* Supplied Grinder display cuts; Ubuntu follows the handoff for body copy. */
-  --font-display: var(--font-grinder);
-  --font-retalic: var(--font-grinder-retalic);
+  /* Supplied Last Duel display cuts; Ubuntu follows the handoff for body copy. */
+  --font-display: var(--font-last-duel);
+  --font-retalic: var(--font-last-duel-retalic);
   font-synthesis: none;
   --font-body: var(--font-ubuntu);
   background: var(--paper);
@@ -853,7 +853,7 @@
 }
 
 /* Integration: open display face, retained local routes, responsive handoff. */
-.site h1, .site h2, .rosterHeading h3, .teamCopy h3, .discipline h3, .missionCopy h3, .creed blockquote { font-weight: 900; text-transform: uppercase; letter-spacing: -.015em; }
+.site h1, .site h2, .rosterHeading h3, .teamCopy h3, .discipline h3, .missionCopy h3, .creed blockquote { font-weight: 700; text-transform: uppercase; letter-spacing: -.015em; }
 /* The supplied Retalic face provides the reverse lean without synthetic skew. */
 .site h1 em, .site h2 em, .site h3 em, .creed em { display: inline-block; font-family: var(--font-retalic), sans-serif; font-style: normal; font-weight: 400; transform: none; }
 .hero h1 { line-height: .86; }
@@ -862,8 +862,8 @@
 .fieldIntro h2 > em { font-size: 1.1em; white-space: nowrap; }
 :global(html[data-theme="dark"]) .site .fieldIntro h2,
 :global(html[data-theme="dark"]) .site .fieldIntro .sectionLabel { color: var(--paper); }
-.site .contactFormShell :global(.text-heading-lg) { font-weight: 900 !important; }
-.statsBand strong { font-weight: 900; }
+.site .contactFormShell :global(.text-heading-lg) { font-weight: 700 !important; }
+.statsBand strong { font-weight: 700; }
 .creed .creedMoons { animation: none; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center; transform: none; }
 .carouselButtons { display: flex; gap: 12px; }
 .carouselButtons button { width: 44px; height: 44px; border: 1px solid currentColor; border-radius: 50%; background: transparent; color: inherit; cursor: pointer; font-size: 24px; }
@@ -883,7 +883,7 @@
 .tickerWord { display: flex; align-items: center; gap: 32px; font-family: var(--font-mono); font-size: clamp(14px, 1.6vw, 24px); font-style: italic; font-weight: 700; white-space: nowrap; }
 .tickerWord i { background: currentColor; width: 25px; height: 25px; mask: url('/images/icons/venture/ico-logo.svg') center / contain no-repeat; }
 .metricItem { display: flex; align-items: center; gap: 22px; border-left: 1px solid rgba(239,233,215,.25); padding-left: 24px; width: 300px; flex-shrink: 0; }
-.metricItem strong { color: var(--coral); font-family: var(--font-display); font-size: clamp(40px, 4vw, 56px); font-weight: 900; font-style: italic; }
+.metricItem strong { color: var(--coral); font-family: var(--font-display); font-size: clamp(40px, 4vw, 56px); font-weight: 700; font-style: italic; }
 .metricItem span { font-family: var(--font-mono); font-size: 14px; line-height: 1.35; max-width: 165px; }
 @keyframes bandDrift { to { transform: translateX(-50%); } }
 :global(html[data-theme="dark"]) .site .metricBand { background: #252a61; }

@@ -35,13 +35,13 @@ export default function TypographyPage() {
       ]
     : [
         {
-          name: brandReign.id === "louchi" ? "Grinder" : "Mazius Display",
+          name: brandReign.id === "louchi" ? "Last Duel" : "Mazius Display",
           className: "font-display",
           sample: "Venture beyond the familiar.",
           role: "Display, headlines, and brand graphics",
           description:
             brandReign.id === "louchi"
-              ? "Grinder Regular and Italic at native weight 400. Coral accents use the separate Grinder Retalic cut, without synthetic skew or bold. Guide-only licensed webfonts; package consumers retain the open Afacad Flux fallback."
+              ? "Last Duel Extended 2 regular/bold and oblique cuts, with a separate Retalic family for coral accents. Use native cuts at weights 400 and 700, with no synthetic skew or bold. Louchi supplied these guide fonts; package consumers retain the open Afacad Flux fallback."
               : "A calligraphic high-contrast serif used for expressive headlines and brand graphics.",
         },
         {
@@ -50,7 +50,7 @@ export default function TypographyPage() {
           sample: "Build digital worlds worth inhabiting.",
           role: "Body and supporting copy",
           description:
-            brandReign.id === "louchi" ? "Clear, unskewed supporting copy beneath Grinder display headings." : "The readable editorial counterweight to Mazius Display across long-form copy and interfaces.",
+            brandReign.id === "louchi" ? "Clear, unskewed supporting copy beneath Last Duel display headings." : "The readable editorial counterweight to Mazius Display across long-form copy and interfaces.",
         },
         {
           name: "Ubuntu Mono",
@@ -77,7 +77,7 @@ export default function TypographyPage() {
           {isTw
             ? "TW pairs theatrical display type with compact supporting copy for an energetic, web-native voice."
             : brandReign.id === "louchi"
-              ? "Louchi keeps the Mazius, Garamond, and Ubuntu foundation but shifts the composition: much larger display moments, tighter leading, editorial contrast, and technical field-note details."
+              ? "Louchi pairs Last Duel display with Ubuntu body and Ubuntu Mono utility, using spacious composition, tight display leading, and technical field-note details."
               : "Suede established the Mazius, Garamond, and Ubuntu foundation used across the warm Moloch and Scroll system."}
         </p>
 
@@ -85,14 +85,16 @@ export default function TypographyPage() {
           <section>
             <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
               <h2 className="type-heading-lg">Font Families</h2>
-              <Link
-                href={sourceUrl}
-                className="type-label-md text-primary hover:text-primary/80"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View source fonts
-              </Link>
+              {brandReign.id !== "louchi" && (
+                <Link
+                  href={sourceUrl}
+                  className="type-label-md text-primary hover:text-primary/80"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View source fonts
+                </Link>
+              )}
             </div>
             <div className="space-y-6">
               {families.map((family) => (

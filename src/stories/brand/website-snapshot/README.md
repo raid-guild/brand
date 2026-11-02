@@ -11,7 +11,7 @@ Adaptations:
 - HireUs has no analytics or fetch submission. previewOutcome and initialStatus expose local success/error states. Its response is simulated after 500ms. No consultation is created.
 - Workshop CSS corrects small-text contrast in form controls and error labels. These intentional deviations need designer review before website adoption.
 - Portal wrapper uses the existing Radix Dialog for focus trapping, Escape and focus return. Selection reports an in-story destination instead of navigating away.
-- Videos, imagery, fonts and icon copies retain their source names. Grinder webfonts are supplied with rights reported by the project owner; guide-only files live outside package fonts. Do not redistribute them without confirming licence scope.
+- Videos, imagery, fonts and icon copies retain their source names. Last Duel fonts were supplied by Louchi for the RaidGuild guide in November 2026; guide-only files live outside package fonts.
 
 When resyncing, diff these adapters and keep all no-network guarantees. Never replace the form preview with the production submission endpoint.
 
