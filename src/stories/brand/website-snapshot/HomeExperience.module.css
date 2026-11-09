@@ -855,10 +855,10 @@
 /* Integration: open display face, retained local routes, responsive handoff. */
 .site h1, .site h2, .rosterHeading h3, .teamCopy h3, .discipline h3, .missionCopy h3, .creed blockquote { font-weight: 700; text-transform: uppercase; letter-spacing: -.015em; }
 /* The supplied Retalic face provides the reverse lean without synthetic skew. */
-.site h1 em, .site h2 em, .site h3 em, .creed em { display: inline-block; font-family: var(--font-retalic), sans-serif; font-style: normal; font-weight: 400; transform: none; }
+.site h1 em, .site h2 em, .site h3 em, .creed em { display: inline-block; font-family: var(--font-last-duel-extended), sans-serif; font-style: italic; font-weight: 700; font-synthesis: style; }
 .hero h1 { line-height: .86; }
-.hero h1 > span { display: inline-block; font-family: var(--font-retalic), sans-serif; font-weight: 400; transform: none; }
-.site .hero h1 em { font-family: var(--font-display), sans-serif; font-style: italic; font-weight: 400; transform: none; }
+.hero h1 > span { display: inline-block; font-family: var(--font-retalic), sans-serif; font-weight: 700; transform: none; }
+.site .hero h1 em { font-family: var(--font-last-duel-extended), sans-serif; font-style: italic; font-weight: 700; font-synthesis: style; transform: none; }
 .fieldIntro h2 > em { font-size: 1.1em; white-space: nowrap; }
 :global(html[data-theme="dark"]) .site .fieldIntro h2,
 :global(html[data-theme="dark"]) .site .fieldIntro .sectionLabel { color: var(--paper); }
@@ -1108,3 +1108,6 @@
   .portalMessage { bottom: 8px; }
 }
 @media (prefers-reduced-motion: reduce) { .portalMessage { animation: none; } }
+
+/* Paired display headings use the current redesign’s Retalic upper cut. */
+.site h1, .site h2, .rosterHeading h3, .teamCopy h3 { font-family: var(--font-retalic), sans-serif; font-weight: 700; }

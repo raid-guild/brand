@@ -16,7 +16,9 @@ test("Louchi uses current display, body and navy night tokens without changing S
 
 test("Venture specimens preserve retalic direction and CTA spacing", () => {
   const css = readFileSync("src/stories/brand/venture-elements.module.css", "utf8");
-  assert.match(css, /font-family: var\(--font-retalic\)/);
+  assert.match(css, /font: 700 .*var\(--font-retalic\)/);
+  assert.match(css, /font-family: var\(--font-last-duel-extended\)/);
+  assert.match(css, /font-synthesis: style/);
   assert.doesNotMatch(css, /skewX/);
   assert.match(css, /margin-top: 24px/);
   for (const file of ["AfacadFlux-Variable.ttf", "AfacadFlux-OFL.txt", "Ubuntu-Variable.ttf", "Ubuntu-Italic-Variable.ttf", "UbuntuMono-UFL.txt"]) {

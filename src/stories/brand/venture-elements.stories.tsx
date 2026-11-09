@@ -18,7 +18,7 @@ function Elements() {
       <p className={styles.copy}>A network of creative and technical people solving ambitious problems together.</p>
       <div className={styles.actions}><Pill>Enter Discord</Pill><Pill filled>Join the Guild</Pill></div>
     </section>)}
-    <section className={styles.notes}><h2>Typography rules</h2><p>Last Duel Extended 2 regular/bold and oblique, with separate Retalic regular/bold: native weights 400/700, no synthetic skew or bold. Uppercase display copy with enough leading to separate the two cuts. Ubuntu for paragraphs; Ubuntu Mono for bracket labels, metadata and controls. Keep 24px between copy and standalone CTAs. Do not apply skew to body copy or controls.</p><p>Pink on cream is an expressive display pairing, not an accessible small-text pairing. These workshop buttons use dark text for contrast; the live cream-on-pink / pink-on-cream small labels still need designer review.</p></section>
+    <section className={styles.notes}><h2>Typography rules</h2><p>The current two-line display uses Bold Extended 2 Retalic above and a synthetic italic of Bold Extended 2 below, because the family has no extended italic cut. Uppercase display copy with enough leading to separate the two cuts. Ubuntu for paragraphs; Ubuntu Mono for bracket labels, metadata and controls. Keep 24px between copy and standalone CTAs. Do not apply skew to body copy or controls.</p><p>Pink on cream is an expressive display pairing, not an accessible small-text pairing. These workshop buttons use dark text for contrast; the live cream-on-pink / pink-on-cream small labels still need designer review.</p></section>
   </main>;
 }
 

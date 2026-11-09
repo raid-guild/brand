@@ -1,8 +1,8 @@
 .sheet { max-width: 1200px; margin: auto; color: var(--foreground); font-family: "Ubuntu", sans-serif; }
 .sheet section { padding: 32px 0; border-bottom: 1px solid var(--border); }
 .label { font: italic 700 16px/1.5 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
-.heading { font: italic 400 clamp(32px, 5vw, 64px)/1 var(--font-display), sans-serif; text-transform: uppercase; letter-spacing: -.015em; margin: 16px 8px 24px; }
-.heading em { display: inline-block; font-style: normal; font-family: var(--font-retalic); font-weight: 400; transform: none; transform-origin: center; color: var(--primary); }
+.heading { font: 700 clamp(32px, 5vw, 64px)/1 var(--font-retalic), sans-serif; text-transform: uppercase; letter-spacing: -.015em; margin: 16px 8px 24px; }
+.heading em { display: inline-block; font-style: italic; font-family: var(--font-last-duel-extended); font-weight: 700; font-synthesis: style; transform-origin: center; color: var(--primary); }
 .copy { max-width: 560px; font-size: 18px; line-height: 1.5; margin: 0; }
 .actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
 .pill { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 56px; max-width: 100%; padding: 6px 6px 6px 24px; border-radius: 100px; border: 2px solid var(--primary); background: #efe9d7; color: #102d2c; text-decoration: none; font: italic 700 16px/24px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }

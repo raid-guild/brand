@@ -1,5 +1,7 @@
 # Louchi / Venture Beyond workshop sync
 
+Active brand branch: `feat/versioned-brand-reigns`. Typography authority: website `review/venture-beyond-redesign` at `7d0e878`; older Grinder snapshots are historical.
+
 Baseline: [website a00dd80](https://github.com/raid-guild/website/tree/a00dd80).
 Design and asset handoff: Luis Blanco (Louchi), [original branch](https://github.com/luisblancoach/website/tree/handoff/venture-beyond-dekan), tip a195359. The website retains original commits as ancestry. This brand-repo copy records source provenance; it does not claim authorship of those assets. Stewardship is not sole authorship: the implementation, critique and refinements are collaborative.
 
@@ -26,7 +28,7 @@ resynced to that revision.
 
 Last Duel Extended 2 Regular/Bold, Oblique/Bold Oblique, and Retalic Extended 2 Regular/Bold are the current display cuts. Louchi supplied the files for the RaidGuild guide in November 2026. The webfonts live in public/brand-fonts/louchi for guide rendering, outside the reusable package font directory. The older Grinder cuts remain in that site directory as historical assets. The adjacent README records source and conversion provenance. Confirm redistribution terms before distributing these files to third parties. Afacad Flux/OFL remains the open package fallback; Ubuntu and Ubuntu Mono retain their existing licences.
 
-Display and accents: native weights 400 and 700, uppercase, no synthetic bold or skew. Use the separate Last Duel Retalic family for accents, with enough line spacing to separate cuts. Ubuntu paragraphs remain unskewed; Ubuntu Mono labels and controls retain their utility voice.
+The authoritative website `review/venture-beyond-redesign` revision `7d0e878` uses Bold Extended 2 Retalic (700) on the upper line of two-level headings and Bold Extended 2 (700) with CSS italic synthesis on the lower line; no native extended italic cut exists. Other Last Duel cuts retain their native 400/700 mapping. Keep enough line spacing to separate cuts. Ubuntu paragraphs remain unskewed; Ubuntu Mono labels and controls retain their utility voice.
 
 Videos and foreground artwork originate in Louchi's handoff/Assets.zip as integrated by the website. The workshop copies the processed hero ping-pong loops, forward-only creed crossfade and horizontal spear illustrations. Do not reverse the creed walker scene: the bird would fly backwards.
 

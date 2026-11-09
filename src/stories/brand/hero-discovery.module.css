@@ -80,14 +80,14 @@
 .titleButton:hover { background: transparent; }
 
 .title {
-  font-family: var(--font-display), serif;
+  font-family: var(--font-retalic), sans-serif;
   font-size: clamp(4.5rem, 11vw, 9rem);
-  font-weight: 400;
+  font-weight: 700;
   letter-spacing: -.015em;
   line-height: .9;
 }
 
-.title em { display: inline-block; color: var(--hero-signal); font-style: normal; font-family: var(--font-retalic); font-weight: 400; transform: none; }
+.title em { display: inline-block; color: var(--hero-signal); font-style: italic; font-family: var(--font-last-duel-extended); font-weight: 700; font-synthesis: style; }
 
 .instruction {
   display: block;

@@ -375,7 +375,7 @@
         {
           "name": "Last Duel",
           "cssVar": "--font-display",
-          "role": "Louchi uppercase display, native regular/bold and oblique cuts plus separate Retalic at weights 400/700; no synthetic skew or bold. Commercial web fonts in the guide only; package consumers use Afacad Flux fallback or their own licensed files. Archived reigns retain their fonts."
+          "role": "Louchi uppercase display, native regular/bold and oblique cuts plus separate Retalic at weights 400/700; the paired-heading lower line synthesizes italic from Bold Extended 2 because there is no native extended italic; do not synthesize bold. Commercial web fonts in the guide only; package consumers use Afacad Flux fallback or their own licensed files. Archived reigns retain their fonts."
         },
         {
           "name": "Ubuntu",
