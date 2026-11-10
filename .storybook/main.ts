@@ -12,6 +12,9 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ["../public"],
+  // Storybook owns the public copy; disable Vite's duplicate copy to avoid
+  // concurrent mkdir races in the large website asset tree.
+  viteFinal: async (viteConfig) => ({ ...viteConfig, publicDir: false }),
 };
 
 export default config;

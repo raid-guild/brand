@@ -40,3 +40,5 @@ export * from "../../../src/components/ui/textarea";
 export * from "../../../src/components/ui/toggle";
 export * from "../../../src/components/ui/tooltip";
 export * from "../../../src/components/ui/wizard";
+
+export * from "../../../src/components/ui/brand-action";

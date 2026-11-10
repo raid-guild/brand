@@ -40,10 +40,7 @@ selection is intentionally not part of either control.
 
 ## Current coverage
 
-The September 2026 Louchi refresh adds **Brand/Venture Beyond** for current
-Afacad Flux / Ubuntu typography, reverse-italic accents, pill controls, card-rail
-navigation and motion rules. See `docs/louchi-venture-sync.md` for the source
-commit, designer provenance, coverage and remaining parity work.
+**Brand/Current Venture Beyond** now contains pinned Clients and Community compositions from website `review/venture-beyond-redesign` revision `7d0e878`, plus focused section stories and a packaged action specimen. The full source and its local-only preview adapters are in `src/stories/brand/current-venture/`. Use `/current-patterns` for the guide and story links. The older Brand/Venture Beyond, Hero Discovery, and Elastic Gallery stories remain historical workshop studies from the September baseline.
 
 Foundation stories cover generated brand tokens, typography, and the complete
 four-reign by two-appearance visual matrix. Every component in the canonical

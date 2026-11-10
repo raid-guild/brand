@@ -24,15 +24,20 @@ import {
 import {
   Button,
   Card,
+  BrandAction,
+  BrandButton,
 } from "@raidguild/brand-system/components";
 import "@raidguild/brand-system/tokens.css";
 import "@raidguild/brand-system/fonts.css";
+import "@raidguild/brand-system/brand-action.css";
 ```
 
 The package also exports font files under `@raidguild/brand-system/fonts/*` and
 logo files under `@raidguild/brand-system/logos/*`. `fonts.css` defines local
 Mazius Display, EB Garamond, and Ubuntu Mono faces without a Google Fonts
 runtime dependency.
+
+`BrandAction` is the current Venture Beyond link/button pill with primary and secondary variants and an inline sword glyph. It is additive: the generic `Button` API and archived reign styles are unchanged. The commercial Last Duel files are guide-only and excluded from the reusable package; the package retains an open display fallback.
 
 `ThemeProvider` uses the latest reign by default and persists a user's valid
 selection under `raidguild-brand-reign`. Use `defaultReign="suede"` when an

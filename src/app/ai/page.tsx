@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
 
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["500", "700"] });
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500"] });
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"] });
+const spaceGrotesk = localFont({ src: [{ path: "../../../public/fonts/ai/SpaceGrotesk-500.ttf", weight: "500" }, { path: "../../../public/fonts/ai/SpaceGrotesk-700.ttf", weight: "700" }] });
+const inter = localFont({ src: [{ path: "../../../public/fonts/ai/Inter-400.ttf", weight: "400" }, { path: "../../../public/fonts/ai/Inter-500.ttf", weight: "500" }] });
+const jetbrainsMono = localFont({ src: [{ path: "../../../public/fonts/ai/JetBrainsMono-400.ttf", weight: "400" }, { path: "../../../public/fonts/ai/JetBrainsMono-500.ttf", weight: "500" }] });
 
 export const metadata: Metadata = {
   title: "RaidGuild AI — Practice Guidelines",

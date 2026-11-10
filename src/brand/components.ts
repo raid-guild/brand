@@ -1,5 +1,5 @@
 const componentIds = [
-  "accordion", "badge", "breadcrumb", "button", "calendar", "card",
+  "accordion", "badge", "breadcrumb", "button", "brand-action", "calendar", "card",
   "carousel", "chart", "checkbox", "combobox", "command", "data-table",
   "date-picker", "dialog", "drawer", "dropdown-menu", "form", "hover-card",
   "input", "item", "kbd", "label", "menubar", "multiselect",
@@ -23,6 +23,7 @@ const defaultStoryIds: Partial<Record<(typeof componentIds)[number], string>> = 
   badge: "primitives-badge--default",
   breadcrumb: "navigation-breadcrumb--default",
   button: "primitives-button--default",
+  "brand-action": "brand-action--default",
   calendar: "experimental-calendar--default",
   card: "data-display-card--default",
   carousel: "experimental-carousel--default",

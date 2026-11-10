@@ -183,6 +183,7 @@ export default function Home() {
       </div>
 
       <BrandReignPanel />
+      <p className="mb-10"><Link href="/current-patterns" className="underline">Current Venture Beyond website patterns and Storybook guide →</Link></p>
 
       <div className="max-w-6xl">
         {/* Quick Resources */}

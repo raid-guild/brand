@@ -1,60 +1,17 @@
-# Louchi / Venture Beyond workshop sync
+# Louchi / Venture Beyond source sync
 
-Active brand branch: `feat/versioned-brand-reigns`. Typography authority: website `review/venture-beyond-redesign` at `7d0e878`; older Grinder snapshots are historical.
+Active brand branch: `feat/versioned-brand-reigns`. The current website source of truth is [`review/venture-beyond-redesign` at `7d0e878065a566207884a37b6281158d26c8ae88`](https://github.com/raid-guild/website/tree/7d0e878065a566207884a37b6281158d26c8ae88). Louchi / Luis Blanco stewarded the visual direction; Guild contributors implemented, reviewed, and refined it. The [original handoff](https://github.com/luisblancoach/website/tree/handoff/venture-beyond-dekan) remains in the website ancestry.
 
-Baseline: [website a00dd80](https://github.com/raid-guild/website/tree/a00dd80).
-Design and asset handoff: Luis Blanco (Louchi), [original branch](https://github.com/luisblancoach/website/tree/handoff/venture-beyond-dekan), tip a195359. The website retains original commits as ancestry. This brand-repo copy records source provenance; it does not claim authorship of those assets. Stewardship is not sole authorship: the implementation, critique and refinements are collaborative.
+## Current coverage
 
-The layout and interaction workshop still uses that `a00dd80` snapshot. Its
-display webfonts now follow the later website
-[`review/venture-beyond-redesign` revision `a6418ea`](https://github.com/raid-guild/website/tree/a6418ea),
-including the September 30 font update
-[`877ba222aa060cce370668c8c05e64d74187a620`](https://github.com/raid-guild/website/commit/877ba222aa060cce370668c8c05e64d74187a620).
-This typography update does not imply the other workshop snapshots have been
-resynced to that revision.
+`Brand/Current Venture Beyond` contains the Clients and Community website compositions at that revision and focused stories for the hero/audience shell, services and reasons, projects and builders, community hats and benefits, inquiry preview, and branded CTA. The guide at `/current-patterns` links each story and package usage. Source sections, narrative, data, assets, and local preview adapters are recorded in `src/stories/brand/current-venture/README.md`.
 
-## Current examples
+Story navigation reports intended destinations while local section anchors scroll. Inquiries validate locally and never submit; the project catalog uses the website's fallback entries without requesting the live API. Portal and live feeds remain website behavior. The shared branded CTA is now published as `BrandAction` / `BrandButton` with `@raidguild/brand-system/brand-action.css`. The generic Button API and archived reigns remain available.
 
-- Brand / Venture Beyond / Typography And Actions: all six section-heading pairings, pill anatomy and 24px separation from copy.
-- Night: explicit navy appearance for side-by-side review.
-- Mobile Card Rail: horizontal swipe, visible 44px previous/next controls, disabled ends, counter, next-card preview and interaction test. Desktop Spears use four columns. Field notes, artifacts and collaborators now share the elastic gallery.
-- Motion And Routing: agreed video, discovery, reduced-motion and navigation behavior.
-- Brand / Hero Discovery: actual current day/night forward-reverse videos and foliage, hover/focus/tap interaction, offscreen/hidden-tab/reduced-motion playback protection.
-- Foundations and all existing primitive stories inherit updated Louchi fonts and semantic surfaces. Archived reign font mappings are unchanged.
-- Brand / Venture Interactions: multicolor portal chooser (illustrated or blank, on magenta, title beneath the portals), real team-wall drag/pause/drift and counter-moving tickers, foliage front door, forward-only creed loop, three-step inquiry with local validation and success/server-error previews.
-- Responsive Spears demonstrates the desktop four-column grid switching to a mobile rail. The older Field Notes rail is retained as a historical study; Brand / Elastic Gallery is the current collection pattern.
+The source website's night canvas is `#191e4e`, raised surface `#252a61`, and cream foreground `#efe9d7`. These values are reflected in Louchi canonical semantic roles; website section-specific tokens and layouts stay in the pinned snapshot CSS. Last Duel Bold Extended 2 Retalic (700) forms the upper display line; Bold Extended 2 (700) with CSS italic synthesis forms the lower. Ubuntu is body text, Ubuntu Mono utility text. The six Last Duel cuts are licensed guide-only assets in `public/brand-fonts/louchi/`, outside the reusable package. The package retains its open Afacad Flux display fallback.
 
-## Typography and assets
+## Historical studies
 
-Last Duel Extended 2 Regular/Bold, Oblique/Bold Oblique, and Retalic Extended 2 Regular/Bold are the current display cuts. Louchi supplied the files for the RaidGuild guide in November 2026. The webfonts live in public/brand-fonts/louchi for guide rendering, outside the reusable package font directory. The older Grinder cuts remain in that site directory as historical assets. The adjacent README records source and conversion provenance. Confirm redistribution terms before distributing these files to third parties. Afacad Flux/OFL remains the open package fallback; Ubuntu and Ubuntu Mono retain their existing licences.
+`Brand/Venture Beyond`, `Brand/Hero Discovery`, `Brand/Elastic Gallery`, and `Brand/Venture Interactions` preserve the September workshop lineage based on website `a00dd80` and later typography study `a6418ea`. Their earlier layout, portal, field-notes rail, and elastic-gallery examples are historical, not current Community page contracts. Their source adapters are documented in `src/stories/brand/website-snapshot/README.md`.
 
-The authoritative website `review/venture-beyond-redesign` revision `7d0e878` uses Bold Extended 2 Retalic (700) on the upper line of two-level headings and Bold Extended 2 (700) with CSS italic synthesis on the lower line; no native extended italic cut exists. Other Last Duel cuts retain their native 400/700 mapping. Keep enough line spacing to separate cuts. Ubuntu paragraphs remain unskewed; Ubuntu Mono labels and controls retain their utility voice.
-
-Videos and foreground artwork originate in Louchi's handoff/Assets.zip as integrated by the website. The workshop copies the processed hero ping-pong loops, forward-only creed crossfade and horizontal spear illustrations. Do not reverse the creed walker scene: the bird would fly backwards.
-
-## Review boundaries
-
-This workshop covers the current website's core visual elements and interaction patterns. It is not a duplicate homepage: hero landmark coordinates remain an isolated study, and navigation destinations are reported locally so reviewers stay in Storybook. Source snapshots and their adapters are documented in `src/stories/brand/website-snapshot/README.md`.
-
-Pill geometry matches the handoff, but small cream-on-pink / pink-on-cream text has contrast problems. Filled workshop specimen controls use near-black text (#060609), and form error labels use light pink on dark surfaces. These pass the pattern accessibility checks. Ask Louchi to approve these color pairings before website adoption. The stable generic Button API is unchanged; the branded pills here remain study components rather than a newly published API.
-
-No story content or statistics should be treated as verified project claims. Talent & Placement remains proposed. Existing unrelated UI components and archived reigns are intentionally preserved.
-
-## Verification
-
-September 22 update: website baseline a00dd80. New Brand / Elastic Gallery stories
-use local fixtures, adaptive columns, stable resting hover slots, fixed caption
-heights, filtering, keyboard dismissal and a sticky right-hand detail panel.
-The shared layout snapshot includes four-across Spears, the brick member wall,
-oppositely tilted ribbons and the ship-hint clearance. Portal interiors now use
-illustrations on an always-magenta canvas with a smaller bottom title. Motion
-previews retain hover/focus/reduced-motion behavior without per-strip controls.
-
-Current verification: all 144 Storybook tests (including 21 brand-story
-interaction/accessibility tests), 12 brand-contract tests and TypeScript checking
-pass. Selected gallery filters
-use near-black text on pink for contrast; the detail panel is a named region
-rather than a nested complementary landmark. These are intentional workshop
-accessibility corrections to propose back to the website.
-
-Previous baseline: the full 142-story browser suite passed, including accessibility checks (existing documented exceptions remain unchanged), portal Escape dismissal, member pause state, rail navigation and form validation. The date-picker's existing selected-date story exposed a month initialization bug; the calendar now starts on its selected date rather than the current month. Typecheck, static Storybook build and canonical brand tests also run before handoff. Form success/error fixtures are local-only and protected by a no-fetch/no-analytics contract test.
+The earlier workshop's contrast and accessibility adjustments were exploratory. Validate any proposal for website adoption against the current source and with Louchi. Current verification results belong to the checks run on the working branch; old story-count claims are intentionally not carried forward.

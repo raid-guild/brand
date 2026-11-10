@@ -37,7 +37,8 @@
     "./fonts.css": "./dist/fonts.css",
     "./fonts/*": "./dist/fonts/*",
     "./logos/*": "./dist/logos/*",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./brand-action.css": "./dist/brand-action.css"
   },
   "scripts": {
     "build": "tsup && tsx scripts/copy-assets.ts",

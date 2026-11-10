@@ -133,7 +133,7 @@ const brandSystemSource = {
       summary: "A Moebius-influenced system of deep teal, cyan, parchment, coral, and acid lime, built around expansive editorial type and speculative-world imagery.",
       direction: "Moebius-influenced speculative worlds, uppercase Last Duel with native Retalic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
       sourceLabel: "Venture Beyond redesign",
-      sourceUrl: "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign",
+      sourceUrl: "https://github.com/raid-guild/website/tree/review/venture-beyond-redesign",
       contributionNote: "Stewarded by Louchi and made real through the work, critique, and adoption of many Guild contributors.",
       palette: [
         { name: "Ink", value: "#102d2c", role: "Canonical dark ink" },
@@ -164,12 +164,12 @@ const brandSystemSource = {
         "--reign-ink": "#102d2c", "--reign-deep": "#0a292b", "--reign-field": "#b8e0df", "--reign-signal": "#ee3c78", "--reign-highlight": "#d7e34d",
       },
       darkTokens: {
-        "--background": "#191e4e", "--foreground": "#efe9d7", "--card": "#242953", "--card-foreground": "#efe9d7",
+        "--background": "#191e4e", "--foreground": "#efe9d7", "--card": "#252a61", "--card-foreground": "#efe9d7",
         "--popover": "#191e4e", "--popover-foreground": "#efe9d7", "--primary": "#ee3c78", "--primary-foreground": "#efe9d7",
         "--secondary": "#173c4d", "--secondary-foreground": "#f1edde", "--muted": "#163949", "--muted-foreground": "#b8e0df",
         "--accent": "#8fe3ef", "--accent-foreground": "#071722", "--border": "#3e5d68", "--input": "#3e5d68", "--ring": "#8fe3ef",
-        "--sidebar": "#06141f", "--sidebar-foreground": "#e8e6d9", "--sidebar-accent": "#173c4d", "--sidebar-accent-foreground": "#f1edde",
-        "--sidebar-border": "#3e5d68", "--sidebar-ring": "#8fe3ef", "--reign-deep": "#06141f", "--reign-field": "#e8e6d9", "--reign-highlight": "#8fe3ef",
+        "--sidebar": "#06141f", "--sidebar-foreground": "#efe9d7", "--sidebar-accent": "#173c4d", "--sidebar-accent-foreground": "#f1edde",
+        "--sidebar-border": "#3e5d68", "--sidebar-ring": "#8fe3ef", "--reign-deep": "#06141f", "--reign-field": "#efe9d7", "--reign-highlight": "#8fe3ef",
       },
       appearances: {
         light: {
@@ -187,9 +187,9 @@ const brandSystemSource = {
           palette: [
             { name: "Night Sky", value: "#191e4e", role: "Primary moonlit field" },
             { name: "Night Depth", value: "#191e4e", role: "Deep section and overlay surface" },
-            { name: "Night Surface", value: "#242953", role: "Raised moonlit surface" },
+            { name: "Night Surface", value: "#252a61", role: "Raised moonlit surface" },
             { name: "Moon Cyan", value: "#8fe3ef", role: "Luminous wayfinding and focus" },
-            { name: "Moon Parchment", value: "#e8e6d9", role: "Primary night text" },
+            { name: "Moon Parchment", value: "#efe9d7", role: "Primary night text" },
             { name: "Night Coral", value: "#a72d68", role: "Atmospheric signal field" },
           ],
         },

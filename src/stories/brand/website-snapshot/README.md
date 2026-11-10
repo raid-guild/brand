@@ -1,3 +1,5 @@
+Historical workshop snapshot (September baseline). For current Clients and Community source at website `7d0e878`, see `../current-venture/README.md`.
+
 # Website pattern snapshots
 
 Copied from raid-guild/website commit a00dd80 (gallery, shared CSS and portal renderer; form/entrance adapters retain their prior baseline) on the Venture Beyond redesign branch.

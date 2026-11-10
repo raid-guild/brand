@@ -105,7 +105,7 @@ export const BRAND_SYSTEM = {
       "summary": "A Moebius-influenced system of deep teal, cyan, parchment, coral, and acid lime, built around expansive editorial type and speculative-world imagery.",
       "direction": "Moebius-influenced speculative worlds, uppercase Last Duel with native Retalic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
       "sourceLabel": "Venture Beyond redesign",
-      "sourceUrl": "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign",
+      "sourceUrl": "https://github.com/raid-guild/website/tree/review/venture-beyond-redesign",
       "contributionNote": "Stewarded by Louchi and made real through the work, critique, and adoption of many Guild contributors.",
       "palette": [
         {
@@ -215,7 +215,7 @@ export const BRAND_SYSTEM = {
       "darkTokens": {
         "--background": "#191e4e",
         "--foreground": "#efe9d7",
-        "--card": "#242953",
+        "--card": "#252a61",
         "--card-foreground": "#efe9d7",
         "--popover": "#191e4e",
         "--popover-foreground": "#efe9d7",
@@ -231,13 +231,13 @@ export const BRAND_SYSTEM = {
         "--input": "#3e5d68",
         "--ring": "#8fe3ef",
         "--sidebar": "#06141f",
-        "--sidebar-foreground": "#e8e6d9",
+        "--sidebar-foreground": "#efe9d7",
         "--sidebar-accent": "#173c4d",
         "--sidebar-accent-foreground": "#f1edde",
         "--sidebar-border": "#3e5d68",
         "--sidebar-ring": "#8fe3ef",
         "--reign-deep": "#06141f",
-        "--reign-field": "#e8e6d9",
+        "--reign-field": "#efe9d7",
         "--reign-highlight": "#8fe3ef"
       },
       "appearances": {
@@ -278,7 +278,7 @@ export const BRAND_SYSTEM = {
             },
             {
               "name": "Night Surface",
-              "value": "#242953",
+              "value": "#252a61",
               "role": "Raised moonlit surface"
             },
             {
@@ -288,7 +288,7 @@ export const BRAND_SYSTEM = {
             },
             {
               "name": "Moon Parchment",
-              "value": "#e8e6d9",
+              "value": "#efe9d7",
               "role": "Primary night text"
             },
             {
@@ -716,6 +716,18 @@ export const BRAND_SYSTEM = {
       "providers": [],
       "storyIds": [
         "primitives-button--default"
+      ],
+      "accessibilityExpected": true,
+      "interactionTestExpected": false
+    },
+    {
+      "id": "brand-action",
+      "sourcePath": "src/components/ui/brand-action.tsx",
+      "stability": "stable",
+      "dependencies": [],
+      "providers": [],
+      "storyIds": [
+        "brand-action--default"
       ],
       "accessibilityExpected": true,
       "interactionTestExpected": false
@@ -1695,7 +1707,7 @@ export const BRAND_REIGNS = [
       }
     ],
     "dataVersion": null,
-    "sourceUrl": "https://github.com/raid-guild/website/tree/feat/venture-beyond-redesign",
+    "sourceUrl": "https://github.com/raid-guild/website/tree/review/venture-beyond-redesign",
     "evidenceNote": null
   },
   {

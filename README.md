@@ -1,6 +1,6 @@
 # RaidGuild Brand Archive
 
-Latest reign: Louchi / Venture Beyond
+Latest reign: Louchi / Venture Beyond. Active source branch: `feat/versioned-brand-reigns`; current website authority: [`review/venture-beyond-redesign` at `7d0e878`](https://github.com/raid-guild/website/tree/7d0e878065a566207884a37b6281158d26c8ae88).
 
 A living, versioned repository of brand guidance, assets, and resources for designers and developers. Each reign records collective identity work shaped under a steward's direction; older reigns remain selectable instead of being overwritten.
 
@@ -38,7 +38,7 @@ npm run test:stories
 ```
 
 Storybook defaults to the Louchi reign and provides independent reign and
-light/dark appearance controls. See
+light/dark appearance controls. The pinned current Clients and Community compositions are linked from [`/current-patterns`](src/app/current-patterns/page.tsx); older Hero Discovery and Elastic Gallery stories are historical studies. See
 [`docs/storybook.md`](docs/storybook.md) for coverage and accessibility policy.
 
 Quick links: [live site](https://www.brand.raidguild.org/) | [repo](https://github.com/raid-guild/brand)

@@ -52,7 +52,7 @@ const preview: Preview = {
 
       return (
         <ThemeProvider key={`${brandReign}-${appearance}`}>
-          <div className="min-h-screen bg-background p-8 text-foreground">
+          <div className={`min-h-screen bg-background text-foreground ${context.title === "Brand/Current Venture Beyond" ? "" : "p-8"}`}>
             <Story />
           </div>
         </ThemeProvider>

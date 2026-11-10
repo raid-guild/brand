@@ -1,0 +1,1 @@
+Local copies of the existing AI practice guide fonts, fetched from the Google Fonts CSS API on 2026-11-10 to avoid a Next.js build-time remote-font loader failure. Families: Inter, Space Grotesk, JetBrains Mono; licenses are SIL Open Font License (see Google Fonts repositories). This is independent of the Louchi brand fonts.

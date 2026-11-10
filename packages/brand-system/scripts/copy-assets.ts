@@ -19,3 +19,5 @@ await cp(
   resolve(outputRoot, "logos"),
   { recursive: true },
 );
+
+await cp(resolve(packageRoot, "src/brand-action.css"), resolve(outputRoot, "brand-action.css"));

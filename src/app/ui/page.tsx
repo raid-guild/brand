@@ -46,6 +46,8 @@ import { FormExample } from "@/components/examples/FormExample";
 import { WizardExample } from "@/components/examples/WizardExample";
 
 export default function UIPage() {
+  // Current website compositions are documented separately at /current-patterns.
+
   const [activeTab, setActiveTab] = useState<
     "getting-started" | "examples" | "advanced-components"
   >("getting-started");
@@ -149,6 +151,7 @@ export default function UIPage() {
     <div className="container-custom py-16">
       <div className="max-w-4xl mx-auto">
         <h1 className="type-display-lg mb-8">UI Components</h1>
+        <p className="mb-8"><Link href="/current-patterns" className="underline">Explore current Venture Beyond website patterns and Storybook compositions →</Link></p>
 
         {/* Intro Section */}
         <section className="mb-8">
