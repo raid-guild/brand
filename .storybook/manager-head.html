@@ -1,0 +1,13 @@
+<script>
+  (() => {
+    const url = new URL(window.location.href);
+
+    if (!url.searchParams.has("path")) {
+      url.searchParams.set(
+        "path",
+        "/story/brand-workshop--default",
+      );
+      window.location.replace(url.toString());
+    }
+  })();
+</script>

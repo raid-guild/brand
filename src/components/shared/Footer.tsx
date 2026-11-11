@@ -6,14 +6,14 @@ import { Switch } from "@/components/ui/switch";
 import { useTheme } from "@/lib/theme-context";
 
 export default function Footer() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, brandReign } = useTheme();
 
   return (
     <footer className="border-t border-border bg-background">
       <div className="container-custom">
         <div className="flex h-16 items-center justify-between">
           <p className="type-body-sm text-muted-foreground">
-            Raid Guild Brand Guidelines
+            RaidGuild Brand Archive · {brandReign.steward} reign
           </p>
           <div className="flex items-center gap-6">
             <div className="type-body-sm text-muted-foreground">

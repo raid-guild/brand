@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { BrandReignPanel } from "@/components/brand/BrandReignPanel";
+import { useTheme } from "@/lib/theme-context";
 
 const HERO_IMAGES = [
   "/assets/webp/scroll100/1080x1440/tower-platform-c.webp",
@@ -109,7 +111,16 @@ const HERO_IMAGES = [
   "/assets/webp/scroll100/1440x1440/warriors-armed-bw.webp",
 ];
 
+const TW_HERO_IMAGE =
+  "https://www.raidguild.org/witch/images/witchcraft-08_0-15-1.png";
+const VEN_HERO_IMAGE = "/images/reigns/ven/skull-sword.png";
+const LOUCHI_HERO_IMAGE =
+  "https://raw.githubusercontent.com/raid-guild/website/6e5f3ec8eade94ddb05a0eb63146aef4a7d80c65/public/images/neo/sky-citadel.png";
+const SUEDE_ASSET_ROOT =
+  "https://media.githubusercontent.com/media/raid-guild/brand/8f0b5eecd9fe0c086e138ba33307110e1d902b06/public";
+
 export default function Home() {
+  const { brandReign } = useTheme();
   // Calculate current image based on 2-minute intervals
   const getImageForInterval = useCallback(() => {
     const interval = Math.floor(Date.now() / (1000 * 60 * 2)); // 2 minutes
@@ -117,6 +128,14 @@ export default function Home() {
   }, []);
 
   const [currentImage, setCurrentImage] = useState<string>(getImageForInterval);
+  const heroImage =
+    brandReign.id === "louchi"
+      ? LOUCHI_HERO_IMAGE
+      : brandReign.id === "tw"
+        ? TW_HERO_IMAGE
+        : brandReign.id === "ven"
+          ? VEN_HERO_IMAGE
+        : `${SUEDE_ASSET_ROOT}${currentImage}`;
 
   // Update image every minute to catch 2-minute boundaries
   useEffect(() => {
@@ -139,11 +158,12 @@ export default function Home() {
         {/* Left Column - Text Content */}
         <div className="flex flex-col justify-center">
           <h1 className="type-display-lg md:type-display-md mb-4">
-            Raid Guild Brand Guidelines
+            RaidGuild Brand Archive
           </h1>
-          <p className="type-body-lg text-moloch-800">
-            Your one-stop shop for brand assets, design guidelines, and UI
-            components. Everything you need to build with the Raid Guild brand.
+          <p className="type-body-lg text-foreground/80">
+            A living guide to the collective identity work shaped during the
+            {` ${brandReign.steward}`} reign. The crossed swords remain the shared
+            signal; each era builds a new world around them.
           </p>
         </div>
 
@@ -151,16 +171,19 @@ export default function Home() {
         <div className="flex justify-center lg:justify-end lg:pr-[100px] lg:pt-[20px]">
           <div className="relative w-full lg:max-w-[500px] aspect-[3/4] rounded-lg overflow-hidden">
             <Image
-              key={currentImage}
-              src={currentImage}
-              alt="Raid Guild Brand Artwork"
+              key={heroImage}
+              src={heroImage}
+              alt={`${brandReign.steward} reign RaidGuild artwork`}
               fill
-              className="object-contain"
+              className={`object-contain ${brandReign.id === "ven" ? "bg-black" : ""}`}
               priority
             />
           </div>
         </div>
       </div>
+
+      <BrandReignPanel />
+      <p className="mb-10"><Link href="/current-patterns" className="underline">Current Venture Beyond website patterns and Storybook guide →</Link></p>
 
       <div className="max-w-6xl">
         {/* Quick Resources */}
@@ -170,30 +193,26 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Link
-              href="/assets/RaidGuild_brand_guidelines.pdf"
+              href="/logos"
               className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <h3 className="type-heading-sm mb-2 group-hover:text-primary transition-colors">
-                Brand Guidelines (PDF)
+                Logos
               </h3>
               <p className="type-body-sm text-muted-foreground">
-                Download the complete brand guidelines document
+                Find the canonical mark and reign-specific logo assets
               </p>
             </Link>
 
             <Link
-              href="https://www.figma.com/design/i12YX9sbqeBXFJvExzA5PM/Raid-Guild-%7C-FINAL-%7C-Brand-%7C-Website-%7C-Archive-%7C-Q4-2025?node-id=1859-175&p=f&t=hEppjEwjbW1ZjeF0-0"
+              href="/architecture"
               className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <h3 className="type-heading-sm mb-2 group-hover:text-primary transition-colors">
-                Brand Guidelines (Figma)
+                Brand Architecture
               </h3>
               <p className="type-body-sm text-muted-foreground">
-                View and use brand assets in Figma
+                Understand how reigns, practices, and the Guild relate
               </p>
             </Link>
 
@@ -213,16 +232,26 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
             <Link
+              href="/packages/raidguild-brand-system-dev.tgz"
+              className="p-6 border border-border rounded-lg hover:border-primary hover:bg-muted/50 transition-all group"
+            >
+              <h3 className="type-heading-sm mb-2 group-hover:text-primary transition-colors">
+                Development Package
+              </h3>
+              <p className="type-body-sm text-muted-foreground">
+                Install the latest commit-specific brand-system tarball
+              </p>
+            </Link>
+            <Link
               href="/ai"
-              target="topw"
               className="p-6 border border-border rounded-lg hover:border-[#2FD09A] hover:bg-muted/50 transition-all group"
             >
               <h3 className="type-heading-sm mb-2 group-hover:text-[#2FD09A] transition-colors">
-                AI Sub-brand
+                AI Practice
               </h3>
               <p className="type-body-sm text-muted-foreground">
-                Design system for raidguild.ai, RaidGuild&apos;s AI
-                consulting agency
+                A distinct practice identity endorsed by and operating through
+                RaidGuild
               </p>
             </Link>
           </div>

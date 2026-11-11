@@ -46,6 +46,8 @@ import { FormExample } from "@/components/examples/FormExample";
 import { WizardExample } from "@/components/examples/WizardExample";
 
 export default function UIPage() {
+  // Current website compositions are documented separately at /current-patterns.
+
   const [activeTab, setActiveTab] = useState<
     "getting-started" | "examples" | "advanced-components"
   >("getting-started");
@@ -149,6 +151,7 @@ export default function UIPage() {
     <div className="container-custom py-16">
       <div className="max-w-4xl mx-auto">
         <h1 className="type-display-lg mb-8">UI Components</h1>
+        <p className="mb-8"><Link href="/current-patterns" className="underline">Explore current Venture Beyond website patterns and Storybook compositions →</Link></p>
 
         {/* Intro Section */}
         <section className="mb-8">
@@ -281,8 +284,12 @@ npm install -D @tailwindcss/postcss tw-animate-css`}</code>
                   <code className="bg-muted px-1.5 py-0.5 rounded text-sm">
                     src/app/globals.css
                   </code>{" "}
-                  with the RaidGuild brand styles from the globals.css file in
-                  this repo.
+                  and copy{" "}
+                  <code className="bg-muted px-1.5 py-0.5 rounded text-sm">
+                    src/generated/brand-tokens.css
+                  </code>{" "}
+                  so the handwritten utilities and generated reign tokens stay
+                  together.
                 </p>
               </div>
 

@@ -1,192 +1,36 @@
-import "server-only";
-
 import { createHash } from "node:crypto";
+import { BRAND_SYSTEM } from "@/generated/brand-data";
+import { BRAND_ARCHITECTURE } from "@/lib/brand-architecture";
 
 const LIVE_BASE_URL = "https://www.brand.raidguild.org";
 const RAW_BASE_URL =
   "https://raw.githubusercontent.com/raid-guild/brand/main/public";
 
-const logoFiles = [
-  "full-m800.svg",
-  "full-m500.svg",
-  "full-s100.svg",
-  "full-m500-m800.svg",
-  "full-m800-m500.svg",
-  "full-m800-s100.svg",
-  "full-s100-s700.svg",
-  "symbol-m800.svg",
-  "symbol-m500.svg",
-  "symbol-s700.svg",
-  "symbol-m500-m800.svg",
-  "symbol-m800-m500.svg",
-  "symbol-m800-s100.svg",
-  "symbol-s100-s700.svg",
-] as const;
-
-const roleIcons = {
-  alchemist: "DAO Consultant",
-  archer: "Visual Design",
-  cleric: "Account Manager",
-  druid: "Data Science",
-  dwarf: "Treasury",
-  healer: "Internal Operations",
-  hunter: "Business Development",
-  monk: "Project Management",
-  necromancer: "DevOps",
-  paladin: "Backend Development",
-  ranger: "UX Design",
-  rogue: "Legal",
-  scribe: "Content Creation",
-  sorcerer: "Role character",
-  tavernkeeper: "Community",
-  warrior: "Frontend Development",
-  wizard: "Smart Contracts",
-} as const;
-
-const serviceIcons = [
-  "community",
-  "consultation",
-  "culture",
-  "dao",
-  "education",
-  "experiment",
-  "frontend",
-  "fullstack",
-  "learning",
-  "manifesto",
-  "marketing",
-  "robot",
-  "spear",
-  "sprint",
-  "swords",
-] as const;
-
-const magicIcons = [
-  "candle",
-  "cauldron",
-  "chalice",
-  "crystal",
-  "feather",
-  "flask",
-  "hourglass",
-  "lantern",
-  "moon",
-  "pumpkin",
-  "sparkle",
-  "star",
-  "stars",
-] as const;
-
-const illustrationScenes = {
-  "1440x1440": [
-    "castle-flag",
-    "castle-staff",
-    "desk-work",
-    "forge-anvil",
-    "forge-building",
-    "forge-duo",
-    "forge-fire",
-    "forge-work",
-    "portal-arch",
-    "ravens-flight",
-    "stairs-spiral",
-    "stone-monuments",
-    "table-castle",
-    "tree-mech",
-    "trio-arch",
-    "trio-backs",
-    "trio-beast",
-    "trio-mountain",
-    "trio-orb",
-    "trio-portal",
-    "trio-portraits",
-    "trio-profiles",
-    "trio-warriors",
-    "trio-weapons",
-    "trio-wings",
-    "warrior-solo",
-    "warriors-armed",
-    "warriors-belts",
-    "warriors-casual",
-    "warriors-confident",
-    "warriors-forward",
-    "warriors-magic",
-    "warriors-masked",
-    "warriors-moloch",
-    "warriors-orbs",
-    "warriors-ready",
-    "warriors-standing",
-    "warriors-triangle",
-    "warriors-white",
-  ],
-  "1080x1440": [
-    "arch-gate",
-    "book-orb",
-    "compass-circular",
-    "raven-solo",
-    "stairs-cloud",
-    "stairs-curve",
-    "stairs-twist",
-    "stone-pedestal",
-    "tower-floating",
-    "tower-platform",
-    "tower-tree",
-    "tree-island",
-  ],
-  "1440x550": ["ship-front", "ship-mech"],
-} as const;
-
-const componentCatalog = [
-  "accordion",
-  "badge",
-  "breadcrumb",
-  "button",
-  "calendar",
-  "card",
-  "carousel",
-  "chart",
-  "checkbox",
-  "combobox",
-  "command",
-  "data-table",
-  "date-picker",
-  "dialog",
-  "drawer",
-  "dropdown-menu",
-  "form",
-  "hover-card",
-  "input",
-  "item",
-  "kbd",
-  "label",
-  "menubar",
-  "multiselect",
-  "navigation-menu",
-  "pagination",
-  "popover",
-  "progress",
-  "radio-group",
-  "scroll-area",
-  "select",
-  "sheet",
-  "sidebar",
-  "skeleton",
-  "slider",
-  "switch",
-  "table",
-  "tabs",
-  "textarea",
-  "toggle",
-  "tooltip",
-  "wizard",
-] as const;
+const logoFiles = BRAND_SYSTEM.assets.logos.map((logo) => logo.file);
+const roleIcons = BRAND_SYSTEM.assets.roleIcons;
+const serviceIcons = BRAND_SYSTEM.assets.serviceIcons;
+const magicIcons = BRAND_SYSTEM.assets.magicIcons;
+const illustrationScenes = Object.fromEntries(
+  Object.entries(BRAND_SYSTEM.assets.illustrations.scenesBySize).map(
+    ([size, collection]) => [size, collection.scenes],
+  ),
+);
+const componentCatalog = BRAND_SYSTEM.components.map((component) => component.id);
+const toCamelCase = (value: string) =>
+  value.toLowerCase().replace(/[- ]+(.)/g, (_, character: string) => character.toUpperCase());
+const getTokenScale = (prefix: "moloch" | "scroll" | "neutral") =>
+  Object.fromEntries(
+    Object.entries(BRAND_SYSTEM.baseTokens)
+      .filter(([token]) => token.startsWith(`--${prefix}-`))
+      .map(([token, value]) => [token.replace(`--${prefix}-`, ""), value]),
+  );
 
 const payload = {
   schema:
     "https://www.brand.raidguild.org/schemas/brand-guidelines-v1.json",
-  schemaVersion: "1.0.0",
-  contentVersion: "2024-q4",
-  name: "RaidGuild Brand Guidelines",
+  schemaVersion: BRAND_SYSTEM.release.schemaVersion,
+  contentVersion: BRAND_SYSTEM.release.brandVersion,
+  name: "RaidGuild Brand Archive",
   description:
     "A machine-readable guide to the RaidGuild brand, design system, voice, implementation patterns, and complete public asset inventory.",
   sourceOfTruth: "https://github.com/raid-guild/brand",
@@ -196,76 +40,64 @@ const payload = {
     githubTree: "https://github.com/raid-guild/brand/tree/main/public",
   },
   guidelines: {
+    architecture: BRAND_ARCHITECTURE,
     identity: {
       summary:
-        "RaidGuild combines battle-tested web3 delivery with a bold, craft-forward, collaborative, and lightly mythic identity.",
+        "RaidGuild is a deliberately evolving, collectively produced identity. The crossed swords are the durable signal; each elected brand steward may guide a new visual world built by many contributors.",
       logoRules: [
-        "The full logo combines the crossed-sword logomark and Raid Guild logotype.",
-        "Do not use the wordmark by itself.",
-        "Use the logomark alone only when space is limited or the full logo is inappropriate.",
-        "Use full-m500.svg or full-m800.svg on light backgrounds and full-s100.svg on dark backgrounds.",
+        "Use the black crossed swords as the canonical master mark.",
+        "Color variations of the crossed swords may identify different tracks or programs.",
+        "Wordmarks, lockups, typography, palettes, illustration, and motion belong to a steward reign and may change.",
+        "Even the crossed-sword geometry may evolve, but any alteration must preserve recognition and be documented as a new mark version.",
+        "Treat the existing full Moloch and Scroll lockups as Suede-era archive assets, not timeless identity rules.",
       ],
+    },
+    versioning: {
+      model:
+        "Brand releases are named for the elected brand steward's reign to identify direction and timeframe, not sole authorship. Each era is a group effort with multiple contributors. The guide defaults to the latest available reign and preserves older reigns as selectable versions.",
+      defaultReign: BRAND_SYSTEM.defaultReign,
+      durableIdentity: "black crossed swords",
+      reigns: BRAND_SYSTEM.reigns.map((reign) => ({
+        id: reign.id,
+        steward: reign.steward,
+        status: reign.status,
+        maturity: reign.maturity,
+        available: reign.available,
+        source: reign.sourceUrl ?? reign.sourceLabel,
+        palette: Object.fromEntries(
+          reign.palette.map((color) => [toCamelCase(color.name), color.value]),
+        ),
+        direction: reign.direction,
+        dataVersion: reign.dataVersion,
+        ...("appearances" in reign && reign.appearances
+          ? { appearances: reign.appearances }
+          : {}),
+        ...("motion" in reign && reign.motion ? { motion: reign.motion } : {}),
+        ...(reign.evidenceNote
+          ? { evidence: "partial-reconstruction", archiveNote: reign.evidenceNote }
+          : {}),
+      })),
+      implementation: {
+        selectorLocation: "top-right header",
+        persistenceKey: BRAND_SYSTEM.reignStorageKey,
+        source: "src/brand/system.ts",
+        cssAttribute: "data-brand-reign",
+      },
     },
     colors: {
       primary: {
-        background: "#f9f7e7",
-        foreground: "#29100a",
-        action: "#bd482d",
-        warmAccent: "#534a13",
+        background: "#efe9d7",
+        foreground: "#102d2c",
+        action: "#ee3c78",
+        highlight: "#d7e34d",
       },
       scales: {
-        moloch: {
-          100: "#f1efee",
-          200: "#efc5bb",
-          300: "#e39b8b",
-          400: "#d25c41",
-          500: "#bd482d",
-          600: "#8b3521",
-          700: "#5c2316",
-          800: "#29100a",
-        },
-        scroll: {
-          100: "#f9f7e7",
-          200: "#ece5ac",
-          300: "#dccd6a",
-          400: "#d2c141",
-          500: "#b5a22c",
-          600: "#837820",
-          700: "#534a13",
-          800: "#211e07",
-        },
-        neutral: {
-          100: "#f1efee",
-          200: "#d5cecd",
-          300: "#b9aeac",
-          400: "#9e8e8a",
-          500: "#806f6b",
-          600: "#645754",
-          700: "#433937",
-          800: "#221d1c",
-          white: "#fafafa",
-          black: "#0d0d0d",
-        },
+        moloch: getTokenScale("moloch"),
+        scroll: getTokenScale("scroll"),
+        neutral: getTokenScale("neutral"),
       },
-      semanticLight: {
-        background: "scroll-100",
-        foreground: "moloch-800",
-        card: "scroll-100",
-        primary: "moloch-500",
-        primaryForeground: "scroll-100",
-        secondary: "neutral-100",
-        muted: "neutral-100",
-        mutedForeground: "neutral-600",
-        accent: "moloch-500",
-        destructive: "moloch-300",
-        border: "neutral-200",
-        input: "neutral-200",
-        ring: "moloch-500",
-      },
-      semanticDark: {
-        background: "moloch-800",
-        foreground: "scroll-100",
-      },
+      semanticLight: BRAND_SYSTEM.reigns[0].tokens,
+      semanticDark: BRAND_SYSTEM.reigns[0].darkTokens,
       rule:
         "Use semantic color tokens instead of hardcoded hex values except when defining the brand palette itself.",
     },
@@ -518,7 +350,7 @@ const payload = {
         "Do not force uppercase, pseudo-small-caps, or extra bolding in body copy and navigation.",
     },
     implementation: {
-      componentImport: "@/components/ui/<component>",
+      componentImport: "@raidguild/brand-system/components",
       componentRule:
         "Compose the existing UI components before proposing bespoke UI.",
       components: componentCatalog,
@@ -586,7 +418,7 @@ const payload = {
         data: {
           choices: ["Table", "DataTable", "Badge", "Chart"],
           usage:
-            "Use Table for semantic tabular data, DataTable for sorting/filtering, Badge for compact status, and Chart for data visualization.",
+            "Use Table for semantic tabular data, DataTable for column-driven sorting, Badge for compact status, and Chart for data visualization.",
         },
         navigation: {
           choices: [
@@ -602,7 +434,7 @@ const payload = {
         },
       },
       patterns: [
-        "Import every component from @/components/ui/<component>; do not recreate an existing primitive.",
+        "Import components from @raidguild/brand-system/components; do not recreate an existing primitive.",
         "Prefer composition over custom component styling.",
         "Use semantic tokens for colors and preserve focus-visible rings.",
         "Keep component state local unless it must be shared across components.",
@@ -625,7 +457,7 @@ const payload = {
       "Give every input a visible label and validation message.",
       "Preserve focus-visible rings and keyboard navigation.",
       "Keep Radix primitives' accessible semantics.",
-      "Maintain primary Moloch 500 on Scroll 100 contrast.",
+      "Validate contrast within every selectable steward reign.",
       "Use responsive layouts and test both mobile and desktop.",
       "Use semantic alt text for brand icons and illustrations.",
     ],
@@ -664,15 +496,46 @@ const payload = {
     },
     illustrations: {
       format: "webp",
-      totalFiles: 212,
+      totalFiles:
+        Object.values(BRAND_SYSTEM.assets.illustrations.scenesBySize).reduce(
+          (total, collection) => total + collection.scenes.length,
+          0,
+        ) *
+        BRAND_SYSTEM.assets.illustrations.palettes.length *
+        Object.keys(BRAND_SYSTEM.assets.illustrations.tones).length *
+        2,
+      reignReferences: {
+        louchi: {
+          source: BRAND_SYSTEM.assets.illustrations.reignReferences.louchi,
+          characterStyleGuide: `${LIVE_BASE_URL}/images/reigns/louchi/character-style-guide.png`,
+          direction:
+            BRAND_SYSTEM.assets.illustrations.referenceCollections.louchi.direction,
+          references:
+            BRAND_SYSTEM.assets.illustrations.referenceCollections.louchi,
+        },
+        tw: {
+          source: "https://www.raidguild.org/witch/images/",
+          direction:
+            "Surreal witchcraft scenes, dense graphic symbols, high-energy crops, and playful motion.",
+        },
+        suede: {
+          source: `${LIVE_BASE_URL}/assets/webp/`,
+          direction:
+            "Technology-forward line art blending cyberpunk aesthetics with D&D heroism.",
+        },
+      },
       tones: {
         c: "color",
         bw: "black and white",
       },
-      variantsPerScene: 4,
+      palettes: BRAND_SYSTEM.assets.illustrations.palettes,
+      variantsPerScene:
+        BRAND_SYSTEM.assets.illustrations.palettes.length *
+        Object.keys(BRAND_SYSTEM.assets.illustrations.tones).length *
+        2,
       urlTemplates: {
-        full: `${LIVE_BASE_URL}/assets/webp/{size}/{scene}-{tone}.webp`,
-        thumbnail: `${LIVE_BASE_URL}/assets/webp/thumbnails/{size}/{scene}-{tone}.webp`,
+        full: `${LIVE_BASE_URL}/assets/webp/{palette}/{size}/{scene}-{tone}.webp`,
+        thumbnail: `${LIVE_BASE_URL}/assets/webp/{palette}/thumbnails/{size}/{scene}-{tone}.webp`,
       },
       scenesBySize: illustrationScenes,
       usage:
@@ -680,34 +543,56 @@ const payload = {
     },
     fonts: {
       folder: `${LIVE_BASE_URL}/fonts/`,
-      files: [
-        "MAZIUSREVIEW20.09-Regular.otf",
-        "MAZIUSREVIEW20.09-Regular.woff",
-        "MaziusDisplay-Bold.otf",
-        "MaziusDisplay-Extraitalic.otf",
-        "MaziusDisplay-ExtraItalicBold.otf",
-        "EBGaramond-VariableFont_wght.ttf",
-        "EBGaramond-Italic-VariableFont_wght.ttf",
-      ].map((file) => ({ file, url: `${LIVE_BASE_URL}/fonts/${file}` })),
-      note: "Ubuntu Mono is loaded through next/font/google and is not stored as a local asset.",
+      reignFamilies: Object.fromEntries(
+        BRAND_SYSTEM.reigns.map((reign) => [
+          reign.id,
+          [
+            reign.typography.display,
+            reign.typography.body,
+            "mono" in reign.typography ? reign.typography.mono : null,
+          ]
+            .filter(Boolean),
+        ]),
+      ),
+      twArchive: [
+        {
+          file: "Alchemion.otf",
+          url: "https://www.raidguild.org/witch/fonts/Alchemion.otf",
+        },
+        {
+          file: "Fratelli.otf",
+          url: "https://www.raidguild.org/witch/fonts/Fratelli.otf",
+        },
+      ],
+      files: BRAND_SYSTEM.assets.fonts.map((font) => ({
+        ...font,
+        url: `${LIVE_BASE_URL}/fonts/${font.file}`,
+        ...("licenseFile" in font && font.licenseFile
+          ? { licenseUrl: `${LIVE_BASE_URL}/fonts/${font.licenseFile}` }
+          : {}),
+      })),
+      note: "Louchi's Last Duel cuts are guide-only assets under /brand-fonts/louchi/ and are excluded from the reusable package. Ubuntu Mono Regular and Bold are packaged local assets for compact utility and factual data. Do not use the mono family for headings or normal paragraphs.",
     },
     social: {
       dimensions: "400x400",
       format: "png",
-      files: ["400x400_dark.png", "400x400_light.png", "400x400_red.png"].map(
-        (file) => ({
+      files: BRAND_SYSTEM.assets.social.map(({ file }) => ({
           file,
           url: `${LIVE_BASE_URL}/assets/social/${file}`,
-        }),
-      ),
+        })),
     },
     guidelinesPdf: {
       format: "pdf",
-      url: `${LIVE_BASE_URL}/assets/RaidGuild_brand_guidelines.pdf`,
-      rawUrl: `${RAW_BASE_URL}/assets/RaidGuild_brand_guidelines.pdf`,
+      url: `${LIVE_BASE_URL}/assets/${BRAND_SYSTEM.assets.guidelinesPdf.file}`,
+      rawUrl: `${RAW_BASE_URL}/assets/${BRAND_SYSTEM.assets.guidelinesPdf.file}`,
     },
   },
   references: [
+    {
+      name: "Brand architecture",
+      repoPath: "docs/brand-architecture.md",
+      url: "https://github.com/raid-guild/brand/blob/main/docs/brand-architecture.md",
+    },
     {
       name: "Agent handbook",
       repoPath: "AGENTS.md",
@@ -719,14 +604,19 @@ const payload = {
       url: "https://github.com/raid-guild/brand/blob/main/docs/brand-voice.md",
     },
     {
+      name: "Louchi hero discovery",
+      repoPath: "docs/louchi-hero-discovery.md",
+      url: "https://github.com/raid-guild/brand/blob/main/docs/louchi-hero-discovery.md",
+    },
+    {
       name: "UI component catalog",
       repoPath: "docs/ui-components.md",
       url: "https://github.com/raid-guild/brand/blob/main/docs/ui-components.md",
     },
     {
       name: "Design tokens",
-      repoPath: "src/app/globals.css",
-      url: "https://github.com/raid-guild/brand/blob/main/src/app/globals.css",
+      repoPath: "src/generated/brand-tokens.css",
+      url: "https://github.com/raid-guild/brand/blob/main/src/generated/brand-tokens.css",
     },
   ],
 } as const;

@@ -28,7 +28,7 @@ Requirements:
 - [Requirement 3]
 
 Make sure to:
-- Import components from @/components/ui/[component-name]
+- Import components from @raidguild/brand-system/components in downstream apps
 - Follow the design system patterns
 - Use the correct variants and props
 - Include proper form handling if needed
@@ -76,10 +76,13 @@ Follow the table patterns shown in the catalog.
 
 ## Import Path
 
-All components are imported from:
+Installed consumers import from the versioned package barrel:
 ```typescript
-import { ComponentName } from "@/components/ui/component-name";
+import { ComponentName } from "@raidguild/brand-system/components";
 ```
+
+When developing this source repository itself, individual component modules
+remain under `@/components/ui/[component-name]`.
 
 ## Component List
 
@@ -317,13 +320,6 @@ Collapsible content sections.
 
 ---
 
-#### **Separator** (if exists)
-Visual divider between content sections.
-
-**Use when:** You need to visually separate content areas.
-
----
-
 ### Overlay & Modal Components
 
 #### **Dialog** (`dialog.tsx`)
@@ -522,18 +518,17 @@ Table component for displaying tabular data.
 ---
 
 #### **DataTable** (`data-table.tsx`)
-Enhanced table component with sorting, filtering, and pagination.
+TanStack-powered table component with an internal sortable row model.
 
-**Exports:** Data table components
+**Exports:** `DataTable`
 
 **Features:**
-- Column sorting
-- Filtering
-- Pagination integration
-- Selection
-- Column visibility
+- Column-driven sorting
+- Semantic table primitives
+- Empty state
+- Custom cell and header rendering
 
-**Use when:** You need advanced table functionality with sorting and filtering.
+**Use when:** You need structured tabular data with custom columns and sorting.
 
 ---
 
@@ -647,14 +642,15 @@ Date picker component combining input and calendar.
 #### **Carousel** (`carousel.tsx`)
 Carousel/slider component for image or content slideshows.
 
-**Exports:** Carousel components
+**Exports:** `Carousel`, `CarouselContent`, `CarouselItem`, `CarouselPrevious`,
+`CarouselNext`, `CarouselApi`
 
 **Features:**
-- Auto-play support
 - Navigation arrows
-- Dot indicators
 - Touch/swipe support
-- Keyboard navigation
+- Horizontal and vertical orientation
+- Orientation-aware keyboard navigation
+- Embla options and plugin integration
 
 **Use when:** You need image carousels, content sliders, or testimonials.
 
@@ -1063,4 +1059,3 @@ When using components, ensure:
 
 **Last Updated:** Generated from component analysis
 **Total Components:** 42+ UI components available
-

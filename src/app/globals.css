@@ -1,5 +1,52 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "../generated/brand-tokens.css";
+
+@font-face { font-family: "Last Duel"; src: url("/brand-fonts/louchi/LastDuel-Ex2.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Last Duel"; src: url("/brand-fonts/louchi/LastDuel-BoldEx2.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Last Duel"; src: url("/brand-fonts/louchi/LastDuel-Oblique.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Last Duel"; src: url("/brand-fonts/louchi/LastDuel-BoldOblique.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "Last Duel Retalic"; src: url("/brand-fonts/louchi/LastDuel-Ex2Retalic.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Last Duel Retalic"; src: url("/brand-fonts/louchi/LastDuel-BoldEx2Retalic.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Last Duel Extended"; src: url("/brand-fonts/louchi/LastDuel-BoldEx2.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Afacad Flux"; src: url("/fonts/AfacadFlux-Variable.ttf") format("truetype"); font-weight: 100 1000; font-style: normal; font-display: swap; }
+@font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Italic-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: italic; font-display: swap; }
+
+/* Louchi's current expression; archived reigns keep their original typography. */
+[data-brand-reign="louchi"] body {
+  --font-afacad: "Afacad Flux", sans-serif;
+  --font-ubuntu: "Ubuntu", sans-serif;
+  --font-last-duel: "Last Duel", "Afacad Flux", sans-serif;
+  --font-last-duel-retalic: "Last Duel Retalic", "Afacad Flux", sans-serif;
+  --font-last-duel-extended: "Last Duel Extended", "Afacad Flux", sans-serif;
+  --font-retalic: var(--font-last-duel-retalic);
+  --font-display: var(--font-last-duel);
+  --font-body: "Ubuntu", sans-serif;
+}
+[data-brand-reign="louchi"] :is(.type-display-lg, .type-display-md, .type-display-sm, .type-heading-lg, .type-heading-md, .type-heading-sm) {
+  font-weight: 400;
+  font-synthesis: none;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -.015em;
+}
+
+@font-face {
+  font-family: "RG Alchemion";
+  src: url("https://www.raidguild.org/witch/fonts/Alchemion.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "RG Fratelli";
+  src: url("https://www.raidguild.org/witch/fonts/Fratelli.otf") format("opentype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -82,19 +129,15 @@
   --letter-spacing-code-sm: 0em; /* 0% */
 
   /* Font Families */
-  --font-display: var(--font-display);
-  --font-body: var(--font-body);
-  --font-mono: var(--font-mono);
+  --font-display: var(--font-mazius-display);
+  --font-body: var(--font-eb-garamond);
+  --font-mono: var(--font-ubuntu-mono);
 
   /* Grid System */
   --grid-column-width: 5.75rem; /* 92px */
   --grid-gap: 1rem; /* 16px */
   --container-padding: 1rem; /* 16px */
-  --container-padding-mobile: 0.25rem; /* 4px */
   --container-max-width: 80rem; /* 1280px */
-  --container-width-mobile: 26rem; /* 416px */
-  --container-width-tablet: 53rem; /* 848px */
-  --container-width-desktop: 80rem; /* 1280px */
 
   /* Shadcn Colors */
   --color-background: var(--background);
@@ -134,80 +177,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-:root {
-  --radius: 0.625rem;
-
-  /* Brand Colors - Moloch */
-  --moloch-100: #f1efee;
-  --moloch-200: #efc5bb;
-  --moloch-300: #e39b8b;
-  --moloch-400: #d25c41;
-  --moloch-500: #bd482d;
-  --moloch-600: #8b3521;
-  --moloch-700: #5c2316;
-  --moloch-800: #29100a;
-
-  /* Brand Colors - Scroll */
-  --scroll-100: #f9f7e7;
-  --scroll-200: #ece5ac;
-  --scroll-300: #dccd6a;
-  --scroll-400: #d2c141;
-  --scroll-500: #b5a22c;
-  --scroll-600: #837820;
-  --scroll-700: #534a13;
-  --scroll-800: #211e07;
-
-  /* Brand Colors - Neutral */
-  --neutral-100: #f1efee;
-  --neutral-200: #d5cecd;
-  --neutral-300: #b9aeac;
-  --neutral-400: #9e8e8a;
-  --neutral-500: #806f6b;
-  --neutral-600: #645754;
-  --neutral-700: #433937;
-  --neutral-800: #221d1c;
-  --neutral-white: #fafafa;
-  --neutral-black: #0d0d0d;
-
-  /* Light Theme - Using brand colors */
-  --background: var(--scroll-100);
-  --foreground: var(--moloch-800);
-  --card: var(--scroll-100);
-  --card-foreground: var(--moloch-800);
-  --popover: var(--scroll-100);
-  --popover-foreground: var(--moloch-800);
-  --primary: var(--moloch-500);
-  --primary-foreground: var(--scroll-100);
-  --secondary: var(--neutral-100);
-  --secondary-foreground: var(--moloch-800);
-  --muted: var(--neutral-100);
-  --muted-foreground: var(--neutral-600);
-  --accent: var(--moloch-500);
-  --accent-foreground: var(--scroll-100);
-  --destructive: var(--moloch-300);
-  --border: var(--neutral-200);
-  --input: var(--neutral-200);
-  --ring: var(--moloch-500);
-  --chart-1: var(--moloch-500);
-  --chart-2: var(--moloch-600);
-  --chart-3: var(--scroll-500);
-  --chart-4: var(--scroll-600);
-  --chart-5: var(--neutral-500);
-  --sidebar: var(--scroll-100);
-  --sidebar-foreground: var(--moloch-800);
-  --sidebar-primary: var(--moloch-500);
-  --sidebar-primary-foreground: var(--scroll-100);
-  --sidebar-accent: var(--neutral-100);
-  --sidebar-accent-foreground: var(--moloch-800);
-  --sidebar-border: var(--neutral-200);
-  --sidebar-ring: var(--moloch-500);
-}
-
-.dark {
-  /* Dark Theme - added here */
-  --background: var(--moloch-800);
-  --foreground: var(--scroll-100);
-}
 
 @layer base {
   * {
@@ -215,6 +184,14 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-variant: normal;
+    font-variant-caps: normal;
+    font-feature-settings: "smcp" 0, "c2sc" 0, "pcap" 0, "c2pc" 0;
+    transition: background-color 240ms ease, color 240ms ease;
+  }
+  strong,
+  b {
+    font-weight: inherit;
   }
 }
 
@@ -243,7 +220,7 @@
     line-height: var(--line-height-display-sm);
     letter-spacing: var(--letter-spacing-display-sm);
     font-family: var(--font-display);
-    font-weight: 450;
+    font-weight: 400;
     /* mb-9 */
   }
 
@@ -369,7 +346,7 @@
 
   @media (min-width: 1024px) {
     .container-custom {
-      max-width: var(--container-width-desktop);
+      max-width: var(--container-max-width);
       padding-left: 0;
       padding-right: 0;
     }

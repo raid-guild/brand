@@ -402,7 +402,7 @@ export function WizardExample() {
           </Link>
           <Link
             href="https://github.com/raid-guild/brand/blob/main/src/components/ui/wizard.tsx"
-            className="type-body-sm text-primary hover:text-primary/80 transition-colors underline"
+            className="type-body-sm text-foreground hover:text-foreground/70 transition-colors underline decoration-primary decoration-2 underline-offset-2"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -410,7 +410,7 @@ export function WizardExample() {
           </Link>
           <Link
             href="https://github.com/raid-guild/brand/blob/main/src/components/examples/WizardExample.tsx"
-            className="type-body-sm text-primary hover:text-primary/80 transition-colors underline"
+            className="type-body-sm text-foreground hover:text-foreground/70 transition-colors underline decoration-primary decoration-2 underline-offset-2"
             target="_blank"
             rel="noopener noreferrer"
           >

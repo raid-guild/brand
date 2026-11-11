@@ -1,0 +1,96 @@
+import type { Preview } from "@storybook/nextjs-vite";
+import { ThemeProvider } from "@raidguild/brand-system";
+import "@raidguild/brand-system/tokens.css";
+import "@raidguild/brand-system/fonts.css";
+import "../src/app/globals.css";
+
+const preview: Preview = {
+  globalTypes: {
+    brandReign: {
+      description: "Brand steward reign",
+      toolbar: {
+        icon: "paintbrush",
+        items: [
+          { value: "louchi", title: "Louchi" },
+          { value: "suede", title: "Suede" },
+          { value: "tw", title: "TW" },
+          { value: "ven", title: "Ven" },
+        ],
+        dynamicTitle: true,
+      },
+    },
+    appearance: {
+      description: "Semantic surface appearance",
+      toolbar: {
+        icon: "contrast",
+        items: [
+          { value: "light", title: "Light" },
+          { value: "dark", title: "Dark" },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+  initialGlobals: {
+    brandReign: "louchi",
+    appearance: "light",
+  },
+  decorators: [
+    (Story, context) => {
+      const brandReign = String(context.globals.brandReign ?? "louchi");
+      const appearance = context.globals.appearance === "dark" ? "dark" : "light";
+
+      if (typeof document !== "undefined") {
+        const root = document.documentElement;
+        root.dataset.brandReign = brandReign;
+        root.dataset.theme = appearance;
+        root.classList.remove("light", "dark");
+        root.classList.add(appearance);
+        localStorage.setItem("raidguild-brand-reign", brandReign);
+        localStorage.setItem("theme", appearance);
+      }
+
+      return (
+        <ThemeProvider key={`${brandReign}-${appearance}`}>
+          <div className={`min-h-screen bg-background text-foreground ${context.title === "Brand/Current Venture Beyond" ? "" : "p-8"}`}>
+            <Story />
+          </div>
+        </ThemeProvider>
+      );
+    },
+  ],
+  parameters: {
+    a11y: {
+      test: "error",
+    },
+    backgrounds: {
+      disable: true,
+    },
+    controls: {
+      expanded: true,
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
+    },
+    layout: "fullscreen",
+    options: {
+      storySort: {
+        order: [
+          "Foundations",
+          "Primitives",
+          "Navigation",
+          "Overlays",
+          "Data Display",
+          "Forms",
+          "Compositions",
+          "Brand",
+          "Experimental",
+        ],
+      },
+    },
+  },
+  tags: ["autodocs"],
+};
+
+export default preview;
