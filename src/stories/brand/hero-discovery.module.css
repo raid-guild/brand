@@ -87,7 +87,7 @@
   line-height: .9;
 }
 
-.title em { display: inline-block; color: var(--hero-signal); font-style: italic; font-family: var(--font-last-duel-extended); font-weight: 700; font-synthesis: style; }
+.title em { display: inline-block; color: var(--hero-signal); font-style: italic; font-family: var(--font-venture-beyond); font-weight: 700; font-synthesis: none; }
 
 .instruction {
   display: block;

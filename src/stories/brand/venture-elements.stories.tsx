@@ -11,7 +11,7 @@ function Pill({ children, filled = false }: { children: React.ReactNode; filled?
 function Elements() {
   return <main className={styles.sheet}>
     <p className={styles.label}>[ Louchi / Venture Beyond ]</p>
-    <p className={styles.copy}>Layout baseline a00dd80 · September 2026. Louchi supplied Last Duel for the RaidGuild guide in November 2026. Stewarded by Louchi, developed collaboratively. Last Duel is the current display face for this guide.</p>
+    <p className={styles.copy}>Layout baseline a00dd80 · September 2026. Stewarded by Louchi, developed collaboratively. Venture Beyond, the open-source RaidGuild variable display family, is the current display face for this guide.</p>
     {[["The Guild", "The network", "is the engine"], ["The Team", "A wide network", "of builders"], ["Selected Expeditions", "Proof from", "the frontier"], ["Active Spears", "Specialized at", "the applied edge"], ["Current Stewards", "Keepers of", "the signal"], ["Begin a Transmission", "What impossible thing", "are you building?"]].map(([label, first, accent]) => <section key={label}>
       <p className={styles.label}>[ {label} ]</p>
       <h2 className={styles.heading}>{first}<br /><em>{accent}</em></h2>

@@ -2,26 +2,30 @@
 @import "tw-animate-css";
 @import "../generated/brand-tokens.css";
 
-@font-face { font-family: "Last Duel"; src: url("/brand-fonts/louchi/LastDuel-Ex2.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "Last Duel"; src: url("/brand-fonts/louchi/LastDuel-BoldEx2.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "Last Duel"; src: url("/brand-fonts/louchi/LastDuel-Oblique.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: "Last Duel"; src: url("/brand-fonts/louchi/LastDuel-BoldOblique.woff2") format("woff2"); font-weight: 700; font-style: italic; font-display: swap; }
-@font-face { font-family: "Last Duel Retalic"; src: url("/brand-fonts/louchi/LastDuel-Ex2Retalic.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "Last Duel Retalic"; src: url("/brand-fonts/louchi/LastDuel-BoldEx2Retalic.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "Last Duel Extended"; src: url("/brand-fonts/louchi/LastDuel-BoldEx2.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+/* Venture Beyond (SIL OFL 1.1, derived from Archivo): Latin web subsets from
+   typography/venture-beyond/scripts/make_web_subsets.py. "Venture Beyond" exposes the full
+   width axis; the "… Extended" families pin wdth 125 (a single font-stretch value clamps the
+   axis), the width the current display style is set in. Never synthesize: italic is the native
+   Italic face and the reverse slant is the separate Retalic family. */
+@font-face { font-family: "Venture Beyond"; src: url("/fonts/venture-beyond/VentureBeyond-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-style: normal; font-display: swap; }
+@font-face { font-family: "Venture Beyond"; src: url("/fonts/venture-beyond/VentureBeyond-Italic-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-style: italic; font-display: swap; }
+@font-face { font-family: "Venture Beyond Retalic"; src: url("/fonts/venture-beyond/VentureBeyond-Retalic-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-style: normal; font-display: swap; }
+@font-face { font-family: "Venture Beyond Extended"; src: url("/fonts/venture-beyond/VentureBeyond-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 125%; font-style: normal; font-display: swap; }
+@font-face { font-family: "Venture Beyond Extended"; src: url("/fonts/venture-beyond/VentureBeyond-Italic-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 125%; font-style: italic; font-display: swap; }
+@font-face { font-family: "Venture Beyond Retalic Extended"; src: url("/fonts/venture-beyond/VentureBeyond-Retalic-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 125%; font-style: normal; font-display: swap; }
 @font-face { font-family: "Afacad Flux"; src: url("/fonts/AfacadFlux-Variable.ttf") format("truetype"); font-weight: 100 1000; font-style: normal; font-display: swap; }
-@font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
-@font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Italic-Variable.ttf") format("truetype"); font-weight: 100 900; font-style: italic; font-display: swap; }
+/* Ubuntu's variable fonts cover wght 100–800; don't advertise 900. */
+@font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Variable.ttf") format("truetype"); font-weight: 100 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Italic-Variable.ttf") format("truetype"); font-weight: 100 800; font-style: italic; font-display: swap; }
 
-/* Louchi's current expression; archived reigns keep their original typography. */
+/* The current reign's expression; archived reigns keep their original typography. */
 [data-brand-reign="louchi"] body {
   --font-afacad: "Afacad Flux", sans-serif;
   --font-ubuntu: "Ubuntu", sans-serif;
-  --font-last-duel: "Last Duel", "Afacad Flux", sans-serif;
-  --font-last-duel-retalic: "Last Duel Retalic", "Afacad Flux", sans-serif;
-  --font-last-duel-extended: "Last Duel Extended", "Afacad Flux", sans-serif;
-  --font-retalic: var(--font-last-duel-retalic);
-  --font-display: var(--font-last-duel);
+  --font-venture-beyond: "Venture Beyond Extended", "Venture Beyond", system-ui, sans-serif;
+  --font-venture-beyond-retalic: "Venture Beyond Retalic Extended", "Venture Beyond Retalic", system-ui, sans-serif;
+  --font-retalic: var(--font-venture-beyond-retalic);
+  --font-display: var(--font-venture-beyond);
   --font-body: "Ubuntu", sans-serif;
 }
 [data-brand-reign="louchi"] :is(.type-display-lg, .type-display-md, .type-display-sm, .type-heading-lg, .type-heading-md, .type-heading-sm) {

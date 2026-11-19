@@ -4,8 +4,8 @@
 export const BRAND_SYSTEM = {
   "release": {
     "schemaVersion": "1.0.0",
-    "brandVersion": "2026.8.1",
-    "generatedAt": "2026-08-19T00:00:00.000Z",
+    "brandVersion": "2026.11.0",
+    "generatedAt": "2026-11-19T00:00:00.000Z",
     "sourceRevision": "feat/versioned-brand-reigns@554fdad",
     "compatibility": {
       "minimumSchemaVersion": "1.0.0",
@@ -103,7 +103,7 @@ export const BRAND_SYSTEM = {
       "maturity": "development",
       "available": true,
       "summary": "A Moebius-influenced system of deep teal, cyan, parchment, coral, and acid lime, built around expansive editorial type and speculative-world imagery.",
-      "direction": "Moebius-influenced speculative worlds, uppercase Last Duel with native Retalic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
+      "direction": "Moebius-influenced speculative worlds, uppercase Venture Beyond with native Retalic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
       "sourceLabel": "Venture Beyond redesign",
       "sourceUrl": "https://github.com/raid-guild/website/tree/review/venture-beyond-redesign",
       "contributionNote": "Stewarded by Louchi and made real through the work, critique, and adoption of many Guild contributors.",
@@ -145,8 +145,8 @@ export const BRAND_SYSTEM = {
         }
       ],
       "tokens": {
-        "--font-display": "'Last Duel', 'Afacad Flux', sans-serif",
-        "--font-retalic": "'Last Duel Retalic', 'Afacad Flux', sans-serif",
+        "--font-display": "'Venture Beyond Extended', 'Venture Beyond', system-ui, sans-serif",
+        "--font-retalic": "'Venture Beyond Retalic Extended', 'Venture Beyond Retalic', system-ui, sans-serif",
         "--font-body": "'Ubuntu', sans-serif",
         "--reign-navy": "#191e4e",
         "--moloch-100": "#e7f4f3",
@@ -314,7 +314,7 @@ export const BRAND_SYSTEM = {
         }
       },
       "typography": {
-        "display": "Last Duel",
+        "display": "Venture Beyond",
         "body": "Ubuntu",
         "mono": "Ubuntu Mono"
       },
@@ -583,10 +583,10 @@ export const BRAND_SYSTEM = {
     "families": [
       {
         "id": "display",
-        "name": "Last Duel",
+        "name": "Venture Beyond",
         "cssVariable": "--font-display",
-        "sourceVariable": "--font-last-duel",
-        "role": "Louchi uppercase display, native regular/bold and oblique cuts plus separate Retalic at weights 400/700; the paired-heading lower line synthesizes italic from Bold Extended 2 because there is no native extended italic; do not synthesize bold. Commercial web fonts in the guide only; package consumers use Afacad Flux fallback or their own licensed files. Archived reigns retain their fonts."
+        "sourceVariable": "--font-venture-beyond",
+        "role": "Uppercase display and headlines in Venture Beyond at the Extended width (wdth 125): native upright and Italic, plus the separate Venture Beyond Retalic family (10° reverse slant) for accents, at weights 400/700 in the guide; the full variable range is wght 100–900 and wdth 62–125. Never synthesize bold or italic. Open source (SIL Open Font License 1.1, derived from Archivo by Omnibus-Type). Archived reigns retain their fonts."
       },
       {
         "id": "body",
@@ -1399,6 +1399,27 @@ export const BRAND_SYSTEM = {
     ],
     "fonts": [
       {
+        "file": "venture-beyond/VentureBeyond-Latin.woff2",
+        "family": "Venture Beyond",
+        "weight": "Variable wght 100–900, wdth 62–125 (Latin web subset)",
+        "license": "SIL Open Font License 1.1",
+        "licenseFile": "venture-beyond/OFL.txt"
+      },
+      {
+        "file": "venture-beyond/VentureBeyond-Italic-Latin.woff2",
+        "family": "Venture Beyond",
+        "weight": "Italic variable (Latin web subset)",
+        "license": "SIL Open Font License 1.1",
+        "licenseFile": "venture-beyond/OFL.txt"
+      },
+      {
+        "file": "venture-beyond/VentureBeyond-Retalic-Latin.woff2",
+        "family": "Venture Beyond Retalic",
+        "weight": "10° Retalic variable (Latin web subset)",
+        "license": "SIL Open Font License 1.1",
+        "licenseFile": "venture-beyond/OFL.txt"
+      },
+      {
         "file": "AfacadFlux-Variable.ttf",
         "family": "Afacad Flux",
         "weight": "Variable 100–1000",
@@ -1407,13 +1428,13 @@ export const BRAND_SYSTEM = {
       {
         "file": "Ubuntu-Variable.ttf",
         "family": "Ubuntu",
-        "weight": "Variable",
+        "weight": "Variable 100–800",
         "license": "Ubuntu Font Licence 1.0"
       },
       {
         "file": "Ubuntu-Italic-Variable.ttf",
         "family": "Ubuntu",
-        "weight": "Italic Variable",
+        "weight": "Italic Variable 100–800",
         "license": "Ubuntu Font Licence 1.0"
       },
       {

@@ -94,9 +94,10 @@
   --cta-focus-halo: var(--color-cream);
   --cta-disabled-opacity: .5;
   --on-pink: #071c1d;
-  /* Last Duel display cuts (src/lib/fonts.ts); Ubuntu follows the handoff for body copy. */
-  --font-display: var(--font-last-duel);
-  --font-retalic: var(--font-last-duel-retalic);
+  /* Venture Beyond display (Extended width, src/app/globals.css); Ubuntu follows the handoff for body copy.
+     (Venture Beyond Extended sets 10–13% narrower than the retired display face these sizes were first fitted to, so the fits remain safe upper bounds.) */
+  --font-display: var(--font-venture-beyond);
+  --font-retalic: var(--font-venture-beyond-retalic);
   font-synthesis: none;
   --font-body: var(--font-ubuntu);
   background: var(--paper);
@@ -2120,7 +2121,7 @@
 .site[data-audience] h3, .site[data-audience] h3 em { font-family: var(--font-body), sans-serif !important; }
 /* Exception (owner, October 29): "The Guild runs on owners, / not employees."
    (.rosterHeading, /clients) keeps its approved display treatment (the display
-   face, Last Duel since November 2, as before the Ubuntu rule). */
+   face, Venture Beyond Extended, as before the Ubuntu rule). */
 .site[data-audience] .rosterHeading h3, .site[data-audience] .rosterHeading h3 em { font-family: var(--font-display), sans-serif !important; }
 
 /* Audience headlines (Hire and Join, October 29): one treatment and one scale
@@ -2223,7 +2224,7 @@
 /* "MEMBER-GOVERNED" is long: 44 px keeps it on one line when the Guild kit
    narrows its column. */
 .site[data-audience] .prologue h2 em { font-size: 44px; }
-/* November 2 (Last Duel): in the Extended 2 Retalic cut the line is 15 em, a
+/* November 2: in the extended Retalic display cut the line was 15 em, a
    little more than 44 px allows in the 650 px column, so above phone widths
    it fits the heading's width instead (44 px at most). */
 @media (min-width: 761px) {
@@ -2353,9 +2354,9 @@
    fits the 24 px gutters ("FIND YOUR PEOPLE." is about 11.3 em wide,
    "TOGETHER." about 6.2 em); the first two lines stay near 30 px (29 px at
    375). Desktop: 88 px keeps "TOGETHER." inside the copy column.
-   November 2 (Last Duel): "FIND YOUR PEOPLE." is 14.3 em in the Extended 2
-   Retalic cut ("TOGETHER." 5.4 em in the Oblique), so the first two lines fit
-   by 14.5 em: about 24 px on a 393 px phone, 40 px on desktop (568 px, inside
+   November 2: "FIND YOUR PEOPLE." was 14.3 em in the retired extended Retalic
+   cut (12.86 em in Venture Beyond Retalic Bold Extended; "TOGETHER." is 7.62 em
+   in the Italic), so the first two lines fit by 14.5 em: about 24 px on a 393 px phone, 40 px on desktop (568 px, inside
    the copy column). */
 .site[data-audience] .hero .heroTitleStacked { width: max-content; }
 .site[data-audience] .hero .heroTitleStacked h1 { font-size: min(32px, calc((100vw - 48px) / 14.5)); letter-spacing: -.005em; line-height: 1; }
@@ -2559,8 +2560,9 @@
    its size above it. */
 .site[data-audience] .contact:not(.joinContact) .contactCopy { container-type: inline-size; }
 .site[data-audience] .contact:not(.joinContact) h2.contactHeadline em { font-size: min(46px, 100cqi / 12.8); white-space: nowrap; }
-/* November 2 (Last Duel): "YOU'RE BUILDING" in the Extended 2 Retalic cut is
-   12.3 em wide (10.3 suited the earlier face), so the divisor follows it. */
+/* November 2: "YOU'RE BUILDING" was 12.3 em wide in the retired extended
+   Retalic cut (10.3 suited the face before it), so the divisor follows it; in
+   Venture Beyond Retalic Bold Extended it is 11.44 em, inside that fit. */
 
 /* Builder cards (October 30, wall pass): the count line above the wall is for
    screen readers only (BuilderNetwork). Every linked card carries the
@@ -2887,11 +2889,12 @@
   .site[data-audience] .prologue .guildActions { align-items: flex-start; flex-direction: column; }
 }
 
-/* Last Duel (November 2) on "/": the Extended 2 upright is wider than the
+/* November 2 on "/": the extended display upright is wider than the
    earlier display cut, so names that filled their card now fit by size, as
    the audience walls do. Rail names below 1000 px scale per name (--chars,
    about .9 em per character at most); the five steward names share one size,
-   set by the longest ("ECWireless", 7.45 em) in the card's content box. */
+   set by the longest ("ECWireless", 6.92 em in Venture Beyond Bold Extended) in
+   the card's content box. */
 @media (max-width: 999px) {
   .site:not([data-audience]) .teamWall .memberRail span { container-type: inline-size; }
   .site:not([data-audience]) .teamWall .memberRail strong { font-size: min(17px, (100cqi - 3px) / (var(--chars, 8) * .9)); }
@@ -2899,20 +2902,20 @@
 .site:not([data-audience]) .stewardCard { container-type: inline-size; }
 .site:not([data-audience]) .stewardCard h4 { font-size: min(30px, 100cqi / 7.6); }
 @media (min-width: 1000px) { .site:not([data-audience]) .stewardCard h4 { font-size: min(24px, 100cqi / 7.6); } }
-/* The hero's "VENTURE" (Extended 2 Retalic, 6.3 em with the -.055em
-   tracking) fits the 24 px gutters on phones. */
+/* The hero's "VENTURE" (Venture Beyond Retalic Bold Extended, 5.91 em with
+   the -.055em tracking; 6.3 em in the retired face) fits the 24 px gutters on phones. */
 @media (max-width: 600px) { .site:not([data-audience]) .hero h1 { font-size: min(68px, calc((100vw - 48px) / 6.4)); } }
 
 /* ── Display type hierarchy (November 2, hierarchy pass) ─────────────────────
-   One system on "/", /clients and /community, both themes. Faces: src/lib/fonts.ts.
+   One system on "/", /clients and /community, both themes. Faces: src/app/globals.css.
    - Two-level display headings (the heading's own text, then its <em>; the
-     heroes' <span> lines, then the <em>): the top line in Last Duel Bold
-     Extended Retalic (LastDuel-BoldEx2Retalic, back-slanted), smaller; the
-     bottom line in Bold Extended italic (LastDuel-BoldEx2 with synthesized
-     oblique, see fonts.ts), about 1.3 to 1.4 times larger. Same width and
+     heroes' <span> lines, then the <em>): the top line in Venture Beyond
+     Retalic Bold Extended (back-slanted), smaller; the bottom line in
+     Venture Beyond Bold Extended Italic (the native italic, never
+     synthesized), about 1.3 to 1.4 times larger. Same width and
      weight, opposite slants: one family, with tension in scale and slant.
    - Standalone display labels (TRANSMISSION, the hero index, section markers)
-     in Last Duel Bold (LastDuel-BoldEx2), upright.
+     in Venture Beyond Bold Extended, upright.
    - Body, UI labels, navigation, buttons and forms keep Ubuntu / Ubuntu Mono.
    Earlier rules size and colour these elements with up to three doubled
    classes and !important (the audience h3 rule), so the roles below use
@@ -2924,7 +2927,7 @@
   --head-top: 28px; --head-bottom: 37px;
   --panel-top: 24px; --panel-bottom: 32px;
   --creed-top: 40px; --creed-bottom: 54px;
-  --font-marker: var(--font-last-duel); --type-marker: 16px; --tracking-marker: .06em;
+  --font-marker: var(--font-venture-beyond); --type-marker: 16px; --tracking-marker: .06em;
 }
 @media (max-width: 760px) {
   .site {
@@ -2938,14 +2941,14 @@
 /* Top lines. */
 :global(html) .site.site :is(main section h2:has(> em), .rosterHeading h3, .teamCopy h3, .creed blockquote),
 :global(html) .site.site .hero h1 > span {
-  font-family: var(--font-last-duel-retalic), var(--font-display), sans-serif !important;
+  font-family: var(--font-venture-beyond-retalic), var(--font-display), sans-serif !important;
   font-style: normal !important; font-weight: 700 !important; letter-spacing: 0 !important;
 }
 /* Bottom lines. */
 :global(html) .site.site :is(main section h2:has(> em), .rosterHeading h3, .teamCopy h3, .creed blockquote) > em,
 :global(html) .site.site .hero h1 > em {
-  font-family: var(--font-last-duel-extended), var(--font-display), sans-serif !important;
-  font-style: italic !important; font-synthesis: style !important; font-weight: 700 !important; letter-spacing: 0 !important;
+  font-family: var(--font-venture-beyond), var(--font-display), sans-serif !important;
+  font-style: italic !important; font-synthesis: none !important; font-weight: 700 !important; letter-spacing: 0 !important;
 }
 
 /* Section headings. */
@@ -2984,8 +2987,8 @@
 :global(html) .site.site:not([data-audience]) .hero h1 > em { font-size: var(--hero-bottom) !important; }
 :global(html) .site.site:not([data-audience]) .hero h1 > span { font-size: calc(var(--hero-bottom) / 1.35) !important; }
 
-/* Standalone display labels: Last Duel Bold, upright. */
-:global(html) .site.site .heroIndex span { font-family: var(--font-last-duel), sans-serif; font-style: normal; font-weight: 700; letter-spacing: .08em; }
+/* Standalone display labels: Venture Beyond Bold Extended, upright. */
+:global(html) .site.site .heroIndex span { font-family: var(--font-venture-beyond), sans-serif; font-style: normal; font-weight: 700; letter-spacing: .08em; }
 :global(html) .site.site .heroIndex strong { font-weight: 700; letter-spacing: 0; }
 /* The hero eyebrow is nowrap from 1000 px; its box follows the wider face. */
 @media (min-width: 1000px) { :global(html) .site.site .hero .eyebrow { width: max-content; } }
@@ -3067,10 +3070,10 @@
   :global(html) .site.site[data-audience] .joinContact .contactCopy { padding-inline: 20px; }
 }
 
-/* Creed (audience routes, phones): calm and centred. The sentence is Last
-   Duel Extended Regular (LastDuel-Ex2), upright and centred, with no
+/* Creed (audience routes, phones): calm and centred. The sentence is Venture
+   Beyond Regular Extended, upright and centred, with no
    back-slant or italic; "BUILD." keeps the brand highlight (the coral block,
-   cream type) in Last Duel Bold Extended, upright. Documented exception to
+   cream type) in Venture Beyond Bold Extended, upright. Documented exception to
    the two-level display rule on phones (docs/venture-integration.md). The
    module is one screen tall (560 to 720 px) and its label, sentence and
    action are one centred group with even spacing. */
@@ -3079,12 +3082,12 @@
   :global(html) .site.site[data-audience] .creed .creedContent { text-align: center; width: 100%; }
   :global(html) .site.site[data-audience] .creed .creedContent .sectionLabel { margin: 0 0 28px; }
   :global(html) .site.site[data-audience] .creed .creedContent blockquote {
-    font-family: var(--font-last-duel), var(--font-display), sans-serif !important; font-size: min(24px, (100vw - 48px) / 13.5) !important;
+    font-family: var(--font-venture-beyond), var(--font-display), sans-serif !important; font-size: min(24px, (100vw - 48px) / 13.5) !important;
     font-style: normal !important; font-weight: 400 !important; letter-spacing: .01em !important; line-height: 1.32 !important;
     margin: 0 auto; max-width: 21em; text-align: center; text-wrap: balance;
   }
   :global(html) .site.site[data-audience] .creed .creedContent blockquote > em {
-    font-family: var(--font-last-duel), var(--font-display), sans-serif !important; font-size: 1.12em !important;
+    font-family: var(--font-venture-beyond), var(--font-display), sans-serif !important; font-size: 1.12em !important;
     font-style: normal !important; font-synthesis: none !important; font-weight: 700 !important; line-height: 1.2 !important; margin-top: .2em;
   }
   :global(html) .site.site[data-audience] .creed .creedCta { margin-top: 40px; }
@@ -3185,9 +3188,13 @@
   :global(html) .site.site[data-audience] .heroSupplement { margin-top: 24px; }
   :global(html) .site.site[data-audience] .heroPaths { display: flex; flex-wrap: wrap; gap: 12px; max-width: none; }
   :global(html) .site.site[data-audience] .heroPaths .pill { width: auto; }
-  /* TRANSMISSION 001 moves from the hero's foot (where the side-by-side
-     actions now reach) to the scene's lower right, 20 px above the floor's
-     edge, clear of the title below it. */
+}
+/* TRANSMISSION 001 moves from the hero's foot (where the actions reach) to
+   the scene's lower right, 20 px above the floor's edge, clear of the title
+   below it. It starts at 601 px, where the marker reappears (it is hidden up
+   to 600 px): from 601 to 760 px the stacked actions also reach the foot, and
+   the marker overlapped "Explore our work". */
+@media (min-width: 601px) {
   :global(html) .site.site[data-audience] .heroIndex { bottom: 20px; grid-column: 1; grid-row: 1 / 2; top: auto; }
 }
 /* From 1300 px the marker sits on the floor, level with the title's first
@@ -3199,7 +3206,7 @@
 /* Below that, Day only: the dark-green marker stays on the scene's lower
    edge, so a soft cream halo (the floor's colour) keeps it legible on
    darker art. */
-@media (min-width: 761px) and (max-width: 1299px) {
+@media (min-width: 601px) and (max-width: 1299px) {
   :global(html:not([data-theme="dark"])) .site.site[data-audience] .heroIndex :is(span, strong) { text-shadow: 0 0 2px rgba(239, 233, 215, .9), 0 0 14px rgba(239, 233, 215, .95), 0 0 28px rgba(239, 233, 215, .8); }
 }
 @media (min-width: 1360px) {
@@ -3417,7 +3424,7 @@
   :global(html) .site.site[data-audience="community"] .hero .heroTitleStacked h1 > span { font-size: min(calc(var(--hero-top) * 1.4 / 1.15), (100vw - 48px) / 17.6) !important; }
 }
 
-/* Builder names (November 3, owner; settles open question 65): Last Duel Bold, upright (LastDuel-BoldEx2; first
+/* Builder names (November 3, owner; settles open question 65): Venture Beyond Bold Extended, upright (first
    Regular, then Bold at the owner's request), instead of the Oblique, on both audience routes (the masonry rail on /community, the tiles on /clients). */
 :global(html) .site.site[data-audience] .teamNetwork :is(.memberRail > a, a.memberTile) strong { font-family: var(--font-display), sans-serif !important; font-style: normal !important; font-synthesis: none; font-weight: 700 !important; }
 
@@ -3459,11 +3466,12 @@
 /* (min-height: an earlier one-screen rule held the section at 960 px, leaving 33–81 px of cream under the wall.) */
 :global(html) .site.site[data-audience] main > :global(#team):has(+ :global(#work)) .teamWall { border-radius: 0; margin-inline: calc(50% - 50vw); width: 100vw; }
 
-/* Steward cards (November 3, owner): names as the builder cards (Last Duel Bold, upright), and the portrait turns
+/* Steward cards (November 3, owner): names as the builder cards (Venture Beyond Bold Extended, upright), and the portrait turns
    over to the hat the steward wears (lib/data/hats.ts, by role) on hover and keyboard focus; crossfade with
    reduced motion. The hat face is decorative; the card's accessible name is unchanged. */
 :global(html) .site.site[data-audience] .keepers.keepers .stewardCard { container-type: inline-size; }
-/* One fitted size for the five names: the longest, "ECWireless", is 7.76 em in Last Duel Bold Extended. */
+/* One fitted size for the five names: the longest, "ECWireless", was 7.76 em in the retired face and is 6.92 em
+   in Venture Beyond Bold Extended, so the 7.8 divisor still fits. */
 :global(html) .site.site[data-audience] .keepers.keepers .stewardCard h4 { font-family: var(--font-display), sans-serif !important; font-size: min(24px, (100cqi - 8px) / 7.8) !important; font-style: normal !important; font-synthesis: none; font-weight: 700 !important; white-space: nowrap; }
 :global(html) .site[data-audience] .keepers .stewardPortrait.stewardFlips { overflow: visible; perspective: 700px; }
 .portraitFaces { display: block; inset: 0; position: absolute; transform-style: preserve-3d; transition: transform .55s cubic-bezier(.2, .7, .2, 1); }
@@ -3489,7 +3497,7 @@
 :global(html) .site.site[data-audience="community"] :global(#work)::before,
 :global(html) .site.site[data-audience="community"] :global(#work)::after { content: none; }
 
-/* The 11-letter Community project title needs a width-aware cap in Last Duel. */
+/* The 11-letter Community project title needs a width-aware cap in the extended display face. */
 @media (max-width: 620px) {
   :global(html) .site.site[data-audience="community"] :global(#work) .collectionHeading h2 em {
     font-size: min(40px, calc((100vw - 48px) / 11.4)) !important;

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Venture Beyond CSS Example</title>
+<!-- Serve typography/venture-beyond/ over HTTP (e.g. python3 -m http.server) and open /integration/example.html -->
+<link rel="stylesheet" href="venture-beyond.css">
+<style>
+  body { margin: 0; padding: 32px 16px; background: #f9f7e7; color: #29100a; font-family: system-ui, sans-serif; }
+  .vb-lockup { font-size: clamp(40px, 11vw, 150px); }
+  p { margin: 8px 0; }
+</style>
+</head>
+<body>
+  <h1 class="vb-lockup"><span class="vb-venture">VENTURE</span><span class="vb-beyond">BEYOND</span></h1>
+  <p class="vb" style="font-weight: var(--vb-weight-regular); font-size: 28px">Upright Regular: Venture Beyond 2026</p>
+  <p class="vb-italic" style="font-weight: var(--vb-weight-light); font-stretch: var(--vb-width-condensed); font-size: 28px">Italic Condensed Light: Venture Beyond 2026</p>
+  <p class="vb-retalic" style="font-weight: var(--vb-weight-bold); font-stretch: var(--vb-width-semiextended); font-size: 28px">Retalic SemiExtended Bold: Venture Beyond 2026</p>
+</body>
+</html>
