@@ -1,0 +1,103 @@
+/*
+ * Venture Beyond: @font-face + typography tokens for RaidGuild.
+ * Fonts: SIL Open Font License 1.1, derived from Archivo by Omnibus-Type (see ../LICENSE/OFL.txt).
+ *
+ * Plain-CSS integration. Paths are relative to this file inside typography/venture-beyond/;
+ * when copying into an app, point the url()s at wherever the .woff2 files are served, e.g.
+ * /fonts/venture-beyond/. For Next.js use next/font/local instead (see nextjs.md).
+ *
+ * Three variable files, two CSS families:
+ *   "Venture Beyond"          normal = Upright, italic = native Italic (10deg)
+ *   "Venture Beyond Retalic"  the reverse slant (-10deg). Its own family on purpose: registered as
+ *                             italic/oblique, browsers would use it for <em>/<i> or swap it in.
+ */
+
+@font-face {
+  font-family: "Venture Beyond";
+  src: url("../dist/woff2/VentureBeyond-Variable.woff2") format("woff2-variations"),
+       url("../dist/woff2/VentureBeyond-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Venture Beyond";
+  src: url("../dist/woff2/VentureBeyond-Italic-Variable.woff2") format("woff2-variations"),
+       url("../dist/woff2/VentureBeyond-Italic-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Venture Beyond Retalic";
+  src: url("../dist/woff2/VentureBeyond-Retalic-Variable.woff2") format("woff2-variations"),
+       url("../dist/woff2/VentureBeyond-Retalic-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Families */
+  --vb-font: "Venture Beyond", "Archivo", system-ui, sans-serif;
+  --vb-font-retalic: "Venture Beyond Retalic", "Venture Beyond", system-ui, sans-serif;
+
+  /* Weight axis (wght 100-900, continuous) */
+  --vb-weight-thin: 100;
+  --vb-weight-extralight: 200;
+  --vb-weight-light: 300;
+  --vb-weight-regular: 400;
+  --vb-weight-medium: 500;
+  --vb-weight-semibold: 600;
+  --vb-weight-bold: 700;
+  --vb-weight-extrabold: 800;
+  --vb-weight-black: 900;
+
+  /* Width axis (wdth 62-125, continuous) -> CSS font-stretch */
+  --vb-width-extracondensed: 62.5%;
+  --vb-width-condensed: 75%;
+  --vb-width-semicondensed: 87.5%;
+  --vb-width-normal: 100%;
+  --vb-width-semiextended: 112.5%;
+  --vb-width-extended: 125%;
+
+  /* Slant (informational; the slant is drawn into the fonts, never apply it with CSS) */
+  --vb-angle-italic: 10deg;   /* OpenType italicAngle -10 */
+  --vb-angle-retalic: -10deg; /* OpenType italicAngle +10 */
+
+  /* Display composition (approved VENTURE / BEYOND lockup) */
+  --vb-display-leading: 0.88;
+  --vb-display-tracking: -0.005em;
+}
+
+/* Base: real faces only. No faux bold or faux italic on top of the variable fonts. */
+.vb,
+.vb-italic,
+.vb-retalic {
+  font-synthesis: none;
+}
+
+.vb        { font-family: var(--vb-font); font-style: normal; }
+.vb-italic { font-family: var(--vb-font); font-style: italic; }
+.vb-retalic { font-family: var(--vb-font-retalic); font-style: normal; }
+
+/* Approved roles: Extended Black */
+.vb-venture,
+.vb-beyond {
+  font-weight: var(--vb-weight-black);
+  font-stretch: var(--vb-width-extended);
+  line-height: var(--vb-display-leading);
+  letter-spacing: var(--vb-display-tracking);
+  font-synthesis: none;
+}
+.vb-venture { font-family: var(--vb-font-retalic); font-style: normal; } /* Extended Black Retalic */
+.vb-beyond  { font-family: var(--vb-font); font-style: italic; }          /* Extended Black Italic */
+
+/* Two-line lockup: <h1 class="vb-lockup"><span class="vb-venture">VENTURE</span><span class="vb-beyond">BEYOND</span></h1> */
+.vb-lockup { margin: 0; font-weight: var(--vb-weight-black); }
+.vb-lockup > span { display: block; white-space: nowrap; }

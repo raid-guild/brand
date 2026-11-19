@@ -1,0 +1,83 @@
+Venture Beyond prototype validation (Extended Black; Retalic 10 deg)
+
+[PASS] upstream pin: Omnibus-Type/Archivo@2111276, 8 files
+[PASS] baseline is byte-identical to the approved v0.100 files: 6 files
+[PASS] OTS sanitize VentureBeyond-ExtendedBlack.ttf: File sanitized successfully!
+[PASS] OTS sanitize VentureBeyond-ExtendedBlackItalic.ttf: File sanitized successfully!
+[PASS] OTS sanitize VentureBeyond-ExtendedBlackRetalic.ttf: File sanitized successfully!
+[PASS] OTS sanitize VentureBeyond-ExtendedBlack.woff2: File sanitized successfully!
+[PASS] OTS sanitize VentureBeyond-ExtendedBlackItalic.woff2: File sanitized successfully!
+[PASS] OTS sanitize VentureBeyond-ExtendedBlackRetalic.woff2: File sanitized successfully!
+[PASS] upright: name IDs 1/2/4/6/16/17: Venture Beyond Extended Black / VentureBeyond-ExtendedBlack
+[PASS] upright: PostScript name syntax: VentureBeyond-ExtendedBlack
+[PASS] upright: legacy family <= 31 chars: 29
+[PASS] upright: Archivo copyright retained: Copyright 2020 The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo). Venture Beyond modifications copyright 2026 RaidGuild.
+[PASS] upright: OFL name records
+[PASS] upright: no stale VF name records (ID 25 / unreferenced IDs >= 256)
+[PASS] upright: family is renamed (no 'Archivo' in names 1/4/6/16)
+[PASS] upright: STAT present
+[PASS] italic: name IDs 1/2/4/6/16/17: Venture Beyond Extended Black Italic / VentureBeyond-ExtendedBlackItalic
+[PASS] italic: PostScript name syntax: VentureBeyond-ExtendedBlackItalic
+[PASS] italic: legacy family <= 31 chars: 29
+[PASS] italic: Archivo copyright retained: Copyright 2020 The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo). Venture Beyond modifications copyright 2026 RaidGuild.
+[PASS] italic: OFL name records
+[PASS] italic: no stale VF name records (ID 25 / unreferenced IDs >= 256)
+[PASS] italic: family is renamed (no 'Archivo' in names 1/4/6/16)
+[PASS] italic: STAT present
+[PASS] retalic: name IDs 1/2/4/6/16/17: Venture Beyond Extended Black Retalic / VentureBeyond-ExtendedBlackRetalic
+[PASS] retalic: PostScript name syntax: VentureBeyond-ExtendedBlackRetalic
+[PASS] retalic: legacy family <= 31 chars: 31
+[PASS] retalic: Archivo copyright retained: Copyright 2020 The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo). Venture Beyond modifications copyright 2026 RaidGuild.
+[PASS] retalic: OFL name records
+[PASS] retalic: no stale VF name records (ID 25 / unreferenced IDs >= 256)
+[PASS] retalic: family is renamed (no 'Archivo' in names 1/4/6/16)
+[PASS] retalic: STAT present
+[PASS] unique PostScript names: VentureBeyond-ExtendedBlack, VentureBeyond-ExtendedBlackItalic, VentureBeyond-ExtendedBlackRetalic
+[PASS] Upright/Italic style-linked (same ID 1): Venture Beyond Extended Black
+[PASS] Retalic in its own legacy family: Venture Beyond ExtBlack Retalic
+[PASS] upright: fsSelection/macStyle: fsSelection=0x0040 (want 0x0040) macStyle=0 (want 0)
+[PASS] upright: usWeightClass 900 / usWidthClass 7
+[PASS] italic: fsSelection/macStyle: fsSelection=0x0001 (want 0x0001) macStyle=2 (want 2)
+[PASS] italic: usWeightClass 900 / usWidthClass 7
+[PASS] retalic: fsSelection/macStyle: fsSelection=0x0240 (want 0x0240) macStyle=0 (want 0)
+[PASS] retalic: usWeightClass 900 / usWidthClass 7
+[PASS] upright: post.italicAngle & hhea caret: italicAngle=+0.0 (OpenType, + = left lean), caret=+0.00 deg, CSS lean=-0.0
+[PASS] italic: post.italicAngle & hhea caret: italicAngle=-10.0 (OpenType, + = left lean), caret=-9.98 deg, CSS lean=+10.0
+[PASS] retalic: post.italicAngle & hhea caret: italicAngle=+10.0 (OpenType, + = left lean), caret=+9.98 deg, CSS lean=-10.0
+[PASS] upright vs Omnibus ArchivoExpanded-Black.ttf: glyph order identical: 834 glyphs
+[PASS] upright vs Omnibus ArchivoExpanded-Black.ttf: cmap identical: 653 code points
+[PASS] upright vs Omnibus ArchivoExpanded-Black.ttf: advance widths identical: 0 differ []
+[PASS] upright: every glyph's filled shape matches Omnibus static: max bbox deviation 0.24 units (integral); worst area deviation 54% of tolerance (three.dnom: 94 sq units); rvrn alternates excluded
+[PASS] upright: shaped text (glyph shapes, kerning, marks) identical to Omnibus static: 0 differences across 358 characters
+[PASS] italic vs Omnibus ArchivoExpanded-BlackItalic.ttf: glyph order identical: 832 glyphs
+[PASS] italic vs Omnibus ArchivoExpanded-BlackItalic.ttf: cmap identical: 653 code points
+[PASS] italic vs Omnibus ArchivoExpanded-BlackItalic.ttf: advance widths identical: 0 differ []
+[PASS] italic: every glyph's filled shape matches Omnibus static: max bbox deviation 0.00 units (None); worst area deviation 98% of tolerance (uni031B.case: 119 sq units); rvrn alternates excluded
+[PASS] italic: shaped text (glyph shapes, kerning, marks) identical to Omnibus static: 0 differences across 358 characters
+[PASS] retalic vs upright: glyph order identical: 834 glyphs
+[PASS] retalic vs upright: cmap identical: 653 code points
+[PASS] retalic vs upright: advance widths identical: 0 differ []
+[PASS] retalic: contour structure identical to upright: 0 differ []
+[PASS] retalic: every point = exact shear of upright: max |dx| 0.945 units (lira), max |dy| 0; x' = x - (y - 263)*tan(10 deg)
+[PASS] retalic: GSUB byte-identical to upright
+[PASS] retalic: shaping glyphs, advances & kerning identical to upright: 0 differences
+[PASS] retalic: GPOS mark offsets follow the slant: 9 positioned marks, max deviation from sheared offset 0.21 units
+[PASS] upright: coverage: A-Z 26/26, a-z 26/26, 0-9 10/10, ASCII punctuation 33/33, Latin-1 letters 62/62, Latin Extended-A 128/128; total 653 code points
+[PASS] italic: coverage: A-Z 26/26, a-z 26/26, 0-9 10/10, ASCII punctuation 33/33, Latin-1 letters 62/62, Latin Extended-A 128/128; total 653 code points
+[PASS] retalic: coverage: A-Z 26/26, a-z 26/26, 0-9 10/10, ASCII punctuation 33/33, Latin-1 letters 62/62, Latin Extended-A 128/128; total 653 code points
+[PASS] all styles: identical character set
+[PASS] upright: no vertical clipping (usWin 1107/440; Archivo ships 1100/410): glyph yMax 1107, yMin -440
+[PASS] upright: line-spacing metrics unchanged from Archivo (typo/hhea, USE_TYPO_METRICS): (878, -210, 0, 878, -210, 0)
+[PASS] upright: max horizontal overhang beyond advance box: left 204 (uni2215), right 1039 (uni0336) units
+[PASS] italic: no vertical clipping (usWin 1107/440; Archivo ships 1100/410): glyph yMax 1107, yMin -440
+[PASS] italic: line-spacing metrics unchanged from Archivo (typo/hhea, USE_TYPO_METRICS): (878, -210, 0, 878, -210, 0)
+[PASS] italic: max horizontal overhang beyond advance box: left 253 (uni2215), right 1069 (uni0336) units
+[PASS] retalic: no vertical clipping (usWin 1107/440; Archivo ships 1100/410): glyph yMax 1107, yMin -440
+[PASS] retalic: line-spacing metrics unchanged from Archivo (typo/hhea, USE_TYPO_METRICS): (878, -210, 0, 878, -210, 0)
+[PASS] retalic: max horizontal overhang beyond advance box: left 270 (uni0209), right 1031 (uni0336) units
+[PASS] upright: WOFF2 round-trip lossless: tables [], glyphs 0
+[PASS] italic: WOFF2 round-trip lossless: tables [], glyphs 0
+[PASS] retalic: WOFF2 round-trip lossless: tables [], glyphs 0
+[PASS] byte-reproducible rebuild: fresh build == baseline
+
+79 checks, 0 failed, 0 warnings
