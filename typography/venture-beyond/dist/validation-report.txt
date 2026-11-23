@@ -1,0 +1,103 @@
+Venture Beyond variable family validation
+Version 0.200; Retalic 10 deg; from Archivo 2.001 @2111276
+
+[PASS] upstream pin: Omnibus-Type/Archivo@2111276
+[PASS] OTS sanitize VentureBeyond[wdth,wght].ttf: File sanitized successfully!
+[PASS] OTS sanitize VentureBeyond-Variable.woff2: File sanitized successfully!
+[PASS] OTS sanitize VentureBeyond-Italic[wdth,wght].ttf: File sanitized successfully!
+[PASS] OTS sanitize VentureBeyond-Italic-Variable.woff2: File sanitized successfully!
+[PASS] OTS sanitize VentureBeyond-Retalic[wdth,wght].ttf: File sanitized successfully!
+[PASS] OTS sanitize VentureBeyond-Retalic-Variable.woff2: File sanitized successfully!
+[PASS] upright: fvar axes = Archivo: wght 100-900 (default 600), wdth 62-125 (default 100)
+[PASS] upright: avar identical to Archivo
+[PASS] italic: fvar axes = Archivo: wght 100-900 (default 600), wdth 62-125 (default 100)
+[PASS] italic: avar identical to Archivo
+[PASS] retalic: fvar axes = Archivo: wght 100-900 (default 600), wdth 62-125 (default 100)
+[PASS] retalic: avar identical to Archivo
+[PASS] upright: 54 named instances, unique, valid PostScript names
+[PASS] upright: named instance 'Extended Black' at wght 900 / wdth 125: VentureBeyond-ExtendedBlack
+[PASS] italic: 54 named instances, unique, valid PostScript names
+[PASS] italic: named instance 'Extended Black Italic' at wght 900 / wdth 125: VentureBeyond-ExtendedBlackItalic
+[PASS] retalic: 54 named instances, unique, valid PostScript names
+[PASS] retalic: named instance 'Extended Black Retalic' at wght 900 / wdth 125: VentureBeyond-ExtendedBlackRetalic
+[PASS] instance PostScript names unique across the family: 162 names
+[PASS] upright: name IDs 1/2/6/16/17/25: Venture Beyond SemiBold / Regular; prefix VentureBeyondRoman
+[PASS] upright: legacy family <= 31 chars: 23
+[PASS] upright: Archivo copyright retained
+[PASS] upright: OFL name records
+[PASS] upright: renamed (no 'Archivo' in 1/4/6/16/25)
+[PASS] upright: no unreferenced name records
+[PASS] upright: Windows-platform name records only
+[PASS] upright: full name (4) begins with legacy family (1): Venture Beyond SemiBold
+[PASS] upright: no DSIG
+[PASS] italic: name IDs 1/2/6/16/17/25: Venture Beyond SemiBold / Italic; prefix VentureBeyondItalic
+[PASS] italic: legacy family <= 31 chars: 23
+[PASS] italic: Archivo copyright retained
+[PASS] italic: OFL name records
+[PASS] italic: renamed (no 'Archivo' in 1/4/6/16/25)
+[PASS] italic: no unreferenced name records
+[PASS] italic: Windows-platform name records only
+[PASS] italic: full name (4) begins with legacy family (1): Venture Beyond SemiBold Italic
+[PASS] italic: no DSIG
+[PASS] retalic: name IDs 1/2/6/16/17/25: Venture Beyond SemiBold Retalic / Regular; prefix VentureBeyondRetalic
+[PASS] retalic: legacy family <= 31 chars: 31
+[PASS] retalic: Archivo copyright retained
+[PASS] retalic: OFL name records
+[PASS] retalic: renamed (no 'Archivo' in 1/4/6/16/25)
+[PASS] retalic: no unreferenced name records
+[PASS] retalic: Windows-platform name records only
+[PASS] retalic: full name (4) begins with legacy family (1): Venture Beyond SemiBold Retalic
+[PASS] retalic: no DSIG
+[PASS] distinct variations PostScript prefixes (ID 25) and default PS names: VentureBeyondItalic, VentureBeyondRetalic, VentureBeyondRoman
+[PASS] Upright/Italic style-linked (same ID 1): Venture Beyond SemiBold
+[PASS] Retalic in its own legacy family: Venture Beyond SemiBold Retalic
+[PASS] upright: fsSelection/macStyle (+USE_TYPO_METRICS): 0x0040 / 0
+[PASS] upright: italicAngle & caret slope: +0 (CSS -0deg), caret +0.00
+[PASS] italic: fsSelection/macStyle (+USE_TYPO_METRICS): 0x0001 / 2
+[PASS] italic: italicAngle & caret slope: -10 (CSS +10deg), caret -9.98
+[PASS] retalic: fsSelection/macStyle (+USE_TYPO_METRICS): 0x0240 / 0
+[PASS] retalic: italicAngle & caret slope: +10 (CSS -10deg), caret +9.98
+[PASS] upright: STAT axis values: axes ('wdth', 'wght', 'slnt', 'ital'); 17 names
+[PASS] upright: STAT 'ital' axis last: ('wdth', 'wght', 'slnt', 'ital')
+[PASS] italic: STAT axis values: axes ('wdth', 'wght', 'slnt', 'ital'); 16 names
+[PASS] italic: STAT 'ital' axis last: ('wdth', 'wght', 'slnt', 'ital')
+[PASS] retalic: STAT axis values: axes ('wdth', 'wght', 'slnt', 'ital'); 17 names
+[PASS] retalic: STAT 'ital' axis last: ('wdth', 'wght', 'slnt', 'ital')
+[PASS] STAT design axes consistent across files: ('wdth', 'wght', 'slnt', 'ital')
+[PASS] upright: Archivo data preserved (glyf, gvar, hmtx, HVAR, avar, GSUB, GPOS, GDEF, cmap, post, maxp, gasp, prep, loca): identical
+[PASS] upright: line-spacing metrics = Archivo: typo/hhea 878/-210/0
+[PASS] italic: Archivo data preserved (glyf, gvar, hmtx, HVAR, avar, GSUB, GPOS, GDEF, cmap, post, maxp, gasp, prep, loca): identical
+[PASS] italic: line-spacing metrics = Archivo: typo/hhea 878/-210/0
+[PASS] retalic: glyph order & cmap = upright
+[PASS] retalic: GSUB byte-identical to upright
+[PASS] retalic: HVAR byte-identical to upright
+[PASS] retalic: avar byte-identical to upright
+[PASS] retalic: cmap byte-identical to upright
+[PASS] retalic: default advance widths = upright: 0 differ
+[PASS] retalic: contour structure = upright at 67 sampled locations
+[PASS] retalic: advance widths = upright at 67 locations (HVAR): 0 differ
+[PASS] retalic: every point = exact 10 deg shear of upright at 67 locations: max |dx| 0.500 (degree @ {'wght': 100, 'wdth': 125}), max |dy| 0.500 units
+[PASS] retalic: master locations exact within rounding: max |dx| 0.500 at the 9 masters
+[PASS] retalic: shaped glyphs, advances & variable kerning = upright at 21 locations: 0 differences
+[PASS] retalic: variable mark anchors follow the slant: 189 positioned marks, max deviation 0.79 units
+[PASS] upright: Extended Black instance matches approved v0.100 baseline: 0 glyph shapes differ []; max bbox deviation 0.42 units (uni030A0301.case); advances 0 differ
+[PASS] upright: shaped text at Extended Black = approved baseline: 0 differences
+[PASS] italic: Extended Black instance matches approved v0.100 baseline: 0 glyph shapes differ []; max bbox deviation 0.00 units (zero.zero); advances 0 differ
+[PASS] italic: shaped text at Extended Black = approved baseline: 0 differences
+[PASS] retalic: Extended Black instance matches approved v0.100 baseline: 0 glyph shapes differ []; max bbox deviation 0.24 units (uni1ED9); advances 0 differ
+[PASS] retalic: shaped text at Extended Black = approved baseline: 0 differences
+[PASS] upright: interpolation diagnostics = Archivo's (inherited): 4 glyphs (cent.BRACKET.110, dollar.BRACKET.110, intersection, multiply)
+[PASS] italic: interpolation diagnostics = Archivo's (inherited): 80 glyphs (C, Cacute, Cacute.loclPLK, Ccaron, Ccedilla, Ccircumflex…)
+[PASS] retalic: shear introduces no new interpolation issues: 4 glyphs (cent.BRACKET.110, dollar.BRACKET.110, intersection, multiply), all also flagged in Archivo upright
+[PASS] upright: no vertical clipping across 57 instances: glyph y -440..1107, usWin 1107/440
+[PASS] italic: no vertical clipping across 57 instances: glyph y -440..1107, usWin 1107/440
+[PASS] retalic: no vertical clipping across 57 instances: glyph y -440..1107, usWin 1107/440
+[PASS] coverage identical in all styles and = Archivo: 653 code points; A-Z 26/26, a-z 26/26, 0-9 10/10, Latin-1 62/62, Latin Ext-A 128/128
+[PASS] upright: WOFF2 round-trip lossless
+[PASS] italic: WOFF2 round-trip lossless
+[PASS] retalic: WOFF2 round-trip lossless
+[PASS] byte-reproducible rebuild: fresh build == dist/ttf
+
+Approved v0.100 baseline (baseline/extended-black-0.100/validation-report.txt): 79 checks, 0 failed, 0 warnings
+
+96 variable-font checks, 0 failed, 0 warnings

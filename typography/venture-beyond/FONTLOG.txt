@@ -1,0 +1,45 @@
+FONTLOG for Venture Beyond
+==========================
+
+Venture Beyond is a RaidGuild derivative of Archivo by Omnibus-Type (Hector Gatti),
+licensed under the SIL Open Font License 1.1 (see LICENSE/OFL.txt).
+
+Basic font information
+----------------------
+Family: Venture Beyond. Styles: Upright, Italic (Archivo's designs, outlines unchanged) and
+Retalic (new reverse-slanted style generated from Archivo's upright).
+
+Upstream: https://github.com/Omnibus-Type/Archivo
+          commit 211127690e8ff106c36c935f7e5e697114cff103, Archivo 2.001
+
+ChangeLog
+---------
+2026-11-18 (RaidGuild) Venture Beyond 0.200 variable family
+  - Three variable fonts (wght 100-900, wdth 62-125; Archivo's axes, defaults and avar):
+    Upright and Italic are Archivo's variable fonts renamed, with outlines, gvar, HVAR, GSUB, GPOS
+    and GDEF unchanged; Retalic is Archivo's upright sheared 10 degrees left about y = 263 across
+    the full design space (outlines, gvar deltas solved master-exactly, composite offsets, GPOS
+    anchors and their variation deltas). Advances and kerning unchanged.
+  - 54 named instances per file (6 widths x 9 weights); width 125 named "Extended".
+  - usWinAscent/usWinDescent 1107/440 (family-wide extremes); line spacing unchanged.
+  - v0.100 Extended Black prototype retained as the approved, hash-pinned visual baseline.
+
+2026-11-18 (RaidGuild) Venture Beyond 0.100 prototype
+  - Extended Black (wght 900, wdth 125) instances of Archivo Upright and Italic, renamed.
+  - New Retalic style: Archivo upright outlines, component offsets and GPOS mark anchors sheared
+    10 degrees to the left about y = 263 (half x-height), mirroring how Archivo Italic was
+    slanted. Advance widths, kerning and OpenType features unchanged.
+  - rvrn heavy-weight alternates baked into base glyphs (as fontmake does for statics).
+  - usWinAscent/usWinDescent raised to 1107/440 so accents don't clip at Black Expanded.
+    Line-spacing metrics unchanged.
+  - Overlaps removed; fonts unhinted; vendor ID NONE; STAT added.
+
+Acknowledgements
+----------------
+N: Hector Gatti / Omnibus-Type
+W: http://www.omnibus-type.com
+D: Original Archivo design (all outlines, spacing, kerning, features)
+
+N: RaidGuild
+W: https://www.brand.raidguild.org/
+D: Venture Beyond naming, Retalic derivation, build pipeline
