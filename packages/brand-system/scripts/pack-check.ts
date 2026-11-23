@@ -18,6 +18,10 @@ const requiredFiles = [
   "dist/fonts/UbuntuMono-Regular.ttf",
   "dist/fonts/UbuntuMono-Bold.ttf",
   "dist/fonts/UbuntuMono-UFL.txt",
+  "dist/fonts/venture-beyond/VentureBeyond-Latin.woff2",
+  "dist/fonts/venture-beyond/VentureBeyond-Italic-Latin.woff2",
+  "dist/fonts/venture-beyond/VentureBeyond-Retalic-Latin.woff2",
+  "dist/fonts/venture-beyond/OFL.txt",
   "dist/logos/symbol-black.svg",
 ];
 

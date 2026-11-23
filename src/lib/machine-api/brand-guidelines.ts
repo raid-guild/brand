@@ -571,7 +571,7 @@ const payload = {
           ? { licenseUrl: `${LIVE_BASE_URL}/fonts/${font.licenseFile}` }
           : {}),
       })),
-      note: "Louchi's Last Duel cuts are guide-only assets under /brand-fonts/louchi/ and are excluded from the reusable package. Ubuntu Mono Regular and Bold are packaged local assets for compact utility and factual data. Do not use the mono family for headings or normal paragraphs.",
+      note: "Venture Beyond is the open-source display family (SIL Open Font License 1.1, derived from Archivo): the fonts/venture-beyond/ files are Latin web subsets of the variable Upright, Italic and 10° Retalic styles (wght 100–900, wdth 62–125); the complete distribution is in the repository under typography/venture-beyond/. Ubuntu covers body and UI text at wght 100–800. Ubuntu Mono Regular and Bold are packaged local assets for compact utility and factual data. Do not use the mono family for headings or normal paragraphs.",
     },
     social: {
       dimensions: "400x400",

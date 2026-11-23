@@ -28,7 +28,7 @@ import "@raidguild/brand-system/brand-action.css";
 <BrandAction href="/contact">Start a project</BrandAction>
 <BrandAction href="/about" variant="secondary" direction="down-right">Read more</BrandAction>
 <BrandButton type="button" onClick={openPreview}>Open preview</BrandButton>`}</code></pre>
-    <p>Last Duel faces in the guide are licensed, guide-only assets. Consumers use the packaged font fallback unless they supply appropriately licensed faces. See <a href="https://github.com/raid-guild/brand/blob/feat/versioned-brand-reigns/docs/package-contract.md">package contract</a> for installation and versioning.</p>
+    <p>Display type is Venture Beyond, an open-source (SIL OFL 1.1) variable family derived from Archivo, with the separate Venture Beyond Retalic family for reverse-slanted accents. The package ships its Latin web subsets under <code>fonts/venture-beyond/</code>. See <a href="https://github.com/raid-guild/brand/blob/feat/versioned-brand-reigns/docs/package-contract.md">package contract</a> for installation and versioning.</p>
     <p>Older <em>Hero Discovery</em> and <em>Elastic Gallery</em> stories document September workshop studies. Use the current stories above for new website work.</p>
   </main>;
 }

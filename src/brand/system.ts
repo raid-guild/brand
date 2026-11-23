@@ -90,8 +90,8 @@ const logoFiles = Object.keys(logoDescriptions);
 const brandSystemSource = {
   release: {
     schemaVersion: "1.0.0",
-    brandVersion: "2026.8.1",
-    generatedAt: "2026-08-19T00:00:00.000Z",
+    brandVersion: "2026.11.0",
+    generatedAt: "2026-11-19T00:00:00.000Z",
     sourceRevision: "feat/versioned-brand-reigns@554fdad",
     compatibility: {
       minimumSchemaVersion: "1.0.0",
@@ -131,7 +131,7 @@ const brandSystemSource = {
       maturity: "development",
       available: true,
       summary: "A Moebius-influenced system of deep teal, cyan, parchment, coral, and acid lime, built around expansive editorial type and speculative-world imagery.",
-      direction: "Moebius-influenced speculative worlds, uppercase Last Duel with native Retalic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
+      direction: "Moebius-influenced speculative worlds, uppercase Venture Beyond with native Retalic accents, Ubuntu body copy, spatial composition, and cinematic motion.",
       sourceLabel: "Venture Beyond redesign",
       sourceUrl: "https://github.com/raid-guild/website/tree/review/venture-beyond-redesign",
       contributionNote: "Stewarded by Louchi and made real through the work, critique, and adoption of many Guild contributors.",
@@ -145,7 +145,7 @@ const brandSystemSource = {
         { name: "Acid Lime", value: "#d7e34d", role: "Highlight and status" },
       ],
       tokens: {
-        "--font-display": "'Last Duel', 'Afacad Flux', sans-serif", "--font-retalic": "'Last Duel Retalic', 'Afacad Flux', sans-serif", "--font-body": "'Ubuntu', sans-serif",
+        "--font-display": "'Venture Beyond Extended', 'Venture Beyond', system-ui, sans-serif", "--font-retalic": "'Venture Beyond Retalic Extended', 'Venture Beyond Retalic', system-ui, sans-serif", "--font-body": "'Ubuntu', sans-serif",
         "--reign-navy": "#191e4e",
         "--moloch-100": "#e7f4f3", "--moloch-200": "#b8e0df", "--moloch-300": "#78c5c3", "--moloch-400": "#ee709a",
         "--moloch-500": "#ee3c78", "--moloch-600": "#b84067", "--moloch-700": "#315654", "--moloch-800": "#0a292b",
@@ -208,7 +208,7 @@ const brandSystemSource = {
           reducedMotion: "Reveal landmarks immediately with no parallax, curtain travel, orbit animation, or long atmospheric crossfade when reduced motion is requested.",
         },
       },
-      typography: { display: "Last Duel", body: "Ubuntu", mono: "Ubuntu Mono" },
+      typography: { display: "Venture Beyond", body: "Ubuntu", mono: "Ubuntu Mono" },
       dataVersion: null,
     },
     {
@@ -331,9 +331,12 @@ const brandSystemSource = {
     serviceIcons: ["community", "consultation", "culture", "dao", "education", "experiment", "frontend", "fullstack", "learning", "manifesto", "marketing", "robot", "spear", "sprint", "swords"],
     magicIcons: ["candle", "cauldron", "chalice", "crystal", "feather", "flask", "hourglass", "lantern", "moon", "pumpkin", "sparkle", "star", "stars"],
     fonts: [
+      { file: "venture-beyond/VentureBeyond-Latin.woff2", family: "Venture Beyond", weight: "Variable wght 100–900, wdth 62–125 (Latin web subset)", license: "SIL Open Font License 1.1", licenseFile: "venture-beyond/OFL.txt" },
+      { file: "venture-beyond/VentureBeyond-Italic-Latin.woff2", family: "Venture Beyond", weight: "Italic variable (Latin web subset)", license: "SIL Open Font License 1.1", licenseFile: "venture-beyond/OFL.txt" },
+      { file: "venture-beyond/VentureBeyond-Retalic-Latin.woff2", family: "Venture Beyond Retalic", weight: "10° Retalic variable (Latin web subset)", license: "SIL Open Font License 1.1", licenseFile: "venture-beyond/OFL.txt" },
       { file: "AfacadFlux-Variable.ttf", family: "Afacad Flux", weight: "Variable 100–1000", license: "SIL Open Font License 1.1" },
-      { file: "Ubuntu-Variable.ttf", family: "Ubuntu", weight: "Variable", license: "Ubuntu Font Licence 1.0" },
-      { file: "Ubuntu-Italic-Variable.ttf", family: "Ubuntu", weight: "Italic Variable", license: "Ubuntu Font Licence 1.0" },
+      { file: "Ubuntu-Variable.ttf", family: "Ubuntu", weight: "Variable 100–800", license: "Ubuntu Font Licence 1.0" },
+      { file: "Ubuntu-Italic-Variable.ttf", family: "Ubuntu", weight: "Italic Variable 100–800", license: "Ubuntu Font Licence 1.0" },
       { file: "MAZIUSREVIEW20.09-Regular.otf", family: "Mazius Display", weight: "Regular" },
       { file: "MAZIUSREVIEW20.09-Regular.woff", family: "Mazius Display", weight: "Regular (woff)" },
       { file: "MaziusDisplay-Bold.otf", family: "Mazius Display", weight: "Bold" },

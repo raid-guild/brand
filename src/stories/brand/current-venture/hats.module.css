@@ -149,7 +149,7 @@
 
 /* Hat → wearer (November 3, owner). The card's content turns over on hover (pointer devices) and while the card
    is selected (keyboard focus or a tap), showing the steward who wears the hat: portrait, name (the role name's
-   Ubuntu bold: Last Duel at a card's 85–105 px fell to 11 px), "Wears 1822.x". Both faces share one grid cell, so the card keeps its
+   Ubuntu bold: the extended display face at a card's 85–105 px fell to 11 px), "Wears 1822.x". Both faces share one grid cell, so the card keeps its
    size; the frame, edge and rings stay put. Reduced motion crossfades the faces instead of turning them. */
 .card.flips { perspective: 900px; }
 .faces { display: grid; transform-style: preserve-3d; transition: transform .55s cubic-bezier(.2, .7, .2, 1); width: 100%; }

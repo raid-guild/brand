@@ -35,22 +35,23 @@ export default function TypographyPage() {
       ]
     : [
         {
-          name: brandReign.id === "louchi" ? "Last Duel" : "Mazius Display",
-          className: "font-display",
+          name: brandReign.id === "louchi" ? "Venture Beyond" : "Mazius Display",
+          // The current reign resolves its display face at runtime; the compiled `font-display` utility is the archive default.
+          className: brandReign.id === "louchi" ? "font-[family-name:var(--font-display)] [font-synthesis:none]" : "font-display",
           sample: "Venture beyond the familiar.",
           role: "Display, headlines, and brand graphics",
           description:
             brandReign.id === "louchi"
-              ? "Last Duel Extended 2 regular/bold and oblique cuts, with a separate Retalic family for coral accents. Use native cuts at weights 400 and 700, with no synthetic skew or bold. Louchi supplied these guide fonts; package consumers retain the open Afacad Flux fallback."
+              ? "Open-source variable display family derived from Archivo, set at the Extended width: native upright and Italic, plus the separate Venture Beyond Retalic family (10° reverse slant) for coral accents. Use weights 400 and 700 with no synthetic skew or bold; the full range is weight 100–900 and width 62–125."
               : "A calligraphic high-contrast serif used for expressive headlines and brand graphics.",
         },
         {
           name: brandReign.id === "louchi" ? "Ubuntu" : "EB Garamond",
-          className: "font-body",
+          className: brandReign.id === "louchi" ? "font-[family-name:var(--font-body)]" : "font-body",
           sample: "Build digital worlds worth inhabiting.",
           role: "Body and supporting copy",
           description:
-            brandReign.id === "louchi" ? "Clear, unskewed supporting copy beneath Last Duel display headings." : "The readable editorial counterweight to Mazius Display across long-form copy and interfaces.",
+            brandReign.id === "louchi" ? "Clear, unskewed supporting copy beneath Venture Beyond display headings." : "The readable editorial counterweight to Mazius Display across long-form copy and interfaces.",
         },
         {
           name: "Ubuntu Mono",
@@ -77,7 +78,7 @@ export default function TypographyPage() {
           {isTw
             ? "TW pairs theatrical display type with compact supporting copy for an energetic, web-native voice."
             : brandReign.id === "louchi"
-              ? "Louchi pairs Last Duel display with Ubuntu body and Ubuntu Mono utility, using spacious composition, tight display leading, and technical field-note details."
+              ? "The current reign pairs Venture Beyond display with Ubuntu body and Ubuntu Mono utility, using spacious composition, tight display leading, and technical field-note details."
               : "Suede established the Mazius, Garamond, and Ubuntu foundation used across the warm Moloch and Scroll system."}
         </p>
 

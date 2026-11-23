@@ -1,6 +1,6 @@
 export const TYPOGRAPHY = {
   families: [
-    { id: "display", name: "Last Duel", cssVariable: "--font-display", sourceVariable: "--font-last-duel", role: "Louchi uppercase display, native regular/bold and oblique cuts plus separate Retalic at weights 400/700; the paired-heading lower line synthesizes italic from Bold Extended 2 because there is no native extended italic; do not synthesize bold. Commercial web fonts in the guide only; package consumers use Afacad Flux fallback or their own licensed files. Archived reigns retain their fonts." },
+    { id: "display", name: "Venture Beyond", cssVariable: "--font-display", sourceVariable: "--font-venture-beyond", role: "Uppercase display and headlines in Venture Beyond at the Extended width (wdth 125): native upright and Italic, plus the separate Venture Beyond Retalic family (10° reverse slant) for accents, at weights 400/700 in the guide; the full variable range is wght 100–900 and wdth 62–125. Never synthesize bold or italic. Open source (SIL Open Font License 1.1, derived from Archivo by Omnibus-Type). Archived reigns retain their fonts." },
     { id: "body", name: "Ubuntu", cssVariable: "--font-body", sourceVariable: "--font-ubuntu", role: "Louchi body copy and supporting UI text; archived reigns retain their fonts" },
     { id: "mono", name: "Ubuntu Mono", cssVariable: "--font-mono", sourceVariable: "--font-ubuntu-mono", role: "Compact utility, metadata, labels, identifiers, and numeric data" },
   ],

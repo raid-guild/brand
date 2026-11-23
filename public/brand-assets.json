@@ -1,9 +1,9 @@
 {
   "$schema": "https://raidguild.org/schemas/brand-manifest-v1.json",
   "name": "RaidGuild Brand Assets Manifest",
-  "version": "2026.8.1",
+  "version": "2026.11.0",
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-08-19T00:00:00.000Z",
+  "generatedAt": "2026-11-19T00:00:00.000Z",
   "sourceRevision": "feat/versioned-brand-reigns@554fdad",
   "brandRefresh": "Louchi / Venture Beyond",
   "description": "Machine-readable inventory of RaidGuild brand assets and its versioned steward-reign guidance.",
@@ -268,8 +268,8 @@
         }
       },
       "semanticLight": {
-        "--font-display": "'Last Duel', 'Afacad Flux', sans-serif",
-        "--font-retalic": "'Last Duel Retalic', 'Afacad Flux', sans-serif",
+        "--font-display": "'Venture Beyond Extended', 'Venture Beyond', system-ui, sans-serif",
+        "--font-retalic": "'Venture Beyond Retalic Extended', 'Venture Beyond Retalic', system-ui, sans-serif",
         "--font-body": "'Ubuntu', sans-serif",
         "--reign-navy": "#191e4e",
         "--moloch-100": "#e7f4f3",
@@ -366,16 +366,16 @@
     },
     "typography": {
       "reigns": {
-        "louchi": "Last Duel, Ubuntu, Ubuntu Mono",
+        "louchi": "Venture Beyond, Ubuntu, Ubuntu Mono",
         "suede": "Mazius Display, EB Garamond, Ubuntu Mono",
         "tw": "RG Alchemion, RG Fratelli",
         "ven": "Mazius Display, EB Garamond, Ubuntu Mono"
       },
       "families": [
         {
-          "name": "Last Duel",
+          "name": "Venture Beyond",
           "cssVar": "--font-display",
-          "role": "Louchi uppercase display, native regular/bold and oblique cuts plus separate Retalic at weights 400/700; the paired-heading lower line synthesizes italic from Bold Extended 2 because there is no native extended italic; do not synthesize bold. Commercial web fonts in the guide only; package consumers use Afacad Flux fallback or their own licensed files. Archived reigns retain their fonts."
+          "role": "Uppercase display and headlines in Venture Beyond at the Extended width (wdth 125): native upright and Italic, plus the separate Venture Beyond Retalic family (10° reverse slant) for accents, at weights 400/700 in the guide; the full variable range is wght 100–900 and wdth 62–125. Never synthesize bold or italic. Open source (SIL Open Font License 1.1, derived from Archivo by Omnibus-Type). Archived reigns retain their fonts."
         },
         {
           "name": "Ubuntu",
@@ -1458,6 +1458,30 @@
       "folder": "https://www.brand.raidguild.org/fonts/",
       "items": [
         {
+          "file": "venture-beyond/VentureBeyond-Latin.woff2",
+          "family": "Venture Beyond",
+          "weight": "Variable wght 100–900, wdth 62–125 (Latin web subset)",
+          "license": "SIL Open Font License 1.1",
+          "licenseFile": "venture-beyond/OFL.txt",
+          "url": "https://www.brand.raidguild.org/fonts/venture-beyond/VentureBeyond-Latin.woff2"
+        },
+        {
+          "file": "venture-beyond/VentureBeyond-Italic-Latin.woff2",
+          "family": "Venture Beyond",
+          "weight": "Italic variable (Latin web subset)",
+          "license": "SIL Open Font License 1.1",
+          "licenseFile": "venture-beyond/OFL.txt",
+          "url": "https://www.brand.raidguild.org/fonts/venture-beyond/VentureBeyond-Italic-Latin.woff2"
+        },
+        {
+          "file": "venture-beyond/VentureBeyond-Retalic-Latin.woff2",
+          "family": "Venture Beyond Retalic",
+          "weight": "10° Retalic variable (Latin web subset)",
+          "license": "SIL Open Font License 1.1",
+          "licenseFile": "venture-beyond/OFL.txt",
+          "url": "https://www.brand.raidguild.org/fonts/venture-beyond/VentureBeyond-Retalic-Latin.woff2"
+        },
+        {
           "file": "AfacadFlux-Variable.ttf",
           "family": "Afacad Flux",
           "weight": "Variable 100–1000",
@@ -1467,14 +1491,14 @@
         {
           "file": "Ubuntu-Variable.ttf",
           "family": "Ubuntu",
-          "weight": "Variable",
+          "weight": "Variable 100–800",
           "license": "Ubuntu Font Licence 1.0",
           "url": "https://www.brand.raidguild.org/fonts/Ubuntu-Variable.ttf"
         },
         {
           "file": "Ubuntu-Italic-Variable.ttf",
           "family": "Ubuntu",
-          "weight": "Italic Variable",
+          "weight": "Italic Variable 100–800",
           "license": "Ubuntu Font Licence 1.0",
           "url": "https://www.brand.raidguild.org/fonts/Ubuntu-Italic-Variable.ttf"
         },

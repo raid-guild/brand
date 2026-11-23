@@ -1,3 +1,53 @@
+/* Venture Beyond: open-source display family (SIL OFL 1.1, derived from Archivo). Latin web
+   subsets; licence in ./fonts/venture-beyond/OFL.txt. The "… Extended" families pin wdth 125. */
+@font-face {
+  font-family: "Venture Beyond";
+  src: url("./fonts/venture-beyond/VentureBeyond-Latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Venture Beyond";
+  src: url("./fonts/venture-beyond/VentureBeyond-Italic-Latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Venture Beyond Retalic";
+  src: url("./fonts/venture-beyond/VentureBeyond-Retalic-Latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Venture Beyond Extended";
+  src: url("./fonts/venture-beyond/VentureBeyond-Latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 125%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Venture Beyond Extended";
+  src: url("./fonts/venture-beyond/VentureBeyond-Italic-Latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 125%;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Venture Beyond Retalic Extended";
+  src: url("./fonts/venture-beyond/VentureBeyond-Retalic-Latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 125%;
+  font-style: normal;
+  font-display: swap;
+}
 @font-face {
   font-family: "Afacad Flux";
   src: url("./fonts/AfacadFlux-Variable.ttf") format("truetype");
@@ -8,14 +58,14 @@
 @font-face {
   font-family: "Ubuntu";
   src: url("./fonts/Ubuntu-Variable.ttf") format("truetype");
-  font-weight: 100 900;
+  font-weight: 100 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Ubuntu";
   src: url("./fonts/Ubuntu-Italic-Variable.ttf") format("truetype");
-  font-weight: 100 900;
+  font-weight: 100 800;
   font-style: italic;
   font-display: swap;
 }
@@ -70,6 +120,8 @@
 :root {
   --font-afacad: "Afacad Flux";
   --font-ubuntu: "Ubuntu";
+  --font-venture-beyond: "Venture Beyond Extended", "Venture Beyond", system-ui, sans-serif;
+  --font-venture-beyond-retalic: "Venture Beyond Retalic Extended", "Venture Beyond Retalic", system-ui, sans-serif;
   --font-mazius-display: "Mazius Display";
   --font-eb-garamond: "EB Garamond";
   --font-ubuntu-mono: "Ubuntu Mono";
