@@ -46,3 +46,30 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Scale: Story = {};
+
+// Base families remain variable; the Extended aliases match the website's fixed
+// 125% width and 105.4% size-adjust. Use explicit families so archived reign
+// utility aliases cannot silently substitute Mazius in this current specimen.
+export const VentureBeyondAxes: Story = {
+  render: () => (
+    <div data-brand-reign="louchi" className="max-w-5xl space-y-10 p-6">
+      <div>
+        <p className="type-label mb-3">Current paired heading · 900 / 125%</p>
+        <h1 className="uppercase" style={{ fontFamily: '"Venture Beyond Retalic Extended", sans-serif', fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: 900, fontStretch: '125%', fontStyle: 'normal', fontSynthesis: 'none', letterSpacing: 0, lineHeight: 1 }}>
+          Venture Beyond
+          <span className="block" style={{ fontFamily: '"Venture Beyond Extended", sans-serif', fontStyle: 'italic' }}>Together</span>
+        </h1>
+      </div>
+      {[62.5, 100, 125].map((width) => (
+        <div key={width}>
+          <p className="type-label mb-2">Base variable family · width {width}%</p>
+          {[400, 700, 900].map((weight) => (
+            <p key={weight} style={{ fontFamily: '"Venture Beyond", sans-serif', fontSize: 'clamp(1.25rem, 2vw, 1.5rem)', fontWeight: weight, fontStretch: `${width}%`, fontSynthesis: 'none', lineHeight: 1.15 }}>
+              {weight} — Guild at the frontier
+            </p>
+          ))}
+        </div>
+      ))}
+    </div>
+  ),
+};

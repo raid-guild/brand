@@ -10,9 +10,9 @@
 @font-face { font-family: "Venture Beyond"; src: url("/fonts/venture-beyond/VentureBeyond-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-style: normal; font-display: swap; }
 @font-face { font-family: "Venture Beyond"; src: url("/fonts/venture-beyond/VentureBeyond-Italic-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-style: italic; font-display: swap; }
 @font-face { font-family: "Venture Beyond Retalic"; src: url("/fonts/venture-beyond/VentureBeyond-Retalic-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-style: normal; font-display: swap; }
-@font-face { font-family: "Venture Beyond Extended"; src: url("/fonts/venture-beyond/VentureBeyond-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 125%; font-style: normal; font-display: swap; }
-@font-face { font-family: "Venture Beyond Extended"; src: url("/fonts/venture-beyond/VentureBeyond-Italic-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 125%; font-style: italic; font-display: swap; }
-@font-face { font-family: "Venture Beyond Retalic Extended"; src: url("/fonts/venture-beyond/VentureBeyond-Retalic-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 125%; font-style: normal; font-display: swap; }
+@font-face { font-family: "Venture Beyond Extended"; src: url("/fonts/venture-beyond/VentureBeyond-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 125%; font-style: normal; size-adjust: 105.4%; font-display: swap; }
+@font-face { font-family: "Venture Beyond Extended"; src: url("/fonts/venture-beyond/VentureBeyond-Italic-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 125%; font-style: italic; size-adjust: 105.4%; font-display: swap; }
+@font-face { font-family: "Venture Beyond Retalic Extended"; src: url("/fonts/venture-beyond/VentureBeyond-Retalic-Latin.woff2") format("woff2"); font-weight: 100 900; font-stretch: 125%; font-style: normal; size-adjust: 105.4%; font-display: swap; }
 @font-face { font-family: "Afacad Flux"; src: url("/fonts/AfacadFlux-Variable.ttf") format("truetype"); font-weight: 100 1000; font-style: normal; font-display: swap; }
 /* Ubuntu's variable fonts cover wght 100–800; don't advertise 900. */
 @font-face { font-family: "Ubuntu"; src: url("/fonts/Ubuntu-Variable.ttf") format("truetype"); font-weight: 100 800; font-style: normal; font-display: swap; }

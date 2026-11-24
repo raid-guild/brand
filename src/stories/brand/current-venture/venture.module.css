@@ -2942,13 +2942,13 @@
 :global(html) .site.site :is(main section h2:has(> em), .rosterHeading h3, .teamCopy h3, .creed blockquote),
 :global(html) .site.site .hero h1 > span {
   font-family: var(--font-venture-beyond-retalic), var(--font-display), sans-serif !important;
-  font-style: normal !important; font-weight: 700 !important; letter-spacing: 0 !important;
+  font-style: normal !important; font-synthesis: none !important; font-weight: 900 !important; letter-spacing: 0 !important;
 }
 /* Bottom lines. */
 :global(html) .site.site :is(main section h2:has(> em), .rosterHeading h3, .teamCopy h3, .creed blockquote) > em,
 :global(html) .site.site .hero h1 > em {
   font-family: var(--font-venture-beyond), var(--font-display), sans-serif !important;
-  font-style: italic !important; font-synthesis: none !important; font-weight: 700 !important; letter-spacing: 0 !important;
+  font-style: italic !important; font-synthesis: none !important; font-weight: 900 !important; letter-spacing: 0 !important;
 }
 
 /* Section headings. */

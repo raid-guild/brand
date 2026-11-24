@@ -1,6 +1,6 @@
 # Louchi / Venture Beyond source sync
 
-Active brand branch: `feat/versioned-brand-reigns`. The current website source of truth is [`review/venture-beyond-redesign` at `7d0e878065a566207884a37b6281158d26c8ae88`](https://github.com/raid-guild/website/tree/7d0e878065a566207884a37b6281158d26c8ae88). Louchi / Luis Blanco stewarded the visual direction; Guild contributors implemented, reviewed, and refined it. The [original handoff](https://github.com/luisblancoach/website/tree/handoff/venture-beyond-dekan) remains in the website ancestry.
+Active brand work targets `main` through a review branch. The current typography source is the merged [website PR #111](https://github.com/raid-guild/website/pull/111), commit [`8164bf6`](https://github.com/raid-guild/website/commit/8164bf6c76edf6227e15f960c9dcc45b9d3c53fc). The layout snapshot still traces to [`review/venture-beyond-redesign` at `7d0e878`](https://github.com/raid-guild/website/tree/7d0e878065a566207884a37b6281158d26c8ae88). Louchi / Luis Blanco stewarded the visual direction; Guild contributors implemented, reviewed, and refined it. The [original handoff](https://github.com/luisblancoach/website/tree/handoff/venture-beyond-dekan) remains in the website ancestry.
 
 ## Current coverage
 
@@ -8,7 +8,7 @@ Active brand branch: `feat/versioned-brand-reigns`. The current website source o
 
 Story navigation reports intended destinations while local section anchors scroll. Inquiries validate locally and never submit; the project catalog uses the website's fallback entries without requesting the live API. Portal and live feeds remain website behavior. The shared branded CTA is now published as `BrandAction` / `BrandButton` with `@raidguild/brand-system/brand-action.css`. The generic Button API and archived reigns remain available.
 
-The source website's night canvas is `#191e4e`, raised surface `#252a61`, and cream foreground `#efe9d7`. These values are reflected in Louchi canonical semantic roles; website section-specific tokens and layouts stay in the pinned snapshot CSS. Venture Beyond Retalic Bold Extended (700) forms the upper display line and the native Venture Beyond Bold Extended Italic (700) the lower, with no CSS synthesis. Ubuntu is body text, Ubuntu Mono utility text. Venture Beyond is open source (SIL OFL 1.1); its Latin web subsets live in `public/fonts/venture-beyond/` and ship with the package. Last Duel was retired in November 2026 (`docs/audit/last-duel-retirement.md`).
+The source website's night canvas is `#191e4e`, raised surface `#252a61`, and cream foreground `#efe9d7`. These values are reflected in Louchi canonical semantic roles; website section-specific tokens and layouts stay in the pinned snapshot CSS. Website PR #111 sets Venture Beyond Retalic Extended on the upper display line and native Venture Beyond Extended Italic on the lower at weight 900, width 125%, size-adjust 105.4%, and zero tracking, with no CSS synthesis. The base families retain the variable width range for specimens. Ubuntu is body text, Ubuntu Mono utility text. Venture Beyond is open source (SIL OFL 1.1); its Latin web subsets live in `public/fonts/venture-beyond/` and ship with the package. Last Duel was retired in November 2026 (`docs/audit/last-duel-retirement.md`).
 
 ## Historical studies
 

@@ -42,7 +42,7 @@ export default function TypographyPage() {
           role: "Display, headlines, and brand graphics",
           description:
             brandReign.id === "louchi"
-              ? "Open-source variable display family derived from Archivo, set at the Extended width: native upright and Italic, plus the separate Venture Beyond Retalic family (10° reverse slant) for coral accents. Use weights 400 and 700 with no synthetic skew or bold; the full range is weight 100–900 and width 62–125."
+              ? "Open-source variable display family derived from Archivo. Current Extended aliases pin width 125% and apply size-adjust 105.4% to match the merged website treatment. Pair Retalic above native Italic at weight 900 and zero tracking for major headings. Ordinary display and cards keep their own weights. The base families expose weight 100–900 and width 62–125 for variable specimens; never synthesize skew or bold."
               : "A calligraphic high-contrast serif used for expressive headlines and brand graphics.",
         },
         {
