@@ -571,7 +571,7 @@ const payload = {
           ? { licenseUrl: `${LIVE_BASE_URL}/fonts/${font.licenseFile}` }
           : {}),
       })),
-      note: "Venture Beyond is the open-source display family (SIL Open Font License 1.1, derived from Archivo): the fonts/venture-beyond/ files are Latin web subsets of the variable Upright, Italic and 10° Retalic styles (wght 100–900, wdth 62–125); the complete distribution is in the repository under typography/venture-beyond/. Ubuntu covers body and UI text at wght 100–800. Ubuntu Mono Regular and Bold are packaged local assets for compact utility and factual data. Do not use the mono family for headings or normal paragraphs.",
+      note: "Venture Beyond is the open-source display family (SIL Open Font License 1.1, derived from Archivo): the fonts/venture-beyond/ files are Latin web subsets of variable Upright, Italic and 10° Retalic styles (wght 100–900, wdth 62–125). Current Extended aliases pin wdth 125 and use size-adjust 105.4% to match merged website PR #111; major paired headings use Retalic above native Italic at weight 900 and zero tracking with font synthesis disabled. Base families retain the variable width range for specimens. The complete distribution is in typography/venture-beyond/. Ubuntu covers body and UI text at wght 100–800. Ubuntu Mono Regular and Bold are packaged local assets for compact utility and factual data. Do not use the mono family for headings or normal paragraphs.",
     },
     social: {
       dimensions: "400x400",

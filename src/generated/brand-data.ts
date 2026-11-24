@@ -586,7 +586,7 @@ export const BRAND_SYSTEM = {
         "name": "Venture Beyond",
         "cssVariable": "--font-display",
         "sourceVariable": "--font-venture-beyond",
-        "role": "Uppercase display and headlines in Venture Beyond at the Extended width (wdth 125): native upright and Italic, plus the separate Venture Beyond Retalic family (10° reverse slant) for accents, at weights 400/700 in the guide; the full variable range is wght 100–900 and wdth 62–125. Never synthesize bold or italic. Open source (SIL Open Font License 1.1, derived from Archivo by Omnibus-Type). Archived reigns retain their fonts."
+        "role": "Uppercase display and headlines use the Extended aliases (wdth 125, size-adjust 105.4%) from the merged website PR #111: native upright and Italic, plus separate Venture Beyond Retalic (10° reverse slant). Paired major display lines use Retalic above and native Italic below at weight 900, tracking 0; ordinary display and cards retain their own weights. The base families expose the full wght 100–900 and wdth 62–125 range for variable specimens. Never synthesize bold or italic. Open source (SIL Open Font License 1.1, derived from Archivo by Omnibus-Type). Archived reigns retain their fonts."
       },
       {
         "id": "body",

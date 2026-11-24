@@ -17,7 +17,7 @@ test("Louchi uses current display, body and navy night tokens without changing S
 
 test("Venture specimens preserve retalic direction and CTA spacing", () => {
   const css = readFileSync("src/stories/brand/venture-elements.module.css", "utf8");
-  assert.match(css, /font: 700 .*var\(--font-retalic\)/);
+  assert.match(css, /font: 900 .*var\(--font-retalic\)/);
   assert.match(css, /font-family: var\(--font-venture-beyond\)/);
   assert.match(css, /font-synthesis: none/);
   assert.doesNotMatch(css, /font-synthesis: style/);
@@ -60,9 +60,29 @@ test("Venture Beyond web subsets ship pinned, licensed and active", () => {
   assert.match(readFileSync("public/fonts/venture-beyond/OFL.txt", "utf8"), /SIL OPEN FONT LICENSE Version 1\.1/);
   assert.match(readFileSync("typography/venture-beyond/LICENSE/OFL.txt", "utf8"), /Omnibus-Type/);
   assert.match(css, /font-family: "Venture Beyond Retalic"/);
+  for (const face of ["Venture Beyond Extended", "Venture Beyond Retalic Extended"]) {
+    assert.match(css, new RegExp(`font-family: "${face}";[^}]*font-stretch: 125%;[^}]*size-adjust: 105\\.4%`));
+    assert.match(packageCss, new RegExp(`font-family: "${face}";[^}]*font-stretch: 125%;[^}]*size-adjust: 105\\.4%`));
+  }
+  for (const source of [css, packageCss]) {
+    const extendedFaces = [...source.matchAll(/@font-face\s*\{[^}]*font-family: "Venture Beyond Extended";[^}]*\}/g)].map(([face]) => face);
+    assert.equal(extendedFaces.length, 2, "Extended upright and native italic must both ship");
+    assert.ok(extendedFaces.some((face) => /font-style: normal;/.test(face)), "Extended upright face must ship");
+    assert.ok(extendedFaces.some((face) => /font-style: italic;/.test(face)), "Extended italic face must ship");
+    assert.ok(extendedFaces.every((face) => /font-stretch: 125%;/.test(face) && /size-adjust: 105\.4%;/.test(face)));
+  }
   assert.match(css, /Ubuntu-Variable\.ttf"\) format\("truetype"\); font-weight: 100 800;/);
   assert.match(css, /Ubuntu-Italic-Variable\.ttf"\) format\("truetype"\); font-weight: 100 800;/);
   assert.doesNotMatch(css, /Grinder-Refined/);
+});
+
+test("current Venture headings distinguish major display from cards", () => {
+  const css = readFileSync("src/stories/brand/current-venture/venture.module.css", "utf8");
+  const major = css.match(/\/\* Top lines\. \*\/([\s\S]*?)\/\* Section headings\. \*\//)?.[1];
+  assert.ok(major, "current major-heading hierarchy must be defined");
+  assert.match(major, /font-family: var\(--font-venture-beyond-retalic\)[^}]*font-weight: 900 !important; letter-spacing: 0 !important/);
+  assert.match(major, /font-family: var\(--font-venture-beyond\)[^}]*font-style: italic !important; font-synthesis: none !important; font-weight: 900 !important; letter-spacing: 0 !important/);
+  assert.match(css, /\.practiceCard h3, \.site \.footer > p \{ font-weight: 700; \}/);
 });
 
 test("Last Duel and Eurostile are fully retired from the active brand system", () => {
